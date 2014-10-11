@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.yazgel.titan.xtext/src-gen" editDirectory="/org.yazgel.titan.xtext.edit/src"
+    editorDirectory="/org.yazgel.titan.xtext.editor/src" modelPluginID="org.yazgel.titan.xtext"
+    forceOverwrite="true" modelName="Titan" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.yazgel.titan.xtext.edit"
+    editorPluginID="org.yazgel.titan.xtext.editor" runtimeVersion="2.10">
+  <genPackages prefix="Titan" basePackage="org.yazgel.titan.xtext" disposableProviderFactory="true"
+      fileExtensions="titan" ecorePackage="Titan.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Titan.ecore#//InternalDSLType">
+      <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//InternalDSLType/NestedFunctions"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Titan.ecore#//DataTypes">
+      <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/String"/>
+      <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Long"/>
+      <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Object"/>
+    </genEnums>
+    <genClasses ecoreClass="Titan.ecore#//Module">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Module/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Module/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Titan.ecore#//Module/packages"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Package/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Titan.ecore#//Package/entities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Titan.ecore#//Package/entityBuilders"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Entity/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//Entity/superEntity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Titan.ecore#//Entity/features"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//EntityBuilder">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//EntityBuilder/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Titan.ecore#//EntityBuilder/takes"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//method">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//method/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//takes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Titan.ecore#//takes/takes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Titan.ecore#//takes/adds"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//adds">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//adds/adds"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Feature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Feature/many"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//Reference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//Reference/reference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//Reference/opposite"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//DataType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//ParameterFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//ParameterFeature/many"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//ParameterFeature/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//ParameterReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//ParameterReference/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//ParameterDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//ParameterDataType/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

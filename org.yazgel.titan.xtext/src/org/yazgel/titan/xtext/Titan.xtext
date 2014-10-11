@@ -1,0 +1,97 @@
+grammar org.yazgel.titan.xtext.Titan with org.eclipse.xtext.common.Terminals
+
+generate titan "http://www.yazgel.org/titan/xtext/Titan"
+
+Module returns Module:
+	{Module}
+	'module'
+	name=QUALIFIED_NAME
+	type= InternalDSLType
+	(packages+=Package (packages+=Package)*)?
+;
+
+enum InternalDSLType returns InternalDSLType:
+	NestedFunctions = 'Nested Functions';
+
+Package returns Package:
+	{Package}
+	'package'
+	 name=QUALIFIED_NAME 
+	'{'
+		(entities+=Entity (entities+=Entity)*)?
+		(entityBuilders+=EntityBuilder (entityBuilders+=EntityBuilder)*)?
+	'}';
+
+Entity returns Entity:
+	{Entity}
+	'entity'
+	name = ID (':' superEntity=[Entity|ID])? 
+	'{' 
+		(features+=Feature (features+=Feature)*)?
+	'}';
+	
+EntityBuilder returns EntityBuilder:
+	{EntityBuilder}
+	'entityBuilder'
+	name = [Entity|ID]
+	'{' 
+		takes = takes?
+	'}';
+	
+method:
+	type = [Entity|ID]
+	
+;
+
+takes:
+	'takes' takes+= ParameterFeature (',' takes+= ParameterFeature)*
+	adds += adds?
+;
+		
+adds:
+	'adds' '(' (adds+=[Feature|QUALIFIED_NAME] (',' adds+=[Feature|QUALIFIED_NAME])*) ')' 
+;
+
+Feature returns Feature:
+	Reference | DataType;
+	
+Reference returns Reference:
+	{Reference}
+	'var'
+	name=ID
+	reference=[Entity|ID]
+	many?=('[]')?
+	('opposite' opposite = [Reference|QUALIFIED_NAME])?
+	;
+
+DataType returns DataType:
+	{DataType}
+	'var'
+	name=ID
+	type=DataTypes	
+	many?=('[]')?
+	;
+	
+ParameterFeature returns ParameterFeature:
+	ParameterReference | ParameterDataType;
+	
+ParameterReference returns ParameterReference:
+	{ParameterReference}
+	reference=[Entity|ID]
+	many?=('[]')?
+	name=ID
+	;
+
+ParameterDataType returns ParameterDataType:
+	{ParameterDataType}
+	type=DataTypes	
+	many?=('[]')?
+	name=ID
+	;
+
+enum DataTypes returns DataTypes:
+	String = 'String' | Integer = 'integer' | Boolean = 'boolean' | Long = 'long' | Double = 'double' | Object = 'Object';
+
+QUALIFIED_NAME:
+	ID('.'ID)*
+;
