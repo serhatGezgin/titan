@@ -112,16 +112,13 @@ class BaseGenerator {
 			}
 		}
 		
-		var counter = 0
 		for (Feature f : e.features) {
 			if (f instanceof Reference && f.many) {
-				counter++
+				importString += "import java.util.Arrays;"
+				importString += "import java.util.List;"
+				
+				return importString
 			}
-		}
-		
-		if(counter > 0){
-			importString += "import java.util.Arrays;"
-			importString += "import java.util.List;"
 		}	
 		
 		importString
