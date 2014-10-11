@@ -1,6 +1,5 @@
 package main;
 
-
 //Update this according to the package name of your builder
 import static deneme.model.builder.NestedEdgeBuilder.Edge;
 import static deneme.model.builder.NestedEdgeBuilder.from;

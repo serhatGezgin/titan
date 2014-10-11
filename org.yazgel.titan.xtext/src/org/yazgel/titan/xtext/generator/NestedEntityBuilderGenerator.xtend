@@ -41,7 +41,13 @@ class NestedEntityBuilderGenerator {
 							«IF f2 instanceof Reference && (f2 as Reference).opposite != null»
 								«FOR f3 : e.features»
 									«IF f3 instanceof Reference && (f3 as Reference).reference.equals((f2 as Reference).featureParentAsEntity)»
-										o.«f2.addername»(r.«f2.gettername»());	
+										«IF (f2 as Reference).many»
+											for(«(f2 as Reference).reference.name» c : r.«f2.gettername»()){
+												o.«f2.addername»(c);
+											}
+										«ELSE»
+											o.«f2.addername»(r.«f2.gettername»());
+										«ENDIF»
 									«ENDIF»
 								«ENDFOR»
 							«ENDIF»

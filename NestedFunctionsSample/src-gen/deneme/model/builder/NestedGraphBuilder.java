@@ -14,8 +14,8 @@ public class NestedGraphBuilder {
 		o.setName(name);
 		for (Edge r : edges) {
 			o.addEdge(r);
-			o.addVertex(r.getFrom());	
-			o.addVertex(r.getTo());	
+			o.addVertex(r.getFrom());
+			o.addVertex(r.getTo());
 		}
 	
 		return o;
