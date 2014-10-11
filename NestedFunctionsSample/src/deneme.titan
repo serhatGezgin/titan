@@ -1,0 +1,19 @@
+module Deneme Nested Functions
+ 
+package deneme{           
+	entity Graph{                   
+		var name String    
+		var edges Edge[] 
+		var vertices Vertex[]  
+	}           
+	         
+	entity Edge{
+		var from Vertex opposite Graph.vertices
+		var to Vertex   opposite Graph.vertices
+		var weight double
+	}
+	  
+	entity Vertex{
+		var label String
+	}
+}
