@@ -12,7 +12,7 @@ package deneme{
 		var to Vertex   opposite Graph.vertices
 		var weight double
 	}
-	  
+	    
 	entity Vertex{
 		var label String
 	}
