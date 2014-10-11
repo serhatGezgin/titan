@@ -5,7 +5,6 @@ public class Vertex {
 	private String label;
 	
 	public Vertex() {
-		label = new String();
 	}
 	
 	public Vertex(String label) {

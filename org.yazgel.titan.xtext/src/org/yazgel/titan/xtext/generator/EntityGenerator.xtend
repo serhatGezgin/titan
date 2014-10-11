@@ -49,18 +49,14 @@ class EntityGenerator extends BaseGenerator {
 	def entityConstructor(Entity e) '''
 		public «e.name»() {
 			«FOR f : e.features»
-				«IF f instanceof DataType»
-					«IF (f as DataType).type.equals(DataTypes.STRING) || (f as DataType).type.equals(DataTypes.OBJECT)»
-						«f.name» = new «f.type»();
-					«ENDIF»
-				«ELSEIF f instanceof Reference»
+				«IF f instanceof Reference»
 					«IF f.many»
 						«f.name» = new ArrayList<>();
 					«ELSE»
 						«f.name» = new «(f as Reference).reference.name»();
 					«ENDIF»
 				«ENDIF»
-			«ENDFOR»
+			«ENDFOR»  
 		}
 		
 		public «e.name»(«FOR f : e.features»«f.constructorParameters»«ENDFOR») {

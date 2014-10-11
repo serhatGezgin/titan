@@ -20,7 +20,7 @@ public class NestedGraphDsl {
 					Edge(from("c"), to("d"), weight(16.4))
 				)
 		);
-		
+		   
 		System.out.println(graph.getName());
 		List<Edge> edges = graph.getEdges();
 		for (Edge edge : edges) {
