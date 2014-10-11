@@ -1,11 +1,10 @@
 package org.yazgel.titan.xtext.generator
 
 import org.eclipse.xtext.generator.IFileSystemAccess
+import org.yazgel.titan.xtext.titan.DataType
 import org.yazgel.titan.xtext.titan.Entity
 import org.yazgel.titan.xtext.titan.Feature
-import org.yazgel.titan.xtext.titan.DataType
 import org.yazgel.titan.xtext.titan.Reference
-import org.yazgel.titan.xtext.titan.DataTypes
 
 class EntityGenerator extends BaseGenerator {
 	var extension FeatureGenerator fg = new FeatureGenerator
