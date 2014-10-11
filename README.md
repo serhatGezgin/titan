@@ -1,4 +1,4 @@
 titan
 =====
 
-titanis an Internal DSL framework for Java platform.
+titan is an Internal DSL framework for Java platform.
