@@ -3,8 +3,8 @@ module Deneme Nested Functions
 package deneme{           
 	entity Graph{                   
 		var name String    
-		var edges Edge[] 
-		var vertices Vertex[]  
+		var edges Edge[]   
+		var vertices Vertex[]    
 	}           
 	         
 	entity Edge{

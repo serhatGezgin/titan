@@ -2,9 +2,13 @@ package main;
 
 
 //Update this according to the package name of your builder
-import static deneme.model.builder.NestedGraphBuilder.*;
-import static deneme.model.builder.NestedEdgeBuilder.*;
-import static deneme.model.builder.NestedVertexBuilder.*;
+import static deneme.model.builder.NestedEdgeBuilder.Edge;
+import static deneme.model.builder.NestedEdgeBuilder.from;
+import static deneme.model.builder.NestedEdgeBuilder.to;
+import static deneme.model.builder.NestedEdgeBuilder.weight;
+import static deneme.model.builder.NestedGraphBuilder.Graph;
+import static deneme.model.builder.NestedGraphBuilder.edges;
+import static deneme.model.builder.NestedGraphBuilder.name;
 
 import java.util.List;
 

@@ -9,7 +9,6 @@ public class Graph {
 	private List<Vertex> vertices;
 	
 	public Graph() {
-		name = new String();
 		edges = new ArrayList<>();
 		vertices = new ArrayList<>();
 	}
