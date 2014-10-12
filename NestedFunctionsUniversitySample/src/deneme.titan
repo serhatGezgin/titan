@@ -6,8 +6,8 @@ package deneme{
 		var universityName String  
 		var universityStudents Student[]
 		var universityCourses Course[]
-	}    
-	
+	}        
+	  
 	entity Student{
 		var studentCode String
 		var studentName String

@@ -29,7 +29,7 @@ class NestedEntityBuilderGenerator {
 	'''
 
 	def entityBuilderConstructor(Entity e){
-		var bannedReferences = e.entityBuilderConstructorBannedFeatures
+		var bannedReferences = e.allBannedFeatures
 		'''
 		public static «e.name» «e.name»(«e.builderConstructorParameters») {
 			«e.name» o = new «e.name»();
@@ -96,7 +96,7 @@ class NestedEntityBuilderGenerator {
 	def dispatch entityBuilderConstantMethods(Feature f) {}
 
 	def dispatch entityBuilderConstantMethods(Reference r) '''
-		«IF !r.featureParentAsEntity.entityBuilderConstructorBannedFeatures.contains(r)»
+		«IF !r.featureParentAsEntity.allBannedFeatures.contains(r)»
 			«IF r.many»
 			public static List<«r.reference.name»> «r.name»(«r.reference.name»...«r.name») {
 				return Arrays.asList(«r.name»);

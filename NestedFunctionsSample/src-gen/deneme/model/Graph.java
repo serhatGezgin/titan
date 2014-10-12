@@ -1,21 +1,26 @@
 package deneme.model;
 
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Graph {
 	private String name;
 	private List<Edge> edges;
-	private List<Vertex> vertices;
+	private Set<Vertex> vertices;
 	
-	public Graph() {
+	public Graph(){
 		edges = new ArrayList<>();
-		vertices = new ArrayList<>();
+		vertices = new TreeSet<>();
 	}
 	
-	public Graph(String name, List<Edge> edges, 
-	List<Vertex> vertices
-	) {
+	public Graph(String name
+	, 
+	List<Edge> edges
+	, 
+	TreeSet<Vertex> vertices
+	){
 		this.name = name;
 		this.edges = edges;
 		this.vertices = vertices;
@@ -36,17 +41,18 @@ public class Graph {
 		this.name = name;
 	}
 	public List<Edge> getEdges() {
-		return edges;
+	return edges;
 	}
 	
 	public void setEdges(List<Edge> edges) {
 		this.edges = edges;
 	}
-	public List<Vertex> getVertices() {
-		return vertices;
+	public Set<Vertex> getVertices() {
+	return vertices;
 	}
 	
-	public void setVertices(List<Vertex> vertices) {
+	public void setVertices(TreeSet<Vertex> vertices) {
 		this.vertices = vertices;
 	}
+	
 }

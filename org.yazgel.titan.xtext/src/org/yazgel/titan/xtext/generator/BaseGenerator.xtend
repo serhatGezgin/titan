@@ -55,7 +55,7 @@ class BaseGenerator {
 		features.last.equals(f)
 	}
 	
-	protected def entityBuilderConstructorBannedFeatures(Entity e) {
+	protected def allBannedFeatures(Entity e) {
 		var list = newArrayList
 		
 		var module = e.moduleFromEntity
@@ -72,8 +72,46 @@ class BaseGenerator {
 		list
 	}
 	
+	protected def allBannedFeaturesEntities(Entity e) {
+		var list = newArrayList
+		
+		var module = e.moduleFromEntity
+		for(Package p : module.packages){
+			for(Entity entity : p.allEntities){
+				for(Feature f : entity.features){
+					if(e.allBannedFeatures.contains(f)){
+						if(!list.contains(entity)){
+							list.add(entity)
+						}
+					}
+				}
+			}
+		}
+		
+		list
+	}
+	
+	protected def allBannedFeaturesReleationEntities(Entity e) {
+		var list = newArrayList
+		
+		var module = e.moduleFromEntity
+		for(Package p : module.packages){
+			for(Entity entity : p.allEntities){
+				for(Feature f : entity.features){
+					if(e.allBannedFeatures.contains(f)){
+						if(!list.contains(entity)){
+							list.add((f as Reference).reference)
+						}
+					}
+				}
+			}
+		}
+		
+		list
+	}
+	
 	protected def entityBuilderConstructorLegalFeatures(Entity e){
-		var bannedReferences = e.entityBuilderConstructorBannedFeatures
+		var bannedReferences = e.allBannedFeatures
 		var legalFeatureList = new ArrayList
 		
 		for(f : e.features){
@@ -86,14 +124,25 @@ class BaseGenerator {
 	}
 
 	protected def entityImportStatements(Entity e) {
+		var importString = ""
+		
+		if(e.allBannedFeaturesEntities.contains(e)){
+			importString += '''
+			import java.util.Set;
+			import java.util.TreeSet;
+			'''
+		}
+		
 		for (Feature f : e.features) {
 			if (f instanceof Reference && f.many) {
-				return '''
+				importString += '''
 					import java.util.ArrayList;
 					import java.util.List;
 				'''
+				return importString
 			}
 		}
+		importString
 	}
 	
 	protected def entityBuilderImportStatements(Entity e) {

@@ -19,7 +19,11 @@ class FeatureGenerator extends BaseGenerator {
 
 	def dispatch featureContent(Reference r) '''
 		«IF r.many»
-			private List<«r.reference.name»> «r.name»;
+			«IF r.featureParentAsEntity.allBannedFeatures.contains(r)»
+				private Set<«r.reference.name»> «r.name»;
+			«ELSE»
+				private List<«r.reference.name»> «r.name»;
+			«ENDIF»
 		«ELSE»
 			private «r.reference.name» «r.name»;
 		«ENDIF»
@@ -54,13 +58,23 @@ class FeatureGenerator extends BaseGenerator {
 
 	def dispatch generateGetterSetter(Reference ref) '''
 		«IF ref.many»
-			public List<«ref.reference.name»> «ref.gettername»() {
+			«IF ref.featureParentAsEntity.allBannedFeatures.contains(ref)»
+				public Set<«ref.reference.name»> «ref.gettername»() {
 				return «ref.name»;
-			}
+				}
 
-			public void «ref.settername»(List<«ref.reference.name»> «ref.name») {
-				this.«ref.name» = «ref.name»;
-			}
+				public void «ref.settername»(TreeSet<«ref.reference.name»> «ref.name») {
+					this.«ref.name» = «ref.name»;
+				}
+			«ELSE»
+				public List<«ref.reference.name»> «ref.gettername»() {
+				return «ref.name»;
+				}
+
+				public void «ref.settername»(List<«ref.reference.name»> «ref.name») {
+					this.«ref.name» = «ref.name»;
+				}
+			«ENDIF»
 		«ELSE» 
 			public «ref.reference.name» «ref.gettername»() {
 				return this.«ref.name»;

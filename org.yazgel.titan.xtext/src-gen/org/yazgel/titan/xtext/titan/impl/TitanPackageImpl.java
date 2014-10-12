@@ -773,7 +773,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
     addEEnumLiteral(dataTypesEEnum, DataTypes.BOOLEAN);
     addEEnumLiteral(dataTypesEEnum, DataTypes.LONG);
     addEEnumLiteral(dataTypesEEnum, DataTypes.DOUBLE);
-    addEEnumLiteral(dataTypesEEnum, DataTypes.OBJECT);
 
     // Create resource
     createResource(eNS_URI);

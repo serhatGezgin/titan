@@ -68,6 +68,5 @@
     <eLiterals name="Boolean" value="2" literal="boolean"/>
     <eLiterals name="Long" value="3" literal="long"/>
     <eLiterals name="Double" value="4" literal="double"/>
-    <eLiterals name="Object" value="5" literal="Object"/>
   </eClassifiers>
 </ecore:EPackage>

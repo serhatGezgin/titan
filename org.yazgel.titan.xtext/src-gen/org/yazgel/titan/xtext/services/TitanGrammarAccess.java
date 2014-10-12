@@ -698,14 +698,12 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLongLongKeyword_3_0 = (Keyword)cLongEnumLiteralDeclaration_3.eContents().get(0);
 		private final EnumLiteralDeclaration cDoubleEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
 		private final Keyword cDoubleDoubleKeyword_4_0 = (Keyword)cDoubleEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cObjectEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cObjectObjectKeyword_5_0 = (Keyword)cObjectEnumLiteralDeclaration_5.eContents().get(0);
 		
 		//enum DataTypes:
-		//	String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double" | Object;
+		//	String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double";
 		public EnumRule getRule() { return rule; }
 
-		//String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double" | Object
+		//String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//String
@@ -737,12 +735,6 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"double"
 		public Keyword getDoubleDoubleKeyword_4_0() { return cDoubleDoubleKeyword_4_0; }
-
-		//Object
-		public EnumLiteralDeclaration getObjectEnumLiteralDeclaration_5() { return cObjectEnumLiteralDeclaration_5; }
-
-		//"Object"
-		public Keyword getObjectObjectKeyword_5_0() { return cObjectObjectKeyword_5_0; }
 	}
 	
 	private final ModuleElements pModule;
@@ -958,7 +950,7 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum DataTypes:
-	//	String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double" | Object;
+	//	String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double";
 	public DataTypesElements getDataTypesAccess() {
 		return unknownRuleDataTypes;
 	}

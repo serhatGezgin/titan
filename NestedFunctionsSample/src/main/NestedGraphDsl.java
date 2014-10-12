@@ -13,6 +13,7 @@ import java.util.List;
 
 import deneme.model.Edge;
 import deneme.model.Graph;
+import deneme.model.Vertex;
  
 public class NestedGraphDsl {
 	public static void main(String[] args) {
@@ -22,12 +23,12 @@ public class NestedGraphDsl {
 					Edge(from("b"), to("c"), weight(26.4)),
 					Edge(from("c"), to("d"), weight(16.4))
 				)
-		);
-		   
+		); 
+		    
 		System.out.println(graph.getName());
 		List<Edge> edges = graph.getEdges();
-		for (Edge edge : edges) {
-			System.out.println(edge.getWeight());
+		for (Vertex v : graph.getVertices()) {
+			System.out.println(v.getLabel());
 		}
 	}
 }

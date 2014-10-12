@@ -67,17 +67,7 @@ public enum DataTypes implements Enumerator
    * @generated
    * @ordered
    */
-  DOUBLE(4, "Double", "double"),
-
-  /**
-   * The '<em><b>Object</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #OBJECT_VALUE
-   * @generated
-   * @ordered
-   */
-  OBJECT(5, "Object", "Object");
+  DOUBLE(4, "Double", "double");
 
   /**
    * The '<em><b>String</b></em>' literal value.
@@ -155,21 +145,6 @@ public enum DataTypes implements Enumerator
   public static final int DOUBLE_VALUE = 4;
 
   /**
-   * The '<em><b>Object</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>Object</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @see #OBJECT
-   * @model name="Object"
-   * @generated
-   * @ordered
-   */
-  public static final int OBJECT_VALUE = 5;
-
-  /**
    * An array of all the '<em><b>Data Types</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -183,7 +158,6 @@ public enum DataTypes implements Enumerator
       BOOLEAN,
       LONG,
       DOUBLE,
-      OBJECT,
     };
 
   /**
@@ -247,7 +221,6 @@ public enum DataTypes implements Enumerator
       case BOOLEAN_VALUE: return BOOLEAN;
       case LONG_VALUE: return LONG;
       case DOUBLE_VALUE: return DOUBLE;
-      case OBJECT_VALUE: return OBJECT;
     }
     return null;
   }

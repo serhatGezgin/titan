@@ -6,14 +6,17 @@ public class Edge {
 	private Vertex to;
 	private double weight;
 	
-	public Edge() {
+	public Edge(){
 		from = new Vertex();
 		to = new Vertex();
 	}
 	
-	public Edge(Vertex from, 
-	Vertex to, 
-	double weight) {
+	public Edge(Vertex from
+	, 
+	Vertex to
+	, 
+	double weight
+	){
 		this.from = from;
 		this.to = to;
 		this.weight = weight;
@@ -41,4 +44,5 @@ public class Edge {
 	public void setWeight(double weight){
 		this.weight = weight;
 	}
+	
 }

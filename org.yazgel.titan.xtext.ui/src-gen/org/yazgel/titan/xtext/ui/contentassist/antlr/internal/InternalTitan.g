@@ -546,13 +546,6 @@ rule__DataTypes__Alternatives
 { after(grammarAccess.getDataTypesAccess().getDoubleEnumLiteralDeclaration_4()); }
 )
 
-    |(
-{ before(grammarAccess.getDataTypesAccess().getObjectEnumLiteralDeclaration_5()); }
-(	'Object' 
-)
-{ after(grammarAccess.getDataTypesAccess().getObjectEnumLiteralDeclaration_5()); }
-)
-
 ;
 finally {
 	restoreStackSize(stackSize);

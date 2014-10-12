@@ -16,7 +16,6 @@
       <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Boolean"/>
       <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Long"/>
       <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Double"/>
-      <genEnumLiterals ecoreEnumLiteral="Titan.ecore#//DataTypes/Object"/>
     </genEnums>
     <genClasses ecoreClass="Titan.ecore#//Module">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Module/name"/>

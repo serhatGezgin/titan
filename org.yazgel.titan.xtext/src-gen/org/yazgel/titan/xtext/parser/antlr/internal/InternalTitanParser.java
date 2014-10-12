@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTitanParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'module'", "'package'", "'{'", "'}'", "'entity'", "':'", "'entityBuilder'", "'takes'", "','", "'adds'", "'('", "')'", "'var'", "'[]'", "'opposite'", "'.'", "'Nested Functions'", "'String'", "'integer'", "'boolean'", "'long'", "'double'", "'Object'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'module'", "'package'", "'{'", "'}'", "'entity'", "':'", "'entityBuilder'", "'takes'", "','", "'adds'", "'('", "')'", "'var'", "'[]'", "'opposite'", "'.'", "'Nested Functions'", "'String'", "'integer'", "'boolean'", "'long'", "'double'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -44,7 +44,6 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
     public static final int T__31=31;
     public static final int RULE_STRING=6;
     public static final int T__32=32;
-    public static final int T__33=33;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
@@ -1569,7 +1568,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
                     if ( (LA14_2==RULE_ID) ) {
                         alt14=1;
                     }
-                    else if ( ((LA14_2>=28 && LA14_2<=33)) ) {
+                    else if ( ((LA14_2>=28 && LA14_2<=32)) ) {
                         alt14=2;
                     }
                     else {
@@ -2109,7 +2108,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
             if ( (LA18_0==RULE_ID) ) {
                 alt18=1;
             }
-            else if ( ((LA18_0>=28 && LA18_0<=33)) ) {
+            else if ( ((LA18_0>=28 && LA18_0<=32)) ) {
                 alt18=2;
             }
             else {
@@ -2674,7 +2673,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataTypes"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1095:1: ruleDataTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) | (enumLiteral_5= 'Object' ) ) ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1095:1: ruleDataTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) ) ;
     public final Enumerator ruleDataTypes() throws RecognitionException {
         Enumerator current = null;
 
@@ -2683,15 +2682,14 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
         Token enumLiteral_2=null;
         Token enumLiteral_3=null;
         Token enumLiteral_4=null;
-        Token enumLiteral_5=null;
 
          enterRule(); 
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1097:28: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) | (enumLiteral_5= 'Object' ) ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1098:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) | (enumLiteral_5= 'Object' ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1097:28: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1098:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1098:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) | (enumLiteral_5= 'Object' ) )
-            int alt22=6;
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1098:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) )
+            int alt22=5;
             switch ( input.LA(1) ) {
             case 28:
                 {
@@ -2716,11 +2714,6 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
             case 32:
                 {
                 alt22=5;
-                }
-                break;
-            case 33:
-                {
-                alt22=6;
                 }
                 break;
             default:
@@ -2816,23 +2809,6 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 6 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1128:6: (enumLiteral_5= 'Object' )
-                    {
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1128:6: (enumLiteral_5= 'Object' )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:1128:8: enumLiteral_5= 'Object'
-                    {
-                    enumLiteral_5=(Token)match(input,33,FOLLOW_33_in_ruleDataTypes2388); 
-
-                            current = grammarAccess.getDataTypesAccess().getObjectEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-                            newLeafNode(enumLiteral_5, grammarAccess.getDataTypesAccess().getObjectEnumLiteralDeclaration_5()); 
-                        
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -2893,9 +2869,9 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14_in_ruleEntityBuilder825 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruletakes_in_entryRuletakes863 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuletakes873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruletakes910 = new BitSet(new long[]{0x00000003F0000010L});
+    public static final BitSet FOLLOW_18_in_ruletakes910 = new BitSet(new long[]{0x00000001F0000010L});
     public static final BitSet FOLLOW_ruleParameterFeature_in_ruletakes931 = new BitSet(new long[]{0x0000000000180002L});
-    public static final BitSet FOLLOW_19_in_ruletakes944 = new BitSet(new long[]{0x00000003F0000010L});
+    public static final BitSet FOLLOW_19_in_ruletakes944 = new BitSet(new long[]{0x00000001F0000010L});
     public static final BitSet FOLLOW_ruleParameterFeature_in_ruletakes965 = new BitSet(new long[]{0x0000000000180002L});
     public static final BitSet FOLLOW_ruleadds_in_ruletakes988 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleadds_in_entryRuleadds1025 = new BitSet(new long[]{0x0000000000000000L});
@@ -2921,7 +2897,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType1518 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDataType1528 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_ruleDataType1574 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDataType1591 = new BitSet(new long[]{0x00000003F0000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleDataType1591 = new BitSet(new long[]{0x00000001F0000010L});
     public static final BitSet FOLLOW_ruleDataTypes_in_ruleDataType1617 = new BitSet(new long[]{0x0000000001000002L});
     public static final BitSet FOLLOW_24_in_ruleDataType1635 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleParameterFeature_in_entryRuleParameterFeature1685 = new BitSet(new long[]{0x0000000000000000L});
@@ -2949,6 +2925,5 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_30_in_ruleDataTypes2337 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_31_in_ruleDataTypes2354 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_ruleDataTypes2371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleDataTypes2388 = new BitSet(new long[]{0x0000000000000002L});
 
 }

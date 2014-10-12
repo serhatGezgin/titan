@@ -33,7 +33,6 @@ public class InternalTitanLexer extends Lexer {
     public static final int T__32=32;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
-    public static final int T__33=33;
     public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
@@ -188,10 +187,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:17:7: ( 'Object' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:17:9: 'Object'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:17:7: ( 'module' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:17:9: 'module'
             {
-            match("Object"); 
+            match("module"); 
 
 
             }
@@ -209,10 +208,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:18:7: ( 'module' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:18:9: 'module'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:18:7: ( 'package' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:18:9: 'package'
             {
-            match("module"); 
+            match("package"); 
 
 
             }
@@ -230,11 +229,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:19:7: ( 'package' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:19:9: 'package'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:19:7: ( '{' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:19:9: '{'
             {
-            match("package"); 
-
+            match('{'); 
 
             }
 
@@ -251,10 +249,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:20:7: ( '{' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:20:9: '{'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:20:7: ( '}' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:20:9: '}'
             {
-            match('{'); 
+            match('}'); 
 
             }
 
@@ -271,10 +269,11 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:21:7: ( '}' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:21:9: '}'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:21:7: ( 'entity' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:21:9: 'entity'
             {
-            match('}'); 
+            match("entity"); 
+
 
             }
 
@@ -291,11 +290,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:22:7: ( 'entity' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:22:9: 'entity'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:22:7: ( ':' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:22:9: ':'
             {
-            match("entity"); 
-
+            match(':'); 
 
             }
 
@@ -312,10 +310,11 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:23:7: ( ':' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:23:9: ':'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:23:7: ( 'entityBuilder' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:23:9: 'entityBuilder'
             {
-            match(':'); 
+            match("entityBuilder"); 
+
 
             }
 
@@ -332,10 +331,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:24:7: ( 'entityBuilder' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:24:9: 'entityBuilder'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:24:7: ( 'takes' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:24:9: 'takes'
             {
-            match("entityBuilder"); 
+            match("takes"); 
 
 
             }
@@ -353,11 +352,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:25:7: ( 'takes' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:25:9: 'takes'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:25:7: ( ',' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:25:9: ','
             {
-            match("takes"); 
-
+            match(','); 
 
             }
 
@@ -374,10 +372,11 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:26:7: ( ',' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:26:9: ','
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:26:7: ( 'adds' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:26:9: 'adds'
             {
-            match(','); 
+            match("adds"); 
+
 
             }
 
@@ -394,11 +393,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:27:7: ( 'adds' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:27:9: 'adds'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:27:7: ( '(' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:27:9: '('
             {
-            match("adds"); 
-
+            match('('); 
 
             }
 
@@ -415,10 +413,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:28:7: ( '(' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:28:9: '('
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:28:7: ( ')' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:28:9: ')'
             {
-            match('('); 
+            match(')'); 
 
             }
 
@@ -435,10 +433,11 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:29:7: ( ')' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:29:9: ')'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:29:7: ( 'var' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:29:9: 'var'
             {
-            match(')'); 
+            match("var"); 
+
 
             }
 
@@ -455,10 +454,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:30:7: ( 'var' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:30:9: 'var'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:30:7: ( 'opposite' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:30:9: 'opposite'
             {
-            match("var"); 
+            match("opposite"); 
 
 
             }
@@ -476,11 +475,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:31:7: ( 'opposite' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:31:9: 'opposite'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:31:7: ( '.' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:31:9: '.'
             {
-            match("opposite"); 
-
+            match('.'); 
 
             }
 
@@ -497,28 +495,8 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:32:7: ( '.' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:32:9: '.'
-            {
-            match('.'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__32"
-
-    // $ANTLR start "T__33"
-    public final void mT__33() throws RecognitionException {
-        try {
-            int _type = T__33;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:33:7: ( '[]' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:33:9: '[]'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:32:7: ( '[]' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:32:9: '[]'
             {
             match("[]"); 
 
@@ -531,17 +509,17 @@ public class InternalTitanLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__33"
+    // $ANTLR end "T__32"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3452:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3452:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3445:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3445:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3452:11: ( '^' )?
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3445:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -550,7 +528,7 @@ public class InternalTitanLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3452:11: '^'
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3445:11: '^'
                     {
                     match('^'); 
 
@@ -568,7 +546,7 @@ public class InternalTitanLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3452:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3445:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -617,10 +595,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3454:10: ( ( '0' .. '9' )+ )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3454:12: ( '0' .. '9' )+
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3447:10: ( ( '0' .. '9' )+ )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3447:12: ( '0' .. '9' )+
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3454:12: ( '0' .. '9' )+
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3447:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -634,7 +612,7 @@ public class InternalTitanLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3454:13: '0' .. '9'
+            	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3447:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -666,10 +644,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -687,10 +665,10 @@ public class InternalTitanLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -706,7 +684,7 @@ public class InternalTitanLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:21: '\\\\' .
+                    	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -714,7 +692,7 @@ public class InternalTitanLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -739,10 +717,10 @@ public class InternalTitanLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -758,7 +736,7 @@ public class InternalTitanLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:54: '\\\\' .
+                    	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -766,7 +744,7 @@ public class InternalTitanLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3456:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3449:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -809,12 +787,12 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3458:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3458:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3451:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3451:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3458:24: ( options {greedy=false; } : . )*
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3451:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -839,7 +817,7 @@ public class InternalTitanLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3458:52: .
+            	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3451:52: .
             	    {
             	    matchAny(); 
 
@@ -869,12 +847,12 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3460:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3460:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3453:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3453:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3460:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3453:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -887,7 +865,7 @@ public class InternalTitanLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3460:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3453:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -907,7 +885,7 @@ public class InternalTitanLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3460:40: ( ( '\\r' )? '\\n' )?
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3453:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -916,9 +894,9 @@ public class InternalTitanLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3460:41: ( '\\r' )? '\\n'
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3453:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3460:41: ( '\\r' )?
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3453:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -927,7 +905,7 @@ public class InternalTitanLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3460:41: '\\r'
+                            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3453:41: '\\r'
                             {
                             match('\r'); 
 
@@ -959,10 +937,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3462:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3462:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3455:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3455:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3462:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3455:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1016,8 +994,8 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3464:16: ( . )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3464:18: .
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3457:16: ( . )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:3457:18: .
             {
             matchAny(); 
 
@@ -1032,8 +1010,8 @@ public class InternalTitanLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=30;
+        // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=29;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1191,56 +1169,49 @@ public class InternalTitanLexer extends Lexer {
                 }
                 break;
             case 23 :
-                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:142: T__33
-                {
-                mT__33(); 
-
-                }
-                break;
-            case 24 :
-                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:148: RULE_ID
+                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:142: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 25 :
-                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:156: RULE_INT
+            case 24 :
+                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:150: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 26 :
-                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:165: RULE_STRING
+            case 25 :
+                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:159: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 27 :
-                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:177: RULE_ML_COMMENT
+            case 26 :
+                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:171: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 28 :
-                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:193: RULE_SL_COMMENT
+            case 27 :
+                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:187: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 29 :
-                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:209: RULE_WS
+            case 28 :
+                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:203: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 30 :
-                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:217: RULE_ANY_OTHER
+            case 29 :
+                // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1:211: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1254,112 +1225,113 @@ public class InternalTitanLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\11\40\2\uffff\1\40\1\uffff\1\40\1\uffff\1\40\2\uffff\2"+
-        "\40\1\uffff\2\36\2\uffff\3\36\2\uffff\1\40\1\uffff\10\40\2\uffff"+
-        "\1\40\1\uffff\1\40\1\uffff\1\40\2\uffff\2\40\7\uffff\14\40\1\125"+
-        "\5\40\1\133\6\40\1\142\1\uffff\5\40\1\uffff\5\40\1\155\1\uffff\2"+
-        "\40\1\160\2\40\1\163\1\164\1\165\1\40\1\170\1\uffff\1\40\2\uffff"+
-        "\1\172\1\173\3\uffff\1\174\1\40\1\uffff\1\40\3\uffff\1\40\1\u0080"+
-        "\1\40\1\uffff\3\40\1\u0085\1\uffff";
+        "\1\uffff\10\37\2\uffff\1\37\1\uffff\1\37\1\uffff\1\37\2\uffff\2"+
+        "\37\1\uffff\2\35\2\uffff\3\35\2\uffff\1\37\1\uffff\7\37\2\uffff"+
+        "\1\37\1\uffff\1\37\1\uffff\1\37\2\uffff\2\37\7\uffff\13\37\1\121"+
+        "\5\37\1\127\5\37\1\135\1\uffff\5\37\1\uffff\4\37\1\147\1\uffff\2"+
+        "\37\1\152\2\37\1\155\1\156\1\37\1\161\1\uffff\1\37\2\uffff\1\163"+
+        "\1\164\2\uffff\1\165\1\37\1\uffff\1\37\3\uffff\1\37\1\171\1\37\1"+
+        "\uffff\3\37\1\176\1\uffff";
     static final String DFA12_eofS =
-        "\u0086\uffff";
+        "\177\uffff";
     static final String DFA12_minS =
-        "\1\0\1\145\1\164\1\156\3\157\1\142\1\157\1\141\2\uffff\1\156\1"+
-        "\uffff\1\141\1\uffff\1\144\2\uffff\1\141\1\160\1\uffff\1\135\1\101"+
-        "\2\uffff\2\0\1\52\2\uffff\1\163\1\uffff\1\162\1\164\1\157\1\156"+
-        "\1\165\1\152\1\144\1\143\2\uffff\1\164\1\uffff\1\153\1\uffff\1\144"+
-        "\2\uffff\1\162\1\160\7\uffff\1\164\1\151\1\145\1\154\1\147\1\142"+
-        "\1\145\1\165\1\153\1\151\1\145\1\163\1\60\1\157\1\145\1\156\1\147"+
-        "\1\145\1\60\1\154\1\143\1\154\1\141\1\164\1\163\1\60\1\uffff\1\163"+
-        "\1\144\1\147\1\145\1\141\1\uffff\1\145\1\164\1\145\1\147\1\171\1"+
-        "\60\1\uffff\1\151\1\40\1\60\1\162\1\156\3\60\1\145\1\60\1\uffff"+
-        "\1\164\2\uffff\2\60\3\uffff\1\60\1\165\1\uffff\1\145\3\uffff\1\151"+
-        "\1\60\1\154\1\uffff\1\144\1\145\1\162\1\60\1\uffff";
+        "\1\0\1\145\1\164\1\156\4\157\1\141\2\uffff\1\156\1\uffff\1\141"+
+        "\1\uffff\1\144\2\uffff\1\141\1\160\1\uffff\1\135\1\101\2\uffff\2"+
+        "\0\1\52\2\uffff\1\163\1\uffff\1\162\1\164\1\157\1\156\1\165\1\144"+
+        "\1\143\2\uffff\1\164\1\uffff\1\153\1\uffff\1\144\2\uffff\1\162\1"+
+        "\160\7\uffff\1\164\1\151\1\145\1\154\1\147\1\142\1\165\1\153\1\151"+
+        "\1\145\1\163\1\60\1\157\1\145\1\156\1\147\1\145\1\60\2\154\1\141"+
+        "\1\164\1\163\1\60\1\uffff\1\163\1\144\1\147\1\145\1\141\1\uffff"+
+        "\2\145\1\147\1\171\1\60\1\uffff\1\151\1\40\1\60\1\162\1\156\2\60"+
+        "\1\145\1\60\1\uffff\1\164\2\uffff\2\60\2\uffff\1\60\1\165\1\uffff"+
+        "\1\145\3\uffff\1\151\1\60\1\154\1\uffff\1\144\1\145\1\162\1\60\1"+
+        "\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\145\1\164\1\156\3\157\1\142\1\157\1\141\2\uffff\1\156"+
-        "\1\uffff\1\141\1\uffff\1\144\2\uffff\1\141\1\160\1\uffff\1\135\1"+
-        "\172\2\uffff\2\uffff\1\57\2\uffff\1\163\1\uffff\1\162\1\164\1\157"+
-        "\1\156\1\165\1\152\1\144\1\143\2\uffff\1\164\1\uffff\1\153\1\uffff"+
-        "\1\144\2\uffff\1\162\1\160\7\uffff\1\164\1\151\1\145\1\154\1\147"+
-        "\1\142\1\145\1\165\1\153\1\151\1\145\1\163\1\172\1\157\1\145\1\156"+
-        "\1\147\1\145\1\172\1\154\1\143\1\154\1\141\1\164\1\163\1\172\1\uffff"+
-        "\1\163\1\144\1\147\1\145\1\141\1\uffff\1\145\1\164\1\145\1\147\1"+
-        "\171\1\172\1\uffff\1\151\1\40\1\172\1\162\1\156\3\172\1\145\1\172"+
-        "\1\uffff\1\164\2\uffff\2\172\3\uffff\1\172\1\165\1\uffff\1\145\3"+
-        "\uffff\1\151\1\172\1\154\1\uffff\1\144\1\145\1\162\1\172\1\uffff";
+        "\1\uffff\1\145\1\164\1\156\4\157\1\141\2\uffff\1\156\1\uffff\1"+
+        "\141\1\uffff\1\144\2\uffff\1\141\1\160\1\uffff\1\135\1\172\2\uffff"+
+        "\2\uffff\1\57\2\uffff\1\163\1\uffff\1\162\1\164\1\157\1\156\1\165"+
+        "\1\144\1\143\2\uffff\1\164\1\uffff\1\153\1\uffff\1\144\2\uffff\1"+
+        "\162\1\160\7\uffff\1\164\1\151\1\145\1\154\1\147\1\142\1\165\1\153"+
+        "\1\151\1\145\1\163\1\172\1\157\1\145\1\156\1\147\1\145\1\172\2\154"+
+        "\1\141\1\164\1\163\1\172\1\uffff\1\163\1\144\1\147\1\145\1\141\1"+
+        "\uffff\2\145\1\147\1\171\1\172\1\uffff\1\151\1\40\1\172\1\162\1"+
+        "\156\2\172\1\145\1\172\1\uffff\1\164\2\uffff\2\172\2\uffff\1\172"+
+        "\1\165\1\uffff\1\145\3\uffff\1\151\1\172\1\154\1\uffff\1\144\1\145"+
+        "\1\162\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\12\uffff\1\12\1\13\1\uffff\1\15\1\uffff\1\20\1\uffff\1\22\1\23"+
-        "\2\uffff\1\26\2\uffff\1\30\1\31\3\uffff\1\35\1\36\1\uffff\1\30\10"+
-        "\uffff\1\12\1\13\1\uffff\1\15\1\uffff\1\20\1\uffff\1\22\1\23\2\uffff"+
-        "\1\26\1\27\1\31\1\32\1\33\1\34\1\35\32\uffff\1\24\5\uffff\1\5\6"+
-        "\uffff\1\21\12\uffff\1\17\1\uffff\1\1\1\2\2\uffff\1\6\1\7\1\10\2"+
-        "\uffff\1\14\1\uffff\1\3\1\4\1\11\3\uffff\1\25\4\uffff\1\16";
+        "\11\uffff\1\11\1\12\1\uffff\1\14\1\uffff\1\17\1\uffff\1\21\1\22"+
+        "\2\uffff\1\25\2\uffff\1\27\1\30\3\uffff\1\34\1\35\1\uffff\1\27\7"+
+        "\uffff\1\11\1\12\1\uffff\1\14\1\uffff\1\17\1\uffff\1\21\1\22\2\uffff"+
+        "\1\25\1\26\1\30\1\31\1\32\1\33\1\34\30\uffff\1\23\5\uffff\1\5\5"+
+        "\uffff\1\20\11\uffff\1\16\1\uffff\1\1\1\2\2\uffff\1\6\1\7\2\uffff"+
+        "\1\13\1\uffff\1\3\1\4\1\10\3\uffff\1\24\4\uffff\1\15";
     static final String DFA12_specialS =
-        "\1\1\31\uffff\1\2\1\0\152\uffff}>";
+        "\1\0\30\uffff\1\1\1\2\144\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\32\4\36\1\33\1\21\1"+
-            "\22\2\36\1\17\1\36\1\25\1\34\12\31\1\15\6\36\15\30\1\1\1\7\3"+
-            "\30\1\2\7\30\1\26\2\36\1\27\1\30\1\36\1\20\1\4\1\30\1\6\1\14"+
-            "\3\30\1\3\2\30\1\5\1\10\1\30\1\24\1\11\3\30\1\16\1\30\1\23\4"+
-            "\30\1\12\1\36\1\13\uff82\36",
-            "\1\37",
+            "\11\35\2\34\2\35\1\34\22\35\1\34\1\35\1\31\4\35\1\32\1\20\1"+
+            "\21\2\35\1\16\1\35\1\24\1\33\12\30\1\14\6\35\15\27\1\1\4\27"+
+            "\1\2\7\27\1\25\2\35\1\26\1\27\1\35\1\17\1\4\1\27\1\6\1\13\3"+
+            "\27\1\3\2\27\1\5\1\7\1\27\1\23\1\10\3\27\1\15\1\27\1\22\4\27"+
+            "\1\11\1\35\1\12\uff82\35",
+            "\1\36",
+            "\1\40",
             "\1\41",
             "\1\42",
             "\1\43",
             "\1\44",
             "\1\45",
             "\1\46",
-            "\1\47",
-            "\1\50",
             "",
+            "",
+            "\1\51",
             "",
             "\1\53",
             "",
             "\1\55",
             "",
-            "\1\57",
             "",
+            "\1\60",
+            "\1\61",
             "",
-            "\1\62",
             "\1\63",
-            "",
-            "\1\65",
-            "\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\32\37\4\uffff\1\37\1\uffff\32\37",
             "",
             "",
-            "\0\67",
-            "\0\67",
-            "\1\70\4\uffff\1\71",
+            "\0\65",
+            "\0\65",
+            "\1\66\4\uffff\1\67",
             "",
             "",
+            "\1\71",
+            "",
+            "\1\72",
             "\1\73",
-            "",
             "\1\74",
             "\1\75",
             "\1\76",
             "\1\77",
             "\1\100",
+            "",
+            "",
             "\1\101",
+            "",
             "\1\102",
+            "",
             "\1\103",
             "",
             "",
             "\1\104",
-            "",
             "\1\105",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\106",
-            "",
-            "",
             "\1\107",
             "\1\110",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\111",
             "\1\112",
             "\1\113",
@@ -1368,72 +1340,64 @@ public class InternalTitanLexer extends Lexer {
             "\1\116",
             "\1\117",
             "\1\120",
-            "\1\121",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\122",
             "\1\123",
             "\1\124",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\125",
             "\1\126",
-            "\1\127",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\130",
             "\1\131",
             "\1\132",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\133",
             "\1\134",
-            "\1\135",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "",
             "\1\136",
             "\1\137",
             "\1\140",
             "\1\141",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\142",
             "",
             "\1\143",
             "\1\144",
             "\1\145",
             "\1\146",
-            "\1\147",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "",
             "\1\150",
             "\1\151",
-            "\1\152",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\153",
             "\1\154",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "\1\156",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\157",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\161",
+            "\12\37\7\uffff\1\37\1\160\30\37\4\uffff\1\37\1\uffff\32\37",
+            "",
             "\1\162",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "",
+            "",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "",
+            "",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             "\1\166",
-            "\12\40\7\uffff\1\40\1\167\30\40\4\uffff\1\40\1\uffff\32\40",
             "",
-            "\1\171",
-            "",
-            "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\167",
             "",
             "",
             "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\170",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+            "\1\172",
+            "",
+            "\1\173",
+            "\1\174",
             "\1\175",
-            "",
-            "\1\176",
-            "",
-            "",
-            "",
-            "\1\177",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\u0081",
-            "",
-            "\1\u0082",
-            "\1\u0083",
-            "\1\u0084",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
             ""
     };
 
@@ -1467,23 +1431,13 @@ public class InternalTitanLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_27 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_27>='\u0000' && LA12_27<='\uFFFF')) ) {s = 55;}
-
-                        else s = 30;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1499,53 +1453,61 @@ public class InternalTitanLexer extends Lexer {
 
                         else if ( (LA12_0=='d') ) {s = 6;}
 
-                        else if ( (LA12_0=='O') ) {s = 7;}
+                        else if ( (LA12_0=='m') ) {s = 7;}
 
-                        else if ( (LA12_0=='m') ) {s = 8;}
+                        else if ( (LA12_0=='p') ) {s = 8;}
 
-                        else if ( (LA12_0=='p') ) {s = 9;}
+                        else if ( (LA12_0=='{') ) {s = 9;}
 
-                        else if ( (LA12_0=='{') ) {s = 10;}
+                        else if ( (LA12_0=='}') ) {s = 10;}
 
-                        else if ( (LA12_0=='}') ) {s = 11;}
+                        else if ( (LA12_0=='e') ) {s = 11;}
 
-                        else if ( (LA12_0=='e') ) {s = 12;}
+                        else if ( (LA12_0==':') ) {s = 12;}
 
-                        else if ( (LA12_0==':') ) {s = 13;}
+                        else if ( (LA12_0=='t') ) {s = 13;}
 
-                        else if ( (LA12_0=='t') ) {s = 14;}
+                        else if ( (LA12_0==',') ) {s = 14;}
 
-                        else if ( (LA12_0==',') ) {s = 15;}
+                        else if ( (LA12_0=='a') ) {s = 15;}
 
-                        else if ( (LA12_0=='a') ) {s = 16;}
+                        else if ( (LA12_0=='(') ) {s = 16;}
 
-                        else if ( (LA12_0=='(') ) {s = 17;}
+                        else if ( (LA12_0==')') ) {s = 17;}
 
-                        else if ( (LA12_0==')') ) {s = 18;}
+                        else if ( (LA12_0=='v') ) {s = 18;}
 
-                        else if ( (LA12_0=='v') ) {s = 19;}
+                        else if ( (LA12_0=='o') ) {s = 19;}
 
-                        else if ( (LA12_0=='o') ) {s = 20;}
+                        else if ( (LA12_0=='.') ) {s = 20;}
 
-                        else if ( (LA12_0=='.') ) {s = 21;}
+                        else if ( (LA12_0=='[') ) {s = 21;}
 
-                        else if ( (LA12_0=='[') ) {s = 22;}
+                        else if ( (LA12_0=='^') ) {s = 22;}
 
-                        else if ( (LA12_0=='^') ) {s = 23;}
+                        else if ( ((LA12_0>='A' && LA12_0<='M')||(LA12_0>='O' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='c'||(LA12_0>='f' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='k')||LA12_0=='n'||(LA12_0>='q' && LA12_0<='s')||LA12_0=='u'||(LA12_0>='w' && LA12_0<='z')) ) {s = 23;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='M')||(LA12_0>='P' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='c'||(LA12_0>='f' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='k')||LA12_0=='n'||(LA12_0>='q' && LA12_0<='s')||LA12_0=='u'||(LA12_0>='w' && LA12_0<='z')) ) {s = 24;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 24;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 25;}
+                        else if ( (LA12_0=='\"') ) {s = 25;}
 
-                        else if ( (LA12_0=='\"') ) {s = 26;}
+                        else if ( (LA12_0=='\'') ) {s = 26;}
 
-                        else if ( (LA12_0=='\'') ) {s = 27;}
+                        else if ( (LA12_0=='/') ) {s = 27;}
 
-                        else if ( (LA12_0=='/') ) {s = 28;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 28;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 29;}
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||LA12_0=='-'||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='\\' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 29;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||LA12_0=='-'||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='\\' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 30;}
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_25 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_25>='\u0000' && LA12_25<='\uFFFF')) ) {s = 53;}
+
+                        else s = 29;
 
                         if ( s>=0 ) return s;
                         break;
@@ -1553,9 +1515,9 @@ public class InternalTitanLexer extends Lexer {
                         int LA12_26 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_26>='\u0000' && LA12_26<='\uFFFF')) ) {s = 55;}
+                        if ( ((LA12_26>='\u0000' && LA12_26<='\uFFFF')) ) {s = 53;}
 
-                        else s = 30;
+                        else s = 29;
 
                         if ( s>=0 ) return s;
                         break;
