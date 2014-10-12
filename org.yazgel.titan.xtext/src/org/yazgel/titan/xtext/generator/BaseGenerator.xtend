@@ -28,6 +28,10 @@ class BaseGenerator {
 		p.add('builder')
 		p.join('/') + '/' + 'Nested' + e.name + 'Builder' + '.java'
 	}
+	
+	protected def entityBuilderClassName(Entity e) {
+		'Nested' + e.name + 'Builder'
+	}
 
 	protected def entityPackageName(Entity e) {
 		val p = e.packageNameList
@@ -154,10 +158,14 @@ class BaseGenerator {
 		list.add(e)
 		
 		for (Feature f : e.features) {
-			if (f instanceof Reference && !list.contains((f as Reference).reference)) {
+			if (f instanceof Reference && !list.contains((f as Reference).reference)) {				
 				importString += "import " + (f as Reference).reference.entityPackageName + "." + (f as Reference).reference.name + ";"
 				importString += "\n"
 				list.add((f as Reference).reference)
+				if(!(f as Reference).many){
+					importString += "import " + (f as Reference).reference.entityBuilderPackageName + "." + (f as Reference).reference.entityBuilderClassName+ ";"
+					importString += "\n"
+				}
 			}
 		}
 		

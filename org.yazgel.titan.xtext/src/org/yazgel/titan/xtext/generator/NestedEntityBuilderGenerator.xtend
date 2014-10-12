@@ -18,7 +18,7 @@ class NestedEntityBuilderGenerator {
 		
 		«e.entityBuilderImportStatements»
 		
-		public class «'Nested' + e.name + 'Builder'» {
+		public class «e.entityBuilderClassName» {
 			
 			«e.entityBuilderConstructor»
 		
@@ -73,6 +73,17 @@ class NestedEntityBuilderGenerator {
 		«ENDFOR»
 		'''
 	}
+	
+	def builderConstructorParametersForUse(Entity e){
+		var legalFeatureList = e.entityBuilderConstructorLegalFeatures
+		'''
+		«FOR f : e.features»
+			«IF legalFeatureList.contains(f)»
+				«f.constructorParametersForUse»
+			«ENDIF»
+		«ENDFOR»
+		'''
+	}
 
 	def dispatch constructorParameters(Feature f) {
 	}
@@ -92,6 +103,23 @@ class NestedEntityBuilderGenerator {
 		«ENDIF»
 		'''	
 	}
+	
+	def dispatch constructorParametersForUse(Feature f) {
+	}
+
+	def dispatch constructorParametersForUse(DataType f){
+		var legalFeatures = f.featureParentAsEntity.entityBuilderConstructorLegalFeatures
+		'''
+		«f.name»«IF !isLastFeature(legalFeatures, f)», «ENDIF»
+		'''
+	} 
+
+	def dispatch constructorParametersForUse(Reference f){
+		var legalFeatures = f.featureParentAsEntity.entityBuilderConstructorLegalFeatures
+		'''
+		«f.name»«IF !isLastFeature(legalFeatures, f)», «ENDIF»
+		'''	
+	}
 
 	def dispatch entityBuilderConstantMethods(Feature f) {}
 
@@ -102,8 +130,8 @@ class NestedEntityBuilderGenerator {
 				return Arrays.asList(«r.name»);
 			}
 			«ELSE» 
-			public static «r.reference.name» «r.name»(«FOR f : r.reference.features»«f.constantMethodParameters»«ENDFOR») {
-				return new «r.reference.name»(«FOR f : r.reference.features»«f.constantMethodParametersForUse»«ENDFOR»);
+			public static «r.reference.name» «r.name»(«r.reference.builderConstructorParameters») {
+				return «r.reference.entityBuilderClassName».«r.reference.name»(«r.reference.builderConstructorParametersForUse»);
 			}
 		«ENDIF»
 		«ENDIF»
@@ -113,27 +141,5 @@ class NestedEntityBuilderGenerator {
 		public static «dt.type» «dt.name»(«dt.type» value) {
 			return value;
 		}
-	'''
-
-	def dispatch constantMethodParameters(Feature f) {
-	}
-
-	def dispatch constantMethodParameters(DataType f) '''
-	«f.type» «f.name»«IF !isLastFeature(f.featureParentAsEntity.features, f)»,«ENDIF»'''
-
-	def dispatch constantMethodParameters(Reference f) '''
-	«IF f.many»ArrayList<«f.reference.name»> «f.name»«IF !isLastFeature(f.featureParentAsEntity.features, f)»,«ENDIF»
-	«ELSE»«f.reference.name» «f.name»«IF !isLastFeature(f.featureParentAsEntity.features, f)»,«ENDIF»
-	«ENDIF»'''
-
-	def dispatch constantMethodParametersForUse(Feature f) {
-	}
-
-	def dispatch constantMethodParametersForUse(DataType f) '''
-		«f.name»«IF !isLastFeature(f.featureParentAsEntity.features, f)»,«ENDIF»
-	'''
-
-	def dispatch constantMethodParametersForUse(Reference f) '''
-		«f.name»«IF !isLastFeature(f.featureParentAsEntity.features, f)»,«ENDIF»
 	'''
 }
