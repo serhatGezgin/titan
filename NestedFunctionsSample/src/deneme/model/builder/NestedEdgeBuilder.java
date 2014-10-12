@@ -2,6 +2,7 @@ package deneme.model.builder;
 
 import deneme.model.Edge;
 import deneme.model.Vertex;
+import deneme.model.builder.NestedVertexBuilder;
 
 public class NestedEdgeBuilder {
 	
@@ -17,12 +18,14 @@ public class NestedEdgeBuilder {
 		return o;
 	}
 
-	public static Vertex from(String label) {
-		return new Vertex(label
+	public static Vertex from(String label
+	) {
+		return NestedVertexBuilder.Vertex(label
 		);
 	}
-	public static Vertex to(String label) {
-		return new Vertex(label
+	public static Vertex to(String label
+	) {
+		return NestedVertexBuilder.Vertex(label
 		);
 	}
 	public static double weight(double value) {
