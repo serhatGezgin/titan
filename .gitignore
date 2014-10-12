@@ -1,0 +1,8 @@
+# class uzantili dosyalar
+*.class
+
+# bin klasoru
+bin/
+
+# Backup files
+*~
