@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.yazgel.titan.xtext.titan.Entity;
-import org.yazgel.titan.xtext.titan.EntityBuilder;
 import org.yazgel.titan.xtext.titan.TitanPackage;
 
 /**
@@ -31,7 +30,6 @@ import org.yazgel.titan.xtext.titan.TitanPackage;
  * <ul>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.PackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.PackageImpl#getEntities <em>Entities</em>}</li>
- *   <li>{@link org.yazgel.titan.xtext.titan.impl.PackageImpl#getEntityBuilders <em>Entity Builders</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,16 +66,6 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements org.yaz
    * @ordered
    */
   protected EList<Entity> entities;
-
-  /**
-   * The cached value of the '{@link #getEntityBuilders() <em>Entity Builders</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEntityBuilders()
-   * @generated
-   * @ordered
-   */
-  protected EList<EntityBuilder> entityBuilders;
 
   /**
    * <!-- begin-user-doc -->
@@ -142,20 +130,6 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements org.yaz
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EntityBuilder> getEntityBuilders()
-  {
-    if (entityBuilders == null)
-    {
-      entityBuilders = new EObjectContainmentEList<EntityBuilder>(EntityBuilder.class, this, TitanPackage.PACKAGE__ENTITY_BUILDERS);
-    }
-    return entityBuilders;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -163,8 +137,6 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements org.yaz
     {
       case TitanPackage.PACKAGE__ENTITIES:
         return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
-      case TitanPackage.PACKAGE__ENTITY_BUILDERS:
-        return ((InternalEList<?>)getEntityBuilders()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -183,8 +155,6 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements org.yaz
         return getName();
       case TitanPackage.PACKAGE__ENTITIES:
         return getEntities();
-      case TitanPackage.PACKAGE__ENTITY_BUILDERS:
-        return getEntityBuilders();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -207,10 +177,6 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements org.yaz
         getEntities().clear();
         getEntities().addAll((Collection<? extends Entity>)newValue);
         return;
-      case TitanPackage.PACKAGE__ENTITY_BUILDERS:
-        getEntityBuilders().clear();
-        getEntityBuilders().addAll((Collection<? extends EntityBuilder>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -231,9 +197,6 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements org.yaz
       case TitanPackage.PACKAGE__ENTITIES:
         getEntities().clear();
         return;
-      case TitanPackage.PACKAGE__ENTITY_BUILDERS:
-        getEntityBuilders().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -252,8 +215,6 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements org.yaz
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case TitanPackage.PACKAGE__ENTITIES:
         return entities != null && !entities.isEmpty();
-      case TitanPackage.PACKAGE__ENTITY_BUILDERS:
-        return entityBuilders != null && !entityBuilders.isEmpty();
     }
     return super.eIsSet(featureID);
   }

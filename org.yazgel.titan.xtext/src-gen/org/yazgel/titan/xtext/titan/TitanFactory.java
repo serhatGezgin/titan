@@ -50,42 +50,6 @@ public interface TitanFactory extends EFactory
   Entity createEntity();
 
   /**
-   * Returns a new object of class '<em>Entity Builder</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entity Builder</em>'.
-   * @generated
-   */
-  EntityBuilder createEntityBuilder();
-
-  /**
-   * Returns a new object of class '<em>method</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>method</em>'.
-   * @generated
-   */
-  method createmethod();
-
-  /**
-   * Returns a new object of class '<em>takes</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>takes</em>'.
-   * @generated
-   */
-  takes createtakes();
-
-  /**
-   * Returns a new object of class '<em>adds</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>adds</em>'.
-   * @generated
-   */
-  adds createadds();
-
-  /**
    * Returns a new object of class '<em>Feature</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,33 +75,6 @@ public interface TitanFactory extends EFactory
    * @generated
    */
   DataType createDataType();
-
-  /**
-   * Returns a new object of class '<em>Parameter Feature</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter Feature</em>'.
-   * @generated
-   */
-  ParameterFeature createParameterFeature();
-
-  /**
-   * Returns a new object of class '<em>Parameter Reference</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter Reference</em>'.
-   * @generated
-   */
-  ParameterReference createParameterReference();
-
-  /**
-   * Returns a new object of class '<em>Parameter Data Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter Data Type</em>'.
-   * @generated
-   */
-  ParameterDataType createParameterDataType();
 
   /**
    * Returns the package supported by this factory.

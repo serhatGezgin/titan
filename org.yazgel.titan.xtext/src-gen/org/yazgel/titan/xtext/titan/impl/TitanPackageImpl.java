@@ -13,19 +13,12 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.DataTypes;
 import org.yazgel.titan.xtext.titan.Entity;
-import org.yazgel.titan.xtext.titan.EntityBuilder;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.InternalDSLType;
 import org.yazgel.titan.xtext.titan.Module;
-import org.yazgel.titan.xtext.titan.ParameterDataType;
-import org.yazgel.titan.xtext.titan.ParameterFeature;
-import org.yazgel.titan.xtext.titan.ParameterReference;
 import org.yazgel.titan.xtext.titan.Reference;
 import org.yazgel.titan.xtext.titan.TitanFactory;
 import org.yazgel.titan.xtext.titan.TitanPackage;
-import org.yazgel.titan.xtext.titan.adds;
-import org.yazgel.titan.xtext.titan.method;
-import org.yazgel.titan.xtext.titan.takes;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,34 +54,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass entityBuilderEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass methodEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass takesEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass addsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass featureEClass = null;
 
   /**
@@ -104,27 +69,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * @generated
    */
   private EClass dataTypeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass parameterFeatureEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass parameterReferenceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass parameterDataTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -278,16 +222,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPackage_EntityBuilders()
-  {
-    return (EReference)packageEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getEntity()
   {
     return entityEClass;
@@ -321,106 +255,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
   public EReference getEntity_Features()
   {
     return (EReference)entityEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getEntityBuilder()
-  {
-    return entityBuilderEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEntityBuilder_Name()
-  {
-    return (EReference)entityBuilderEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEntityBuilder_Takes()
-  {
-    return (EReference)entityBuilderEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getmethod()
-  {
-    return methodEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getmethod_Type()
-  {
-    return (EReference)methodEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass gettakes()
-  {
-    return takesEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference gettakes_Takes()
-  {
-    return (EReference)takesEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference gettakes_Adds()
-  {
-    return (EReference)takesEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getadds()
-  {
-    return addsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getadds_Adds()
-  {
-    return (EReference)addsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -508,76 +342,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getParameterFeature()
-  {
-    return parameterFeatureEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getParameterFeature_Many()
-  {
-    return (EAttribute)parameterFeatureEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getParameterFeature_Name()
-  {
-    return (EAttribute)parameterFeatureEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getParameterReference()
-  {
-    return parameterReferenceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getParameterReference_Reference()
-  {
-    return (EReference)parameterReferenceEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getParameterDataType()
-  {
-    return parameterDataTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getParameterDataType_Type()
-  {
-    return (EAttribute)parameterDataTypeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EEnum getInternalDSLType()
   {
     return internalDSLTypeEEnum;
@@ -631,26 +395,11 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
     packageEClass = createEClass(PACKAGE);
     createEAttribute(packageEClass, PACKAGE__NAME);
     createEReference(packageEClass, PACKAGE__ENTITIES);
-    createEReference(packageEClass, PACKAGE__ENTITY_BUILDERS);
 
     entityEClass = createEClass(ENTITY);
     createEAttribute(entityEClass, ENTITY__NAME);
     createEReference(entityEClass, ENTITY__SUPER_ENTITY);
     createEReference(entityEClass, ENTITY__FEATURES);
-
-    entityBuilderEClass = createEClass(ENTITY_BUILDER);
-    createEReference(entityBuilderEClass, ENTITY_BUILDER__NAME);
-    createEReference(entityBuilderEClass, ENTITY_BUILDER__TAKES);
-
-    methodEClass = createEClass(METHOD);
-    createEReference(methodEClass, METHOD__TYPE);
-
-    takesEClass = createEClass(TAKES);
-    createEReference(takesEClass, TAKES__TAKES);
-    createEReference(takesEClass, TAKES__ADDS);
-
-    addsEClass = createEClass(ADDS);
-    createEReference(addsEClass, ADDS__ADDS);
 
     featureEClass = createEClass(FEATURE);
     createEAttribute(featureEClass, FEATURE__NAME);
@@ -662,16 +411,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
 
     dataTypeEClass = createEClass(DATA_TYPE);
     createEAttribute(dataTypeEClass, DATA_TYPE__TYPE);
-
-    parameterFeatureEClass = createEClass(PARAMETER_FEATURE);
-    createEAttribute(parameterFeatureEClass, PARAMETER_FEATURE__MANY);
-    createEAttribute(parameterFeatureEClass, PARAMETER_FEATURE__NAME);
-
-    parameterReferenceEClass = createEClass(PARAMETER_REFERENCE);
-    createEReference(parameterReferenceEClass, PARAMETER_REFERENCE__REFERENCE);
-
-    parameterDataTypeEClass = createEClass(PARAMETER_DATA_TYPE);
-    createEAttribute(parameterDataTypeEClass, PARAMETER_DATA_TYPE__TYPE);
 
     // Create enums
     internalDSLTypeEEnum = createEEnum(INTERNAL_DSL_TYPE);
@@ -709,8 +448,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
     // Add supertypes to classes
     referenceEClass.getESuperTypes().add(this.getFeature());
     dataTypeEClass.getESuperTypes().add(this.getFeature());
-    parameterReferenceEClass.getESuperTypes().add(this.getParameterFeature());
-    parameterDataTypeEClass.getESuperTypes().add(this.getParameterFeature());
 
     // Initialize classes and features; add operations and parameters
     initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -721,26 +458,11 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
     initEClass(packageEClass, org.yazgel.titan.xtext.titan.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.yazgel.titan.xtext.titan.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPackage_Entities(), this.getEntity(), null, "entities", null, 0, -1, org.yazgel.titan.xtext.titan.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPackage_EntityBuilders(), this.getEntityBuilder(), null, "entityBuilders", null, 0, -1, org.yazgel.titan.xtext.titan.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_SuperEntity(), this.getEntity(), null, "superEntity", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_Features(), this.getFeature(), null, "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(entityBuilderEClass, EntityBuilder.class, "EntityBuilder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntityBuilder_Name(), this.getEntity(), null, "name", null, 0, 1, EntityBuilder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntityBuilder_Takes(), this.gettakes(), null, "takes", null, 0, 1, EntityBuilder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(methodEClass, method.class, "method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getmethod_Type(), this.getEntity(), null, "type", null, 0, 1, method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(takesEClass, takes.class, "takes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(gettakes_Takes(), this.getParameterFeature(), null, "takes", null, 0, -1, takes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(gettakes_Adds(), this.getadds(), null, "adds", null, 0, -1, takes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(addsEClass, adds.class, "adds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getadds_Adds(), this.getFeature(), null, "adds", null, 0, -1, adds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -752,16 +474,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDataType_Type(), this.getDataTypes(), "type", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(parameterFeatureEClass, ParameterFeature.class, "ParameterFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getParameterFeature_Many(), ecorePackage.getEBoolean(), "many", null, 0, 1, ParameterFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParameterFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParameterFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getParameterReference_Reference(), this.getEntity(), null, "reference", null, 0, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(parameterDataTypeEClass, ParameterDataType.class, "ParameterDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getParameterDataType_Type(), this.getDataTypes(), "type", null, 0, 1, ParameterDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(internalDSLTypeEEnum, InternalDSLType.class, "InternalDSLType");

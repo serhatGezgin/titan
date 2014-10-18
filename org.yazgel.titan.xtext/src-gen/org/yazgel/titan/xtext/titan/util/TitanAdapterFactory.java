@@ -11,17 +11,10 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.Entity;
-import org.yazgel.titan.xtext.titan.EntityBuilder;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.Module;
-import org.yazgel.titan.xtext.titan.ParameterDataType;
-import org.yazgel.titan.xtext.titan.ParameterFeature;
-import org.yazgel.titan.xtext.titan.ParameterReference;
 import org.yazgel.titan.xtext.titan.Reference;
 import org.yazgel.titan.xtext.titan.TitanPackage;
-import org.yazgel.titan.xtext.titan.adds;
-import org.yazgel.titan.xtext.titan.method;
-import org.yazgel.titan.xtext.titan.takes;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,26 +95,6 @@ public class TitanAdapterFactory extends AdapterFactoryImpl
         return createEntityAdapter();
       }
       @Override
-      public Adapter caseEntityBuilder(EntityBuilder object)
-      {
-        return createEntityBuilderAdapter();
-      }
-      @Override
-      public Adapter casemethod(method object)
-      {
-        return createmethodAdapter();
-      }
-      @Override
-      public Adapter casetakes(takes object)
-      {
-        return createtakesAdapter();
-      }
-      @Override
-      public Adapter caseadds(adds object)
-      {
-        return createaddsAdapter();
-      }
-      @Override
       public Adapter caseFeature(Feature object)
       {
         return createFeatureAdapter();
@@ -135,21 +108,6 @@ public class TitanAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDataType(DataType object)
       {
         return createDataTypeAdapter();
-      }
-      @Override
-      public Adapter caseParameterFeature(ParameterFeature object)
-      {
-        return createParameterFeatureAdapter();
-      }
-      @Override
-      public Adapter caseParameterReference(ParameterReference object)
-      {
-        return createParameterReferenceAdapter();
-      }
-      @Override
-      public Adapter caseParameterDataType(ParameterDataType object)
-      {
-        return createParameterDataTypeAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -219,66 +177,6 @@ public class TitanAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.EntityBuilder <em>Entity Builder</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.yazgel.titan.xtext.titan.EntityBuilder
-   * @generated
-   */
-  public Adapter createEntityBuilderAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.method <em>method</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.yazgel.titan.xtext.titan.method
-   * @generated
-   */
-  public Adapter createmethodAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.takes <em>takes</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.yazgel.titan.xtext.titan.takes
-   * @generated
-   */
-  public Adapter createtakesAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.adds <em>adds</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.yazgel.titan.xtext.titan.adds
-   * @generated
-   */
-  public Adapter createaddsAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.Feature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -319,51 +217,6 @@ public class TitanAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDataTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.ParameterFeature <em>Parameter Feature</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.yazgel.titan.xtext.titan.ParameterFeature
-   * @generated
-   */
-  public Adapter createParameterFeatureAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.ParameterReference <em>Parameter Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.yazgel.titan.xtext.titan.ParameterReference
-   * @generated
-   */
-  public Adapter createParameterReferenceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.ParameterDataType <em>Parameter Data Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.yazgel.titan.xtext.titan.ParameterDataType
-   * @generated
-   */
-  public Adapter createParameterDataTypeAdapter()
   {
     return null;
   }

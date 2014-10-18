@@ -3,9 +3,7 @@
 package org.yazgel.oop.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.yazgel.oop.OStatement;
 import org.yazgel.oop.OopPackage;
 

@@ -14,19 +14,12 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.DataTypes;
 import org.yazgel.titan.xtext.titan.Entity;
-import org.yazgel.titan.xtext.titan.EntityBuilder;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.InternalDSLType;
 import org.yazgel.titan.xtext.titan.Module;
-import org.yazgel.titan.xtext.titan.ParameterDataType;
-import org.yazgel.titan.xtext.titan.ParameterFeature;
-import org.yazgel.titan.xtext.titan.ParameterReference;
 import org.yazgel.titan.xtext.titan.Reference;
 import org.yazgel.titan.xtext.titan.TitanFactory;
 import org.yazgel.titan.xtext.titan.TitanPackage;
-import org.yazgel.titan.xtext.titan.adds;
-import org.yazgel.titan.xtext.titan.method;
-import org.yazgel.titan.xtext.titan.takes;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,16 +76,9 @@ public class TitanFactoryImpl extends EFactoryImpl implements TitanFactory
       case TitanPackage.MODULE: return createModule();
       case TitanPackage.PACKAGE: return createPackage();
       case TitanPackage.ENTITY: return createEntity();
-      case TitanPackage.ENTITY_BUILDER: return createEntityBuilder();
-      case TitanPackage.METHOD: return createmethod();
-      case TitanPackage.TAKES: return createtakes();
-      case TitanPackage.ADDS: return createadds();
       case TitanPackage.FEATURE: return createFeature();
       case TitanPackage.REFERENCE: return createReference();
       case TitanPackage.DATA_TYPE: return createDataType();
-      case TitanPackage.PARAMETER_FEATURE: return createParameterFeature();
-      case TitanPackage.PARAMETER_REFERENCE: return createParameterReference();
-      case TitanPackage.PARAMETER_DATA_TYPE: return createParameterDataType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -174,50 +160,6 @@ public class TitanFactoryImpl extends EFactoryImpl implements TitanFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public EntityBuilder createEntityBuilder()
-  {
-    EntityBuilderImpl entityBuilder = new EntityBuilderImpl();
-    return entityBuilder;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public method createmethod()
-  {
-    methodImpl method = new methodImpl();
-    return method;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public takes createtakes()
-  {
-    takesImpl takes = new takesImpl();
-    return takes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public adds createadds()
-  {
-    addsImpl adds = new addsImpl();
-    return adds;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Feature createFeature()
   {
     FeatureImpl feature = new FeatureImpl();
@@ -244,39 +186,6 @@ public class TitanFactoryImpl extends EFactoryImpl implements TitanFactory
   {
     DataTypeImpl dataType = new DataTypeImpl();
     return dataType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ParameterFeature createParameterFeature()
-  {
-    ParameterFeatureImpl parameterFeature = new ParameterFeatureImpl();
-    return parameterFeature;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ParameterReference createParameterReference()
-  {
-    ParameterReferenceImpl parameterReference = new ParameterReferenceImpl();
-    return parameterReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ParameterDataType createParameterDataType()
-  {
-    ParameterDataTypeImpl parameterDataType = new ParameterDataTypeImpl();
-    return parameterDataType;
   }
 
   /**

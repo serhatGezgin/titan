@@ -38,27 +38,17 @@ public class TitanParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getFeatureAccess().getAlternatives(), "rule__Feature__Alternatives");
-					put(grammarAccess.getParameterFeatureAccess().getAlternatives(), "rule__ParameterFeature__Alternatives");
 					put(grammarAccess.getDataTypesAccess().getAlternatives(), "rule__DataTypes__Alternatives");
 					put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
 					put(grammarAccess.getModuleAccess().getGroup_4(), "rule__Module__Group_4__0");
 					put(grammarAccess.getPackageAccess().getGroup(), "rule__Package__Group__0");
 					put(grammarAccess.getPackageAccess().getGroup_4(), "rule__Package__Group_4__0");
-					put(grammarAccess.getPackageAccess().getGroup_5(), "rule__Package__Group_5__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup_3(), "rule__Entity__Group_3__0");
 					put(grammarAccess.getEntityAccess().getGroup_5(), "rule__Entity__Group_5__0");
-					put(grammarAccess.getEntityBuilderAccess().getGroup(), "rule__EntityBuilder__Group__0");
-					put(grammarAccess.getTakesAccess().getGroup(), "rule__Takes__Group__0");
-					put(grammarAccess.getTakesAccess().getGroup_2(), "rule__Takes__Group_2__0");
-					put(grammarAccess.getAddsAccess().getGroup(), "rule__Adds__Group__0");
-					put(grammarAccess.getAddsAccess().getGroup_2(), "rule__Adds__Group_2__0");
-					put(grammarAccess.getAddsAccess().getGroup_2_1(), "rule__Adds__Group_2_1__0");
 					put(grammarAccess.getReferenceAccess().getGroup(), "rule__Reference__Group__0");
 					put(grammarAccess.getReferenceAccess().getGroup_5(), "rule__Reference__Group_5__0");
 					put(grammarAccess.getDataTypeAccess().getGroup(), "rule__DataType__Group__0");
-					put(grammarAccess.getParameterReferenceAccess().getGroup(), "rule__ParameterReference__Group__0");
-					put(grammarAccess.getParameterDataTypeAccess().getGroup(), "rule__ParameterDataType__Group__0");
 					put(grammarAccess.getQUALIFIED_NAMEAccess().getGroup(), "rule__QUALIFIED_NAME__Group__0");
 					put(grammarAccess.getQUALIFIED_NAMEAccess().getGroup_1(), "rule__QUALIFIED_NAME__Group_1__0");
 					put(grammarAccess.getModuleAccess().getNameAssignment_2(), "rule__Module__NameAssignment_2");
@@ -68,20 +58,10 @@ public class TitanParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPackageAccess().getNameAssignment_2(), "rule__Package__NameAssignment_2");
 					put(grammarAccess.getPackageAccess().getEntitiesAssignment_4_0(), "rule__Package__EntitiesAssignment_4_0");
 					put(grammarAccess.getPackageAccess().getEntitiesAssignment_4_1(), "rule__Package__EntitiesAssignment_4_1");
-					put(grammarAccess.getPackageAccess().getEntityBuildersAssignment_5_0(), "rule__Package__EntityBuildersAssignment_5_0");
-					put(grammarAccess.getPackageAccess().getEntityBuildersAssignment_5_1(), "rule__Package__EntityBuildersAssignment_5_1");
 					put(grammarAccess.getEntityAccess().getNameAssignment_2(), "rule__Entity__NameAssignment_2");
 					put(grammarAccess.getEntityAccess().getSuperEntityAssignment_3_1(), "rule__Entity__SuperEntityAssignment_3_1");
 					put(grammarAccess.getEntityAccess().getFeaturesAssignment_5_0(), "rule__Entity__FeaturesAssignment_5_0");
 					put(grammarAccess.getEntityAccess().getFeaturesAssignment_5_1(), "rule__Entity__FeaturesAssignment_5_1");
-					put(grammarAccess.getEntityBuilderAccess().getNameAssignment_2(), "rule__EntityBuilder__NameAssignment_2");
-					put(grammarAccess.getEntityBuilderAccess().getTakesAssignment_4(), "rule__EntityBuilder__TakesAssignment_4");
-					put(grammarAccess.getMethodAccess().getTypeAssignment(), "rule__Method__TypeAssignment");
-					put(grammarAccess.getTakesAccess().getTakesAssignment_1(), "rule__Takes__TakesAssignment_1");
-					put(grammarAccess.getTakesAccess().getTakesAssignment_2_1(), "rule__Takes__TakesAssignment_2_1");
-					put(grammarAccess.getTakesAccess().getAddsAssignment_3(), "rule__Takes__AddsAssignment_3");
-					put(grammarAccess.getAddsAccess().getAddsAssignment_2_0(), "rule__Adds__AddsAssignment_2_0");
-					put(grammarAccess.getAddsAccess().getAddsAssignment_2_1_1(), "rule__Adds__AddsAssignment_2_1_1");
 					put(grammarAccess.getReferenceAccess().getNameAssignment_2(), "rule__Reference__NameAssignment_2");
 					put(grammarAccess.getReferenceAccess().getReferenceAssignment_3(), "rule__Reference__ReferenceAssignment_3");
 					put(grammarAccess.getReferenceAccess().getManyAssignment_4(), "rule__Reference__ManyAssignment_4");
@@ -89,12 +69,6 @@ public class TitanParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeAccess().getNameAssignment_2(), "rule__DataType__NameAssignment_2");
 					put(grammarAccess.getDataTypeAccess().getTypeAssignment_3(), "rule__DataType__TypeAssignment_3");
 					put(grammarAccess.getDataTypeAccess().getManyAssignment_4(), "rule__DataType__ManyAssignment_4");
-					put(grammarAccess.getParameterReferenceAccess().getReferenceAssignment_1(), "rule__ParameterReference__ReferenceAssignment_1");
-					put(grammarAccess.getParameterReferenceAccess().getManyAssignment_2(), "rule__ParameterReference__ManyAssignment_2");
-					put(grammarAccess.getParameterReferenceAccess().getNameAssignment_3(), "rule__ParameterReference__NameAssignment_3");
-					put(grammarAccess.getParameterDataTypeAccess().getTypeAssignment_1(), "rule__ParameterDataType__TypeAssignment_1");
-					put(grammarAccess.getParameterDataTypeAccess().getManyAssignment_2(), "rule__ParameterDataType__ManyAssignment_2");
-					put(grammarAccess.getParameterDataTypeAccess().getNameAssignment_3(), "rule__ParameterDataType__NameAssignment_3");
 				}
 			};
 		}

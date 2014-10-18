@@ -1,7 +1,10 @@
 package org.yazgel.titan.xtext.generator;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.yazgel.oop.OClass;
 import org.yazgel.oop.ODataType;
 import org.yazgel.oop.ODataTypes;
@@ -19,17 +22,39 @@ import org.yazgel.titan.xtext.titan.Reference;
 
 @SuppressWarnings("all")
 public class Titan2OopGenerator {
+  private Map<EObject, EObject> transformationReleations = new HashMap<EObject, EObject>();
+  
   public OModel doGenerate(final Module module) {
     OModel _xblockexpression = null;
     {
       OModel model = OopFactoryImpl.eINSTANCE.createOModel();
       String _name = module.getName();
       model.setName(_name);
+      this.transformationReleations.put(model, module);
+      this.transformationReleations.put(module, model);
       EList<org.yazgel.titan.xtext.titan.Package> _packages = module.getPackages();
       for (final org.yazgel.titan.xtext.titan.Package p : _packages) {
         EList<OPackage> _packages_1 = model.getPackages();
         OPackage _generate = this.generate(p);
         _packages_1.add(_generate);
+      }
+      EList<OPackage> oPackages = model.getPackages();
+      for (final OPackage p_1 : oPackages) {
+        {
+          EList<OClass> oClasses = p_1.getClasses();
+          for (final OClass c : oClasses) {
+            {
+              EObject _get = this.transformationReleations.get(c);
+              Entity entity = ((Entity) _get);
+              EList<Feature> tFeatures = entity.getFeatures();
+              for (final Feature f : tFeatures) {
+                EList<OFeature> _features = c.getFeatures();
+                OFeature _generateFeature = this.generateFeature(f);
+                _features.add(_generateFeature);
+              }
+            }
+          }
+        }
       }
       _xblockexpression = model;
     }
@@ -42,6 +67,8 @@ public class Titan2OopGenerator {
       OPackage oPackage = OopFactoryImpl.eINSTANCE.createOPackage();
       String _name = tPackage.getName();
       oPackage.setName(_name);
+      this.transformationReleations.put(oPackage, tPackage);
+      this.transformationReleations.put(tPackage, oPackage);
       EList<Entity> _entities = tPackage.getEntities();
       for (final Entity e : _entities) {
         EList<OClass> _classes = oPackage.getClasses();
@@ -59,15 +86,15 @@ public class Titan2OopGenerator {
       OClass oClass = OopFactoryImpl.eINSTANCE.createOClass();
       String _name = entity.getName();
       oClass.setName(_name);
-      EList<Feature> features = entity.getFeatures();
-      for (final Feature f : features) {
-        EList<OFeature> _features = oClass.getFeatures();
-        OFeature _generateFeature = this.generateFeature(f);
-        _features.add(_generateFeature);
-      }
+      this.transformationReleations.put(oClass, entity);
+      this.transformationReleations.put(entity, oClass);
       _xblockexpression = oClass;
     }
     return _xblockexpression;
+  }
+  
+  protected OFeature _generateFeature(final Feature f) {
+    return null;
   }
   
   protected ODataType _generateFeature(final DataType dt) {
@@ -76,6 +103,8 @@ public class Titan2OopGenerator {
       ODataType oDataType = OopFactoryImpl.eINSTANCE.createODataType();
       String _name = dt.getName();
       oDataType.setName(_name);
+      this.transformationReleations.put(oDataType, dt);
+      this.transformationReleations.put(dt, oDataType);
       boolean _isMany = dt.isMany();
       oDataType.setMany(_isMany);
       DataTypes _type = dt.getType();
@@ -111,8 +140,13 @@ public class Titan2OopGenerator {
       OReference oReference = OopFactoryImpl.eINSTANCE.createOReference();
       String _name = r.getName();
       oReference.setName(_name);
+      this.transformationReleations.put(oReference, r);
+      this.transformationReleations.put(r, oReference);
       boolean _isMany = r.isMany();
       oReference.setMany(_isMany);
+      Entity _reference = r.getReference();
+      EObject _get = this.transformationReleations.get(_reference);
+      oReference.setReference(((OClass) _get));
       _xblockexpression = oReference;
     }
     return _xblockexpression;
@@ -123,6 +157,8 @@ public class Titan2OopGenerator {
       return _generateFeature((DataType)dt);
     } else if (dt instanceof Reference) {
       return _generateFeature((Reference)dt);
+    } else if (dt != null) {
+      return _generateFeature(dt);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(dt).toString());

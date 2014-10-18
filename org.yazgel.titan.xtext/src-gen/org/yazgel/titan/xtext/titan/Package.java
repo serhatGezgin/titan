@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.yazgel.titan.xtext.titan.Package#getName <em>Name</em>}</li>
  *   <li>{@link org.yazgel.titan.xtext.titan.Package#getEntities <em>Entities</em>}</li>
- *   <li>{@link org.yazgel.titan.xtext.titan.Package#getEntityBuilders <em>Entity Builders</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,21 +66,5 @@ public interface Package extends EObject
    * @generated
    */
   EList<Entity> getEntities();
-
-  /**
-   * Returns the value of the '<em><b>Entity Builders</b></em>' containment reference list.
-   * The list contents are of type {@link org.yazgel.titan.xtext.titan.EntityBuilder}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Entity Builders</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Entity Builders</em>' containment reference list.
-   * @see org.yazgel.titan.xtext.titan.TitanPackage#getPackage_EntityBuilders()
-   * @model containment="true"
-   * @generated
-   */
-  EList<EntityBuilder> getEntityBuilders();
 
 } // Package

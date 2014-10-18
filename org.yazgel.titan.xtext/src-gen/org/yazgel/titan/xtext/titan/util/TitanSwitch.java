@@ -9,17 +9,10 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.Entity;
-import org.yazgel.titan.xtext.titan.EntityBuilder;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.Module;
-import org.yazgel.titan.xtext.titan.ParameterDataType;
-import org.yazgel.titan.xtext.titan.ParameterFeature;
-import org.yazgel.titan.xtext.titan.ParameterReference;
 import org.yazgel.titan.xtext.titan.Reference;
 import org.yazgel.titan.xtext.titan.TitanPackage;
-import org.yazgel.titan.xtext.titan.adds;
-import org.yazgel.titan.xtext.titan.method;
-import org.yazgel.titan.xtext.titan.takes;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,34 +98,6 @@ public class TitanSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TitanPackage.ENTITY_BUILDER:
-      {
-        EntityBuilder entityBuilder = (EntityBuilder)theEObject;
-        T result = caseEntityBuilder(entityBuilder);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TitanPackage.METHOD:
-      {
-        method method = (method)theEObject;
-        T result = casemethod(method);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TitanPackage.TAKES:
-      {
-        takes takes = (takes)theEObject;
-        T result = casetakes(takes);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TitanPackage.ADDS:
-      {
-        adds adds = (adds)theEObject;
-        T result = caseadds(adds);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TitanPackage.FEATURE:
       {
         Feature feature = (Feature)theEObject;
@@ -153,29 +118,6 @@ public class TitanSwitch<T> extends Switch<T>
         DataType dataType = (DataType)theEObject;
         T result = caseDataType(dataType);
         if (result == null) result = caseFeature(dataType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TitanPackage.PARAMETER_FEATURE:
-      {
-        ParameterFeature parameterFeature = (ParameterFeature)theEObject;
-        T result = caseParameterFeature(parameterFeature);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TitanPackage.PARAMETER_REFERENCE:
-      {
-        ParameterReference parameterReference = (ParameterReference)theEObject;
-        T result = caseParameterReference(parameterReference);
-        if (result == null) result = caseParameterFeature(parameterReference);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TitanPackage.PARAMETER_DATA_TYPE:
-      {
-        ParameterDataType parameterDataType = (ParameterDataType)theEObject;
-        T result = caseParameterDataType(parameterDataType);
-        if (result == null) result = caseParameterFeature(parameterDataType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -232,70 +174,6 @@ public class TitanSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Entity Builder</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Entity Builder</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEntityBuilder(EntityBuilder object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>method</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>method</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casemethod(method object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>takes</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>takes</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casetakes(takes object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>adds</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>adds</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseadds(adds object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -339,54 +217,6 @@ public class TitanSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDataType(DataType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Parameter Feature</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Parameter Feature</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseParameterFeature(ParameterFeature object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Parameter Reference</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Parameter Reference</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseParameterReference(ParameterReference object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Parameter Data Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Parameter Data Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseParameterDataType(ParameterDataType object)
   {
     return null;
   }
