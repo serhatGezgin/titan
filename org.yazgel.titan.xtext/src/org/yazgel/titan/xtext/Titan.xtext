@@ -6,92 +6,48 @@ Module returns Module:
 	{Module}
 	'module'
 	name=QUALIFIED_NAME
-	type= InternalDSLType
-	(packages+=Package (packages+=Package)*)?
-;
+	type=InternalDSLType
+	(packages+=Package (packages+=Package)*)?;
 
 enum InternalDSLType returns InternalDSLType:
-	NestedFunctions = 'Nested Functions';
+	NestedFunctions='Nested Functions';
 
 Package returns Package:
 	{Package}
 	'package'
-	 name=QUALIFIED_NAME 
+	name=QUALIFIED_NAME
 	'{'
-		(entities+=Entity (entities+=Entity)*)?
-		(entityBuilders+=EntityBuilder (entityBuilders+=EntityBuilder)*)?
+	(entities+=Entity (entities+=Entity)*)?
 	'}';
 
 Entity returns Entity:
 	{Entity}
 	'entity'
-	name = ID (':' superEntity=[Entity|ID])? 
-	'{' 
-		(features+=Feature (features+=Feature)*)?
+	name=ID (':' superEntity=[Entity|ID])?
+	'{'
+	(features+=Feature (features+=Feature)*)?
 	'}';
-	
-EntityBuilder returns EntityBuilder:
-	{EntityBuilder}
-	'entityBuilder'
-	name = [Entity|ID]
-	'{' 
-		takes = takes?
-	'}';
-	
-method:
-	type = [Entity|ID]
-	
-;
-
-takes:
-	'takes' takes+= ParameterFeature (',' takes+= ParameterFeature)*
-	adds += adds?
-;
-		
-adds:
-	'adds' '(' (adds+=[Feature|QUALIFIED_NAME] (',' adds+=[Feature|QUALIFIED_NAME])*) ')' 
-;
 
 Feature returns Feature:
 	Reference | DataType;
-	
+
 Reference returns Reference:
 	{Reference}
 	'var'
 	name=ID
 	reference=[Entity|ID]
 	many?=('[]')?
-	('opposite' opposite = [Reference|QUALIFIED_NAME])?
-	;
+	('opposite' opposite=[Reference|QUALIFIED_NAME])?;
 
 DataType returns DataType:
 	{DataType}
 	'var'
 	name=ID
-	type=DataTypes	
-	many?=('[]')?
-	;
-	
-ParameterFeature returns ParameterFeature:
-	ParameterReference | ParameterDataType;
-	
-ParameterReference returns ParameterReference:
-	{ParameterReference}
-	reference=[Entity|ID]
-	many?=('[]')?
-	name=ID
-	;
-
-ParameterDataType returns ParameterDataType:
-	{ParameterDataType}
-	type=DataTypes	
-	many?=('[]')?
-	name=ID
-	;
+	type=DataTypes
+	many?=('[]')?;
 
 enum DataTypes returns DataTypes:
-	String = 'String' | Integer = 'integer' | Boolean = 'boolean' | Long = 'long' | Double = 'double';
+	String='String' | Integer='integer' | Boolean='boolean' | Long='long' | Double='double';
 
 QUALIFIED_NAME:
-	ID('.'ID)*
-;
+	ID ('.' ID)*;
