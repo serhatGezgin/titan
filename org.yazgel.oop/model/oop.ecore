@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="oop" nsURI="http://www.yazgel.org/oop/Oop" nsPrefix="oop">
+  <eClassifiers xsi:type="ecore:EClass" name="OModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
+        eType="#//OPackage" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OPackage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
+        eType="#//OClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//OClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+        eType="#//OMethod" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//OFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="many" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OReference" eSuperTypes="#//OFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//OClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ODataType" eSuperTypes="#//OFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ODataTypes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ODataTypes">
+    <eLiterals name="String"/>
+    <eLiterals name="integer" value="1"/>
+    <eLiterals name="boolean" value="2"/>
+    <eLiterals name="long" value="3" literal="long"/>
+    <eLiterals name="double" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OMethod">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//OParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//OStatement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loops" upperBound="-1"
+        eType="#//OLoop" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OConstructor" eSuperTypes="#//OMethod"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OLoop">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//OStatement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OFor" eSuperTypes="#//OLoop">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="objectName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ListVarriable" eType="#//OVarriableCreateStatement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OReturnStatement" eSuperTypes="#//OStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnVarriable" eType="#//OVarriableCreateStatement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OVarriableCreateStatement" eSuperTypes="#//OStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calledConstructor" eType="#//OConstructor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OMethodCallStatement" eSuperTypes="#//OStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varriable" eType="#//OVarriableCreateStatement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calledMethod" eType="#//OMethod"/>
+  </eClassifiers>
+</ecore:EPackage>

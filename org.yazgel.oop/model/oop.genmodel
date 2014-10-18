@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.yazgel.oop/src" modelPluginID="org.yazgel.oop"
+    modelName="Oop" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>oop.ecore</foreignModel>
+  <genPackages prefix="Oop" basePackage="org.yazgel" disposableProviderFactory="true"
+      ecorePackage="oop.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="oop.ecore#//ODataTypes">
+      <genEnumLiterals ecoreEnumLiteral="oop.ecore#//ODataTypes/String"/>
+      <genEnumLiterals ecoreEnumLiteral="oop.ecore#//ODataTypes/integer"/>
+      <genEnumLiterals ecoreEnumLiteral="oop.ecore#//ODataTypes/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="oop.ecore#//ODataTypes/long"/>
+      <genEnumLiterals ecoreEnumLiteral="oop.ecore#//ODataTypes/double"/>
+    </genEnums>
+    <genClasses ecoreClass="oop.ecore#//OModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OModel/packages"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OPackage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OPackage/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OPackage/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OClass/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OClass/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OClass/methods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OClass/features"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OFeature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OFeature/many"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OReference/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//ODataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//ODataType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OMethod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OMethod/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OMethod/isConst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OMethod/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OMethod/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OMethod/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OMethod/loops"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OConstructor"/>
+    <genClasses ecoreClass="oop.ecore#//OParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OParameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OLoop/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OFor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OFor/objectName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OFor/ListVarriable"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OStatement"/>
+    <genClasses ecoreClass="oop.ecore#//OReturnStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OReturnStatement/returnVarriable"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OVarriableCreateStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OVarriableCreateStatement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OVarriableCreateStatement/calledConstructor"/>
+    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//OMethodCallStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OMethodCallStatement/varriable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OMethodCallStatement/calledMethod"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
