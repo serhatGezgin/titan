@@ -3,16 +3,21 @@
 package org.yazgel.oop.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.yazgel.oop.OLoop;
+
 import org.yazgel.oop.OMethod;
 import org.yazgel.oop.OParameter;
 import org.yazgel.oop.OStatement;
@@ -30,7 +35,7 @@ import org.yazgel.oop.OopPackage;
  *   <li>{@link org.yazgel.oop.impl.OMethodImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.yazgel.oop.impl.OMethodImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.yazgel.oop.impl.OMethodImpl#getStatements <em>Statements</em>}</li>
- *   <li>{@link org.yazgel.oop.impl.OMethodImpl#getLoops <em>Loops</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.OMethodImpl#isIsOverride <em>Is Override</em>}</li>
  * </ul>
  * </p>
  *
@@ -118,14 +123,24 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 	protected EList<OStatement> statements;
 
 	/**
-	 * The cached value of the '{@link #getLoops() <em>Loops</em>}' containment reference list.
+	 * The default value of the '{@link #isIsOverride() <em>Is Override</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLoops()
+	 * @see #isIsOverride()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<OLoop> loops;
+	protected static final boolean IS_OVERRIDE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsOverride() <em>Is Override</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsOverride()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isOverride = IS_OVERRIDE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -238,11 +253,20 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<OLoop> getLoops() {
-		if (loops == null) {
-			loops = new EObjectContainmentEList<OLoop>(OLoop.class, this, OopPackage.OMETHOD__LOOPS);
-		}
-		return loops;
+	public boolean isIsOverride() {
+		return isOverride;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsOverride(boolean newIsOverride) {
+		boolean oldIsOverride = isOverride;
+		isOverride = newIsOverride;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OMETHOD__IS_OVERRIDE, oldIsOverride, isOverride));
 	}
 
 	/**
@@ -257,8 +281,6 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case OopPackage.OMETHOD__STATEMENTS:
 				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
-			case OopPackage.OMETHOD__LOOPS:
-				return ((InternalEList<?>)getLoops()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -281,8 +303,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 				return getParameters();
 			case OopPackage.OMETHOD__STATEMENTS:
 				return getStatements();
-			case OopPackage.OMETHOD__LOOPS:
-				return getLoops();
+			case OopPackage.OMETHOD__IS_OVERRIDE:
+				return isIsOverride();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,9 +335,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 				getStatements().clear();
 				getStatements().addAll((Collection<? extends OStatement>)newValue);
 				return;
-			case OopPackage.OMETHOD__LOOPS:
-				getLoops().clear();
-				getLoops().addAll((Collection<? extends OLoop>)newValue);
+			case OopPackage.OMETHOD__IS_OVERRIDE:
+				setIsOverride((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -344,8 +365,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 			case OopPackage.OMETHOD__STATEMENTS:
 				getStatements().clear();
 				return;
-			case OopPackage.OMETHOD__LOOPS:
-				getLoops().clear();
+			case OopPackage.OMETHOD__IS_OVERRIDE:
+				setIsOverride(IS_OVERRIDE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -369,8 +390,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 				return parameters != null && !parameters.isEmpty();
 			case OopPackage.OMETHOD__STATEMENTS:
 				return statements != null && !statements.isEmpty();
-			case OopPackage.OMETHOD__LOOPS:
-				return loops != null && !loops.isEmpty();
+			case OopPackage.OMETHOD__IS_OVERRIDE:
+				return isOverride != IS_OVERRIDE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -391,6 +412,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 		result.append(isConst);
 		result.append(", returnType: ");
 		result.append(returnType);
+		result.append(", isOverride: ");
+		result.append(isOverride);
 		result.append(')');
 		return result.toString();
 	}

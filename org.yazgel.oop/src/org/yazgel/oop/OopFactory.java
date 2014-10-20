@@ -49,31 +49,58 @@ public interface OopFactory extends EFactory {
 	OClass createOClass();
 
 	/**
-	 * Returns a new object of class '<em>OFeature</em>'.
+	 * Returns a new object of class '<em>OClass Import</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OFeature</em>'.
+	 * @return a new object of class '<em>OClass Import</em>'.
 	 * @generated
 	 */
-	OFeature createOFeature();
+	OClassImport createOClassImport();
 
 	/**
-	 * Returns a new object of class '<em>OReference</em>'.
+	 * Returns a new object of class '<em>OClass Implement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OReference</em>'.
+	 * @return a new object of class '<em>OClass Implement</em>'.
 	 * @generated
 	 */
-	OReference createOReference();
+	OClassImplement createOClassImplement();
 
 	/**
-	 * Returns a new object of class '<em>OData Type</em>'.
+	 * Returns a new object of class '<em>OReference Multi</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OData Type</em>'.
+	 * @return a new object of class '<em>OReference Multi</em>'.
 	 * @generated
 	 */
-	ODataType createODataType();
+	OReferenceMulti createOReferenceMulti();
+
+	/**
+	 * Returns a new object of class '<em>OReference Single</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>OReference Single</em>'.
+	 * @generated
+	 */
+	OReferenceSingle createOReferenceSingle();
+
+	/**
+	 * Returns a new object of class '<em>OData Type Single</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>OData Type Single</em>'.
+	 * @generated
+	 */
+	ODataTypeSingle createODataTypeSingle();
+
+	/**
+	 * Returns a new object of class '<em>OData Type Multi</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>OData Type Multi</em>'.
+	 * @generated
+	 */
+	ODataTypeMulti createODataTypeMulti();
 
 	/**
 	 * Returns a new object of class '<em>OMethod</em>'.
@@ -103,24 +130,6 @@ public interface OopFactory extends EFactory {
 	OParameter createOParameter();
 
 	/**
-	 * Returns a new object of class '<em>OLoop</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OLoop</em>'.
-	 * @generated
-	 */
-	OLoop createOLoop();
-
-	/**
-	 * Returns a new object of class '<em>OFor</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OFor</em>'.
-	 * @generated
-	 */
-	OFor createOFor();
-
-	/**
 	 * Returns a new object of class '<em>OStatement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,33 +137,6 @@ public interface OopFactory extends EFactory {
 	 * @generated
 	 */
 	OStatement createOStatement();
-
-	/**
-	 * Returns a new object of class '<em>OReturn Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OReturn Statement</em>'.
-	 * @generated
-	 */
-	OReturnStatement createOReturnStatement();
-
-	/**
-	 * Returns a new object of class '<em>OVarriable Create Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OVarriable Create Statement</em>'.
-	 * @generated
-	 */
-	OVarriableCreateStatement createOVarriableCreateStatement();
-
-	/**
-	 * Returns a new object of class '<em>OMethod Call Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OMethod Call Statement</em>'.
-	 * @generated
-	 */
-	OMethodCallStatement createOMethodCallStatement();
 
 	/**
 	 * Returns the package supported by this factory.

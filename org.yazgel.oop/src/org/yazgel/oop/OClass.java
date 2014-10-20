@@ -3,6 +3,7 @@
 package org.yazgel.oop;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,9 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.yazgel.oop.OClass#getName <em>Name</em>}</li>
- *   <li>{@link org.yazgel.oop.OClass#getImports <em>Imports</em>}</li>
  *   <li>{@link org.yazgel.oop.OClass#getMethods <em>Methods</em>}</li>
  *   <li>{@link org.yazgel.oop.OClass#getFeatures <em>Features</em>}</li>
+ *   <li>{@link org.yazgel.oop.OClass#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.yazgel.oop.OClass#getImplements <em>Implements</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,22 +54,6 @@ public interface OClass extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Imports</b></em>' reference list.
-	 * The list contents are of type {@link org.yazgel.oop.OClass}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Imports</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Imports</em>' reference list.
-	 * @see org.yazgel.oop.OopPackage#getOClass_Imports()
-	 * @model
-	 * @generated
-	 */
-	EList<OClass> getImports();
-
-	/**
 	 * Returns the value of the '<em><b>Methods</b></em>' containment reference list.
 	 * The list contents are of type {@link org.yazgel.oop.OMethod}.
 	 * <!-- begin-user-doc -->
@@ -98,5 +84,57 @@ public interface OClass extends EObject {
 	 * @generated
 	 */
 	EList<OFeature> getFeatures();
+
+	/**
+	 * Returns the value of the '<em><b>Imports</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Imports</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Imports</em>' reference.
+	 * @see #setImports(OClassImport)
+	 * @see org.yazgel.oop.OopPackage#getOClass_Imports()
+	 * @model
+	 * @generated
+	 */
+	OClassImport getImports();
+
+	/**
+	 * Sets the value of the '{@link org.yazgel.oop.OClass#getImports <em>Imports</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Imports</em>' reference.
+	 * @see #getImports()
+	 * @generated
+	 */
+	void setImports(OClassImport value);
+
+	/**
+	 * Returns the value of the '<em><b>Implements</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Implements</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implements</em>' reference.
+	 * @see #setImplements(OClassImplement)
+	 * @see org.yazgel.oop.OopPackage#getOClass_Implements()
+	 * @model
+	 * @generated
+	 */
+	OClassImplement getImplements();
+
+	/**
+	 * Sets the value of the '{@link org.yazgel.oop.OClass#getImplements <em>Implements</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implements</em>' reference.
+	 * @see #getImplements()
+	 * @generated
+	 */
+	void setImplements(OClassImplement value);
 
 } // OClass

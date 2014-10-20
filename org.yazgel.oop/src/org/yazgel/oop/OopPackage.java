@@ -169,22 +169,13 @@ public interface OopPackage extends EPackage {
 	int OCLASS__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Imports</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCLASS__IMPORTS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OCLASS__METHODS = 2;
+	int OCLASS__METHODS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -193,7 +184,25 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OCLASS__FEATURES = 3;
+	int OCLASS__FEATURES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS__IMPORTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Implements</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS__IMPLEMENTS = 4;
 
 	/**
 	 * The number of structural features of the '<em>OClass</em>' class.
@@ -202,7 +211,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OCLASS_FEATURE_COUNT = 4;
+	int OCLASS_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>OClass</em>' class.
@@ -214,6 +223,89 @@ public interface OopPackage extends EPackage {
 	int OCLASS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.yazgel.oop.impl.OClassImportImpl <em>OClass Import</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.yazgel.oop.impl.OClassImportImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getOClassImport()
+	 * @generated
+	 */
+	int OCLASS_IMPORT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Imports From Domain</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS_IMPORT__IMPORTS_FROM_DOMAIN = 0;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS_IMPORT__IMPORTS = 1;
+
+	/**
+	 * The number of structural features of the '<em>OClass Import</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS_IMPORT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>OClass Import</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS_IMPORT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.yazgel.oop.impl.OClassImplementImpl <em>OClass Implement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.yazgel.oop.impl.OClassImplementImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getOClassImplement()
+	 * @generated
+	 */
+	int OCLASS_IMPLEMENT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Implements String</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS_IMPLEMENT__IMPLEMENTS_STRING = 0;
+
+	/**
+	 * The number of structural features of the '<em>OClass Implement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS_IMPLEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>OClass Implement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS_IMPLEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.yazgel.oop.impl.OFeatureImpl <em>OFeature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,7 +313,7 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getOFeature()
 	 * @generated
 	 */
-	int OFEATURE = 3;
+	int OFEATURE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -233,22 +325,13 @@ public interface OopPackage extends EPackage {
 	int OFEATURE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Many</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFEATURE__MANY = 1;
-
-	/**
 	 * The number of structural features of the '<em>OFeature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OFEATURE_FEATURE_COUNT = 2;
+	int OFEATURE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>OFeature</em>' class.
@@ -267,7 +350,7 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getOReference()
 	 * @generated
 	 */
-	int OREFERENCE = 4;
+	int OREFERENCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -277,15 +360,6 @@ public interface OopPackage extends EPackage {
 	 * @ordered
 	 */
 	int OREFERENCE__NAME = OFEATURE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Many</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OREFERENCE__MANY = OFEATURE__MANY;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -315,6 +389,116 @@ public interface OopPackage extends EPackage {
 	int OREFERENCE_OPERATION_COUNT = OFEATURE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.yazgel.oop.impl.OReferenceMultiImpl <em>OReference Multi</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.yazgel.oop.impl.OReferenceMultiImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getOReferenceMulti()
+	 * @generated
+	 */
+	int OREFERENCE_MULTI = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_MULTI__NAME = OREFERENCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_MULTI__REFERENCE = OREFERENCE__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Multi Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_MULTI__MULTI_TYPE = OREFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Unique Instance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_MULTI__UNIQUE_INSTANCE = OREFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>OReference Multi</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_MULTI_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>OReference Multi</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_MULTI_OPERATION_COUNT = OREFERENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.yazgel.oop.impl.OReferenceSingleImpl <em>OReference Single</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.yazgel.oop.impl.OReferenceSingleImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getOReferenceSingle()
+	 * @generated
+	 */
+	int OREFERENCE_SINGLE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_SINGLE__NAME = OREFERENCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_SINGLE__REFERENCE = OREFERENCE__REFERENCE;
+
+	/**
+	 * The number of structural features of the '<em>OReference Single</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_SINGLE_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>OReference Single</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE_SINGLE_OPERATION_COUNT = OREFERENCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.yazgel.oop.impl.ODataTypeImpl <em>OData Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,7 +506,7 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getODataType()
 	 * @generated
 	 */
-	int ODATA_TYPE = 5;
+	int ODATA_TYPE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -332,15 +516,6 @@ public interface OopPackage extends EPackage {
 	 * @ordered
 	 */
 	int ODATA_TYPE__NAME = OFEATURE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Many</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ODATA_TYPE__MANY = OFEATURE__MANY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -370,6 +545,116 @@ public interface OopPackage extends EPackage {
 	int ODATA_TYPE_OPERATION_COUNT = OFEATURE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.yazgel.oop.impl.ODataTypeSingleImpl <em>OData Type Single</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.yazgel.oop.impl.ODataTypeSingleImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypeSingle()
+	 * @generated
+	 */
+	int ODATA_TYPE_SINGLE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_SINGLE__NAME = ODATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_SINGLE__TYPE = ODATA_TYPE__TYPE;
+
+	/**
+	 * The number of structural features of the '<em>OData Type Single</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_SINGLE_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>OData Type Single</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_SINGLE_OPERATION_COUNT = ODATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.yazgel.oop.impl.ODataTypeMultiImpl <em>OData Type Multi</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.yazgel.oop.impl.ODataTypeMultiImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypeMulti()
+	 * @generated
+	 */
+	int ODATA_TYPE_MULTI = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_MULTI__NAME = ODATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_MULTI__TYPE = ODATA_TYPE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Multi Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_MULTI__MULTI_TYPE = ODATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Unique Instance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_MULTI__UNIQUE_INSTANCE = ODATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>OData Type Multi</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_MULTI_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>OData Type Multi</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE_MULTI_OPERATION_COUNT = ODATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.yazgel.oop.impl.OMethodImpl <em>OMethod</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,7 +662,7 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getOMethod()
 	 * @generated
 	 */
-	int OMETHOD = 6;
+	int OMETHOD = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -425,13 +710,13 @@ public interface OopPackage extends EPackage {
 	int OMETHOD__STATEMENTS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Loops</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Is Override</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OMETHOD__LOOPS = 5;
+	int OMETHOD__IS_OVERRIDE = 5;
 
 	/**
 	 * The number of structural features of the '<em>OMethod</em>' class.
@@ -459,7 +744,7 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getOConstructor()
 	 * @generated
 	 */
-	int OCONSTRUCTOR = 7;
+	int OCONSTRUCTOR = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -507,13 +792,13 @@ public interface OopPackage extends EPackage {
 	int OCONSTRUCTOR__STATEMENTS = OMETHOD__STATEMENTS;
 
 	/**
-	 * The feature id for the '<em><b>Loops</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Is Override</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OCONSTRUCTOR__LOOPS = OMETHOD__LOOPS;
+	int OCONSTRUCTOR__IS_OVERRIDE = OMETHOD__IS_OVERRIDE;
 
 	/**
 	 * The number of structural features of the '<em>OConstructor</em>' class.
@@ -541,7 +826,7 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getOParameter()
 	 * @generated
 	 */
-	int OPARAMETER = 8;
+	int OPARAMETER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -580,98 +865,6 @@ public interface OopPackage extends EPackage {
 	int OPARAMETER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.OLoopImpl <em>OLoop</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.OLoopImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getOLoop()
-	 * @generated
-	 */
-	int OLOOP = 9;
-
-	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OLOOP__STATEMENTS = 0;
-
-	/**
-	 * The number of structural features of the '<em>OLoop</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OLOOP_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>OLoop</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OLOOP_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.OForImpl <em>OFor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.OForImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getOFor()
-	 * @generated
-	 */
-	int OFOR = 10;
-
-	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFOR__STATEMENTS = OLOOP__STATEMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Object Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFOR__OBJECT_NAME = OLOOP_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>List Varriable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFOR__LIST_VARRIABLE = OLOOP_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>OFor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFOR_FEATURE_COUNT = OLOOP_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>OFor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFOR_OPERATION_COUNT = OLOOP_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.yazgel.oop.impl.OStatementImpl <em>OStatement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -679,7 +872,16 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getOStatement()
 	 * @generated
 	 */
-	int OSTATEMENT = 11;
+	int OSTATEMENT = 15;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OSTATEMENT__CONTENT = 0;
 
 	/**
 	 * The number of structural features of the '<em>OStatement</em>' class.
@@ -688,7 +890,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OSTATEMENT_FEATURE_COUNT = 0;
+	int OSTATEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>OStatement</em>' class.
@@ -700,135 +902,6 @@ public interface OopPackage extends EPackage {
 	int OSTATEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.OReturnStatementImpl <em>OReturn Statement</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.OReturnStatementImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getOReturnStatement()
-	 * @generated
-	 */
-	int ORETURN_STATEMENT = 12;
-
-	/**
-	 * The feature id for the '<em><b>Return Varriable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORETURN_STATEMENT__RETURN_VARRIABLE = OSTATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>OReturn Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORETURN_STATEMENT_FEATURE_COUNT = OSTATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>OReturn Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ORETURN_STATEMENT_OPERATION_COUNT = OSTATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.OVarriableCreateStatementImpl <em>OVarriable Create Statement</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.OVarriableCreateStatementImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getOVarriableCreateStatement()
-	 * @generated
-	 */
-	int OVARRIABLE_CREATE_STATEMENT = 13;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OVARRIABLE_CREATE_STATEMENT__NAME = OSTATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Called Constructor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OVARRIABLE_CREATE_STATEMENT__CALLED_CONSTRUCTOR = OSTATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>OVarriable Create Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OVARRIABLE_CREATE_STATEMENT_FEATURE_COUNT = OSTATEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>OVarriable Create Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OVARRIABLE_CREATE_STATEMENT_OPERATION_COUNT = OSTATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.OMethodCallStatementImpl <em>OMethod Call Statement</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.OMethodCallStatementImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getOMethodCallStatement()
-	 * @generated
-	 */
-	int OMETHOD_CALL_STATEMENT = 14;
-
-	/**
-	 * The feature id for the '<em><b>Varriable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OMETHOD_CALL_STATEMENT__VARRIABLE = OSTATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Called Method</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OMETHOD_CALL_STATEMENT__CALLED_METHOD = OSTATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>OMethod Call Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OMETHOD_CALL_STATEMENT_FEATURE_COUNT = OSTATEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>OMethod Call Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OMETHOD_CALL_STATEMENT_OPERATION_COUNT = OSTATEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.yazgel.oop.ODataTypes <em>OData Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -836,7 +909,17 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypes()
 	 * @generated
 	 */
-	int ODATA_TYPES = 15;
+	int ODATA_TYPES = 16;
+
+	/**
+	 * The meta object id for the '{@link org.yazgel.oop.MultiOFeatureTypes <em>Multi OFeature Types</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.yazgel.oop.MultiOFeatureTypes
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getMultiOFeatureTypes()
+	 * @generated
+	 */
+	int MULTI_OFEATURE_TYPES = 17;
 
 
 	/**
@@ -925,17 +1008,6 @@ public interface OopPackage extends EPackage {
 	EAttribute getOClass_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.yazgel.oop.OClass#getImports <em>Imports</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Imports</em>'.
-	 * @see org.yazgel.oop.OClass#getImports()
-	 * @see #getOClass()
-	 * @generated
-	 */
-	EReference getOClass_Imports();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.yazgel.oop.OClass#getMethods <em>Methods</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -956,6 +1028,81 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOClass_Features();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.yazgel.oop.OClass#getImports <em>Imports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Imports</em>'.
+	 * @see org.yazgel.oop.OClass#getImports()
+	 * @see #getOClass()
+	 * @generated
+	 */
+	EReference getOClass_Imports();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.yazgel.oop.OClass#getImplements <em>Implements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Implements</em>'.
+	 * @see org.yazgel.oop.OClass#getImplements()
+	 * @see #getOClass()
+	 * @generated
+	 */
+	EReference getOClass_Implements();
+
+	/**
+	 * Returns the meta object for class '{@link org.yazgel.oop.OClassImport <em>OClass Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OClass Import</em>'.
+	 * @see org.yazgel.oop.OClassImport
+	 * @generated
+	 */
+	EClass getOClassImport();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.yazgel.oop.OClassImport#getImportsFromDomain <em>Imports From Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Imports From Domain</em>'.
+	 * @see org.yazgel.oop.OClassImport#getImportsFromDomain()
+	 * @see #getOClassImport()
+	 * @generated
+	 */
+	EReference getOClassImport_ImportsFromDomain();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.yazgel.oop.OClassImport#getImports <em>Imports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Imports</em>'.
+	 * @see org.yazgel.oop.OClassImport#getImports()
+	 * @see #getOClassImport()
+	 * @generated
+	 */
+	EAttribute getOClassImport_Imports();
+
+	/**
+	 * Returns the meta object for class '{@link org.yazgel.oop.OClassImplement <em>OClass Implement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OClass Implement</em>'.
+	 * @see org.yazgel.oop.OClassImplement
+	 * @generated
+	 */
+	EClass getOClassImplement();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.yazgel.oop.OClassImplement#getImplementsString <em>Implements String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Implements String</em>'.
+	 * @see org.yazgel.oop.OClassImplement#getImplementsString()
+	 * @see #getOClassImplement()
+	 * @generated
+	 */
+	EAttribute getOClassImplement_ImplementsString();
 
 	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OFeature <em>OFeature</em>}'.
@@ -979,17 +1126,6 @@ public interface OopPackage extends EPackage {
 	EAttribute getOFeature_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.yazgel.oop.OFeature#isMany <em>Many</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Many</em>'.
-	 * @see org.yazgel.oop.OFeature#isMany()
-	 * @see #getOFeature()
-	 * @generated
-	 */
-	EAttribute getOFeature_Many();
-
-	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OReference <em>OReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1011,6 +1147,48 @@ public interface OopPackage extends EPackage {
 	EReference getOReference_Reference();
 
 	/**
+	 * Returns the meta object for class '{@link org.yazgel.oop.OReferenceMulti <em>OReference Multi</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OReference Multi</em>'.
+	 * @see org.yazgel.oop.OReferenceMulti
+	 * @generated
+	 */
+	EClass getOReferenceMulti();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.yazgel.oop.OReferenceMulti#getMultiType <em>Multi Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multi Type</em>'.
+	 * @see org.yazgel.oop.OReferenceMulti#getMultiType()
+	 * @see #getOReferenceMulti()
+	 * @generated
+	 */
+	EAttribute getOReferenceMulti_MultiType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.yazgel.oop.OReferenceMulti#isUniqueInstance <em>Unique Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unique Instance</em>'.
+	 * @see org.yazgel.oop.OReferenceMulti#isUniqueInstance()
+	 * @see #getOReferenceMulti()
+	 * @generated
+	 */
+	EAttribute getOReferenceMulti_UniqueInstance();
+
+	/**
+	 * Returns the meta object for class '{@link org.yazgel.oop.OReferenceSingle <em>OReference Single</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OReference Single</em>'.
+	 * @see org.yazgel.oop.OReferenceSingle
+	 * @generated
+	 */
+	EClass getOReferenceSingle();
+
+	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.ODataType <em>OData Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1030,6 +1208,48 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getODataType_Type();
+
+	/**
+	 * Returns the meta object for class '{@link org.yazgel.oop.ODataTypeSingle <em>OData Type Single</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OData Type Single</em>'.
+	 * @see org.yazgel.oop.ODataTypeSingle
+	 * @generated
+	 */
+	EClass getODataTypeSingle();
+
+	/**
+	 * Returns the meta object for class '{@link org.yazgel.oop.ODataTypeMulti <em>OData Type Multi</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OData Type Multi</em>'.
+	 * @see org.yazgel.oop.ODataTypeMulti
+	 * @generated
+	 */
+	EClass getODataTypeMulti();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.yazgel.oop.ODataTypeMulti#getMultiType <em>Multi Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multi Type</em>'.
+	 * @see org.yazgel.oop.ODataTypeMulti#getMultiType()
+	 * @see #getODataTypeMulti()
+	 * @generated
+	 */
+	EAttribute getODataTypeMulti_MultiType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.yazgel.oop.ODataTypeMulti#isUniqueInstance <em>Unique Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unique Instance</em>'.
+	 * @see org.yazgel.oop.ODataTypeMulti#isUniqueInstance()
+	 * @see #getODataTypeMulti()
+	 * @generated
+	 */
+	EAttribute getODataTypeMulti_UniqueInstance();
 
 	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OMethod <em>OMethod</em>}'.
@@ -1097,15 +1317,15 @@ public interface OopPackage extends EPackage {
 	EReference getOMethod_Statements();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.yazgel.oop.OMethod#getLoops <em>Loops</em>}'.
+	 * Returns the meta object for the attribute '{@link org.yazgel.oop.OMethod#isIsOverride <em>Is Override</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Loops</em>'.
-	 * @see org.yazgel.oop.OMethod#getLoops()
+	 * @return the meta object for the attribute '<em>Is Override</em>'.
+	 * @see org.yazgel.oop.OMethod#isIsOverride()
 	 * @see #getOMethod()
 	 * @generated
 	 */
-	EReference getOMethod_Loops();
+	EAttribute getOMethod_IsOverride();
 
 	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OConstructor <em>OConstructor</em>}'.
@@ -1150,59 +1370,6 @@ public interface OopPackage extends EPackage {
 	EAttribute getOParameter_Type();
 
 	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.OLoop <em>OLoop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OLoop</em>'.
-	 * @see org.yazgel.oop.OLoop
-	 * @generated
-	 */
-	EClass getOLoop();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.yazgel.oop.OLoop#getStatements <em>Statements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see org.yazgel.oop.OLoop#getStatements()
-	 * @see #getOLoop()
-	 * @generated
-	 */
-	EReference getOLoop_Statements();
-
-	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.OFor <em>OFor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OFor</em>'.
-	 * @see org.yazgel.oop.OFor
-	 * @generated
-	 */
-	EClass getOFor();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.yazgel.oop.OFor#getObjectName <em>Object Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Object Name</em>'.
-	 * @see org.yazgel.oop.OFor#getObjectName()
-	 * @see #getOFor()
-	 * @generated
-	 */
-	EAttribute getOFor_ObjectName();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.yazgel.oop.OFor#getListVarriable <em>List Varriable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>List Varriable</em>'.
-	 * @see org.yazgel.oop.OFor#getListVarriable()
-	 * @see #getOFor()
-	 * @generated
-	 */
-	EReference getOFor_ListVarriable();
-
-	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OStatement <em>OStatement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1213,89 +1380,15 @@ public interface OopPackage extends EPackage {
 	EClass getOStatement();
 
 	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.OReturnStatement <em>OReturn Statement</em>}'.
+	 * Returns the meta object for the attribute '{@link org.yazgel.oop.OStatement#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OReturn Statement</em>'.
-	 * @see org.yazgel.oop.OReturnStatement
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see org.yazgel.oop.OStatement#getContent()
+	 * @see #getOStatement()
 	 * @generated
 	 */
-	EClass getOReturnStatement();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.yazgel.oop.OReturnStatement#getReturnVarriable <em>Return Varriable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Return Varriable</em>'.
-	 * @see org.yazgel.oop.OReturnStatement#getReturnVarriable()
-	 * @see #getOReturnStatement()
-	 * @generated
-	 */
-	EReference getOReturnStatement_ReturnVarriable();
-
-	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.OVarriableCreateStatement <em>OVarriable Create Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OVarriable Create Statement</em>'.
-	 * @see org.yazgel.oop.OVarriableCreateStatement
-	 * @generated
-	 */
-	EClass getOVarriableCreateStatement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.yazgel.oop.OVarriableCreateStatement#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.yazgel.oop.OVarriableCreateStatement#getName()
-	 * @see #getOVarriableCreateStatement()
-	 * @generated
-	 */
-	EAttribute getOVarriableCreateStatement_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.yazgel.oop.OVarriableCreateStatement#getCalledConstructor <em>Called Constructor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Called Constructor</em>'.
-	 * @see org.yazgel.oop.OVarriableCreateStatement#getCalledConstructor()
-	 * @see #getOVarriableCreateStatement()
-	 * @generated
-	 */
-	EReference getOVarriableCreateStatement_CalledConstructor();
-
-	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.OMethodCallStatement <em>OMethod Call Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OMethod Call Statement</em>'.
-	 * @see org.yazgel.oop.OMethodCallStatement
-	 * @generated
-	 */
-	EClass getOMethodCallStatement();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.yazgel.oop.OMethodCallStatement#getVarriable <em>Varriable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Varriable</em>'.
-	 * @see org.yazgel.oop.OMethodCallStatement#getVarriable()
-	 * @see #getOMethodCallStatement()
-	 * @generated
-	 */
-	EReference getOMethodCallStatement_Varriable();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.yazgel.oop.OMethodCallStatement#getCalledMethod <em>Called Method</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Called Method</em>'.
-	 * @see org.yazgel.oop.OMethodCallStatement#getCalledMethod()
-	 * @see #getOMethodCallStatement()
-	 * @generated
-	 */
-	EReference getOMethodCallStatement_CalledMethod();
+	EAttribute getOStatement_Content();
 
 	/**
 	 * Returns the meta object for enum '{@link org.yazgel.oop.ODataTypes <em>OData Types</em>}'.
@@ -1306,6 +1399,16 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getODataTypes();
+
+	/**
+	 * Returns the meta object for enum '{@link org.yazgel.oop.MultiOFeatureTypes <em>Multi OFeature Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Multi OFeature Types</em>'.
+	 * @see org.yazgel.oop.MultiOFeatureTypes
+	 * @generated
+	 */
+	EEnum getMultiOFeatureTypes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1401,14 +1504,6 @@ public interface OopPackage extends EPackage {
 		EAttribute OCLASS__NAME = eINSTANCE.getOClass_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Imports</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OCLASS__IMPORTS = eINSTANCE.getOClass_Imports();
-
-		/**
 		 * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1423,6 +1518,66 @@ public interface OopPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OCLASS__FEATURES = eINSTANCE.getOClass_Features();
+
+		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OCLASS__IMPORTS = eINSTANCE.getOClass_Imports();
+
+		/**
+		 * The meta object literal for the '<em><b>Implements</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OCLASS__IMPLEMENTS = eINSTANCE.getOClass_Implements();
+
+		/**
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.OClassImportImpl <em>OClass Import</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.impl.OClassImportImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getOClassImport()
+		 * @generated
+		 */
+		EClass OCLASS_IMPORT = eINSTANCE.getOClassImport();
+
+		/**
+		 * The meta object literal for the '<em><b>Imports From Domain</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OCLASS_IMPORT__IMPORTS_FROM_DOMAIN = eINSTANCE.getOClassImport_ImportsFromDomain();
+
+		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OCLASS_IMPORT__IMPORTS = eINSTANCE.getOClassImport_Imports();
+
+		/**
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.OClassImplementImpl <em>OClass Implement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.impl.OClassImplementImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getOClassImplement()
+		 * @generated
+		 */
+		EClass OCLASS_IMPLEMENT = eINSTANCE.getOClassImplement();
+
+		/**
+		 * The meta object literal for the '<em><b>Implements String</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OCLASS_IMPLEMENT__IMPLEMENTS_STRING = eINSTANCE.getOClassImplement_ImplementsString();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OFeatureImpl <em>OFeature</em>}' class.
@@ -1443,14 +1598,6 @@ public interface OopPackage extends EPackage {
 		EAttribute OFEATURE__NAME = eINSTANCE.getOFeature_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Many</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OFEATURE__MANY = eINSTANCE.getOFeature_Many();
-
-		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OReferenceImpl <em>OReference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1469,6 +1616,42 @@ public interface OopPackage extends EPackage {
 		EReference OREFERENCE__REFERENCE = eINSTANCE.getOReference_Reference();
 
 		/**
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.OReferenceMultiImpl <em>OReference Multi</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.impl.OReferenceMultiImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getOReferenceMulti()
+		 * @generated
+		 */
+		EClass OREFERENCE_MULTI = eINSTANCE.getOReferenceMulti();
+
+		/**
+		 * The meta object literal for the '<em><b>Multi Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OREFERENCE_MULTI__MULTI_TYPE = eINSTANCE.getOReferenceMulti_MultiType();
+
+		/**
+		 * The meta object literal for the '<em><b>Unique Instance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OREFERENCE_MULTI__UNIQUE_INSTANCE = eINSTANCE.getOReferenceMulti_UniqueInstance();
+
+		/**
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.OReferenceSingleImpl <em>OReference Single</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.impl.OReferenceSingleImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getOReferenceSingle()
+		 * @generated
+		 */
+		EClass OREFERENCE_SINGLE = eINSTANCE.getOReferenceSingle();
+
+		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.ODataTypeImpl <em>OData Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1485,6 +1668,42 @@ public interface OopPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ODATA_TYPE__TYPE = eINSTANCE.getODataType_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.ODataTypeSingleImpl <em>OData Type Single</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.impl.ODataTypeSingleImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypeSingle()
+		 * @generated
+		 */
+		EClass ODATA_TYPE_SINGLE = eINSTANCE.getODataTypeSingle();
+
+		/**
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.ODataTypeMultiImpl <em>OData Type Multi</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.impl.ODataTypeMultiImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypeMulti()
+		 * @generated
+		 */
+		EClass ODATA_TYPE_MULTI = eINSTANCE.getODataTypeMulti();
+
+		/**
+		 * The meta object literal for the '<em><b>Multi Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ODATA_TYPE_MULTI__MULTI_TYPE = eINSTANCE.getODataTypeMulti_MultiType();
+
+		/**
+		 * The meta object literal for the '<em><b>Unique Instance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ODATA_TYPE_MULTI__UNIQUE_INSTANCE = eINSTANCE.getODataTypeMulti_UniqueInstance();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OMethodImpl <em>OMethod</em>}' class.
@@ -1537,12 +1756,12 @@ public interface OopPackage extends EPackage {
 		EReference OMETHOD__STATEMENTS = eINSTANCE.getOMethod_Statements();
 
 		/**
-		 * The meta object literal for the '<em><b>Loops</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Is Override</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OMETHOD__LOOPS = eINSTANCE.getOMethod_Loops();
+		EAttribute OMETHOD__IS_OVERRIDE = eINSTANCE.getOMethod_IsOverride();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OConstructorImpl <em>OConstructor</em>}' class.
@@ -1581,50 +1800,6 @@ public interface OopPackage extends EPackage {
 		EAttribute OPARAMETER__TYPE = eINSTANCE.getOParameter_Type();
 
 		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.OLoopImpl <em>OLoop</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.OLoopImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getOLoop()
-		 * @generated
-		 */
-		EClass OLOOP = eINSTANCE.getOLoop();
-
-		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OLOOP__STATEMENTS = eINSTANCE.getOLoop_Statements();
-
-		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.OForImpl <em>OFor</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.OForImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getOFor()
-		 * @generated
-		 */
-		EClass OFOR = eINSTANCE.getOFor();
-
-		/**
-		 * The meta object literal for the '<em><b>Object Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OFOR__OBJECT_NAME = eINSTANCE.getOFor_ObjectName();
-
-		/**
-		 * The meta object literal for the '<em><b>List Varriable</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OFOR__LIST_VARRIABLE = eINSTANCE.getOFor_ListVarriable();
-
-		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OStatementImpl <em>OStatement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1635,74 +1810,12 @@ public interface OopPackage extends EPackage {
 		EClass OSTATEMENT = eINSTANCE.getOStatement();
 
 		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.OReturnStatementImpl <em>OReturn Statement</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.OReturnStatementImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getOReturnStatement()
-		 * @generated
-		 */
-		EClass ORETURN_STATEMENT = eINSTANCE.getOReturnStatement();
-
-		/**
-		 * The meta object literal for the '<em><b>Return Varriable</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ORETURN_STATEMENT__RETURN_VARRIABLE = eINSTANCE.getOReturnStatement_ReturnVarriable();
-
-		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.OVarriableCreateStatementImpl <em>OVarriable Create Statement</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.OVarriableCreateStatementImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getOVarriableCreateStatement()
-		 * @generated
-		 */
-		EClass OVARRIABLE_CREATE_STATEMENT = eINSTANCE.getOVarriableCreateStatement();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OVARRIABLE_CREATE_STATEMENT__NAME = eINSTANCE.getOVarriableCreateStatement_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Called Constructor</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OVARRIABLE_CREATE_STATEMENT__CALLED_CONSTRUCTOR = eINSTANCE.getOVarriableCreateStatement_CalledConstructor();
-
-		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.OMethodCallStatementImpl <em>OMethod Call Statement</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.OMethodCallStatementImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getOMethodCallStatement()
-		 * @generated
-		 */
-		EClass OMETHOD_CALL_STATEMENT = eINSTANCE.getOMethodCallStatement();
-
-		/**
-		 * The meta object literal for the '<em><b>Varriable</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OMETHOD_CALL_STATEMENT__VARRIABLE = eINSTANCE.getOMethodCallStatement_Varriable();
-
-		/**
-		 * The meta object literal for the '<em><b>Called Method</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OMETHOD_CALL_STATEMENT__CALLED_METHOD = eINSTANCE.getOMethodCallStatement_CalledMethod();
+		EAttribute OSTATEMENT__CONTENT = eINSTANCE.getOStatement_Content();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.ODataTypes <em>OData Types</em>}' enum.
@@ -1713,6 +1826,16 @@ public interface OopPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ODATA_TYPES = eINSTANCE.getODataTypes();
+
+		/**
+		 * The meta object literal for the '{@link org.yazgel.oop.MultiOFeatureTypes <em>Multi OFeature Types</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.MultiOFeatureTypes
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getMultiOFeatureTypes()
+		 * @generated
+		 */
+		EEnum MULTI_OFEATURE_TYPES = eINSTANCE.getMultiOFeatureTypes();
 
 	}
 

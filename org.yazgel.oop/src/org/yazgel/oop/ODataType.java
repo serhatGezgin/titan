@@ -16,7 +16,7 @@ package org.yazgel.oop;
  * </p>
  *
  * @see org.yazgel.oop.OopPackage#getODataType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface ODataType extends OFeature {

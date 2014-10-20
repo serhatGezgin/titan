@@ -16,7 +16,7 @@ package org.yazgel.oop;
  * </p>
  *
  * @see org.yazgel.oop.OopPackage#getOReference()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface OReference extends OFeature {

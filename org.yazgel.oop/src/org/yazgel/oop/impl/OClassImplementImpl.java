@@ -3,47 +3,48 @@
 package org.yazgel.oop.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-import org.yazgel.oop.OLoop;
-import org.yazgel.oop.OStatement;
+
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
+import org.yazgel.oop.OClassImplement;
 import org.yazgel.oop.OopPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>OLoop</b></em>'.
+ * An implementation of the model object '<em><b>OClass Implement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.yazgel.oop.impl.OLoopImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.OClassImplementImpl#getImplementsString <em>Implements String</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class OLoopImpl extends MinimalEObjectImpl.Container implements OLoop {
+public class OClassImplementImpl extends MinimalEObjectImpl.Container implements OClassImplement {
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * The cached value of the '{@link #getImplementsString() <em>Implements String</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements()
+	 * @see #getImplementsString()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<OStatement> statements;
+	protected EList<String> implementsString;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OLoopImpl() {
+	protected OClassImplementImpl() {
 		super();
 	}
 
@@ -54,7 +55,7 @@ public class OLoopImpl extends MinimalEObjectImpl.Container implements OLoop {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OopPackage.Literals.OLOOP;
+		return OopPackage.Literals.OCLASS_IMPLEMENT;
 	}
 
 	/**
@@ -62,25 +63,11 @@ public class OLoopImpl extends MinimalEObjectImpl.Container implements OLoop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<OStatement> getStatements() {
-		if (statements == null) {
-			statements = new EObjectContainmentEList<OStatement>(OStatement.class, this, OopPackage.OLOOP__STATEMENTS);
+	public EList<String> getImplementsString() {
+		if (implementsString == null) {
+			implementsString = new EDataTypeUniqueEList<String>(String.class, this, OopPackage.OCLASS_IMPLEMENT__IMPLEMENTS_STRING);
 		}
-		return statements;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OopPackage.OLOOP__STATEMENTS:
-				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		return implementsString;
 	}
 
 	/**
@@ -91,8 +78,8 @@ public class OLoopImpl extends MinimalEObjectImpl.Container implements OLoop {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OopPackage.OLOOP__STATEMENTS:
-				return getStatements();
+			case OopPackage.OCLASS_IMPLEMENT__IMPLEMENTS_STRING:
+				return getImplementsString();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,9 +93,9 @@ public class OLoopImpl extends MinimalEObjectImpl.Container implements OLoop {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OopPackage.OLOOP__STATEMENTS:
-				getStatements().clear();
-				getStatements().addAll((Collection<? extends OStatement>)newValue);
+			case OopPackage.OCLASS_IMPLEMENT__IMPLEMENTS_STRING:
+				getImplementsString().clear();
+				getImplementsString().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +109,8 @@ public class OLoopImpl extends MinimalEObjectImpl.Container implements OLoop {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OopPackage.OLOOP__STATEMENTS:
-				getStatements().clear();
+			case OopPackage.OCLASS_IMPLEMENT__IMPLEMENTS_STRING:
+				getImplementsString().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,10 +124,26 @@ public class OLoopImpl extends MinimalEObjectImpl.Container implements OLoop {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OopPackage.OLOOP__STATEMENTS:
-				return statements != null && !statements.isEmpty();
+			case OopPackage.OCLASS_IMPLEMENT__IMPLEMENTS_STRING:
+				return implementsString != null && !implementsString.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //OLoopImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (implementsString: ");
+		result.append(implementsString);
+		result.append(')');
+		return result.toString();
+	}
+
+} //OClassImplementImpl

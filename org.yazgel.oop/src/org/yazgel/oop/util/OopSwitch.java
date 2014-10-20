@@ -84,6 +84,18 @@ public class OopSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OopPackage.OCLASS_IMPORT: {
+				OClassImport oClassImport = (OClassImport)theEObject;
+				T result = caseOClassImport(oClassImport);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OopPackage.OCLASS_IMPLEMENT: {
+				OClassImplement oClassImplement = (OClassImplement)theEObject;
+				T result = caseOClassImplement(oClassImplement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OopPackage.OFEATURE: {
 				OFeature oFeature = (OFeature)theEObject;
 				T result = caseOFeature(oFeature);
@@ -97,10 +109,42 @@ public class OopSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OopPackage.OREFERENCE_MULTI: {
+				OReferenceMulti oReferenceMulti = (OReferenceMulti)theEObject;
+				T result = caseOReferenceMulti(oReferenceMulti);
+				if (result == null) result = caseOReference(oReferenceMulti);
+				if (result == null) result = caseOFeature(oReferenceMulti);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OopPackage.OREFERENCE_SINGLE: {
+				OReferenceSingle oReferenceSingle = (OReferenceSingle)theEObject;
+				T result = caseOReferenceSingle(oReferenceSingle);
+				if (result == null) result = caseOReference(oReferenceSingle);
+				if (result == null) result = caseOFeature(oReferenceSingle);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OopPackage.ODATA_TYPE: {
 				ODataType oDataType = (ODataType)theEObject;
 				T result = caseODataType(oDataType);
 				if (result == null) result = caseOFeature(oDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OopPackage.ODATA_TYPE_SINGLE: {
+				ODataTypeSingle oDataTypeSingle = (ODataTypeSingle)theEObject;
+				T result = caseODataTypeSingle(oDataTypeSingle);
+				if (result == null) result = caseODataType(oDataTypeSingle);
+				if (result == null) result = caseOFeature(oDataTypeSingle);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OopPackage.ODATA_TYPE_MULTI: {
+				ODataTypeMulti oDataTypeMulti = (ODataTypeMulti)theEObject;
+				T result = caseODataTypeMulti(oDataTypeMulti);
+				if (result == null) result = caseODataType(oDataTypeMulti);
+				if (result == null) result = caseOFeature(oDataTypeMulti);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,43 +167,9 @@ public class OopSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OopPackage.OLOOP: {
-				OLoop oLoop = (OLoop)theEObject;
-				T result = caseOLoop(oLoop);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case OopPackage.OFOR: {
-				OFor oFor = (OFor)theEObject;
-				T result = caseOFor(oFor);
-				if (result == null) result = caseOLoop(oFor);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case OopPackage.OSTATEMENT: {
 				OStatement oStatement = (OStatement)theEObject;
 				T result = caseOStatement(oStatement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case OopPackage.ORETURN_STATEMENT: {
-				OReturnStatement oReturnStatement = (OReturnStatement)theEObject;
-				T result = caseOReturnStatement(oReturnStatement);
-				if (result == null) result = caseOStatement(oReturnStatement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case OopPackage.OVARRIABLE_CREATE_STATEMENT: {
-				OVarriableCreateStatement oVarriableCreateStatement = (OVarriableCreateStatement)theEObject;
-				T result = caseOVarriableCreateStatement(oVarriableCreateStatement);
-				if (result == null) result = caseOStatement(oVarriableCreateStatement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case OopPackage.OMETHOD_CALL_STATEMENT: {
-				OMethodCallStatement oMethodCallStatement = (OMethodCallStatement)theEObject;
-				T result = caseOMethodCallStatement(oMethodCallStatement);
-				if (result == null) result = caseOStatement(oMethodCallStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,6 +223,36 @@ public class OopSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>OClass Import</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>OClass Import</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOClassImport(OClassImport object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>OClass Implement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>OClass Implement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOClassImplement(OClassImplement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>OFeature</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -243,6 +283,36 @@ public class OopSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>OReference Multi</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>OReference Multi</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOReferenceMulti(OReferenceMulti object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>OReference Single</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>OReference Single</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOReferenceSingle(OReferenceSingle object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>OData Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -254,6 +324,36 @@ public class OopSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseODataType(ODataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>OData Type Single</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>OData Type Single</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseODataTypeSingle(ODataTypeSingle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>OData Type Multi</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>OData Type Multi</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseODataTypeMulti(ODataTypeMulti object) {
 		return null;
 	}
 
@@ -303,36 +403,6 @@ public class OopSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OLoop</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OLoop</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOLoop(OLoop object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OFor</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OFor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOFor(OFor object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>OStatement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -344,51 +414,6 @@ public class OopSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOStatement(OStatement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OReturn Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OReturn Statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOReturnStatement(OReturnStatement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OVarriable Create Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OVarriable Create Statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOVarriableCreateStatement(OVarriableCreateStatement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OMethod Call Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OMethod Call Statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOMethodCallStatement(OMethodCallStatement object) {
 		return null;
 	}
 

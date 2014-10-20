@@ -4,6 +4,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.ArrayList;
 import java.util.List;
+import deneme.model.Edge;
 
 public class Graph {
 	private String name;

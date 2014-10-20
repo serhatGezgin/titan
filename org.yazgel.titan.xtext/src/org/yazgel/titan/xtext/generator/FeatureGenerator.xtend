@@ -60,7 +60,7 @@ class FeatureGenerator extends BaseGenerator {
 		«IF ref.many»
 			«IF ref.featureParentAsEntity.allBannedFeatures.contains(ref)»
 				public Set<«ref.reference.name»> «ref.gettername»() {
-				return «ref.name»;
+					return «ref.name»;
 				}
 
 				public void «ref.settername»(TreeSet<«ref.reference.name»> «ref.name») {

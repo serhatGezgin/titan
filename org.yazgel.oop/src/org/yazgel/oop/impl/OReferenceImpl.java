@@ -26,7 +26,7 @@ import org.yazgel.oop.OopPackage;
  *
  * @generated
  */
-public class OReferenceImpl extends OFeatureImpl implements OReference {
+public abstract class OReferenceImpl extends OFeatureImpl implements OReference {
 	/**
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -60,18 +60,16 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 			case OopPackage.OMODEL: return createOModel();
 			case OopPackage.OPACKAGE: return createOPackage();
 			case OopPackage.OCLASS: return createOClass();
-			case OopPackage.OFEATURE: return createOFeature();
-			case OopPackage.OREFERENCE: return createOReference();
-			case OopPackage.ODATA_TYPE: return createODataType();
+			case OopPackage.OCLASS_IMPORT: return createOClassImport();
+			case OopPackage.OCLASS_IMPLEMENT: return createOClassImplement();
+			case OopPackage.OREFERENCE_MULTI: return createOReferenceMulti();
+			case OopPackage.OREFERENCE_SINGLE: return createOReferenceSingle();
+			case OopPackage.ODATA_TYPE_SINGLE: return createODataTypeSingle();
+			case OopPackage.ODATA_TYPE_MULTI: return createODataTypeMulti();
 			case OopPackage.OMETHOD: return createOMethod();
 			case OopPackage.OCONSTRUCTOR: return createOConstructor();
 			case OopPackage.OPARAMETER: return createOParameter();
-			case OopPackage.OLOOP: return createOLoop();
-			case OopPackage.OFOR: return createOFor();
 			case OopPackage.OSTATEMENT: return createOStatement();
-			case OopPackage.ORETURN_STATEMENT: return createOReturnStatement();
-			case OopPackage.OVARRIABLE_CREATE_STATEMENT: return createOVarriableCreateStatement();
-			case OopPackage.OMETHOD_CALL_STATEMENT: return createOMethodCallStatement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -87,6 +85,8 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 		switch (eDataType.getClassifierID()) {
 			case OopPackage.ODATA_TYPES:
 				return createODataTypesFromString(eDataType, initialValue);
+			case OopPackage.MULTI_OFEATURE_TYPES:
+				return createMultiOFeatureTypesFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -102,6 +102,8 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 		switch (eDataType.getClassifierID()) {
 			case OopPackage.ODATA_TYPES:
 				return convertODataTypesToString(eDataType, instanceValue);
+			case OopPackage.MULTI_OFEATURE_TYPES:
+				return convertMultiOFeatureTypesToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -142,9 +144,9 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OFeature createOFeature() {
-		OFeatureImpl oFeature = new OFeatureImpl();
-		return oFeature;
+	public OClassImport createOClassImport() {
+		OClassImportImpl oClassImport = new OClassImportImpl();
+		return oClassImport;
 	}
 
 	/**
@@ -152,9 +154,9 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OReference createOReference() {
-		OReferenceImpl oReference = new OReferenceImpl();
-		return oReference;
+	public OClassImplement createOClassImplement() {
+		OClassImplementImpl oClassImplement = new OClassImplementImpl();
+		return oClassImplement;
 	}
 
 	/**
@@ -162,9 +164,39 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ODataType createODataType() {
-		ODataTypeImpl oDataType = new ODataTypeImpl();
-		return oDataType;
+	public OReferenceMulti createOReferenceMulti() {
+		OReferenceMultiImpl oReferenceMulti = new OReferenceMultiImpl();
+		return oReferenceMulti;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OReferenceSingle createOReferenceSingle() {
+		OReferenceSingleImpl oReferenceSingle = new OReferenceSingleImpl();
+		return oReferenceSingle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ODataTypeSingle createODataTypeSingle() {
+		ODataTypeSingleImpl oDataTypeSingle = new ODataTypeSingleImpl();
+		return oDataTypeSingle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ODataTypeMulti createODataTypeMulti() {
+		ODataTypeMultiImpl oDataTypeMulti = new ODataTypeMultiImpl();
+		return oDataTypeMulti;
 	}
 
 	/**
@@ -202,59 +234,9 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OLoop createOLoop() {
-		OLoopImpl oLoop = new OLoopImpl();
-		return oLoop;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OFor createOFor() {
-		OForImpl oFor = new OForImpl();
-		return oFor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public OStatement createOStatement() {
 		OStatementImpl oStatement = new OStatementImpl();
 		return oStatement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OReturnStatement createOReturnStatement() {
-		OReturnStatementImpl oReturnStatement = new OReturnStatementImpl();
-		return oReturnStatement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OVarriableCreateStatement createOVarriableCreateStatement() {
-		OVarriableCreateStatementImpl oVarriableCreateStatement = new OVarriableCreateStatementImpl();
-		return oVarriableCreateStatement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OMethodCallStatement createOMethodCallStatement() {
-		OMethodCallStatementImpl oMethodCallStatement = new OMethodCallStatementImpl();
-		return oMethodCallStatement;
 	}
 
 	/**
@@ -274,6 +256,26 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * @generated
 	 */
 	public String convertODataTypesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MultiOFeatureTypes createMultiOFeatureTypesFromString(EDataType eDataType, String initialValue) {
+		MultiOFeatureTypes result = MultiOFeatureTypes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMultiOFeatureTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

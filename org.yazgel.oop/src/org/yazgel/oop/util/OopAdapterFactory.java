@@ -80,6 +80,14 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 				return createOClassAdapter();
 			}
 			@Override
+			public Adapter caseOClassImport(OClassImport object) {
+				return createOClassImportAdapter();
+			}
+			@Override
+			public Adapter caseOClassImplement(OClassImplement object) {
+				return createOClassImplementAdapter();
+			}
+			@Override
 			public Adapter caseOFeature(OFeature object) {
 				return createOFeatureAdapter();
 			}
@@ -88,8 +96,24 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 				return createOReferenceAdapter();
 			}
 			@Override
+			public Adapter caseOReferenceMulti(OReferenceMulti object) {
+				return createOReferenceMultiAdapter();
+			}
+			@Override
+			public Adapter caseOReferenceSingle(OReferenceSingle object) {
+				return createOReferenceSingleAdapter();
+			}
+			@Override
 			public Adapter caseODataType(ODataType object) {
 				return createODataTypeAdapter();
+			}
+			@Override
+			public Adapter caseODataTypeSingle(ODataTypeSingle object) {
+				return createODataTypeSingleAdapter();
+			}
+			@Override
+			public Adapter caseODataTypeMulti(ODataTypeMulti object) {
+				return createODataTypeMultiAdapter();
 			}
 			@Override
 			public Adapter caseOMethod(OMethod object) {
@@ -104,28 +128,8 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 				return createOParameterAdapter();
 			}
 			@Override
-			public Adapter caseOLoop(OLoop object) {
-				return createOLoopAdapter();
-			}
-			@Override
-			public Adapter caseOFor(OFor object) {
-				return createOForAdapter();
-			}
-			@Override
 			public Adapter caseOStatement(OStatement object) {
 				return createOStatementAdapter();
-			}
-			@Override
-			public Adapter caseOReturnStatement(OReturnStatement object) {
-				return createOReturnStatementAdapter();
-			}
-			@Override
-			public Adapter caseOVarriableCreateStatement(OVarriableCreateStatement object) {
-				return createOVarriableCreateStatementAdapter();
-			}
-			@Override
-			public Adapter caseOMethodCallStatement(OMethodCallStatement object) {
-				return createOMethodCallStatementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -190,6 +194,34 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OClassImport <em>OClass Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.yazgel.oop.OClassImport
+	 * @generated
+	 */
+	public Adapter createOClassImportAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OClassImplement <em>OClass Implement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.yazgel.oop.OClassImplement
+	 * @generated
+	 */
+	public Adapter createOClassImplementAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OFeature <em>OFeature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -218,6 +250,34 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OReferenceMulti <em>OReference Multi</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.yazgel.oop.OReferenceMulti
+	 * @generated
+	 */
+	public Adapter createOReferenceMultiAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OReferenceSingle <em>OReference Single</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.yazgel.oop.OReferenceSingle
+	 * @generated
+	 */
+	public Adapter createOReferenceSingleAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.ODataType <em>OData Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -228,6 +288,34 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createODataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.ODataTypeSingle <em>OData Type Single</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.yazgel.oop.ODataTypeSingle
+	 * @generated
+	 */
+	public Adapter createODataTypeSingleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.ODataTypeMulti <em>OData Type Multi</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.yazgel.oop.ODataTypeMulti
+	 * @generated
+	 */
+	public Adapter createODataTypeMultiAdapter() {
 		return null;
 	}
 
@@ -274,34 +362,6 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OLoop <em>OLoop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.yazgel.oop.OLoop
-	 * @generated
-	 */
-	public Adapter createOLoopAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OFor <em>OFor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.yazgel.oop.OFor
-	 * @generated
-	 */
-	public Adapter createOForAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OStatement <em>OStatement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -312,48 +372,6 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOStatementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OReturnStatement <em>OReturn Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.yazgel.oop.OReturnStatement
-	 * @generated
-	 */
-	public Adapter createOReturnStatementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OVarriableCreateStatement <em>OVarriable Create Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.yazgel.oop.OVarriableCreateStatement
-	 * @generated
-	 */
-	public Adapter createOVarriableCreateStatementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OMethodCallStatement <em>OMethod Call Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.yazgel.oop.OMethodCallStatement
-	 * @generated
-	 */
-	public Adapter createOMethodCallStatementAdapter() {
 		return null;
 	}
 

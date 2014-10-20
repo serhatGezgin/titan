@@ -1,12 +1,12 @@
 module deneme Nested Functions
 
 package deneme{
-	    
+	     
 	entity University{
 		var universityName String  
 		var universityStudents Student[]
 		var universityCourses Course[]
-	}        
+	}          
 	  
 	entity Student{
 		var studentCode String

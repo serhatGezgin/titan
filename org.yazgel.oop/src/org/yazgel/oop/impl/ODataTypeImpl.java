@@ -25,7 +25,7 @@ import org.yazgel.oop.OopPackage;
  *
  * @generated
  */
-public class ODataTypeImpl extends OFeatureImpl implements ODataType {
+public abstract class ODataTypeImpl extends OFeatureImpl implements ODataType {
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
