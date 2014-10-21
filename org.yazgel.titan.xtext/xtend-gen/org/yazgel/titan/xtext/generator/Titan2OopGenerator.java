@@ -32,7 +32,7 @@ import org.yazgel.oop.OReferenceMulti;
 import org.yazgel.oop.OReferenceSingle;
 import org.yazgel.oop.OStatement;
 import org.yazgel.oop.impl.OopFactoryImpl;
-import org.yazgel.titan.xtext.generator.BaseGenerator2;
+import org.yazgel.titan.xtext.generator.BaseGenerator;
 import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.DataTypes;
 import org.yazgel.titan.xtext.titan.Entity;
@@ -993,7 +993,7 @@ public class Titan2OopGenerator {
         OClass modelOc = ((OClass) _value);
         HashSet<String> importSet = CollectionLiterals.<String>newHashSet();
         StringConcatenation _builder = new StringConcatenation();
-        String _oClassPackageName = BaseGenerator2.oClassPackageName(modelOc);
+        String _oClassPackageName = BaseGenerator.oClassPackageName(modelOc);
         _builder.append(_oClassPackageName, "");
         _builder.append(".");
         String _name_1 = modelOc.getName();
@@ -1004,7 +1004,7 @@ public class Titan2OopGenerator {
           if ((f instanceof OReference)) {
             StringConcatenation _builder_1 = new StringConcatenation();
             OClass _reference = ((OReference)f).getReference();
-            String _oClassPackageName_1 = BaseGenerator2.oClassPackageName(_reference);
+            String _oClassPackageName_1 = BaseGenerator.oClassPackageName(_reference);
             _builder_1.append(_oClassPackageName_1, "");
             _builder_1.append(".");
             OClass _reference_1 = ((OReference)f).getReference();
@@ -1024,7 +1024,7 @@ public class Titan2OopGenerator {
               EObject _key_1 = _get_1.getKey();
               OClass builderOfReferenceOclass = ((OClass) _key_1);
               StringConcatenation _builder_2 = new StringConcatenation();
-              String _oClassPackageName_2 = BaseGenerator2.oClassPackageName(builderOfReferenceOclass);
+              String _oClassPackageName_2 = BaseGenerator.oClassPackageName(builderOfReferenceOclass);
               _builder_2.append(_oClassPackageName_2, "");
               _builder_2.append(".");
               String _name_3 = builderOfReferenceOclass.getName();

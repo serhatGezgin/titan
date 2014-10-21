@@ -3,185 +3,34 @@ package org.yazgel.titan.xtext.generator
 import java.util.List
 import java.util.Stack
 import org.eclipse.emf.ecore.EObject
-import org.yazgel.titan.xtext.titan.DataType
-import org.yazgel.titan.xtext.titan.Entity
-import org.yazgel.titan.xtext.titan.Feature
-import org.yazgel.titan.xtext.titan.Module
-import org.yazgel.titan.xtext.titan.Package
-import org.yazgel.titan.xtext.titan.Reference
-import java.util.ArrayList
+import org.yazgel.oop.OClass
+import org.yazgel.oop.OPackage
 
 class BaseGenerator {
 
 	/* Base Package hatirlanmasi gerek. */
-	protected static Package basePackage;
+	protected static OPackage basePackage;
 
-	protected def entityFileName(Entity e) {
-		val p = e.packageNameList
-		p.add('model')
-		p.join('/') + '/' + e.name + '.java'
-	}
-
-	protected def entityBuilderFileName(Entity e) {
-		val p = e.packageNameList
-		p.add('model')
-		p.add('builder')
-		p.join('/') + '/' + 'Nested' + e.name + 'Builder' + '.java'
-	}
-	
-	protected def entityBuilderClassName(Entity e) {
-		'Nested' + e.name + 'Builder'
+	protected def oClassFileName(OClass oc) {
+		val p = oc.packageNameList
+		p.join('/') + '/' + oc.name + '.java'
 	}
 
-	protected def entityPackageName(Entity e) {
-		val p = e.packageNameList
-		p.add('model')
-		p.join('.')
-	}
-	
-	protected def entityBuilderPackageName(Entity e) {
-		val p = e.packageNameList
-		p.add('model')
-		p.add('builder')
-		p.join('.')
-	}
-
-	protected def packageNameList(Entity e) {
+	protected static def packageNameList(OClass oc) {
 		val list = newArrayList
-		var pack = e.eContainer as Package
+		var pack = oc.eContainer as OPackage
 
 		list.addAll(pack.name.split('\\.'))
 
 		list
 	}
 
-	protected def isLastFeature(List<Feature> features, Feature f) {
-		features.last.equals(f)
+	protected static def oClassPackageName(OClass oc) {
+		val p = oc.packageNameList
+		p.join('.')
 	}
 	
-	protected def allBannedFeatures(Entity e) {
-		var list = newArrayList
-		
-		var module = e.moduleFromEntity
-		for(Package p : module.packages){
-			for(Entity entity : p.allEntities){
-				for(Feature f : entity.features){
-					if(f instanceof Reference && (f as Reference).opposite != null){
-						list.add((f as Reference).opposite)						
-					}
-				}
-			}
-		}
-		
-		list
-	}
-	
-	protected def allBannedFeaturesEntities(Entity e) {
-		var list = newArrayList
-		
-		var module = e.moduleFromEntity
-		for(Package p : module.packages){
-			for(Entity entity : p.allEntities){
-				for(Feature f : entity.features){
-					if(e.allBannedFeatures.contains(f)){
-						if(!list.contains(entity)){
-							list.add(entity)
-						}
-					}
-				}
-			}
-		}
-		
-		list
-	}
-	
-	protected def allBannedFeaturesReleationEntities(Entity e) {
-		var list = newArrayList
-		
-		var module = e.moduleFromEntity
-		for(Package p : module.packages){
-			for(Entity entity : p.allEntities){
-				for(Feature f : entity.features){
-					if(e.allBannedFeatures.contains(f)){
-						if(!list.contains(entity)){
-							list.add((f as Reference).reference)
-						}
-					}
-				}
-			}
-		}
-		
-		list
-	}
-	
-	protected def entityBuilderConstructorLegalFeatures(Entity e){
-		var bannedReferences = e.allBannedFeatures
-		var legalFeatureList = new ArrayList
-		
-		for(f : e.features){
-			if(!bannedReferences.contains(f)){
-				legalFeatureList.add(f)
-			}
-		}
-		
-		legalFeatureList
-	}
-
-	protected def entityImportStatements(Entity e) {
-		var importString = ""
-		
-		if(e.allBannedFeaturesEntities.contains(e)){
-			importString += '''
-			import java.util.Set;
-			import java.util.TreeSet;
-			'''
-		}
-		
-		for (Feature f : e.features) {
-			if (f instanceof Reference && f.many) {
-				importString += '''
-					import java.util.ArrayList;
-					import java.util.List;
-				'''
-				return importString
-			}
-		}
-		importString
-	}
-	
-	protected def entityBuilderImportStatements(Entity e) {
-		var importString = ""
-		val list = newArrayList
-		
-		importString += "import " + e.entityPackageName + "." + e.name + ";"
-		importString += "\n"
-		list.add(e)
-		
-		for (Feature f : e.features) {
-			if (f instanceof Reference && !list.contains((f as Reference).reference)) {				
-				importString += "import " + (f as Reference).reference.entityPackageName + "." + (f as Reference).reference.name + ";"
-				importString += "\n"
-				list.add((f as Reference).reference)
-				if(!(f as Reference).many){
-					importString += "import " + (f as Reference).reference.entityBuilderPackageName + "." + (f as Reference).reference.entityBuilderClassName+ ";"
-					importString += "\n"
-				}
-			}
-		}
-		
-		for (Feature f : e.features) {
-			if (f instanceof Reference && f.many) {
-				importString += "import java.util.Arrays;"
-				importString += "import java.util.List;"
-				
-				return importString
-			}
-		}	
-		
-		importString
-	}
-
-	protected def List<Entity> allEntities(Package p) {
+	protected def List<OClass> allOClasses(OPackage p) {
 		val list = newArrayList
 		var Stack<EObject> stack = new Stack
 		stack.push(p)
@@ -189,76 +38,14 @@ class BaseGenerator {
 		while (!stack.isEmpty) {
 			var item = stack.pop
 
-			if (item instanceof Package) {
-				stack.addAll(item.entities)
-			} else if (item instanceof Entity) {
+			if (item instanceof OPackage) {
+				stack.addAll(item.classes)
+			} else if (item instanceof OClass) {
 				list.add(item)
 			}
 		}
 
 		list
 	}
-	
-	protected def List<Entity> allEntities(Module m) {
-		val list = newArrayList
-		var Stack<EObject> stack = new Stack
 		
-		for(Package p : m.packages){
-			stack.push(p)	
-		}
-
-		while (!stack.isEmpty) {
-			var item = stack.pop
-
-			if (item instanceof Package) {
-				stack.addAll(item.entities)
-			} else if (item instanceof Entity) {
-				list.add(item)
-			}
-		}
-
-		list
-	}
-
-	protected def gettername(Feature f) {
-		'get' + f.name.toFirstUpper
-	}
-
-	protected def settername(Feature f) {
-		'set' + f.name.toFirstUpper
-	}
-	
-	protected dispatch def addername(Feature f) {
-	}
-	
-	protected dispatch def addername(DataType f) {
-		'add' + f.type.toString.toFirstUpper
-	}
-	
-	protected dispatch def addername(Reference f) {
-		'add' + f.reference.name.toFirstUpper
-	}
-	
-	protected dispatch def adderParemetername(Feature f) {
-	}
-	
-	protected dispatch def adderParemetername(DataType f) {
-		f.type.toString.toFirstLower
-	}
-	
-	protected dispatch def adderParemetername(Reference f) {
-		f.reference.name.toFirstLower
-	}
-
-	protected def getFeatureParentAsEntity(Feature f) {
-		f.eContainer as Entity
-	}
-	
-	protected def getDataTypeParent(DataType r) {
-		r.eContainer as Entity
-	}
-	
-	protected def getModuleFromEntity(Entity e) {
-		(e.eContainer).eContainer as Module
-	}
 }

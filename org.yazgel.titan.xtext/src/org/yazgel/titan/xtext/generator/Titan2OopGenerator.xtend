@@ -432,15 +432,15 @@ class Titan2OopGenerator {
 
 			var importSet = newHashSet()
 
-			importSet.add('''«BaseGenerator2.oClassPackageName(modelOc)».«modelOc.name»''')
+			importSet.add('''«BaseGenerator.oClassPackageName(modelOc)».«modelOc.name»''')
 			for (OFeature f : modelOc.features) {
 				if (f instanceof OReference) {
-					importSet.add('''«BaseGenerator2.oClassPackageName(f.reference)».«f.reference.name»''')
+					importSet.add('''«BaseGenerator.oClassPackageName(f.reference)».«f.reference.name»''')
 					if (f instanceof OReferenceSingle) {
 						var builderOfReferenceOclass = modelBuilderReleations.filter[p1, p2|p2.equals(f.reference)].
 							entrySet.get(0).key as OClass
 						importSet.add(
-							'''«BaseGenerator2.oClassPackageName(builderOfReferenceOclass)».«builderOfReferenceOclass.
+							'''«BaseGenerator.oClassPackageName(builderOfReferenceOclass)».«builderOfReferenceOclass.
 								name»''')
 					} else if (f instanceof OReferenceMulti) {
 						importSet.add('''java.util.Arrays''')
