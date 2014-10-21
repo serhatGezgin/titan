@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.yazgel.oop.OPackage#getName <em>Name</em>}</li>
  *   <li>{@link org.yazgel.oop.OPackage#getClasses <em>Classes</em>}</li>
+ *   <li>{@link org.yazgel.oop.OPackage#getPackages <em>Packages</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,5 +66,21 @@ public interface OPackage extends EObject {
 	 * @generated
 	 */
 	EList<OClass> getClasses();
+
+	/**
+	 * Returns the value of the '<em><b>Packages</b></em>' containment reference list.
+	 * The list contents are of type {@link org.yazgel.oop.OPackage}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Packages</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Packages</em>' containment reference list.
+	 * @see org.yazgel.oop.OopPackage#getOPackage_Packages()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<OPackage> getPackages();
 
 } // OPackage

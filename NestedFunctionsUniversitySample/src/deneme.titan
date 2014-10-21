@@ -1,6 +1,6 @@
 module deneme Nested Functions
 
-package deneme{
+package deneme.model{
 	     
 	entity University{
 		var universityName String  

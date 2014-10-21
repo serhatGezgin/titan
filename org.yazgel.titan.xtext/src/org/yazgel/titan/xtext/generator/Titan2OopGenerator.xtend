@@ -1,34 +1,33 @@
 package org.yazgel.titan.xtext.generator
 
+import java.util.HashMap
+import java.util.Map
+import org.eclipse.emf.ecore.EObject
 import org.yazgel.oop.OClass
 import org.yazgel.oop.ODataType
-import org.yazgel.oop.ODataTypes
+import org.yazgel.oop.ODataTypeMulti
+import org.yazgel.oop.ODataTypeSingle
+import org.yazgel.oop.OFeature
 import org.yazgel.oop.OModel
 import org.yazgel.oop.OPackage
 import org.yazgel.oop.OReference
+import org.yazgel.oop.OReferenceMulti
+import org.yazgel.oop.OReferenceSingle
 import org.yazgel.oop.impl.OopFactoryImpl
 import org.yazgel.titan.xtext.titan.DataType
 import org.yazgel.titan.xtext.titan.DataTypes
 import org.yazgel.titan.xtext.titan.Entity
+import org.yazgel.titan.xtext.titan.Feature
 import org.yazgel.titan.xtext.titan.Module
 import org.yazgel.titan.xtext.titan.Package
 import org.yazgel.titan.xtext.titan.Reference
-import org.yazgel.titan.xtext.titan.Feature
-import org.yazgel.oop.OFeature
-import java.util.HashMap
-import org.eclipse.emf.ecore.EObject
-import java.util.Map
-import org.yazgel.oop.OReferenceMulti
-import org.yazgel.oop.MultiOFeatureTypes
-import org.yazgel.oop.ODataTypeMulti
-import org.yazgel.oop.OReferenceSingle
-import org.yazgel.oop.ODataTypeSingle
 
 class Titan2OopGenerator {
 
 	//From model, To Model &&
 	//To model, From Model
 	public static Map<EObject, EObject> transformationReleations = new HashMap<EObject, EObject>();
+	public static Map<EObject, EObject> modelBuilderReleations = new HashMap<EObject, EObject>();
 
 	def OModel doGenerate(Module module) {
 
@@ -63,10 +62,8 @@ class Titan2OopGenerator {
 
 	def OClass generate(Entity entity) {
 		var oClass = OopFactoryImpl.eINSTANCE.createOClass
-		var oClassImport = OopFactoryImpl.eINSTANCE.createOClassImport
 
 		oClass.name = entity.name
-		oClass.imports = oClassImport
 		transformationReleations.put(entity, oClass)
 		transformationReleations.put(oClass, entity)
 
@@ -84,22 +81,15 @@ class Titan2OopGenerator {
 		var ODataType data;
 		if (dt.many) {
 			data = OopFactoryImpl.eINSTANCE.createODataTypeMulti;
-			(data as ODataTypeMulti).multiType = MultiOFeatureTypes.ARRAY;
+			data.type = '''List<«dt.type»>'''
 		} else {
 			data = OopFactoryImpl.eINSTANCE.createODataTypeSingle
+			data.type = '''«dt.type»'''
 		}
 
 		data.name = dt.name
 		transformationReleations.put(dt, data)
 		transformationReleations.put(data, dt)
-
-		switch dt.type {
-			case DataTypes.BOOLEAN: data.type = ODataTypes.BOOLEAN
-			case DataTypes.DOUBLE: data.type = ODataTypes.DOUBLE
-			case DataTypes.INTEGER: data.type = ODataTypes.INTEGER
-			case DataTypes.LONG: data.type = ODataTypes.LONG
-			case DataTypes.STRING: data.type = ODataTypes.STRING
-		}
 
 		data
 	}
@@ -108,9 +98,10 @@ class Titan2OopGenerator {
 		var OReference ref;
 		if (r.many) {
 			ref = OopFactoryImpl.eINSTANCE.createOReferenceMulti;
-			(ref as OReferenceMulti).multiType = MultiOFeatureTypes.ARRAY_LIST;
+			ref.type = '''List<«r.reference.name»>'''
 		} else {
 			ref = OopFactoryImpl.eINSTANCE.createOReferenceSingle
+			ref.type = r.reference.name
 		}
 
 		ref.name = r.name
@@ -126,7 +117,9 @@ class Titan2OopGenerator {
 		var releationsOfReferences = transformationReleations.filter[p1, p2|p1 instanceof Reference]
 		for (e : releationsOfReferences.entrySet) {
 			var or = transformationReleations.get((e.key as Reference).reference) as OClass;
+			var oo = transformationReleations.get((e.key as Reference).opposite) as OReference;
 			(e.value as OReference).reference = or;
+			(e.value as OReference).opposite = oo;
 		}
 
 		//2-Unique referances must be set (opposite releations = unique releations)
@@ -135,34 +128,38 @@ class Titan2OopGenerator {
 		for (e : oppositeReferences.entrySet) {
 			var or = transformationReleations.get((e.key as Reference).opposite) as OReferenceMulti
 			or.uniqueInstance = true;
-			or.multiType = MultiOFeatureTypes.TREE_SET
+			or.type = '''Set<«or.reference.name»>'''
 		}
 
 		//3-Import Statements must be added after generated model classes
 		for (e : releationsOfReferences.entrySet) {
-			var reference = e.key as Reference
+
 			var oReference = e.value as OReference
 			var oClass = e.value.eContainer as OClass
 
-			oClass.imports.importsFromDomain.add(transformationReleations.get(reference.reference) as OClass)
 			if (oReference instanceof OReferenceMulti) {
 				if ((oReference as OReferenceMulti).uniqueInstance) {
-					oClass.imports.imports.add("java.util.Set");
-					oClass.imports.imports.add("java.util.TreeSet");
+					oClass.imports.add("java.util.Set");
+					oClass.imports.add("java.util.TreeSet");
 				} else {
-					oClass.imports.imports.add("java.util.List");
-					oClass.imports.imports.add("java.util.ArrayList");
+					oClass.imports.add("java.util.List");
+					oClass.imports.add("java.util.ArrayList");
 				}
 			}
 		}
 
-		//4-Implement String Statements must be added after generated model classes
-		var oClasesWithUniqueInstanceOFeatures = transformationReleations.filter[p1, p2|
+		//4-Implement String Statements must be added after generated model classes  
+		var oClasesWithUniqueInstanceOFeatures = transformationReleations.filter [ p1, p2 |
 			p1 instanceof OClass && (p1 as OClass).features.filter[f|
-				f instanceof OReferenceMulti && (f as OReferenceMulti).uniqueInstance].size > 0]
+				f instanceof OReferenceMulti && (f as OReferenceMulti).uniqueInstance].size > 0
+		]
 		for (e : oClasesWithUniqueInstanceOFeatures.entrySet) {
 			var oClass = e.key as OClass
-			oClass.implements.implementsString.add("Comparable");
+			for (f : oClass.features) {
+				if (f instanceof OReferenceMulti && (f as OReferenceMulti).uniqueInstance)
+					(f as OReferenceMulti).reference.implements.add(
+						'''Comparable<«(f as OReferenceMulti).reference.name»>''');
+			}
 		}
 
 		//5.1- First Constructors must be added after generated model classes
@@ -208,14 +205,14 @@ class Titan2OopGenerator {
 				if (of instanceof ODataTypeSingle) {
 					param.type = '''«of.type»'''
 				} else if (of instanceof ODataTypeMulti) {
-					param.type = '''«of.type»[]'''
+					param.type = '''ArrayList<«of.type»>'''
 				} else if (of instanceof OReferenceSingle) {
 					param.type = '''«of.reference.name»'''
 				} else if (of instanceof OReferenceMulti) {
 					if (of.uniqueInstance) {
 						param.type = '''TreeSet<«of.reference.name»>'''
 					} else {
-						param.type = '''List<«of.reference.name»>'''
+						param.type = '''ArrayList<«of.reference.name»>'''
 					}
 				}
 				oConst.parameters.add(param)
@@ -257,7 +254,7 @@ class Titan2OopGenerator {
 
 					var parameter = OopFactoryImpl.eINSTANCE.createOParameter
 					parameter.name = dt.name.toFirstLower
-					parameter.type = dt.type.literal
+					parameter.type = dt.type
 					method.parameters.add(parameter)
 
 					var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -280,7 +277,7 @@ class Titan2OopGenerator {
 				//getter
 				var gmethod = OopFactoryImpl.eINSTANCE.createOMethod
 				gmethod.name = '''get«d.name.toFirstUpper»'''
-				gmethod.returnType = '''«d.type.literal»«IF d instanceof ODataTypeMulti»[]«ENDIF»'''
+				gmethod.returnType = '''«d.type»«IF d instanceof ODataTypeMulti»[]«ENDIF»'''
 
 				var statement = OopFactoryImpl.eINSTANCE.createOStatement
 				statement.content = '''return this.«d.name»;'''
@@ -294,7 +291,7 @@ class Titan2OopGenerator {
 
 				var sparameter = OopFactoryImpl.eINSTANCE.createOParameter
 				sparameter.name = d.name.toFirstLower
-				sparameter.type = d.type.literal
+				sparameter.type = d.type
 				smethod.parameters.add(sparameter)
 
 				statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -335,7 +332,7 @@ class Titan2OopGenerator {
 					if (f.uniqueInstance)
 						sparameter.type = '''TreeSet<«f.reference.name»>'''
 					else
-						sparameter.type = '''List<«f.reference.name»>'''
+						sparameter.type = '''ArrayList<«f.reference.name»>'''
 				} else {
 					sparameter.type = '''«f.reference.name»'''
 				}
@@ -349,7 +346,7 @@ class Titan2OopGenerator {
 			}
 		}
 
-		//7- COmpareTo must be added
+		//7- CompareTo must be added
 		for (e : oClasses.entrySet) {
 			var oc = e.key as OClass
 			for (OFeature of : oc.features.filter[of|
@@ -360,7 +357,7 @@ class Titan2OopGenerator {
 				var cmethod = OopFactoryImpl.eINSTANCE.createOMethod
 				cmethod.name = '''compareTo'''
 				cmethod.returnType = '''int'''
-				cmethod.isOverride = true
+				cmethod.override = true
 
 				var sparameter = OopFactoryImpl.eINSTANCE.createOParameter
 				sparameter.name = '''o'''
@@ -376,25 +373,25 @@ class Titan2OopGenerator {
 					int comparison;
 					
 					if (this == o) return EQUAL;			
-					«FOR f : oc.features»
-						«IF f instanceof DataType»
-							«IF f.type.equals(DataTypes.STRING)»
+					«FOR f : ref.reference.features»
+						«IF f instanceof ODataType»
+							«IF f.type.equals(DataTypes.STRING.literal)»
 								//Strings follow this form
 								comparison = this.get«f.name.toFirstUpper»().compareTo(o.get«f.name.toFirstUpper»());
 								if (comparison != EQUAL) return comparison;
-							«ELSEIF f.type.equals(DataTypes.BOOLEAN)»
+							«ELSEIF f.type.equals(DataTypes.BOOLEAN.literal)»
 								//booleans follow this form
 								if (!this.get«f.name.toFirstUpper» && o.get«f.name.toFirstUpper») return BEFORE;
 								if (this.get«f.name.toFirstUpper» && !o.get«f.name.toFirstUpper») return AFTER;
-							«ELSEIF f.type.equals(DataTypes.DOUBLE)»
+							«ELSEIF f.type.equals(DataTypes.DOUBLE.literal)»
 								//primitive numbers follow this form
 								if (this.get«f.name.toFirstUpper» < o.get«f.name.toFirstUpper») return BEFORE;
 								if (this.get«f.name.toFirstUpper» > o.get«f.name.toFirstUpper») return AFTER;
-							«ELSEIF f.type.equals(DataTypes.INTEGER)»
+							«ELSEIF f.type.equals(DataTypes.INTEGER.literal)»
 								//primitive numbers follow this form
 								if (this.get«f.name.toFirstUpper» < o.get«f.name.toFirstUpper») return BEFORE;
 								if (this.get«f.name.toFirstUpper» > o.get«f.name.toFirstUpper») return AFTER;
-							«ELSEIF f.type.equals(DataTypes.LONG)»
+							«ELSEIF f.type.equals(DataTypes.LONG.literal)»
 								//primitive numbers follow this form
 								if (this.get«f.name.toFirstUpper» < o.get«f.name.toFirstUpper») return BEFORE;
 								if (this.get«f.name.toFirstUpper» > o.get«f.name.toFirstUpper») return AFTER;
@@ -408,7 +405,216 @@ class Titan2OopGenerator {
 				ref.reference.methods.add(cmethod)
 			}
 		}
-		//Entity Finished
-	
+
+		//Model Finished
+		//Model Builder starts
+		//1- Builder Class must be added.
+		var builderPackage = OopFactoryImpl.eINSTANCE.createOPackage
+		builderPackage.name = model.packages.get(0).name + "." + 'builder'
+		model.packages.add(builderPackage)
+
+		for (e : oClasses.entrySet) {
+			var oc = e.key as OClass
+
+			var bc = OopFactoryImpl.eINSTANCE.createOClass
+			bc.name = '''Nested«oc.name»Builder'''
+
+			modelBuilderReleations.put(bc, oc)
+
+			builderPackage.classes.add(bc)
+		}
+
+		//2-Import Statements must be added for builder Class
+		//Burada Builder sınıfları dolaşılır bunlar ayrıca bir mapte tutulmalı.
+		for (e : modelBuilderReleations.entrySet) {
+			var builderOc = e.key as OClass
+			var modelOc = e.value as OClass
+
+			var importSet = newHashSet()
+
+			importSet.add('''«BaseGenerator2.oClassPackageName(modelOc)».«modelOc.name»''')
+			for (OFeature f : modelOc.features) {
+				if (f instanceof OReference) {
+					importSet.add('''«BaseGenerator2.oClassPackageName(f.reference)».«f.reference.name»''')
+					if (f instanceof OReferenceSingle) {
+						var builderOfReferenceOclass = modelBuilderReleations.filter[p1, p2|p2.equals(f.reference)].
+							entrySet.get(0).key as OClass
+						importSet.add(
+							'''«BaseGenerator2.oClassPackageName(builderOfReferenceOclass)».«builderOfReferenceOclass.
+								name»''')
+					} else if (f instanceof OReferenceMulti) {
+						importSet.add('''java.util.Arrays''')
+						importSet.add('''java.util.List''')
+					}
+				}
+			}
+			builderOc.imports.addAll(importSet)
+		}
+
+		//3.Constructors must be added for builder Class
+		for (e : modelBuilderReleations.entrySet) {
+			var builderOc = e.key as OClass
+			var modelOc = e.value as OClass
+
+			var constructor = OopFactoryImpl.eINSTANCE.createOConstructor
+
+			constructor.name = modelOc.name
+			constructor.static = true
+			constructor.returnType = '''«modelOc.name»'''
+
+			var statement = OopFactoryImpl.eINSTANCE.createOStatement
+			var statementContent = '''«modelOc.name» o = new «modelOc.name»();'''
+
+			//Parameters must be set && Statements must be create.
+			var oFeatures = modelOc.features
+			for (OFeature of : oFeatures) {
+				if (of instanceof OReferenceMulti && !(of as OReferenceMulti).uniqueInstance) {
+					statementContent += '''
+						for («(of as OReference).reference.name» r : «of.name») {
+							o.add«(of as OReference).reference.name.toFirstUpper»(r);
+							«FOR f2 : (of as OReference).reference.features»
+								«IF f2 instanceof OReference && (f2 as OReference).opposite != null»
+									«FOR f3 : modelOc.features»
+										«IF f3 instanceof OReference && (f3 as OReference).reference.equals((f2 as OReference).eContainer as OClass)»
+											«IF (f2 instanceof OReferenceMulti)»
+												for(«(f2 as OReference).reference.name» c : r.get«f2.name.toFirstUpper»()){
+													o.add«f2.reference.name»(c);
+												}
+											«ELSE»
+												o.add«(f2 as OReferenceSingle).reference.name»(r.get«f2.name.toFirstUpper»());
+											«ENDIF»
+										«ENDIF»
+									«ENDFOR»
+								«ENDIF»
+							«ENDFOR»
+						}
+					'''
+				} else if (!(of instanceof OReferenceMulti)) {
+					statementContent += '''o.set«of.name.toFirstUpper»(«of.name»);'''
+				}
+
+				if (of instanceof ODataTypeSingle) {
+					var param = OopFactoryImpl.eINSTANCE.createOParameter
+					param.name = of.name
+					param.type = '''«of.type»'''
+					constructor.parameters.add(param)
+				} else if (of instanceof ODataTypeMulti) {
+					var param = OopFactoryImpl.eINSTANCE.createOParameter
+					param.name = of.name
+					param.type = '''List<«of.type»>'''
+					constructor.parameters.add(param)
+				} else if (of instanceof OReferenceSingle) {
+					var param = OopFactoryImpl.eINSTANCE.createOParameter
+					param.name = of.name
+					param.type = '''«of.reference.name»'''
+					constructor.parameters.add(param)
+				} else if (of instanceof OReferenceMulti) {
+					if (!of.uniqueInstance) {
+						var param = OopFactoryImpl.eINSTANCE.createOParameter
+						param.name = of.name
+						param.type = '''List<«of.reference.name»>'''
+						constructor.parameters.add(param)
+					}
+				}
+
+			}
+			statementContent += '''return o;'''
+			statement.content = statementContent
+			constructor.statements.add(statement)
+			builderOc.methods.add(constructor)
+		}
+
+		//4.Builder Static Methods must be added for builder Class
+		for (e : modelBuilderReleations.entrySet) {
+			var builderOc = e.key as OClass
+			var modelOc = e.value as OClass
+
+			//Parameters must be set && Statements must be create.
+			var oFeatures = modelOc.features
+			for (OFeature of : oFeatures) {
+				if (!(of instanceof OReferenceMulti && (of as OReferenceMulti).uniqueInstance)) {
+					var staticOM = OopFactoryImpl.eINSTANCE.createOMethod
+					builderOc.methods.add(staticOM)
+
+					staticOM.static = true
+					staticOM.name = of.name
+
+					if (of instanceof ODataTypeSingle) {
+						var param = OopFactoryImpl.eINSTANCE.createOParameter
+						param.name = of.name
+						param.type = '''«of.type»'''
+						staticOM.parameters.add(param)
+
+						var statement = OopFactoryImpl.eINSTANCE.createOStatement
+						statement.content = '''return «of.name»;'''
+
+						staticOM.returnType = '''«of.type»'''
+						staticOM.statements.add(statement)
+					} else if (of instanceof ODataTypeMulti) {
+						var param = OopFactoryImpl.eINSTANCE.createOParameter
+						param.name = of.name
+						param.type = '''List<«of.type»>'''
+						staticOM.parameters.add(param)
+
+						var statement = OopFactoryImpl.eINSTANCE.createOStatement
+						statement.content = '''return «of.name»;'''
+
+						staticOM.returnType = '''List<«of.type»>'''
+						staticOM.statements.add(statement)
+					} else if (of instanceof OReferenceSingle) {
+
+						//Burada Diğer builder Constructor cagıralacagından bırden fazla parametre olusturulup eklenır.
+						var ref = of.reference
+						for (refFeatures : ref.features) {
+							var param = OopFactoryImpl.eINSTANCE.createOParameter
+							param.name = refFeatures.name
+							if (refFeatures instanceof ODataTypeSingle) {
+								param.type = '''«refFeatures.type»'''
+							} else if (refFeatures instanceof ODataTypeMulti) {
+								param.type = '''List<«refFeatures.type»>'''
+							} else if (refFeatures instanceof OReferenceSingle) {
+								param.type = '''«refFeatures.reference.name»'''
+							} else if (refFeatures instanceof OReferenceMulti) {
+								if (!refFeatures.uniqueInstance) {
+									param.type = '''List<«of.reference.name»>'''
+								}
+							}
+							staticOM.parameters.add(param)
+						}
+						var statement = OopFactoryImpl.eINSTANCE.createOStatement
+						var statementParamString = ""
+						for (p : staticOM.parameters) {
+							statementParamString += '''
+								«p.name»«IF !staticOM.parameters.last.equals(p)», «ENDIF»
+							'''
+						}
+
+						var builderOfReferenceOclass = modelBuilderReleations.filter[p1, p2|p2.equals(of.reference)].
+							entrySet.get(0).key as OClass
+						statement.content = '''return «builderOfReferenceOclass.name».«of.reference.name»(«statementParamString»);'''
+
+						staticOM.returnType = '''«of.reference.name»'''
+						staticOM.statements.add(statement)
+
+					} else if (of instanceof OReferenceMulti) {
+						if (!of.uniqueInstance) {
+							var param = OopFactoryImpl.eINSTANCE.createOParameter
+							param.name = of.name
+							param.type = '''«of.reference.name»...'''
+							staticOM.parameters.add(param)
+
+							var statement = OopFactoryImpl.eINSTANCE.createOStatement
+							statement.content = '''return Arrays.asList(«of.name»);'''
+
+							staticOM.returnType = '''List<«of.reference.name»>'''
+							staticOM.statements.add(statement)
+						}
+					}
+				}
+			}
+		}
+		//Burada static alanlar bosaltılır.
+		modelBuilderReleations.clear
+		transformationReleations.clear
 	}
 }

@@ -31,11 +31,11 @@ import org.yazgel.oop.OopPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.yazgel.oop.impl.OMethodImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.yazgel.oop.impl.OMethodImpl#isIsConst <em>Is Const</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.OMethodImpl#isStatic <em>Static</em>}</li>
  *   <li>{@link org.yazgel.oop.impl.OMethodImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.yazgel.oop.impl.OMethodImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.yazgel.oop.impl.OMethodImpl#getStatements <em>Statements</em>}</li>
- *   <li>{@link org.yazgel.oop.impl.OMethodImpl#isIsOverride <em>Is Override</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.OMethodImpl#isOverride <em>Override</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,24 +63,24 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isIsConst() <em>Is Const</em>}' attribute.
+	 * The default value of the '{@link #isStatic() <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsConst()
+	 * @see #isStatic()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_CONST_EDEFAULT = false;
+	protected static final boolean STATIC_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isIsConst() <em>Is Const</em>}' attribute.
+	 * The cached value of the '{@link #isStatic() <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsConst()
+	 * @see #isStatic()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isConst = IS_CONST_EDEFAULT;
+	protected boolean static_ = STATIC_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
@@ -123,24 +123,24 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 	protected EList<OStatement> statements;
 
 	/**
-	 * The default value of the '{@link #isIsOverride() <em>Is Override</em>}' attribute.
+	 * The default value of the '{@link #isOverride() <em>Override</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsOverride()
+	 * @see #isOverride()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_OVERRIDE_EDEFAULT = false;
+	protected static final boolean OVERRIDE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isIsOverride() <em>Is Override</em>}' attribute.
+	 * The cached value of the '{@link #isOverride() <em>Override</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsOverride()
+	 * @see #isOverride()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isOverride = IS_OVERRIDE_EDEFAULT;
+	protected boolean override = OVERRIDE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,8 +187,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsConst() {
-		return isConst;
+	public boolean isStatic() {
+		return static_;
 	}
 
 	/**
@@ -196,11 +196,11 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsConst(boolean newIsConst) {
-		boolean oldIsConst = isConst;
-		isConst = newIsConst;
+	public void setStatic(boolean newStatic) {
+		boolean oldStatic = static_;
+		static_ = newStatic;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OMETHOD__IS_CONST, oldIsConst, isConst));
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OMETHOD__STATIC, oldStatic, static_));
 	}
 
 	/**
@@ -253,8 +253,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsOverride() {
-		return isOverride;
+	public boolean isOverride() {
+		return override;
 	}
 
 	/**
@@ -262,11 +262,11 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsOverride(boolean newIsOverride) {
-		boolean oldIsOverride = isOverride;
-		isOverride = newIsOverride;
+	public void setOverride(boolean newOverride) {
+		boolean oldOverride = override;
+		override = newOverride;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OMETHOD__IS_OVERRIDE, oldIsOverride, isOverride));
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OMETHOD__OVERRIDE, oldOverride, override));
 	}
 
 	/**
@@ -295,16 +295,16 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 		switch (featureID) {
 			case OopPackage.OMETHOD__NAME:
 				return getName();
-			case OopPackage.OMETHOD__IS_CONST:
-				return isIsConst();
+			case OopPackage.OMETHOD__STATIC:
+				return isStatic();
 			case OopPackage.OMETHOD__RETURN_TYPE:
 				return getReturnType();
 			case OopPackage.OMETHOD__PARAMETERS:
 				return getParameters();
 			case OopPackage.OMETHOD__STATEMENTS:
 				return getStatements();
-			case OopPackage.OMETHOD__IS_OVERRIDE:
-				return isIsOverride();
+			case OopPackage.OMETHOD__OVERRIDE:
+				return isOverride();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -321,8 +321,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 			case OopPackage.OMETHOD__NAME:
 				setName((String)newValue);
 				return;
-			case OopPackage.OMETHOD__IS_CONST:
-				setIsConst((Boolean)newValue);
+			case OopPackage.OMETHOD__STATIC:
+				setStatic((Boolean)newValue);
 				return;
 			case OopPackage.OMETHOD__RETURN_TYPE:
 				setReturnType((String)newValue);
@@ -335,8 +335,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 				getStatements().clear();
 				getStatements().addAll((Collection<? extends OStatement>)newValue);
 				return;
-			case OopPackage.OMETHOD__IS_OVERRIDE:
-				setIsOverride((Boolean)newValue);
+			case OopPackage.OMETHOD__OVERRIDE:
+				setOverride((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -353,8 +353,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 			case OopPackage.OMETHOD__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case OopPackage.OMETHOD__IS_CONST:
-				setIsConst(IS_CONST_EDEFAULT);
+			case OopPackage.OMETHOD__STATIC:
+				setStatic(STATIC_EDEFAULT);
 				return;
 			case OopPackage.OMETHOD__RETURN_TYPE:
 				setReturnType(RETURN_TYPE_EDEFAULT);
@@ -365,8 +365,8 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 			case OopPackage.OMETHOD__STATEMENTS:
 				getStatements().clear();
 				return;
-			case OopPackage.OMETHOD__IS_OVERRIDE:
-				setIsOverride(IS_OVERRIDE_EDEFAULT);
+			case OopPackage.OMETHOD__OVERRIDE:
+				setOverride(OVERRIDE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -382,16 +382,16 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 		switch (featureID) {
 			case OopPackage.OMETHOD__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case OopPackage.OMETHOD__IS_CONST:
-				return isConst != IS_CONST_EDEFAULT;
+			case OopPackage.OMETHOD__STATIC:
+				return static_ != STATIC_EDEFAULT;
 			case OopPackage.OMETHOD__RETURN_TYPE:
 				return RETURN_TYPE_EDEFAULT == null ? returnType != null : !RETURN_TYPE_EDEFAULT.equals(returnType);
 			case OopPackage.OMETHOD__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
 			case OopPackage.OMETHOD__STATEMENTS:
 				return statements != null && !statements.isEmpty();
-			case OopPackage.OMETHOD__IS_OVERRIDE:
-				return isOverride != IS_OVERRIDE_EDEFAULT;
+			case OopPackage.OMETHOD__OVERRIDE:
+				return override != OVERRIDE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -408,12 +408,12 @@ public class OMethodImpl extends MinimalEObjectImpl.Container implements OMethod
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", isConst: ");
-		result.append(isConst);
+		result.append(", static: ");
+		result.append(static_);
 		result.append(", returnType: ");
 		result.append(returnType);
-		result.append(", isOverride: ");
-		result.append(isOverride);
+		result.append(", override: ");
+		result.append(override);
 		result.append(')');
 		return result.toString();
 	}

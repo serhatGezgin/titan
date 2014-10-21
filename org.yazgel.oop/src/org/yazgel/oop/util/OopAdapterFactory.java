@@ -80,14 +80,6 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 				return createOClassAdapter();
 			}
 			@Override
-			public Adapter caseOClassImport(OClassImport object) {
-				return createOClassImportAdapter();
-			}
-			@Override
-			public Adapter caseOClassImplement(OClassImplement object) {
-				return createOClassImplementAdapter();
-			}
-			@Override
 			public Adapter caseOFeature(OFeature object) {
 				return createOFeatureAdapter();
 			}
@@ -190,34 +182,6 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOClassAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OClassImport <em>OClass Import</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.yazgel.oop.OClassImport
-	 * @generated
-	 */
-	public Adapter createOClassImportAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OClassImplement <em>OClass Implement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.yazgel.oop.OClassImplement
-	 * @generated
-	 */
-	public Adapter createOClassImplementAdapter() {
 		return null;
 	}
 

@@ -1,20 +1,18 @@
 package org.yazgel.titan.xtext.generator
 
 import org.eclipse.xtext.generator.IFileSystemAccess
-import org.yazgel.titan.xtext.titan.Package
+import org.yazgel.oop.OPackage
 
-class PackageGenerator extends BaseGenerator {
-	var entityGenerator = new EntityGenerator
-	var nestedEntityBuilderGenerator = new NestedEntityBuilderGenerator
+class PackageGenerator extends BaseGenerator2 {
+	var entityGenerator = new EntityGenerator2
 
-	def generateFile(Package p, IFileSystemAccess fsa) {
+	def generateFile(OPackage p, IFileSystemAccess fsa) {
 
 		/* Base package kaydet. */
 		basePackage = p
 
-		p.allEntities.forEach [
+		p.allOClasses.forEach [ 
 			entityGenerator.generateFile(it, fsa)
-			nestedEntityBuilderGenerator.generateFile(it, fsa)
 		]
 	}
 }

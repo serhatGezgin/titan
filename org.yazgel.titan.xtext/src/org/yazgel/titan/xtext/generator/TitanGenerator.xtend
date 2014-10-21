@@ -24,9 +24,8 @@ class TitanGenerator implements IGenerator {
 	}
 	
 	def dispatch void compile(Module m, IFileSystemAccess fsa) {
-		var m2m = new Titan2OopGenerator
-		var oModel = m2m.doGenerate(m);
-		m.packages.forEach[it.generateFile(fsa)]
+		var oModel = new Titan2OopGenerator().doGenerate(m);
+		oModel.packages.forEach[it.generateFile(fsa)]
 	}
 
 	def dispatch void compile(EObject o, IFileSystemAccess fsa) {

@@ -3,7 +3,6 @@
 package org.yazgel.oop.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -60,8 +59,6 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 			case OopPackage.OMODEL: return createOModel();
 			case OopPackage.OPACKAGE: return createOPackage();
 			case OopPackage.OCLASS: return createOClass();
-			case OopPackage.OCLASS_IMPORT: return createOClassImport();
-			case OopPackage.OCLASS_IMPLEMENT: return createOClassImplement();
 			case OopPackage.OREFERENCE_MULTI: return createOReferenceMulti();
 			case OopPackage.OREFERENCE_SINGLE: return createOReferenceSingle();
 			case OopPackage.ODATA_TYPE_SINGLE: return createODataTypeSingle();
@@ -72,40 +69,6 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 			case OopPackage.OSTATEMENT: return createOStatement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case OopPackage.ODATA_TYPES:
-				return createODataTypesFromString(eDataType, initialValue);
-			case OopPackage.MULTI_OFEATURE_TYPES:
-				return createMultiOFeatureTypesFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case OopPackage.ODATA_TYPES:
-				return convertODataTypesToString(eDataType, instanceValue);
-			case OopPackage.MULTI_OFEATURE_TYPES:
-				return convertMultiOFeatureTypesToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -137,26 +100,6 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	public OClass createOClass() {
 		OClassImpl oClass = new OClassImpl();
 		return oClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OClassImport createOClassImport() {
-		OClassImportImpl oClassImport = new OClassImportImpl();
-		return oClassImport;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OClassImplement createOClassImplement() {
-		OClassImplementImpl oClassImplement = new OClassImplementImpl();
-		return oClassImplement;
 	}
 
 	/**
@@ -237,46 +180,6 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	public OStatement createOStatement() {
 		OStatementImpl oStatement = new OStatementImpl();
 		return oStatement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ODataTypes createODataTypesFromString(EDataType eDataType, String initialValue) {
-		ODataTypes result = ODataTypes.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertODataTypesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MultiOFeatureTypes createMultiOFeatureTypesFromString(EDataType eDataType, String initialValue) {
-		MultiOFeatureTypes result = MultiOFeatureTypes.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertMultiOFeatureTypesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

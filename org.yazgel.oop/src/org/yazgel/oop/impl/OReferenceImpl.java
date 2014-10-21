@@ -3,12 +3,9 @@
 package org.yazgel.oop.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.yazgel.oop.OClass;
 import org.yazgel.oop.OReference;
 import org.yazgel.oop.OopPackage;
@@ -21,6 +18,7 @@ import org.yazgel.oop.OopPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.yazgel.oop.impl.OReferenceImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.OReferenceImpl#getOpposite <em>Opposite</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +34,16 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	 * @ordered
 	 */
 	protected OClass reference;
+
+	/**
+	 * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOpposite()
+	 * @generated
+	 * @ordered
+	 */
+	protected OReference opposite;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,12 +107,53 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OReference getOpposite() {
+		if (opposite != null && opposite.eIsProxy()) {
+			InternalEObject oldOpposite = (InternalEObject)opposite;
+			opposite = (OReference)eResolveProxy(oldOpposite);
+			if (opposite != oldOpposite) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OopPackage.OREFERENCE__OPPOSITE, oldOpposite, opposite));
+			}
+		}
+		return opposite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OReference basicGetOpposite() {
+		return opposite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOpposite(OReference newOpposite) {
+		OReference oldOpposite = opposite;
+		opposite = newOpposite;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OREFERENCE__OPPOSITE, oldOpposite, opposite));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case OopPackage.OREFERENCE__REFERENCE:
 				if (resolve) return getReference();
 				return basicGetReference();
+			case OopPackage.OREFERENCE__OPPOSITE:
+				if (resolve) return getOpposite();
+				return basicGetOpposite();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +168,9 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 		switch (featureID) {
 			case OopPackage.OREFERENCE__REFERENCE:
 				setReference((OClass)newValue);
+				return;
+			case OopPackage.OREFERENCE__OPPOSITE:
+				setOpposite((OReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,6 +187,9 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 			case OopPackage.OREFERENCE__REFERENCE:
 				setReference((OClass)null);
 				return;
+			case OopPackage.OREFERENCE__OPPOSITE:
+				setOpposite((OReference)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,6 +204,8 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 		switch (featureID) {
 			case OopPackage.OREFERENCE__REFERENCE:
 				return reference != null;
+			case OopPackage.OREFERENCE__OPPOSITE:
+				return opposite != null;
 		}
 		return super.eIsSet(featureID);
 	}

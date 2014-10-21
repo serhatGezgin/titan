@@ -1,11 +1,11 @@
 module Deneme Nested Functions
- 
-package deneme{              
+   
+package deneme.model{              
 	entity Graph{                        
 		var name String      
-		var edges Edge[]   
+		var edges Edge[]    
 		var vertices Vertex[]         
-	}                      
+	}                        
 	                    
 	entity Edge{  
 		var from Vertex opposite Graph.vertices

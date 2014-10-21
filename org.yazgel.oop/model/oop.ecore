@@ -10,6 +10,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
         eType="#//OClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
+        eType="#//OPackage" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OClass">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -17,54 +19,37 @@
         eType="#//OMethod" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//OFeature" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="#//OClassImport"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" eType="#//OClassImplement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OClassImport">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="importsFromDomain" upperBound="-1"
-        eType="#//OClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imports" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OClassImplement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementsString" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implements" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OFeature" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OReference" abstract="true" eSuperTypes="#//OFeature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//OClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//OReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OReferenceMulti" eSuperTypes="#//OReference">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiType" eType="#//MultiOFeatureTypes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueInstance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OReferenceSingle" eSuperTypes="#//OReference"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ODataType" abstract="true" eSuperTypes="#//OFeature">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ODataTypes"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ODataType" abstract="true" eSuperTypes="#//OFeature"/>
   <eClassifiers xsi:type="ecore:EClass" name="ODataTypeSingle" eSuperTypes="#//ODataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ODataTypeMulti" eSuperTypes="#//ODataType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiType" eType="#//MultiOFeatureTypes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueInstance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ODataTypes">
-    <eLiterals name="String"/>
-    <eLiterals name="integer" value="1"/>
-    <eLiterals name="boolean" value="2"/>
-    <eLiterals name="long" value="3" literal="long"/>
-    <eLiterals name="double" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OMethod">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//OParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//OStatement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOverride" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="override" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OConstructor" eSuperTypes="#//OMethod"/>
   <eClassifiers xsi:type="ecore:EClass" name="OParameter">
@@ -73,12 +58,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="MultiOFeatureTypes">
-    <eLiterals name="ArrayList"/>
-    <eLiterals name="List" value="1"/>
-    <eLiterals name="TreeSet" value="2" literal="TreeSet"/>
-    <eLiterals name="Array" value="3"/>
-    <eLiterals name="Set" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

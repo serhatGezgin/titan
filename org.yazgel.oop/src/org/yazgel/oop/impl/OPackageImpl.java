@@ -31,6 +31,7 @@ import org.yazgel.oop.OopPackage;
  * <ul>
  *   <li>{@link org.yazgel.oop.impl.OPackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.yazgel.oop.impl.OPackageImpl#getClasses <em>Classes</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.OPackageImpl#getPackages <em>Packages</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,16 @@ public class OPackageImpl extends MinimalEObjectImpl.Container implements OPacka
 	 * @ordered
 	 */
 	protected EList<OClass> classes;
+
+	/**
+	 * The cached value of the '{@link #getPackages() <em>Packages</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPackages()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OPackage> packages;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +135,25 @@ public class OPackageImpl extends MinimalEObjectImpl.Container implements OPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<OPackage> getPackages() {
+		if (packages == null) {
+			packages = new EObjectContainmentEList<OPackage>(OPackage.class, this, OopPackage.OPACKAGE__PACKAGES);
+		}
+		return packages;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case OopPackage.OPACKAGE__CLASSES:
 				return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
+			case OopPackage.OPACKAGE__PACKAGES:
+				return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +170,8 @@ public class OPackageImpl extends MinimalEObjectImpl.Container implements OPacka
 				return getName();
 			case OopPackage.OPACKAGE__CLASSES:
 				return getClasses();
+			case OopPackage.OPACKAGE__PACKAGES:
+				return getPackages();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +192,10 @@ public class OPackageImpl extends MinimalEObjectImpl.Container implements OPacka
 				getClasses().clear();
 				getClasses().addAll((Collection<? extends OClass>)newValue);
 				return;
+			case OopPackage.OPACKAGE__PACKAGES:
+				getPackages().clear();
+				getPackages().addAll((Collection<? extends OPackage>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +214,9 @@ public class OPackageImpl extends MinimalEObjectImpl.Container implements OPacka
 			case OopPackage.OPACKAGE__CLASSES:
 				getClasses().clear();
 				return;
+			case OopPackage.OPACKAGE__PACKAGES:
+				getPackages().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +233,8 @@ public class OPackageImpl extends MinimalEObjectImpl.Container implements OPacka
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case OopPackage.OPACKAGE__CLASSES:
 				return classes != null && !classes.isEmpty();
+			case OopPackage.OPACKAGE__PACKAGES:
+				return packages != null && !packages.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -15,12 +15,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.yazgel.oop.OClass;
-import org.yazgel.oop.OClassImplement;
-import org.yazgel.oop.OClassImport;
 import org.yazgel.oop.OFeature;
 import org.yazgel.oop.OMethod;
 import org.yazgel.oop.OopPackage;
@@ -84,24 +83,24 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 	protected EList<OFeature> features;
 
 	/**
-	 * The cached value of the '{@link #getImports() <em>Imports</em>}' reference.
+	 * The cached value of the '{@link #getImports() <em>Imports</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getImports()
 	 * @generated
 	 * @ordered
 	 */
-	protected OClassImport imports;
+	protected EList<String> imports;
 
 	/**
-	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' reference.
+	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getImplements()
 	 * @generated
 	 * @ordered
 	 */
-	protected OClassImplement implements_;
+	protected EList<String> implements_;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,14 +171,9 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OClassImport getImports() {
-		if (imports != null && imports.eIsProxy()) {
-			InternalEObject oldImports = (InternalEObject)imports;
-			imports = (OClassImport)eResolveProxy(oldImports);
-			if (imports != oldImports) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OopPackage.OCLASS__IMPORTS, oldImports, imports));
-			}
+	public EList<String> getImports() {
+		if (imports == null) {
+			imports = new EDataTypeUniqueEList<String>(String.class, this, OopPackage.OCLASS__IMPORTS);
 		}
 		return imports;
 	}
@@ -189,58 +183,11 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OClassImport basicGetImports() {
-		return imports;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImports(OClassImport newImports) {
-		OClassImport oldImports = imports;
-		imports = newImports;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OCLASS__IMPORTS, oldImports, imports));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OClassImplement getImplements() {
-		if (implements_ != null && implements_.eIsProxy()) {
-			InternalEObject oldImplements = (InternalEObject)implements_;
-			implements_ = (OClassImplement)eResolveProxy(oldImplements);
-			if (implements_ != oldImplements) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OopPackage.OCLASS__IMPLEMENTS, oldImplements, implements_));
-			}
+	public EList<String> getImplements() {
+		if (implements_ == null) {
+			implements_ = new EDataTypeUniqueEList<String>(String.class, this, OopPackage.OCLASS__IMPLEMENTS);
 		}
 		return implements_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OClassImplement basicGetImplements() {
-		return implements_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImplements(OClassImplement newImplements) {
-		OClassImplement oldImplements = implements_;
-		implements_ = newImplements;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OCLASS__IMPLEMENTS, oldImplements, implements_));
 	}
 
 	/**
@@ -274,11 +221,9 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 			case OopPackage.OCLASS__FEATURES:
 				return getFeatures();
 			case OopPackage.OCLASS__IMPORTS:
-				if (resolve) return getImports();
-				return basicGetImports();
+				return getImports();
 			case OopPackage.OCLASS__IMPLEMENTS:
-				if (resolve) return getImplements();
-				return basicGetImplements();
+				return getImplements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -304,10 +249,12 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 				getFeatures().addAll((Collection<? extends OFeature>)newValue);
 				return;
 			case OopPackage.OCLASS__IMPORTS:
-				setImports((OClassImport)newValue);
+				getImports().clear();
+				getImports().addAll((Collection<? extends String>)newValue);
 				return;
 			case OopPackage.OCLASS__IMPLEMENTS:
-				setImplements((OClassImplement)newValue);
+				getImplements().clear();
+				getImplements().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -331,10 +278,10 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 				getFeatures().clear();
 				return;
 			case OopPackage.OCLASS__IMPORTS:
-				setImports((OClassImport)null);
+				getImports().clear();
 				return;
 			case OopPackage.OCLASS__IMPLEMENTS:
-				setImplements((OClassImplement)null);
+				getImplements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -355,9 +302,9 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 			case OopPackage.OCLASS__FEATURES:
 				return features != null && !features.isEmpty();
 			case OopPackage.OCLASS__IMPORTS:
-				return imports != null;
+				return imports != null && !imports.isEmpty();
 			case OopPackage.OCLASS__IMPLEMENTS:
-				return implements_ != null;
+				return implements_ != null && !implements_.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,6 +321,10 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", imports: ");
+		result.append(imports);
+		result.append(", implements: ");
+		result.append(implements_);
 		result.append(')');
 		return result.toString();
 	}

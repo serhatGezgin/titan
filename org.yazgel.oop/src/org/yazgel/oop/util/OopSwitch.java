@@ -84,18 +84,6 @@ public class OopSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OopPackage.OCLASS_IMPORT: {
-				OClassImport oClassImport = (OClassImport)theEObject;
-				T result = caseOClassImport(oClassImport);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case OopPackage.OCLASS_IMPLEMENT: {
-				OClassImplement oClassImplement = (OClassImplement)theEObject;
-				T result = caseOClassImplement(oClassImplement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case OopPackage.OFEATURE: {
 				OFeature oFeature = (OFeature)theEObject;
 				T result = caseOFeature(oFeature);
@@ -219,36 +207,6 @@ public class OopSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOClass(OClass object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OClass Import</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OClass Import</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOClassImport(OClassImport object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OClass Implement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OClass Implement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOClassImplement(OClassImplement object) {
 		return null;
 	}
 

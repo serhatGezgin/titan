@@ -20,6 +20,7 @@ import org.yazgel.oop.OopPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.yazgel.oop.impl.OFeatureImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.OFeatureImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +46,26 @@ public abstract class OFeatureImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +112,34 @@ public abstract class OFeatureImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(String newType) {
+		String oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OFEATURE__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case OopPackage.OFEATURE__NAME:
 				return getName();
+			case OopPackage.OFEATURE__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +154,9 @@ public abstract class OFeatureImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case OopPackage.OFEATURE__NAME:
 				setName((String)newValue);
+				return;
+			case OopPackage.OFEATURE__TYPE:
+				setType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +173,9 @@ public abstract class OFeatureImpl extends MinimalEObjectImpl.Container implemen
 			case OopPackage.OFEATURE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case OopPackage.OFEATURE__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +190,8 @@ public abstract class OFeatureImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case OopPackage.OFEATURE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case OopPackage.OFEATURE__TYPE:
+				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,6 +208,8 @@ public abstract class OFeatureImpl extends MinimalEObjectImpl.Container implemen
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

@@ -49,24 +49,6 @@ public interface OopFactory extends EFactory {
 	OClass createOClass();
 
 	/**
-	 * Returns a new object of class '<em>OClass Import</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OClass Import</em>'.
-	 * @generated
-	 */
-	OClassImport createOClassImport();
-
-	/**
-	 * Returns a new object of class '<em>OClass Implement</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OClass Implement</em>'.
-	 * @generated
-	 */
-	OClassImplement createOClassImplement();
-
-	/**
 	 * Returns a new object of class '<em>OReference Multi</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

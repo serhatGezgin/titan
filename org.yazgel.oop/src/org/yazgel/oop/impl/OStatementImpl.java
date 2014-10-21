@@ -3,9 +3,12 @@
 package org.yazgel.oop.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.yazgel.oop.OStatement;
 import org.yazgel.oop.OopPackage;
 
@@ -32,6 +35,7 @@ public class OStatementImpl extends MinimalEObjectImpl.Container implements OSta
 	 * @ordered
 	 */
 	protected static final String CONTENT_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -101,7 +105,6 @@ public class OStatementImpl extends MinimalEObjectImpl.Container implements OSta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

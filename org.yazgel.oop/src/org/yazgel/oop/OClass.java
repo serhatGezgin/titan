@@ -86,55 +86,35 @@ public interface OClass extends EObject {
 	EList<OFeature> getFeatures();
 
 	/**
-	 * Returns the value of the '<em><b>Imports</b></em>' reference.
+	 * Returns the value of the '<em><b>Imports</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Imports</em>' reference isn't clear,
+	 * If the meaning of the '<em>Imports</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Imports</em>' reference.
-	 * @see #setImports(OClassImport)
+	 * @return the value of the '<em>Imports</em>' attribute list.
 	 * @see org.yazgel.oop.OopPackage#getOClass_Imports()
 	 * @model
 	 * @generated
 	 */
-	OClassImport getImports();
+	EList<String> getImports();
 
 	/**
-	 * Sets the value of the '{@link org.yazgel.oop.OClass#getImports <em>Imports</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Imports</em>' reference.
-	 * @see #getImports()
-	 * @generated
-	 */
-	void setImports(OClassImport value);
-
-	/**
-	 * Returns the value of the '<em><b>Implements</b></em>' reference.
+	 * Returns the value of the '<em><b>Implements</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Implements</em>' reference isn't clear,
+	 * If the meaning of the '<em>Implements</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Implements</em>' reference.
-	 * @see #setImplements(OClassImplement)
+	 * @return the value of the '<em>Implements</em>' attribute list.
 	 * @see org.yazgel.oop.OopPackage#getOClass_Implements()
 	 * @model
 	 * @generated
 	 */
-	OClassImplement getImplements();
-
-	/**
-	 * Sets the value of the '{@link org.yazgel.oop.OClass#getImplements <em>Implements</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Implements</em>' reference.
-	 * @see #getImplements()
-	 * @generated
-	 */
-	void setImplements(OClassImplement value);
+	EList<String> getImplements();
 
 } // OClass

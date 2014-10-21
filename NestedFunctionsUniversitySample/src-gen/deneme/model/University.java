@@ -2,57 +2,51 @@ package deneme.model;
 
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class University {
 	private String universityName;
 	private List<Student> universityStudents;
 	private Set<Course> universityCourses;
 	
-	public University(){
+	public   University(){
 		universityStudents = new ArrayList<>();
 		universityCourses = new TreeSet<>();
 	}
-	
-	public University(String universityName
-	, 
-	List<Student> universityStudents
-	, 
-	TreeSet<Course> universityCourses
+	public   University(String universityName, ArrayList<Student> universityStudents, TreeSet<Course> universityCourses
 	){
 		this.universityName = universityName;
 		this.universityStudents = universityStudents;
 		this.universityCourses = universityCourses;
 	}
-	
-	public void addStudent(Student student) {
+	public  void addStudent(Student student
+	){
 		getUniversityStudents().add(student);
 	}
-	public void addCourse(Course course) {
+	public  void addCourse(Course course
+	){
 		getUniversityCourses().add(course);
 	}
-	
-	public String getUniversityName(){
+	public  String getUniversityName(){
 		return this.universityName;
 	}
-	
-	public void setUniversityName(String universityName){
+	public  void setUniversityName(String universityName
+	){
 		this.universityName = universityName;
 	}
-	public List<Student> getUniversityStudents() {
-	return universityStudents;
+	public  List<Student> getUniversityStudents(){
+		return this.universityStudents;
 	}
-	
-	public void setUniversityStudents(List<Student> universityStudents) {
+	public  void setUniversityStudents(ArrayList<Student> universityStudents
+	){
 		this.universityStudents = universityStudents;
 	}
-	public Set<Course> getUniversityCourses() {
-	return universityCourses;
+	public  Set<Course> getUniversityCourses(){
+		return this.universityCourses;
 	}
-	
-	public void setUniversityCourses(TreeSet<Course> universityCourses) {
+	public  void setUniversityCourses(TreeSet<Course> universityCourses
+	){
 		this.universityCourses = universityCourses;
 	}
-	
 }

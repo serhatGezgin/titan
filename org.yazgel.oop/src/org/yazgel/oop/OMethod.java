@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.yazgel.oop.OMethod#getName <em>Name</em>}</li>
- *   <li>{@link org.yazgel.oop.OMethod#isIsConst <em>Is Const</em>}</li>
+ *   <li>{@link org.yazgel.oop.OMethod#isStatic <em>Static</em>}</li>
  *   <li>{@link org.yazgel.oop.OMethod#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link org.yazgel.oop.OMethod#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.yazgel.oop.OMethod#getStatements <em>Statements</em>}</li>
- *   <li>{@link org.yazgel.oop.OMethod#isIsOverride <em>Is Override</em>}</li>
+ *   <li>{@link org.yazgel.oop.OMethod#isOverride <em>Override</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,30 +55,30 @@ public interface OMethod extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Const</b></em>' attribute.
+	 * Returns the value of the '<em><b>Static</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Const</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Static</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Const</em>' attribute.
-	 * @see #setIsConst(boolean)
-	 * @see org.yazgel.oop.OopPackage#getOMethod_IsConst()
+	 * @return the value of the '<em>Static</em>' attribute.
+	 * @see #setStatic(boolean)
+	 * @see org.yazgel.oop.OopPackage#getOMethod_Static()
 	 * @model
 	 * @generated
 	 */
-	boolean isIsConst();
+	boolean isStatic();
 
 	/**
-	 * Sets the value of the '{@link org.yazgel.oop.OMethod#isIsConst <em>Is Const</em>}' attribute.
+	 * Sets the value of the '{@link org.yazgel.oop.OMethod#isStatic <em>Static</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Const</em>' attribute.
-	 * @see #isIsConst()
+	 * @param value the new value of the '<em>Static</em>' attribute.
+	 * @see #isStatic()
 	 * @generated
 	 */
-	void setIsConst(boolean value);
+	void setStatic(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Return Type</b></em>' attribute.
@@ -139,29 +139,29 @@ public interface OMethod extends EObject {
 	EList<OStatement> getStatements();
 
 	/**
-	 * Returns the value of the '<em><b>Is Override</b></em>' attribute.
+	 * Returns the value of the '<em><b>Override</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Override</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Override</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Override</em>' attribute.
-	 * @see #setIsOverride(boolean)
-	 * @see org.yazgel.oop.OopPackage#getOMethod_IsOverride()
+	 * @return the value of the '<em>Override</em>' attribute.
+	 * @see #setOverride(boolean)
+	 * @see org.yazgel.oop.OopPackage#getOMethod_Override()
 	 * @model
 	 * @generated
 	 */
-	boolean isIsOverride();
+	boolean isOverride();
 
 	/**
-	 * Sets the value of the '{@link org.yazgel.oop.OMethod#isIsOverride <em>Is Override</em>}' attribute.
+	 * Sets the value of the '{@link org.yazgel.oop.OMethod#isOverride <em>Override</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Override</em>' attribute.
-	 * @see #isIsOverride()
+	 * @param value the new value of the '<em>Override</em>' attribute.
+	 * @see #isOverride()
 	 * @generated
 	 */
-	void setIsOverride(boolean value);
+	void setOverride(boolean value);
 
 } // OMethod

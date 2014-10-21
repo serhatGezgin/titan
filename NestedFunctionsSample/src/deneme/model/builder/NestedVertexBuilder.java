@@ -5,14 +5,11 @@ import deneme.model.Vertex;
 public class NestedVertexBuilder {
 	
 	public static Vertex Vertex(String label
-	) {
-		Vertex o = new Vertex();
-		o.setLabel(label);
-	
-		return o;
+	){
+		Vertex o = new Vertex();o.setLabel(label);return o;
 	}
-
-	public static String label(String value) {
-		return value;
+	public static String label(String label
+	){
+		return label;
 	}
-}  
+}
