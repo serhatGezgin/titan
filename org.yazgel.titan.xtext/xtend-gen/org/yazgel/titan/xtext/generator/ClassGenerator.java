@@ -9,10 +9,10 @@ import org.yazgel.oop.OFeature;
 import org.yazgel.oop.OMethod;
 import org.yazgel.oop.OParameter;
 import org.yazgel.oop.OStatement;
-import org.yazgel.titan.xtext.generator.BaseGenerator;
+import org.yazgel.titan.xtext.generator.Model2TextGeneratorHelper;
 
 @SuppressWarnings("all")
-public class ClassGenerator extends BaseGenerator {
+public class ClassGenerator extends Model2TextGeneratorHelper {
   public void generateFile(final OClass oc, final IFileSystemAccess fsa) {
     String _oClassFileName = this.oClassFileName(oc);
     CharSequence _oClassContent = this.oClassContent(oc);
@@ -22,7 +22,7 @@ public class ClassGenerator extends BaseGenerator {
   public CharSequence oClassContent(final OClass oc) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
-    String _oClassPackageName = BaseGenerator.oClassPackageName(oc);
+    String _oClassPackageName = this.oClassPackageName(oc);
     _builder.append(_oClassPackageName, "");
     _builder.append(";");
     _builder.newLineIfNotEmpty();

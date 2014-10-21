@@ -6,30 +6,16 @@ import org.eclipse.emf.ecore.EObject
 import org.yazgel.oop.OClass
 import org.yazgel.oop.OPackage
 
-class BaseGenerator {
+class Model2TextGeneratorHelper extends BaseGeneratorHelper{
 
 	/* Base Package hatirlanmasi gerek. */
 	protected static OPackage basePackage;
-
+ 
 	protected def oClassFileName(OClass oc) {
 		val p = oc.packageNameList
 		p.join('/') + '/' + oc.name + '.java'
 	}
 
-	protected static def packageNameList(OClass oc) {
-		val list = newArrayList
-		var pack = oc.eContainer as OPackage
-
-		list.addAll(pack.name.split('\\.'))
-
-		list
-	}
-
-	protected static def oClassPackageName(OClass oc) {
-		val p = oc.packageNameList
-		p.join('.')
-	}
-	
 	protected def List<OClass> allOClasses(OPackage p) {
 		val list = newArrayList
 		var Stack<EObject> stack = new Stack
@@ -47,5 +33,5 @@ class BaseGenerator {
 
 		list
 	}
-		
+
 }

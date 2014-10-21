@@ -22,7 +22,7 @@ import org.yazgel.titan.xtext.titan.Module
 import org.yazgel.titan.xtext.titan.Package
 import org.yazgel.titan.xtext.titan.Reference
 
-class Titan2OopGenerator {
+class Titan2OopGenerator extends Model2ModelGeneratorHelper{
 
 	//From model, To Model &&
 	//To model, From Model
@@ -431,16 +431,16 @@ class Titan2OopGenerator {
 			var modelOc = e.value as OClass
 
 			var importSet = newHashSet()
-
-			importSet.add('''«BaseGenerator.oClassPackageName(modelOc)».«modelOc.name»''')
+			
+			importSet.add('''«modelOc.oClassPackageName».«modelOc.name»''')
 			for (OFeature f : modelOc.features) {
 				if (f instanceof OReference) {
-					importSet.add('''«BaseGenerator.oClassPackageName(f.reference)».«f.reference.name»''')
+					importSet.add('''«f.reference.oClassPackageName».«f.reference.name»''')
 					if (f instanceof OReferenceSingle) {
 						var builderOfReferenceOclass = modelBuilderReleations.filter[p1, p2|p2.equals(f.reference)].
 							entrySet.get(0).key as OClass
 						importSet.add(
-							'''«BaseGenerator.oClassPackageName(builderOfReferenceOclass)».«builderOfReferenceOclass.
+							'''«builderOfReferenceOclass.oClassPackageName».«builderOfReferenceOclass.
 								name»''')
 					} else if (f instanceof OReferenceMulti) {
 						importSet.add('''java.util.Arrays''')
