@@ -4,7 +4,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.yazgel.oop.OClass
 import org.yazgel.oop.OMethod
 
-class EntityGenerator2 extends BaseGenerator {
+class ClassGenerator extends BaseGenerator {
 
 	def generateFile(OClass oc, IFileSystemAccess fsa) {
 		fsa.generateFile(oc.oClassFileName, oc.oClassContent)

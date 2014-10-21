@@ -12,7 +12,7 @@ import org.yazgel.oop.OStatement;
 import org.yazgel.titan.xtext.generator.BaseGenerator;
 
 @SuppressWarnings("all")
-public class EntityGenerator2 extends BaseGenerator {
+public class ClassGenerator extends BaseGenerator {
   public void generateFile(final OClass oc, final IFileSystemAccess fsa) {
     String _oClassFileName = this.oClassFileName(oc);
     CharSequence _oClassContent = this.oClassContent(oc);
