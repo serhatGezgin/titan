@@ -9,7 +9,7 @@ import org.yazgel.oop.OFeature;
 import org.yazgel.oop.OMethod;
 import org.yazgel.oop.OParameter;
 import org.yazgel.oop.OStatement;
-import org.yazgel.titan.xtext.generator.Model2TextGeneratorHelper;
+import org.yazgel.titan.xtext.generator.helper.Model2TextGeneratorHelper;
 
 @SuppressWarnings("all")
 public class ClassGenerator extends Model2TextGeneratorHelper {

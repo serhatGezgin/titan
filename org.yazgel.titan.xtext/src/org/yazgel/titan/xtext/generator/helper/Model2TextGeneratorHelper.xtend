@@ -1,4 +1,4 @@
-package org.yazgel.titan.xtext.generator
+package org.yazgel.titan.xtext.generator.helper
 
 import java.util.List
 import java.util.Stack

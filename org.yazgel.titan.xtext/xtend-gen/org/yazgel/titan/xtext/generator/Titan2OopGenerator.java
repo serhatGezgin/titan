@@ -31,7 +31,7 @@ import org.yazgel.oop.OReferenceMulti;
 import org.yazgel.oop.OReferenceSingle;
 import org.yazgel.oop.OStatement;
 import org.yazgel.oop.impl.OopFactoryImpl;
-import org.yazgel.titan.xtext.generator.Model2ModelGeneratorHelper;
+import org.yazgel.titan.xtext.generator.helper.Model2ModelGeneratorHelper;
 import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.DataTypes;
 import org.yazgel.titan.xtext.titan.Entity;

@@ -3,6 +3,7 @@ package org.yazgel.titan.xtext.generator
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.yazgel.oop.OClass
 import org.yazgel.oop.OMethod
+import org.yazgel.titan.xtext.generator.helper.Model2TextGeneratorHelper
 
 class ClassGenerator extends Model2TextGeneratorHelper {
 

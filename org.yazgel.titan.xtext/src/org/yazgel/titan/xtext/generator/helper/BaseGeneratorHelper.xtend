@@ -1,4 +1,4 @@
-package org.yazgel.titan.xtext.generator
+package org.yazgel.titan.xtext.generator.helper
 
 import org.yazgel.oop.OClass
 import org.yazgel.oop.OPackage

@@ -1,4 +1,4 @@
-package org.yazgel.titan.xtext.generator;
+package org.yazgel.titan.xtext.generator.helper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.yazgel.oop.OClass;
 import org.yazgel.oop.OPackage;
-import org.yazgel.titan.xtext.generator.BaseGeneratorHelper;
+import org.yazgel.titan.xtext.generator.helper.BaseGeneratorHelper;
 
 @SuppressWarnings("all")
 public class Model2TextGeneratorHelper extends BaseGeneratorHelper {

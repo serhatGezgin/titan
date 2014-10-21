@@ -21,6 +21,7 @@ import org.yazgel.titan.xtext.titan.Feature
 import org.yazgel.titan.xtext.titan.Module
 import org.yazgel.titan.xtext.titan.Package
 import org.yazgel.titan.xtext.titan.Reference
+import org.yazgel.titan.xtext.generator.helper.Model2ModelGeneratorHelper
 
 class Titan2OopGenerator extends Model2ModelGeneratorHelper{
 
