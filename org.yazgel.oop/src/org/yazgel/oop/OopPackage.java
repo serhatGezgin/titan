@@ -707,88 +707,6 @@ public interface OopPackage extends EPackage {
 	int OMETHOD_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.OConstructorImpl <em>OConstructor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.OConstructorImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getOConstructor()
-	 * @generated
-	 */
-	int OCONSTRUCTOR = 11;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCONSTRUCTOR__NAME = OMETHOD__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Static</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCONSTRUCTOR__STATIC = OMETHOD__STATIC;
-
-	/**
-	 * The feature id for the '<em><b>Return Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCONSTRUCTOR__RETURN_TYPE = OMETHOD__RETURN_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCONSTRUCTOR__PARAMETERS = OMETHOD__PARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCONSTRUCTOR__STATEMENTS = OMETHOD__STATEMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Override</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCONSTRUCTOR__OVERRIDE = OMETHOD__OVERRIDE;
-
-	/**
-	 * The number of structural features of the '<em>OConstructor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCONSTRUCTOR_FEATURE_COUNT = OMETHOD_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>OConstructor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OCONSTRUCTOR_OPERATION_COUNT = OMETHOD_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.yazgel.oop.impl.OParameterImpl <em>OParameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -796,7 +714,7 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getOParameter()
 	 * @generated
 	 */
-	int OPARAMETER = 12;
+	int OPARAMETER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -842,7 +760,7 @@ public interface OopPackage extends EPackage {
 	 * @see org.yazgel.oop.impl.OopPackageImpl#getOStatement()
 	 * @generated
 	 */
-	int OSTATEMENT = 13;
+	int OSTATEMENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -1225,16 +1143,6 @@ public interface OopPackage extends EPackage {
 	EAttribute getOMethod_Override();
 
 	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.OConstructor <em>OConstructor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OConstructor</em>'.
-	 * @see org.yazgel.oop.OConstructor
-	 * @generated
-	 */
-	EClass getOConstructor();
-
-	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OParameter <em>OParameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1595,16 +1503,6 @@ public interface OopPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OMETHOD__OVERRIDE = eINSTANCE.getOMethod_Override();
-
-		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.OConstructorImpl <em>OConstructor</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.OConstructorImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getOConstructor()
-		 * @generated
-		 */
-		EClass OCONSTRUCTOR = eINSTANCE.getOConstructor();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OParameterImpl <em>OParameter</em>}' class.

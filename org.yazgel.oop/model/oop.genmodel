@@ -48,7 +48,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oop.ecore#//OMethod/statements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OMethod/override"/>
     </genClasses>
-    <genClasses ecoreClass="oop.ecore#//OConstructor"/>
     <genClasses ecoreClass="oop.ecore#//OParameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OParameter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OParameter/type"/>

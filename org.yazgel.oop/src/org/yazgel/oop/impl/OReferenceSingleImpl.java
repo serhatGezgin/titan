@@ -3,6 +3,7 @@
 package org.yazgel.oop.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.yazgel.oop.OReferenceSingle;
 import org.yazgel.oop.OopPackage;
 

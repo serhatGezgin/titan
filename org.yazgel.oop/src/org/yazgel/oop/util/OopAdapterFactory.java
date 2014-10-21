@@ -112,10 +112,6 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 				return createOMethodAdapter();
 			}
 			@Override
-			public Adapter caseOConstructor(OConstructor object) {
-				return createOConstructorAdapter();
-			}
-			@Override
 			public Adapter caseOParameter(OParameter object) {
 				return createOParameterAdapter();
 			}
@@ -294,20 +290,6 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOMethodAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OConstructor <em>OConstructor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.yazgel.oop.OConstructor
-	 * @generated
-	 */
-	public Adapter createOConstructorAdapter() {
 		return null;
 	}
 

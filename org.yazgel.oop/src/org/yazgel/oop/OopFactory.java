@@ -94,15 +94,6 @@ public interface OopFactory extends EFactory {
 	OMethod createOMethod();
 
 	/**
-	 * Returns a new object of class '<em>OConstructor</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OConstructor</em>'.
-	 * @generated
-	 */
-	OConstructor createOConstructor();
-
-	/**
 	 * Returns a new object of class '<em>OParameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

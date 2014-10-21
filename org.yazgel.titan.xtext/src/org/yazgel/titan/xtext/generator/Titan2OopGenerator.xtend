@@ -166,7 +166,7 @@ class Titan2OopGenerator {
 		var oClasses = transformationReleations.filter[p1, p2|p1 instanceof OClass]
 		for (e : oClasses.entrySet) {
 			var oc = e.key as OClass
-			var oConst = OopFactoryImpl.eINSTANCE.createOConstructor
+			var oConst = OopFactoryImpl.eINSTANCE.createOMethod
 			oConst.name = oc.name
 
 			//Parameters must be set && Statements must be create.
@@ -190,7 +190,7 @@ class Titan2OopGenerator {
 		//5.2- Second Constructors must be added after generated model classes
 		for (e : oClasses.entrySet) {
 			var oc = e.key as OClass
-			var oConst = OopFactoryImpl.eINSTANCE.createOConstructor
+			var oConst = OopFactoryImpl.eINSTANCE.createOMethod
 			oConst.name = oc.name
 
 			//Parameters must be set && Statements must be create.
@@ -456,7 +456,7 @@ class Titan2OopGenerator {
 			var builderOc = e.key as OClass
 			var modelOc = e.value as OClass
 
-			var constructor = OopFactoryImpl.eINSTANCE.createOConstructor
+			var constructor = OopFactoryImpl.eINSTANCE.createOMethod
 
 			constructor.name = modelOc.name
 			constructor.static = true

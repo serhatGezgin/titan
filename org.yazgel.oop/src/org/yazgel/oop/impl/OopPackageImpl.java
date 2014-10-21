@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.yazgel.oop.OClass;
-import org.yazgel.oop.OConstructor;
 import org.yazgel.oop.ODataType;
 import org.yazgel.oop.ODataTypeMulti;
 import org.yazgel.oop.ODataTypeSingle;
@@ -109,13 +108,6 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * @generated
 	 */
 	private EClass oMethodEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass oConstructorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -494,15 +486,6 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOConstructor() {
-		return oConstructorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getOParameter() {
 		return oParameterEClass;
 	}
@@ -615,8 +598,6 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 		createEReference(oMethodEClass, OMETHOD__STATEMENTS);
 		createEAttribute(oMethodEClass, OMETHOD__OVERRIDE);
 
-		oConstructorEClass = createEClass(OCONSTRUCTOR);
-
 		oParameterEClass = createEClass(OPARAMETER);
 		createEAttribute(oParameterEClass, OPARAMETER__NAME);
 		createEAttribute(oParameterEClass, OPARAMETER__TYPE);
@@ -659,7 +640,6 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 		oDataTypeEClass.getESuperTypes().add(this.getOFeature());
 		oDataTypeSingleEClass.getESuperTypes().add(this.getODataType());
 		oDataTypeMultiEClass.getESuperTypes().add(this.getODataType());
-		oConstructorEClass.getESuperTypes().add(this.getOMethod());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(oModelEClass, OModel.class, "OModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -705,8 +685,6 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 		initEReference(getOMethod_Parameters(), this.getOParameter(), null, "parameters", null, 0, -1, OMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOMethod_Statements(), this.getOStatement(), null, "statements", null, 0, -1, OMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOMethod_Override(), ecorePackage.getEBoolean(), "override", null, 0, 1, OMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(oConstructorEClass, OConstructor.class, "OConstructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(oParameterEClass, OParameter.class, "OParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, OParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

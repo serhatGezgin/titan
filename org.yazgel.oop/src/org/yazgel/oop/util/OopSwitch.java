@@ -142,13 +142,6 @@ public class OopSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OopPackage.OCONSTRUCTOR: {
-				OConstructor oConstructor = (OConstructor)theEObject;
-				T result = caseOConstructor(oConstructor);
-				if (result == null) result = caseOMethod(oConstructor);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case OopPackage.OPARAMETER: {
 				OParameter oParameter = (OParameter)theEObject;
 				T result = caseOParameter(oParameter);
@@ -327,21 +320,6 @@ public class OopSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOMethod(OMethod object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OConstructor</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OConstructor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOConstructor(OConstructor object) {
 		return null;
 	}
 

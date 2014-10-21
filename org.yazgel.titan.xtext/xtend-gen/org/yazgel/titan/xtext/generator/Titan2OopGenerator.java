@@ -18,7 +18,6 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.MapExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.yazgel.oop.OClass;
-import org.yazgel.oop.OConstructor;
 import org.yazgel.oop.ODataType;
 import org.yazgel.oop.ODataTypeMulti;
 import org.yazgel.oop.ODataTypeSingle;
@@ -324,7 +323,7 @@ public class Titan2OopGenerator {
       {
         EObject _key = e_4.getKey();
         OClass oc = ((OClass) _key);
-        OConstructor oConst = OopFactoryImpl.eINSTANCE.createOConstructor();
+        OMethod oConst = OopFactoryImpl.eINSTANCE.createOMethod();
         String _name = oc.getName();
         oConst.setName(_name);
         EList<OFeature> oFeatures = oc.getFeatures();
@@ -372,7 +371,7 @@ public class Titan2OopGenerator {
       {
         EObject _key = e_5.getKey();
         OClass oc = ((OClass) _key);
-        OConstructor oConst = OopFactoryImpl.eINSTANCE.createOConstructor();
+        OMethod oConst = OopFactoryImpl.eINSTANCE.createOMethod();
         String _name = oc.getName();
         oConst.setName(_name);
         EList<OFeature> oFeatures = oc.getFeatures();
@@ -1053,7 +1052,7 @@ public class Titan2OopGenerator {
         OClass builderOc = ((OClass) _key);
         EObject _value = e_11.getValue();
         OClass modelOc = ((OClass) _value);
-        OConstructor constructor = OopFactoryImpl.eINSTANCE.createOConstructor();
+        OMethod constructor = OopFactoryImpl.eINSTANCE.createOMethod();
         String _name_1 = modelOc.getName();
         constructor.setName(_name_1);
         constructor.setStatic(true);

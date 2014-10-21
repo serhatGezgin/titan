@@ -64,7 +64,6 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 			case OopPackage.ODATA_TYPE_SINGLE: return createODataTypeSingle();
 			case OopPackage.ODATA_TYPE_MULTI: return createODataTypeMulti();
 			case OopPackage.OMETHOD: return createOMethod();
-			case OopPackage.OCONSTRUCTOR: return createOConstructor();
 			case OopPackage.OPARAMETER: return createOParameter();
 			case OopPackage.OSTATEMENT: return createOStatement();
 			default:
@@ -150,16 +149,6 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	public OMethod createOMethod() {
 		OMethodImpl oMethod = new OMethodImpl();
 		return oMethod;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OConstructor createOConstructor() {
-		OConstructorImpl oConstructor = new OConstructorImpl();
-		return oConstructor;
 	}
 
 	/**
