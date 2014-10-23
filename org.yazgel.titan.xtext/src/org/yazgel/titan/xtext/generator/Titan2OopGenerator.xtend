@@ -40,7 +40,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 		//Model classes must be added.
 		var model = OopFactoryImpl.eINSTANCE.createOModel
-		model.name = module.name 
+		model.name = module.name
 		transformationReleations.put(module, model)
 		transformationReleations.put(model, module)
 
@@ -148,15 +148,19 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 	def postGenerator(OModel model) {
 
 		//1-Reference Reference prop must be set after generated model classes
-		var releationsOfReferences = transformationReleations.filter[p1, p2|p1 instanceof Reference]
+		var releationsOfReferences = transformationReleations.filter[p1, p2|p1 instanceof Feature]
 		for (e : releationsOfReferences.entrySet) {
-			var or = transformationReleations.get((e.key as Reference).reference) as OClass;
-			var oo = transformationReleations.get((e.key as Reference).opposite) as OReference;
-			(e.value as OReference).reference = or;
-			(e.value as OReference).opposite = oo;
-			
-			if(!oppositedOMultiReferences.contains(oo))
-				oppositedOMultiReferences.add(oo as OReferenceMulti)
+			if (e.key instanceof Reference) {
+				var or = transformationReleations.get((e.key as Reference).reference) as OClass;
+				(e.value as OReference).reference = or;
+				if (e.key instanceof SingleReference) {
+					var oo = transformationReleations.get((e.key as SingleReference).opposite) as OReference;
+					(e.value as OReference).opposite = oo;
+
+					if (!oppositedOMultiReferences.contains(oo))
+						oppositedOMultiReferences.add(oo as OReferenceMulti)
+				}
+			}
 		}
 
 		//2-Import Statements must be added after generated model classes
@@ -186,8 +190,8 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			for (f : oClass.features) {
 				if (f instanceof OReferenceMulti && (f as OReferenceMulti).uniqueInstance)
 					(f as OReferenceMulti).reference.implements.add(
-					'''Comparable<«(f as OReferenceMulti).reference.name»>''');
-			} 
+						'''Comparable<«(f as OReferenceMulti).reference.name»>''');
+			}
 		}
 
 		//4 Constructors must be added after generated model classes

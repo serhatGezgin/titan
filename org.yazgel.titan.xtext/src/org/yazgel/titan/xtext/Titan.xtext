@@ -40,7 +40,7 @@ SingleReference returns SingleReference:
 	name=ID
 	reference=[Entity|ID]
 	unique ?= ('unique')?
-	('opposite' opposite=[Reference|QUALIFIED_NAME])?;
+	('opposite' opposite=[MultiReference|QUALIFIED_NAME])?;
 	
 MultiReference returns MultiReference:
 	{MultiReference}
@@ -48,10 +48,8 @@ MultiReference returns MultiReference:
 	name=ID
 	reference=[Entity|ID]
 	'[]'
-	unique ?= ('unique')?
-	('opposite' opposite=[Reference|QUALIFIED_NAME])?;
+	unique ?= ('unique')?;
 	
-
 DataType returns DataType:
 	SingleDataType | MultiDataType;
 	
@@ -59,7 +57,8 @@ SingleDataType returns SingleDataType:
 	{SingleDataType}
 	'var'
 	name=ID
-	type=DataTypes;
+	type=DataTypes
+	('opposite' opposite=[MultiDataType|QUALIFIED_NAME])?;
 	
 MultiDataType returns MultiDataType:
 	{MultiDataType}

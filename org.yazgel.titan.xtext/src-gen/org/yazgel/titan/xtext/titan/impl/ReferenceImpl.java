@@ -22,7 +22,6 @@ import org.yazgel.titan.xtext.titan.TitanPackage;
  * <ul>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#isUnique <em>Unique</em>}</li>
- *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#getOpposite <em>Opposite</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,16 +58,6 @@ public class ReferenceImpl extends FeatureImpl implements Reference
    * @ordered
    */
   protected boolean unique = UNIQUE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOpposite()
-   * @generated
-   * @ordered
-   */
-  protected Reference opposite;
 
   /**
    * <!-- begin-user-doc -->
@@ -162,49 +151,6 @@ public class ReferenceImpl extends FeatureImpl implements Reference
    * <!-- end-user-doc -->
    * @generated
    */
-  public Reference getOpposite()
-  {
-    if (opposite != null && opposite.eIsProxy())
-    {
-      InternalEObject oldOpposite = (InternalEObject)opposite;
-      opposite = (Reference)eResolveProxy(oldOpposite);
-      if (opposite != oldOpposite)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TitanPackage.REFERENCE__OPPOSITE, oldOpposite, opposite));
-      }
-    }
-    return opposite;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Reference basicGetOpposite()
-  {
-    return opposite;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOpposite(Reference newOpposite)
-  {
-    Reference oldOpposite = opposite;
-    opposite = newOpposite;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TitanPackage.REFERENCE__OPPOSITE, oldOpposite, opposite));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -215,9 +161,6 @@ public class ReferenceImpl extends FeatureImpl implements Reference
         return basicGetReference();
       case TitanPackage.REFERENCE__UNIQUE:
         return isUnique();
-      case TitanPackage.REFERENCE__OPPOSITE:
-        if (resolve) return getOpposite();
-        return basicGetOpposite();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -237,9 +180,6 @@ public class ReferenceImpl extends FeatureImpl implements Reference
         return;
       case TitanPackage.REFERENCE__UNIQUE:
         setUnique((Boolean)newValue);
-        return;
-      case TitanPackage.REFERENCE__OPPOSITE:
-        setOpposite((Reference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -261,9 +201,6 @@ public class ReferenceImpl extends FeatureImpl implements Reference
       case TitanPackage.REFERENCE__UNIQUE:
         setUnique(UNIQUE_EDEFAULT);
         return;
-      case TitanPackage.REFERENCE__OPPOSITE:
-        setOpposite((Reference)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -282,8 +219,6 @@ public class ReferenceImpl extends FeatureImpl implements Reference
         return reference != null;
       case TitanPackage.REFERENCE__UNIQUE:
         return unique != UNIQUE_EDEFAULT;
-      case TitanPackage.REFERENCE__OPPOSITE:
-        return opposite != null;
     }
     return super.eIsSet(featureID);
   }

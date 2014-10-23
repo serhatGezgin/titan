@@ -4,15 +4,12 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.yazgel.titan.xtext.services.TitanGrammarAccess;
 import org.yazgel.titan.xtext.titan.Entity;
 import org.yazgel.titan.xtext.titan.Module;
@@ -113,7 +110,7 @@ public class TitanSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID reference=[Entity|ID] unique?='unique'? opposite=[Reference|QUALIFIED_NAME]?)
+	 *     (name=ID reference=[Entity|ID] unique?='unique'?)
 	 */
 	protected void sequence_MultiReference(EObject context, MultiReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -131,26 +128,16 @@ public class TitanSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=DataTypes)
+	 *     (name=ID type=DataTypes opposite=[MultiDataType|QUALIFIED_NAME]?)
 	 */
 	protected void sequence_SingleDataType(EObject context, SingleDataType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TitanPackage.Literals.FEATURE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TitanPackage.Literals.FEATURE__NAME));
-			if(transientValues.isValueTransient(semanticObject, TitanPackage.Literals.DATA_TYPE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TitanPackage.Literals.DATA_TYPE__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSingleDataTypeAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSingleDataTypeAccess().getTypeDataTypesEnumRuleCall_3_0(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID reference=[Entity|ID] unique?='unique'? opposite=[Reference|QUALIFIED_NAME]?)
+	 *     (name=ID reference=[Entity|ID] unique?='unique'? opposite=[MultiReference|QUALIFIED_NAME]?)
 	 */
 	protected void sequence_SingleReference(EObject context, SingleReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

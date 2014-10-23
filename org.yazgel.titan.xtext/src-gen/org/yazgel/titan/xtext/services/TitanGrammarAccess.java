@@ -261,15 +261,16 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cOppositeKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cOppositeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cOppositeReferenceCrossReference_5_1_0 = (CrossReference)cOppositeAssignment_5_1.eContents().get(0);
-		private final RuleCall cOppositeReferenceQUALIFIED_NAMEParserRuleCall_5_1_0_1 = (RuleCall)cOppositeReferenceCrossReference_5_1_0.eContents().get(1);
+		private final CrossReference cOppositeMultiReferenceCrossReference_5_1_0 = (CrossReference)cOppositeAssignment_5_1.eContents().get(0);
+		private final RuleCall cOppositeMultiReferenceQUALIFIED_NAMEParserRuleCall_5_1_0_1 = (RuleCall)cOppositeMultiReferenceCrossReference_5_1_0.eContents().get(1);
 		
 		//SingleReference:
 		//	{SingleReference} "var" name=ID reference=[Entity] unique?="unique"? ("opposite"
-		//	opposite=[Reference|QUALIFIED_NAME])?;
+		//	opposite=[MultiReference|QUALIFIED_NAME])?;
 		public ParserRule getRule() { return rule; }
 
-		//{SingleReference} "var" name=ID reference=[Entity] unique?="unique"? ("opposite" opposite=[Reference|QUALIFIED_NAME])?
+		//{SingleReference} "var" name=ID reference=[Entity] unique?="unique"? ("opposite"
+		//opposite=[MultiReference|QUALIFIED_NAME])?
 		public Group getGroup() { return cGroup; }
 
 		//{SingleReference}
@@ -299,20 +300,20 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 		//"unique"
 		public Keyword getUniqueUniqueKeyword_4_0() { return cUniqueUniqueKeyword_4_0; }
 
-		//("opposite" opposite=[Reference|QUALIFIED_NAME])?
+		//("opposite" opposite=[MultiReference|QUALIFIED_NAME])?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"opposite"
 		public Keyword getOppositeKeyword_5_0() { return cOppositeKeyword_5_0; }
 
-		//opposite=[Reference|QUALIFIED_NAME]
+		//opposite=[MultiReference|QUALIFIED_NAME]
 		public Assignment getOppositeAssignment_5_1() { return cOppositeAssignment_5_1; }
 
-		//[Reference|QUALIFIED_NAME]
-		public CrossReference getOppositeReferenceCrossReference_5_1_0() { return cOppositeReferenceCrossReference_5_1_0; }
+		//[MultiReference|QUALIFIED_NAME]
+		public CrossReference getOppositeMultiReferenceCrossReference_5_1_0() { return cOppositeMultiReferenceCrossReference_5_1_0; }
 
 		//QUALIFIED_NAME
-		public RuleCall getOppositeReferenceQUALIFIED_NAMEParserRuleCall_5_1_0_1() { return cOppositeReferenceQUALIFIED_NAMEParserRuleCall_5_1_0_1; }
+		public RuleCall getOppositeMultiReferenceQUALIFIED_NAMEParserRuleCall_5_1_0_1() { return cOppositeMultiReferenceQUALIFIED_NAMEParserRuleCall_5_1_0_1; }
 	}
 
 	public class MultiReferenceElements extends AbstractParserRuleElementFinder {
@@ -328,19 +329,12 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftSquareBracketRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cUniqueAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final Keyword cUniqueUniqueKeyword_5_0 = (Keyword)cUniqueAssignment_5.eContents().get(0);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cOppositeKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cOppositeAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cOppositeReferenceCrossReference_6_1_0 = (CrossReference)cOppositeAssignment_6_1.eContents().get(0);
-		private final RuleCall cOppositeReferenceQUALIFIED_NAMEParserRuleCall_6_1_0_1 = (RuleCall)cOppositeReferenceCrossReference_6_1_0.eContents().get(1);
 		
 		//MultiReference:
-		//	{MultiReference} "var" name=ID reference=[Entity] "[]" unique?="unique"? ("opposite"
-		//	opposite=[Reference|QUALIFIED_NAME])?;
+		//	{MultiReference} "var" name=ID reference=[Entity] "[]" unique?="unique"?;
 		public ParserRule getRule() { return rule; }
 
-		//{MultiReference} "var" name=ID reference=[Entity] "[]" unique?="unique"? ("opposite"
-		//opposite=[Reference|QUALIFIED_NAME])?
+		//{MultiReference} "var" name=ID reference=[Entity] "[]" unique?="unique"?
 		public Group getGroup() { return cGroup; }
 
 		//{MultiReference}
@@ -372,21 +366,6 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"unique"
 		public Keyword getUniqueUniqueKeyword_5_0() { return cUniqueUniqueKeyword_5_0; }
-
-		//("opposite" opposite=[Reference|QUALIFIED_NAME])?
-		public Group getGroup_6() { return cGroup_6; }
-
-		//"opposite"
-		public Keyword getOppositeKeyword_6_0() { return cOppositeKeyword_6_0; }
-
-		//opposite=[Reference|QUALIFIED_NAME]
-		public Assignment getOppositeAssignment_6_1() { return cOppositeAssignment_6_1; }
-
-		//[Reference|QUALIFIED_NAME]
-		public CrossReference getOppositeReferenceCrossReference_6_1_0() { return cOppositeReferenceCrossReference_6_1_0; }
-
-		//QUALIFIED_NAME
-		public RuleCall getOppositeReferenceQUALIFIED_NAMEParserRuleCall_6_1_0_1() { return cOppositeReferenceQUALIFIED_NAMEParserRuleCall_6_1_0_1; }
 	}
 
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
@@ -418,12 +397,17 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cTypeDataTypesEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cOppositeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cOppositeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cOppositeMultiDataTypeCrossReference_4_1_0 = (CrossReference)cOppositeAssignment_4_1.eContents().get(0);
+		private final RuleCall cOppositeMultiDataTypeQUALIFIED_NAMEParserRuleCall_4_1_0_1 = (RuleCall)cOppositeMultiDataTypeCrossReference_4_1_0.eContents().get(1);
 		
 		//SingleDataType:
-		//	{SingleDataType} "var" name=ID type=DataTypes;
+		//	{SingleDataType} "var" name=ID type=DataTypes ("opposite" opposite=[MultiDataType|QUALIFIED_NAME])?;
 		public ParserRule getRule() { return rule; }
 
-		//{SingleDataType} "var" name=ID type=DataTypes
+		//{SingleDataType} "var" name=ID type=DataTypes ("opposite" opposite=[MultiDataType|QUALIFIED_NAME])?
 		public Group getGroup() { return cGroup; }
 
 		//{SingleDataType}
@@ -443,6 +427,21 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 
 		//DataTypes
 		public RuleCall getTypeDataTypesEnumRuleCall_3_0() { return cTypeDataTypesEnumRuleCall_3_0; }
+
+		//("opposite" opposite=[MultiDataType|QUALIFIED_NAME])?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"opposite"
+		public Keyword getOppositeKeyword_4_0() { return cOppositeKeyword_4_0; }
+
+		//opposite=[MultiDataType|QUALIFIED_NAME]
+		public Assignment getOppositeAssignment_4_1() { return cOppositeAssignment_4_1; }
+
+		//[MultiDataType|QUALIFIED_NAME]
+		public CrossReference getOppositeMultiDataTypeCrossReference_4_1_0() { return cOppositeMultiDataTypeCrossReference_4_1_0; }
+
+		//QUALIFIED_NAME
+		public RuleCall getOppositeMultiDataTypeQUALIFIED_NAMEParserRuleCall_4_1_0_1() { return cOppositeMultiDataTypeQUALIFIED_NAMEParserRuleCall_4_1_0_1; }
 	}
 
 	public class MultiDataTypeElements extends AbstractParserRuleElementFinder {
@@ -717,7 +716,7 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 
 	//SingleReference:
 	//	{SingleReference} "var" name=ID reference=[Entity] unique?="unique"? ("opposite"
-	//	opposite=[Reference|QUALIFIED_NAME])?;
+	//	opposite=[MultiReference|QUALIFIED_NAME])?;
 	public SingleReferenceElements getSingleReferenceAccess() {
 		return pSingleReference;
 	}
@@ -727,8 +726,7 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MultiReference:
-	//	{MultiReference} "var" name=ID reference=[Entity] "[]" unique?="unique"? ("opposite"
-	//	opposite=[Reference|QUALIFIED_NAME])?;
+	//	{MultiReference} "var" name=ID reference=[Entity] "[]" unique?="unique"?;
 	public MultiReferenceElements getMultiReferenceAccess() {
 		return pMultiReference;
 	}
@@ -748,7 +746,7 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SingleDataType:
-	//	{SingleDataType} "var" name=ID type=DataTypes;
+	//	{SingleDataType} "var" name=ID type=DataTypes ("opposite" opposite=[MultiDataType|QUALIFIED_NAME])?;
 	public SingleDataTypeElements getSingleDataTypeAccess() {
 		return pSingleDataType;
 	}
