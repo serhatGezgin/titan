@@ -33,14 +33,20 @@
     </genClasses>
     <genClasses ecoreClass="Titan.ecore#//Feature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Feature/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Feature/many"/>
     </genClasses>
     <genClasses ecoreClass="Titan.ecore#//Reference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//Reference/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Reference/unique"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//Reference/opposite"/>
     </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//SingleReference"/>
+    <genClasses ecoreClass="Titan.ecore#//MultiReference"/>
     <genClasses ecoreClass="Titan.ecore#//DataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//DataType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//SingleDataType"/>
+    <genClasses ecoreClass="Titan.ecore#//MultiDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//MultiDataType/unique"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

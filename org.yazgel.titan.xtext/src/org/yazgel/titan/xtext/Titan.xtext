@@ -32,19 +32,42 @@ Feature returns Feature:
 	Reference | DataType;
 
 Reference returns Reference:
-	{Reference}
+	SingleReference | MultiReference;
+	
+SingleReference returns SingleReference:
+	{SingleReference}
 	'var'
 	name=ID
 	reference=[Entity|ID]
-	many?=('[]')?
+	unique ?= ('unique')?
 	('opposite' opposite=[Reference|QUALIFIED_NAME])?;
+	
+MultiReference returns MultiReference:
+	{MultiReference}
+	'var'
+	name=ID
+	reference=[Entity|ID]
+	'[]'
+	unique ?= ('unique')?
+	('opposite' opposite=[Reference|QUALIFIED_NAME])?;
+	
 
 DataType returns DataType:
-	{DataType}
+	SingleDataType | MultiDataType;
+	
+SingleDataType returns SingleDataType:
+	{SingleDataType}
+	'var'
+	name=ID
+	type=DataTypes;
+	
+MultiDataType returns MultiDataType:
+	{MultiDataType}
 	'var'
 	name=ID
 	type=DataTypes
-	many?=('[]')?;
+	'[]'
+	unique ?= ('unique')?;
 
 enum DataTypes returns DataTypes:
 	String='String' | Integer='integer' | Boolean='boolean' | Long='long' | Double='double';

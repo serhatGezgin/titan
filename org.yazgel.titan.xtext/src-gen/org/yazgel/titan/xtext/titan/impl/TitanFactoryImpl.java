@@ -17,7 +17,11 @@ import org.yazgel.titan.xtext.titan.Entity;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.InternalDSLType;
 import org.yazgel.titan.xtext.titan.Module;
+import org.yazgel.titan.xtext.titan.MultiDataType;
+import org.yazgel.titan.xtext.titan.MultiReference;
 import org.yazgel.titan.xtext.titan.Reference;
+import org.yazgel.titan.xtext.titan.SingleDataType;
+import org.yazgel.titan.xtext.titan.SingleReference;
 import org.yazgel.titan.xtext.titan.TitanFactory;
 import org.yazgel.titan.xtext.titan.TitanPackage;
 
@@ -78,7 +82,11 @@ public class TitanFactoryImpl extends EFactoryImpl implements TitanFactory
       case TitanPackage.ENTITY: return createEntity();
       case TitanPackage.FEATURE: return createFeature();
       case TitanPackage.REFERENCE: return createReference();
+      case TitanPackage.SINGLE_REFERENCE: return createSingleReference();
+      case TitanPackage.MULTI_REFERENCE: return createMultiReference();
       case TitanPackage.DATA_TYPE: return createDataType();
+      case TitanPackage.SINGLE_DATA_TYPE: return createSingleDataType();
+      case TitanPackage.MULTI_DATA_TYPE: return createMultiDataType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -182,10 +190,54 @@ public class TitanFactoryImpl extends EFactoryImpl implements TitanFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public SingleReference createSingleReference()
+  {
+    SingleReferenceImpl singleReference = new SingleReferenceImpl();
+    return singleReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiReference createMultiReference()
+  {
+    MultiReferenceImpl multiReference = new MultiReferenceImpl();
+    return multiReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DataType createDataType()
   {
     DataTypeImpl dataType = new DataTypeImpl();
     return dataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SingleDataType createSingleDataType()
+  {
+    SingleDataTypeImpl singleDataType = new SingleDataTypeImpl();
+    return singleDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiDataType createMultiDataType()
+  {
+    MultiDataTypeImpl multiDataType = new MultiDataTypeImpl();
+    return multiDataType;
   }
 
   /**

@@ -68,6 +68,24 @@ public interface TitanFactory extends EFactory
   Reference createReference();
 
   /**
+   * Returns a new object of class '<em>Single Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Single Reference</em>'.
+   * @generated
+   */
+  SingleReference createSingleReference();
+
+  /**
+   * Returns a new object of class '<em>Multi Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi Reference</em>'.
+   * @generated
+   */
+  MultiReference createMultiReference();
+
+  /**
    * Returns a new object of class '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -75,6 +93,24 @@ public interface TitanFactory extends EFactory
    * @generated
    */
   DataType createDataType();
+
+  /**
+   * Returns a new object of class '<em>Single Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Single Data Type</em>'.
+   * @generated
+   */
+  SingleDataType createSingleDataType();
+
+  /**
+   * Returns a new object of class '<em>Multi Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi Data Type</em>'.
+   * @generated
+   */
+  MultiDataType createMultiDataType();
 
   /**
    * Returns the package supported by this factory.

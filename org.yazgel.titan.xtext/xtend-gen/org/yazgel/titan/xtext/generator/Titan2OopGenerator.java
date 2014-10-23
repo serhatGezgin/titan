@@ -37,7 +37,11 @@ import org.yazgel.titan.xtext.titan.DataTypes;
 import org.yazgel.titan.xtext.titan.Entity;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.Module;
+import org.yazgel.titan.xtext.titan.MultiDataType;
+import org.yazgel.titan.xtext.titan.MultiReference;
 import org.yazgel.titan.xtext.titan.Reference;
+import org.yazgel.titan.xtext.titan.SingleDataType;
+import org.yazgel.titan.xtext.titan.SingleReference;
 
 @SuppressWarnings("all")
 public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
@@ -108,27 +112,40 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
   }
   
   protected ODataType _generateFeature(final DataType dt) {
+    return null;
+  }
+  
+  protected ODataType _generateFeature(final SingleDataType dt) {
     ODataType _xblockexpression = null;
     {
       ODataType data = null;
-      boolean _isMany = dt.isMany();
-      if (_isMany) {
-        ODataTypeMulti _createODataTypeMulti = OopFactoryImpl.eINSTANCE.createODataTypeMulti();
-        data = _createODataTypeMulti;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("List<");
-        DataTypes _type = dt.getType();
-        _builder.append(_type, "");
-        _builder.append(">");
-        data.setType(_builder.toString());
-      } else {
-        ODataTypeSingle _createODataTypeSingle = OopFactoryImpl.eINSTANCE.createODataTypeSingle();
-        data = _createODataTypeSingle;
-        StringConcatenation _builder_1 = new StringConcatenation();
-        DataTypes _type_1 = dt.getType();
-        _builder_1.append(_type_1, "");
-        data.setType(_builder_1.toString());
-      }
+      ODataTypeSingle _createODataTypeSingle = OopFactoryImpl.eINSTANCE.createODataTypeSingle();
+      data = _createODataTypeSingle;
+      StringConcatenation _builder = new StringConcatenation();
+      DataTypes _type = dt.getType();
+      _builder.append(_type, "");
+      data.setType(_builder.toString());
+      String _name = dt.getName();
+      data.setName(_name);
+      Titan2OopGenerator.transformationReleations.put(dt, data);
+      Titan2OopGenerator.transformationReleations.put(data, dt);
+      _xblockexpression = data;
+    }
+    return _xblockexpression;
+  }
+  
+  protected ODataType _generateFeature(final MultiDataType dt) {
+    ODataType _xblockexpression = null;
+    {
+      ODataType data = null;
+      ODataTypeMulti _createODataTypeMulti = OopFactoryImpl.eINSTANCE.createODataTypeMulti();
+      data = _createODataTypeMulti;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("List<");
+      DataTypes _type = dt.getType();
+      _builder.append(_type, "");
+      _builder.append(">");
+      data.setType(_builder.toString());
       String _name = dt.getName();
       data.setName(_name);
       Titan2OopGenerator.transformationReleations.put(dt, data);
@@ -139,29 +156,42 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
   }
   
   protected OReference _generateFeature(final Reference r) {
+    return null;
+  }
+  
+  protected OReference _generateFeature(final SingleReference r) {
     OReference _xblockexpression = null;
     {
       OReference ref = null;
-      boolean _isMany = r.isMany();
-      if (_isMany) {
-        OReferenceMulti _createOReferenceMulti = OopFactoryImpl.eINSTANCE.createOReferenceMulti();
-        ref = _createOReferenceMulti;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("List<");
-        Entity _reference = r.getReference();
-        String _name = _reference.getName();
-        _builder.append(_name, "");
-        _builder.append(">");
-        ref.setType(_builder.toString());
-      } else {
-        OReferenceSingle _createOReferenceSingle = OopFactoryImpl.eINSTANCE.createOReferenceSingle();
-        ref = _createOReferenceSingle;
-        Entity _reference_1 = r.getReference();
-        String _name_1 = _reference_1.getName();
-        ref.setType(_name_1);
-      }
-      String _name_2 = r.getName();
-      ref.setName(_name_2);
+      OReferenceSingle _createOReferenceSingle = OopFactoryImpl.eINSTANCE.createOReferenceSingle();
+      ref = _createOReferenceSingle;
+      Entity _reference = r.getReference();
+      String _name = _reference.getName();
+      ref.setType(_name);
+      String _name_1 = r.getName();
+      ref.setName(_name_1);
+      Titan2OopGenerator.transformationReleations.put(r, ref);
+      Titan2OopGenerator.transformationReleations.put(ref, r);
+      _xblockexpression = ref;
+    }
+    return _xblockexpression;
+  }
+  
+  protected OReference _generateFeature(final MultiReference r) {
+    OReference _xblockexpression = null;
+    {
+      OReference ref = null;
+      OReferenceMulti _createOReferenceMulti = OopFactoryImpl.eINSTANCE.createOReferenceMulti();
+      ref = _createOReferenceMulti;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("List<");
+      Entity _reference = r.getReference();
+      String _name = _reference.getName();
+      _builder.append(_name, "");
+      _builder.append(">");
+      ref.setType(_builder.toString());
+      String _name_1 = r.getName();
+      ref.setName(_name_1);
       Titan2OopGenerator.transformationReleations.put(r, ref);
       Titan2OopGenerator.transformationReleations.put(ref, r);
       _xblockexpression = ref;
@@ -208,8 +238,7 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
           _and = false;
         } else {
           Reference _opposite_1 = ((Reference) p1).getOpposite();
-          boolean _isMany = _opposite_1.isMany();
-          _and = _isMany;
+          _and = (_opposite_1 instanceof MultiReference);
         }
         return Boolean.valueOf(_and);
       }
@@ -1483,7 +1512,15 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
   }
   
   public OFeature generateFeature(final Feature dt) {
-    if (dt instanceof DataType) {
+    if (dt instanceof MultiDataType) {
+      return _generateFeature((MultiDataType)dt);
+    } else if (dt instanceof MultiReference) {
+      return _generateFeature((MultiReference)dt);
+    } else if (dt instanceof SingleDataType) {
+      return _generateFeature((SingleDataType)dt);
+    } else if (dt instanceof SingleReference) {
+      return _generateFeature((SingleReference)dt);
+    } else if (dt instanceof DataType) {
       return _generateFeature((DataType)dt);
     } else if (dt instanceof Reference) {
       return _generateFeature((Reference)dt);

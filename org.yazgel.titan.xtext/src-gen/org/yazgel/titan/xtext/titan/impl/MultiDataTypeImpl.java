@@ -7,52 +7,51 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.yazgel.titan.xtext.titan.Feature;
+import org.yazgel.titan.xtext.titan.MultiDataType;
 import org.yazgel.titan.xtext.titan.TitanPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Feature</b></em>'.
+ * An implementation of the model object '<em><b>Multi Data Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.yazgel.titan.xtext.titan.impl.FeatureImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.yazgel.titan.xtext.titan.impl.MultiDataTypeImpl#isUnique <em>Unique</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
+public class MultiDataTypeImpl extends DataTypeImpl implements MultiDataType
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #isUnique() <em>Unique</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #isUnique()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final boolean UNIQUE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #isUnique() <em>Unique</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #isUnique()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected boolean unique = UNIQUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeatureImpl()
+  protected MultiDataTypeImpl()
   {
     super();
   }
@@ -65,7 +64,7 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   @Override
   protected EClass eStaticClass()
   {
-    return TitanPackage.Literals.FEATURE;
+    return TitanPackage.Literals.MULTI_DATA_TYPE;
   }
 
   /**
@@ -73,9 +72,9 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public boolean isUnique()
   {
-    return name;
+    return unique;
   }
 
   /**
@@ -83,12 +82,12 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setUnique(boolean newUnique)
   {
-    String oldName = name;
-    name = newName;
+    boolean oldUnique = unique;
+    unique = newUnique;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TitanPackage.FEATURE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, TitanPackage.MULTI_DATA_TYPE__UNIQUE, oldUnique, unique));
   }
 
   /**
@@ -101,8 +100,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case TitanPackage.FEATURE__NAME:
-        return getName();
+      case TitanPackage.MULTI_DATA_TYPE__UNIQUE:
+        return isUnique();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +116,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case TitanPackage.FEATURE__NAME:
-        setName((String)newValue);
+      case TitanPackage.MULTI_DATA_TYPE__UNIQUE:
+        setUnique((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +133,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case TitanPackage.FEATURE__NAME:
-        setName(NAME_EDEFAULT);
+      case TitanPackage.MULTI_DATA_TYPE__UNIQUE:
+        setUnique(UNIQUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +150,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case TitanPackage.FEATURE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case TitanPackage.MULTI_DATA_TYPE__UNIQUE:
+        return unique != UNIQUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -168,10 +167,10 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (unique: ");
+    result.append(unique);
     result.append(')');
     return result.toString();
   }
 
-} //FeatureImpl
+} //MultiDataTypeImpl

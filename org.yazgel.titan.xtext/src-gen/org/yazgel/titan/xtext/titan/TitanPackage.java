@@ -206,22 +206,13 @@ public interface TitanPackage extends EPackage
   int FEATURE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Many</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE__MANY = 1;
-
-  /**
    * The number of structural features of the '<em>Feature</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_FEATURE_COUNT = 2;
+  int FEATURE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl <em>Reference</em>}' class.
@@ -243,15 +234,6 @@ public interface TitanPackage extends EPackage
   int REFERENCE__NAME = FEATURE__NAME;
 
   /**
-   * The feature id for the '<em><b>Many</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCE__MANY = FEATURE__MANY;
-
-  /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -261,13 +243,22 @@ public interface TitanPackage extends EPackage
   int REFERENCE__REFERENCE = FEATURE_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Unique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCE__UNIQUE = FEATURE_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Opposite</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REFERENCE__OPPOSITE = FEATURE_FEATURE_COUNT + 1;
+  int REFERENCE__OPPOSITE = FEATURE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Reference</em>' class.
@@ -276,7 +267,117 @@ public interface TitanPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REFERENCE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 2;
+  int REFERENCE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.SingleReferenceImpl <em>Single Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.yazgel.titan.xtext.titan.impl.SingleReferenceImpl
+   * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getSingleReference()
+   * @generated
+   */
+  int SINGLE_REFERENCE = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_REFERENCE__NAME = REFERENCE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Reference</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_REFERENCE__REFERENCE = REFERENCE__REFERENCE;
+
+  /**
+   * The feature id for the '<em><b>Unique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_REFERENCE__UNIQUE = REFERENCE__UNIQUE;
+
+  /**
+   * The feature id for the '<em><b>Opposite</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_REFERENCE__OPPOSITE = REFERENCE__OPPOSITE;
+
+  /**
+   * The number of structural features of the '<em>Single Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_REFERENCE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.MultiReferenceImpl <em>Multi Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.yazgel.titan.xtext.titan.impl.MultiReferenceImpl
+   * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getMultiReference()
+   * @generated
+   */
+  int MULTI_REFERENCE = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_REFERENCE__NAME = REFERENCE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Reference</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_REFERENCE__REFERENCE = REFERENCE__REFERENCE;
+
+  /**
+   * The feature id for the '<em><b>Unique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_REFERENCE__UNIQUE = REFERENCE__UNIQUE;
+
+  /**
+   * The feature id for the '<em><b>Opposite</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_REFERENCE__OPPOSITE = REFERENCE__OPPOSITE;
+
+  /**
+   * The number of structural features of the '<em>Multi Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_REFERENCE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -286,7 +387,7 @@ public interface TitanPackage extends EPackage
    * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getDataType()
    * @generated
    */
-  int DATA_TYPE = 5;
+  int DATA_TYPE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -296,15 +397,6 @@ public interface TitanPackage extends EPackage
    * @ordered
    */
   int DATA_TYPE__NAME = FEATURE__NAME;
-
-  /**
-   * The feature id for the '<em><b>Many</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_TYPE__MANY = FEATURE__MANY;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -325,6 +417,89 @@ public interface TitanPackage extends EPackage
   int DATA_TYPE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.SingleDataTypeImpl <em>Single Data Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.yazgel.titan.xtext.titan.impl.SingleDataTypeImpl
+   * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getSingleDataType()
+   * @generated
+   */
+  int SINGLE_DATA_TYPE = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_DATA_TYPE__TYPE = DATA_TYPE__TYPE;
+
+  /**
+   * The number of structural features of the '<em>Single Data Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.MultiDataTypeImpl <em>Multi Data Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.yazgel.titan.xtext.titan.impl.MultiDataTypeImpl
+   * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getMultiDataType()
+   * @generated
+   */
+  int MULTI_DATA_TYPE = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_DATA_TYPE__TYPE = DATA_TYPE__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Unique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_DATA_TYPE__UNIQUE = DATA_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Multi Data Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.yazgel.titan.xtext.titan.InternalDSLType <em>Internal DSL Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -332,7 +507,7 @@ public interface TitanPackage extends EPackage
    * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getInternalDSLType()
    * @generated
    */
-  int INTERNAL_DSL_TYPE = 6;
+  int INTERNAL_DSL_TYPE = 10;
 
   /**
    * The meta object id for the '{@link org.yazgel.titan.xtext.titan.DataTypes <em>Data Types</em>}' enum.
@@ -342,7 +517,7 @@ public interface TitanPackage extends EPackage
    * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getDataTypes()
    * @generated
    */
-  int DATA_TYPES = 7;
+  int DATA_TYPES = 11;
 
 
   /**
@@ -485,17 +660,6 @@ public interface TitanPackage extends EPackage
   EAttribute getFeature_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.yazgel.titan.xtext.titan.Feature#isMany <em>Many</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Many</em>'.
-   * @see org.yazgel.titan.xtext.titan.Feature#isMany()
-   * @see #getFeature()
-   * @generated
-   */
-  EAttribute getFeature_Many();
-
-  /**
    * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.Reference <em>Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -517,6 +681,17 @@ public interface TitanPackage extends EPackage
   EReference getReference_Reference();
 
   /**
+   * Returns the meta object for the attribute '{@link org.yazgel.titan.xtext.titan.Reference#isUnique <em>Unique</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unique</em>'.
+   * @see org.yazgel.titan.xtext.titan.Reference#isUnique()
+   * @see #getReference()
+   * @generated
+   */
+  EAttribute getReference_Unique();
+
+  /**
    * Returns the meta object for the reference '{@link org.yazgel.titan.xtext.titan.Reference#getOpposite <em>Opposite</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -526,6 +701,26 @@ public interface TitanPackage extends EPackage
    * @generated
    */
   EReference getReference_Opposite();
+
+  /**
+   * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.SingleReference <em>Single Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Single Reference</em>'.
+   * @see org.yazgel.titan.xtext.titan.SingleReference
+   * @generated
+   */
+  EClass getSingleReference();
+
+  /**
+   * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.MultiReference <em>Multi Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multi Reference</em>'.
+   * @see org.yazgel.titan.xtext.titan.MultiReference
+   * @generated
+   */
+  EClass getMultiReference();
 
   /**
    * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.DataType <em>Data Type</em>}'.
@@ -547,6 +742,37 @@ public interface TitanPackage extends EPackage
    * @generated
    */
   EAttribute getDataType_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.SingleDataType <em>Single Data Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Single Data Type</em>'.
+   * @see org.yazgel.titan.xtext.titan.SingleDataType
+   * @generated
+   */
+  EClass getSingleDataType();
+
+  /**
+   * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.MultiDataType <em>Multi Data Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multi Data Type</em>'.
+   * @see org.yazgel.titan.xtext.titan.MultiDataType
+   * @generated
+   */
+  EClass getMultiDataType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.yazgel.titan.xtext.titan.MultiDataType#isUnique <em>Unique</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unique</em>'.
+   * @see org.yazgel.titan.xtext.titan.MultiDataType#isUnique()
+   * @see #getMultiDataType()
+   * @generated
+   */
+  EAttribute getMultiDataType_Unique();
 
   /**
    * Returns the meta object for enum '{@link org.yazgel.titan.xtext.titan.InternalDSLType <em>Internal DSL Type</em>}'.
@@ -704,14 +930,6 @@ public interface TitanPackage extends EPackage
     EAttribute FEATURE__NAME = eINSTANCE.getFeature_Name();
 
     /**
-     * The meta object literal for the '<em><b>Many</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FEATURE__MANY = eINSTANCE.getFeature_Many();
-
-    /**
      * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl <em>Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -730,12 +948,40 @@ public interface TitanPackage extends EPackage
     EReference REFERENCE__REFERENCE = eINSTANCE.getReference_Reference();
 
     /**
+     * The meta object literal for the '<em><b>Unique</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REFERENCE__UNIQUE = eINSTANCE.getReference_Unique();
+
+    /**
      * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference REFERENCE__OPPOSITE = eINSTANCE.getReference_Opposite();
+
+    /**
+     * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.SingleReferenceImpl <em>Single Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.yazgel.titan.xtext.titan.impl.SingleReferenceImpl
+     * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getSingleReference()
+     * @generated
+     */
+    EClass SINGLE_REFERENCE = eINSTANCE.getSingleReference();
+
+    /**
+     * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.MultiReferenceImpl <em>Multi Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.yazgel.titan.xtext.titan.impl.MultiReferenceImpl
+     * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getMultiReference()
+     * @generated
+     */
+    EClass MULTI_REFERENCE = eINSTANCE.getMultiReference();
 
     /**
      * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -754,6 +1000,34 @@ public interface TitanPackage extends EPackage
      * @generated
      */
     EAttribute DATA_TYPE__TYPE = eINSTANCE.getDataType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.SingleDataTypeImpl <em>Single Data Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.yazgel.titan.xtext.titan.impl.SingleDataTypeImpl
+     * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getSingleDataType()
+     * @generated
+     */
+    EClass SINGLE_DATA_TYPE = eINSTANCE.getSingleDataType();
+
+    /**
+     * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.MultiDataTypeImpl <em>Multi Data Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.yazgel.titan.xtext.titan.impl.MultiDataTypeImpl
+     * @see org.yazgel.titan.xtext.titan.impl.TitanPackageImpl#getMultiDataType()
+     * @generated
+     */
+    EClass MULTI_DATA_TYPE = eINSTANCE.getMultiDataType();
+
+    /**
+     * The meta object literal for the '<em><b>Unique</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTI_DATA_TYPE__UNIQUE = eINSTANCE.getMultiDataType_Unique();
 
     /**
      * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.InternalDSLType <em>Internal DSL Type</em>}' enum.

@@ -11,7 +11,11 @@ import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.Entity;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.Module;
+import org.yazgel.titan.xtext.titan.MultiDataType;
+import org.yazgel.titan.xtext.titan.MultiReference;
 import org.yazgel.titan.xtext.titan.Reference;
+import org.yazgel.titan.xtext.titan.SingleDataType;
+import org.yazgel.titan.xtext.titan.SingleReference;
 import org.yazgel.titan.xtext.titan.TitanPackage;
 
 /**
@@ -113,11 +117,47 @@ public class TitanSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TitanPackage.SINGLE_REFERENCE:
+      {
+        SingleReference singleReference = (SingleReference)theEObject;
+        T result = caseSingleReference(singleReference);
+        if (result == null) result = caseReference(singleReference);
+        if (result == null) result = caseFeature(singleReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TitanPackage.MULTI_REFERENCE:
+      {
+        MultiReference multiReference = (MultiReference)theEObject;
+        T result = caseMultiReference(multiReference);
+        if (result == null) result = caseReference(multiReference);
+        if (result == null) result = caseFeature(multiReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TitanPackage.DATA_TYPE:
       {
         DataType dataType = (DataType)theEObject;
         T result = caseDataType(dataType);
         if (result == null) result = caseFeature(dataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TitanPackage.SINGLE_DATA_TYPE:
+      {
+        SingleDataType singleDataType = (SingleDataType)theEObject;
+        T result = caseSingleDataType(singleDataType);
+        if (result == null) result = caseDataType(singleDataType);
+        if (result == null) result = caseFeature(singleDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TitanPackage.MULTI_DATA_TYPE:
+      {
+        MultiDataType multiDataType = (MultiDataType)theEObject;
+        T result = caseMultiDataType(multiDataType);
+        if (result == null) result = caseDataType(multiDataType);
+        if (result == null) result = caseFeature(multiDataType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -206,6 +246,38 @@ public class TitanSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Single Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Single Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSingleReference(SingleReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multi Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multi Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiReference(MultiReference object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -217,6 +289,38 @@ public class TitanSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDataType(DataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Single Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Single Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSingleDataType(SingleDataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multi Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multi Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiDataType(MultiDataType object)
   {
     return null;
   }

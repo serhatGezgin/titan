@@ -16,7 +16,11 @@ import org.yazgel.titan.xtext.titan.Entity;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.InternalDSLType;
 import org.yazgel.titan.xtext.titan.Module;
+import org.yazgel.titan.xtext.titan.MultiDataType;
+import org.yazgel.titan.xtext.titan.MultiReference;
 import org.yazgel.titan.xtext.titan.Reference;
+import org.yazgel.titan.xtext.titan.SingleDataType;
+import org.yazgel.titan.xtext.titan.SingleReference;
 import org.yazgel.titan.xtext.titan.TitanFactory;
 import org.yazgel.titan.xtext.titan.TitanPackage;
 
@@ -68,7 +72,35 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass singleReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass dataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass singleDataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiDataTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -282,16 +314,6 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeature_Many()
-  {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getReference()
   {
     return referenceEClass;
@@ -312,9 +334,39 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getReference_Unique()
+  {
+    return (EAttribute)referenceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getReference_Opposite()
   {
-    return (EReference)referenceEClass.getEStructuralFeatures().get(1);
+    return (EReference)referenceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSingleReference()
+  {
+    return singleReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMultiReference()
+  {
+    return multiReferenceEClass;
   }
 
   /**
@@ -335,6 +387,36 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
   public EAttribute getDataType_Type()
   {
     return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSingleDataType()
+  {
+    return singleDataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMultiDataType()
+  {
+    return multiDataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiDataType_Unique()
+  {
+    return (EAttribute)multiDataTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -403,14 +485,23 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
 
     featureEClass = createEClass(FEATURE);
     createEAttribute(featureEClass, FEATURE__NAME);
-    createEAttribute(featureEClass, FEATURE__MANY);
 
     referenceEClass = createEClass(REFERENCE);
     createEReference(referenceEClass, REFERENCE__REFERENCE);
+    createEAttribute(referenceEClass, REFERENCE__UNIQUE);
     createEReference(referenceEClass, REFERENCE__OPPOSITE);
+
+    singleReferenceEClass = createEClass(SINGLE_REFERENCE);
+
+    multiReferenceEClass = createEClass(MULTI_REFERENCE);
 
     dataTypeEClass = createEClass(DATA_TYPE);
     createEAttribute(dataTypeEClass, DATA_TYPE__TYPE);
+
+    singleDataTypeEClass = createEClass(SINGLE_DATA_TYPE);
+
+    multiDataTypeEClass = createEClass(MULTI_DATA_TYPE);
+    createEAttribute(multiDataTypeEClass, MULTI_DATA_TYPE__UNIQUE);
 
     // Create enums
     internalDSLTypeEEnum = createEEnum(INTERNAL_DSL_TYPE);
@@ -447,7 +538,11 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
 
     // Add supertypes to classes
     referenceEClass.getESuperTypes().add(this.getFeature());
+    singleReferenceEClass.getESuperTypes().add(this.getReference());
+    multiReferenceEClass.getESuperTypes().add(this.getReference());
     dataTypeEClass.getESuperTypes().add(this.getFeature());
+    singleDataTypeEClass.getESuperTypes().add(this.getDataType());
+    multiDataTypeEClass.getESuperTypes().add(this.getDataType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -466,14 +561,23 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
 
     initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeature_Many(), ecorePackage.getEBoolean(), "many", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReference_Reference(), this.getEntity(), null, "reference", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getReference_Unique(), ecorePackage.getEBoolean(), "unique", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReference_Opposite(), this.getReference(), null, "opposite", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(singleReferenceEClass, SingleReference.class, "SingleReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(multiReferenceEClass, MultiReference.class, "MultiReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDataType_Type(), this.getDataTypes(), "type", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(singleDataTypeEClass, SingleDataType.class, "SingleDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(multiDataTypeEClass, MultiDataType.class, "MultiDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiDataType_Unique(), ecorePackage.getEBoolean(), "unique", null, 0, 1, MultiDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(internalDSLTypeEEnum, InternalDSLType.class, "InternalDSLType");

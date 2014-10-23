@@ -38,6 +38,8 @@ public class TitanParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getFeatureAccess().getAlternatives(), "rule__Feature__Alternatives");
+					put(grammarAccess.getReferenceAccess().getAlternatives(), "rule__Reference__Alternatives");
+					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 					put(grammarAccess.getDataTypesAccess().getAlternatives(), "rule__DataTypes__Alternatives");
 					put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
 					put(grammarAccess.getModuleAccess().getGroup_4(), "rule__Module__Group_4__0");
@@ -46,9 +48,12 @@ public class TitanParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup_3(), "rule__Entity__Group_3__0");
 					put(grammarAccess.getEntityAccess().getGroup_5(), "rule__Entity__Group_5__0");
-					put(grammarAccess.getReferenceAccess().getGroup(), "rule__Reference__Group__0");
-					put(grammarAccess.getReferenceAccess().getGroup_5(), "rule__Reference__Group_5__0");
-					put(grammarAccess.getDataTypeAccess().getGroup(), "rule__DataType__Group__0");
+					put(grammarAccess.getSingleReferenceAccess().getGroup(), "rule__SingleReference__Group__0");
+					put(grammarAccess.getSingleReferenceAccess().getGroup_5(), "rule__SingleReference__Group_5__0");
+					put(grammarAccess.getMultiReferenceAccess().getGroup(), "rule__MultiReference__Group__0");
+					put(grammarAccess.getMultiReferenceAccess().getGroup_6(), "rule__MultiReference__Group_6__0");
+					put(grammarAccess.getSingleDataTypeAccess().getGroup(), "rule__SingleDataType__Group__0");
+					put(grammarAccess.getMultiDataTypeAccess().getGroup(), "rule__MultiDataType__Group__0");
 					put(grammarAccess.getQUALIFIED_NAMEAccess().getGroup(), "rule__QUALIFIED_NAME__Group__0");
 					put(grammarAccess.getQUALIFIED_NAMEAccess().getGroup_1(), "rule__QUALIFIED_NAME__Group_1__0");
 					put(grammarAccess.getModuleAccess().getNameAssignment_2(), "rule__Module__NameAssignment_2");
@@ -62,13 +67,19 @@ public class TitanParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityAccess().getSuperEntityAssignment_3_1(), "rule__Entity__SuperEntityAssignment_3_1");
 					put(grammarAccess.getEntityAccess().getFeaturesAssignment_5_0(), "rule__Entity__FeaturesAssignment_5_0");
 					put(grammarAccess.getEntityAccess().getFeaturesAssignment_5_1(), "rule__Entity__FeaturesAssignment_5_1");
-					put(grammarAccess.getReferenceAccess().getNameAssignment_2(), "rule__Reference__NameAssignment_2");
-					put(grammarAccess.getReferenceAccess().getReferenceAssignment_3(), "rule__Reference__ReferenceAssignment_3");
-					put(grammarAccess.getReferenceAccess().getManyAssignment_4(), "rule__Reference__ManyAssignment_4");
-					put(grammarAccess.getReferenceAccess().getOppositeAssignment_5_1(), "rule__Reference__OppositeAssignment_5_1");
-					put(grammarAccess.getDataTypeAccess().getNameAssignment_2(), "rule__DataType__NameAssignment_2");
-					put(grammarAccess.getDataTypeAccess().getTypeAssignment_3(), "rule__DataType__TypeAssignment_3");
-					put(grammarAccess.getDataTypeAccess().getManyAssignment_4(), "rule__DataType__ManyAssignment_4");
+					put(grammarAccess.getSingleReferenceAccess().getNameAssignment_2(), "rule__SingleReference__NameAssignment_2");
+					put(grammarAccess.getSingleReferenceAccess().getReferenceAssignment_3(), "rule__SingleReference__ReferenceAssignment_3");
+					put(grammarAccess.getSingleReferenceAccess().getUniqueAssignment_4(), "rule__SingleReference__UniqueAssignment_4");
+					put(grammarAccess.getSingleReferenceAccess().getOppositeAssignment_5_1(), "rule__SingleReference__OppositeAssignment_5_1");
+					put(grammarAccess.getMultiReferenceAccess().getNameAssignment_2(), "rule__MultiReference__NameAssignment_2");
+					put(grammarAccess.getMultiReferenceAccess().getReferenceAssignment_3(), "rule__MultiReference__ReferenceAssignment_3");
+					put(grammarAccess.getMultiReferenceAccess().getUniqueAssignment_5(), "rule__MultiReference__UniqueAssignment_5");
+					put(grammarAccess.getMultiReferenceAccess().getOppositeAssignment_6_1(), "rule__MultiReference__OppositeAssignment_6_1");
+					put(grammarAccess.getSingleDataTypeAccess().getNameAssignment_2(), "rule__SingleDataType__NameAssignment_2");
+					put(grammarAccess.getSingleDataTypeAccess().getTypeAssignment_3(), "rule__SingleDataType__TypeAssignment_3");
+					put(grammarAccess.getMultiDataTypeAccess().getNameAssignment_2(), "rule__MultiDataType__NameAssignment_2");
+					put(grammarAccess.getMultiDataTypeAccess().getTypeAssignment_3(), "rule__MultiDataType__TypeAssignment_3");
+					put(grammarAccess.getMultiDataTypeAccess().getUniqueAssignment_5(), "rule__MultiDataType__UniqueAssignment_5");
 				}
 			};
 		}

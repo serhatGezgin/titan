@@ -12,6 +12,7 @@ package org.yazgel.titan.xtext.titan;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.yazgel.titan.xtext.titan.Reference#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.yazgel.titan.xtext.titan.Reference#isUnique <em>Unique</em>}</li>
  *   <li>{@link org.yazgel.titan.xtext.titan.Reference#getOpposite <em>Opposite</em>}</li>
  * </ul>
  * </p>
@@ -47,6 +48,32 @@ public interface Reference extends Feature
    * @generated
    */
   void setReference(Entity value);
+
+  /**
+   * Returns the value of the '<em><b>Unique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Unique</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Unique</em>' attribute.
+   * @see #setUnique(boolean)
+   * @see org.yazgel.titan.xtext.titan.TitanPackage#getReference_Unique()
+   * @model
+   * @generated
+   */
+  boolean isUnique();
+
+  /**
+   * Sets the value of the '{@link org.yazgel.titan.xtext.titan.Reference#isUnique <em>Unique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Unique</em>' attribute.
+   * @see #isUnique()
+   * @generated
+   */
+  void setUnique(boolean value);
 
   /**
    * Returns the value of the '<em><b>Opposite</b></em>' reference.

@@ -13,7 +13,11 @@ import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.Entity;
 import org.yazgel.titan.xtext.titan.Feature;
 import org.yazgel.titan.xtext.titan.Module;
+import org.yazgel.titan.xtext.titan.MultiDataType;
+import org.yazgel.titan.xtext.titan.MultiReference;
 import org.yazgel.titan.xtext.titan.Reference;
+import org.yazgel.titan.xtext.titan.SingleDataType;
+import org.yazgel.titan.xtext.titan.SingleReference;
 import org.yazgel.titan.xtext.titan.TitanPackage;
 
 /**
@@ -105,9 +109,29 @@ public class TitanAdapterFactory extends AdapterFactoryImpl
         return createReferenceAdapter();
       }
       @Override
+      public Adapter caseSingleReference(SingleReference object)
+      {
+        return createSingleReferenceAdapter();
+      }
+      @Override
+      public Adapter caseMultiReference(MultiReference object)
+      {
+        return createMultiReferenceAdapter();
+      }
+      @Override
       public Adapter caseDataType(DataType object)
       {
         return createDataTypeAdapter();
+      }
+      @Override
+      public Adapter caseSingleDataType(SingleDataType object)
+      {
+        return createSingleDataTypeAdapter();
+      }
+      @Override
+      public Adapter caseMultiDataType(MultiDataType object)
+      {
+        return createMultiDataTypeAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -207,6 +231,36 @@ public class TitanAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.SingleReference <em>Single Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.yazgel.titan.xtext.titan.SingleReference
+   * @generated
+   */
+  public Adapter createSingleReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.MultiReference <em>Multi Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.yazgel.titan.xtext.titan.MultiReference
+   * @generated
+   */
+  public Adapter createMultiReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.DataType <em>Data Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -217,6 +271,36 @@ public class TitanAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDataTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.SingleDataType <em>Single Data Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.yazgel.titan.xtext.titan.SingleDataType
+   * @generated
+   */
+  public Adapter createSingleDataTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.yazgel.titan.xtext.titan.MultiDataType <em>Multi Data Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.yazgel.titan.xtext.titan.MultiDataType
+   * @generated
+   */
+  public Adapter createMultiDataTypeAdapter()
   {
     return null;
   }

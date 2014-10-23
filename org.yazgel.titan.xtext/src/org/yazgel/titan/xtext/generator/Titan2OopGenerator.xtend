@@ -22,8 +22,12 @@ import org.yazgel.titan.xtext.titan.Module
 import org.yazgel.titan.xtext.titan.Package
 import org.yazgel.titan.xtext.titan.Reference
 import org.yazgel.titan.xtext.generator.helper.Model2ModelGeneratorHelper
+import org.yazgel.titan.xtext.titan.SingleDataType
+import org.yazgel.titan.xtext.titan.MultiDataType 
+import org.yazgel.titan.xtext.titan.SingleReference
+import org.yazgel.titan.xtext.titan.MultiReference
 
-class Titan2OopGenerator extends Model2ModelGeneratorHelper{
+class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 	//From model, To Model &&
 	//To model, From Model
@@ -79,14 +83,25 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper{
 	}
 
 	def dispatch ODataType generateFeature(DataType dt) {
+	}
+
+	def dispatch ODataType generateFeature(SingleDataType dt) {
 		var ODataType data;
-		if (dt.many) {
-			data = OopFactoryImpl.eINSTANCE.createODataTypeMulti;
-			data.type = '''List<«dt.type»>'''
-		} else {
-			data = OopFactoryImpl.eINSTANCE.createODataTypeSingle
-			data.type = '''«dt.type»'''
-		}
+
+		data = OopFactoryImpl.eINSTANCE.createODataTypeSingle
+		data.type = '''«dt.type»'''
+
+		data.name = dt.name
+		transformationReleations.put(dt, data)
+		transformationReleations.put(data, dt)
+
+		data
+	}
+
+	def dispatch ODataType generateFeature(MultiDataType dt) {
+		var ODataType data;
+		data = OopFactoryImpl.eINSTANCE.createODataTypeMulti;
+		data.type = '''List<«dt.type»>'''
 
 		data.name = dt.name
 		transformationReleations.put(dt, data)
@@ -96,14 +111,24 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper{
 	}
 
 	def dispatch OReference generateFeature(Reference r) {
+	}
+
+	def dispatch OReference generateFeature(SingleReference r) {
 		var OReference ref;
-		if (r.many) {
-			ref = OopFactoryImpl.eINSTANCE.createOReferenceMulti;
-			ref.type = '''List<«r.reference.name»>'''
-		} else {
-			ref = OopFactoryImpl.eINSTANCE.createOReferenceSingle
-			ref.type = r.reference.name
-		}
+		ref = OopFactoryImpl.eINSTANCE.createOReferenceSingle
+		ref.type = r.reference.name
+
+		ref.name = r.name
+		transformationReleations.put(r, ref)
+		transformationReleations.put(ref, r)
+
+		ref
+	}
+
+	def dispatch OReference generateFeature(MultiReference r) {
+		var OReference ref;
+		ref = OopFactoryImpl.eINSTANCE.createOReferenceMulti;
+		ref.type = '''List<«r.reference.name»>'''
 
 		ref.name = r.name
 		transformationReleations.put(r, ref)
@@ -125,7 +150,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper{
 
 		//2-Unique referances must be set (opposite releations = unique releations)
 		var oppositeReferences = transformationReleations.filter[p1, p2|
-			(p1 instanceof Reference) && ((p1 as Reference).opposite != null) && ((p1 as Reference).opposite.many)]
+			(p1 instanceof Reference) && ((p1 as Reference).opposite != null) && (((p1 as Reference).opposite instanceof MultiReference))]
 		for (e : oppositeReferences.entrySet) {
 			var or = transformationReleations.get((e.key as Reference).opposite) as OReferenceMulti
 			or.uniqueInstance = true;
@@ -432,7 +457,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper{
 			var modelOc = e.value as OClass
 
 			var importSet = newHashSet()
-			
+
 			importSet.add('''«modelOc.oClassPackageName».«modelOc.name»''')
 			for (OFeature f : modelOc.features) {
 				if (f instanceof OReference) {
@@ -441,8 +466,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper{
 						var builderOfReferenceOclass = modelBuilderReleations.filter[p1, p2|p2.equals(f.reference)].
 							entrySet.get(0).key as OClass
 						importSet.add(
-							'''«builderOfReferenceOclass.oClassPackageName».«builderOfReferenceOclass.
-								name»''')
+							'''«builderOfReferenceOclass.oClassPackageName».«builderOfReferenceOclass.name»''')
 					} else if (f instanceof OReferenceMulti) {
 						importSet.add('''java.util.Arrays''')
 						importSet.add('''java.util.List''')
@@ -614,6 +638,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper{
 				}
 			}
 		}
+
 		//Burada static alanlar bosaltılır.
 		modelBuilderReleations.clear
 		transformationReleations.clear

@@ -21,6 +21,7 @@ import org.yazgel.titan.xtext.titan.TitanPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#getOpposite <em>Opposite</em>}</li>
  * </ul>
  * </p>
@@ -38,6 +39,26 @@ public class ReferenceImpl extends FeatureImpl implements Reference
    * @ordered
    */
   protected Entity reference;
+
+  /**
+   * The default value of the '{@link #isUnique() <em>Unique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isUnique()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean UNIQUE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isUnique() <em>Unique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isUnique()
+   * @generated
+   * @ordered
+   */
+  protected boolean unique = UNIQUE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
@@ -118,6 +139,29 @@ public class ReferenceImpl extends FeatureImpl implements Reference
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isUnique()
+  {
+    return unique;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUnique(boolean newUnique)
+  {
+    boolean oldUnique = unique;
+    unique = newUnique;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TitanPackage.REFERENCE__UNIQUE, oldUnique, unique));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Reference getOpposite()
   {
     if (opposite != null && opposite.eIsProxy())
@@ -169,6 +213,8 @@ public class ReferenceImpl extends FeatureImpl implements Reference
       case TitanPackage.REFERENCE__REFERENCE:
         if (resolve) return getReference();
         return basicGetReference();
+      case TitanPackage.REFERENCE__UNIQUE:
+        return isUnique();
       case TitanPackage.REFERENCE__OPPOSITE:
         if (resolve) return getOpposite();
         return basicGetOpposite();
@@ -188,6 +234,9 @@ public class ReferenceImpl extends FeatureImpl implements Reference
     {
       case TitanPackage.REFERENCE__REFERENCE:
         setReference((Entity)newValue);
+        return;
+      case TitanPackage.REFERENCE__UNIQUE:
+        setUnique((Boolean)newValue);
         return;
       case TitanPackage.REFERENCE__OPPOSITE:
         setOpposite((Reference)newValue);
@@ -209,6 +258,9 @@ public class ReferenceImpl extends FeatureImpl implements Reference
       case TitanPackage.REFERENCE__REFERENCE:
         setReference((Entity)null);
         return;
+      case TitanPackage.REFERENCE__UNIQUE:
+        setUnique(UNIQUE_EDEFAULT);
+        return;
       case TitanPackage.REFERENCE__OPPOSITE:
         setOpposite((Reference)null);
         return;
@@ -228,10 +280,29 @@ public class ReferenceImpl extends FeatureImpl implements Reference
     {
       case TitanPackage.REFERENCE__REFERENCE:
         return reference != null;
+      case TitanPackage.REFERENCE__UNIQUE:
+        return unique != UNIQUE_EDEFAULT;
       case TitanPackage.REFERENCE__OPPOSITE:
         return opposite != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (unique: ");
+    result.append(unique);
+    result.append(')');
+    return result.toString();
   }
 
 } //ReferenceImpl
