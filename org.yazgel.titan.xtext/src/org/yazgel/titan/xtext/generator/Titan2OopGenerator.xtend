@@ -23,9 +23,10 @@ import org.yazgel.titan.xtext.titan.Package
 import org.yazgel.titan.xtext.titan.Reference
 import org.yazgel.titan.xtext.generator.helper.Model2ModelGeneratorHelper
 import org.yazgel.titan.xtext.titan.SingleDataType
-import org.yazgel.titan.xtext.titan.MultiDataType 
+import org.yazgel.titan.xtext.titan.MultiDataType
 import org.yazgel.titan.xtext.titan.SingleReference
 import org.yazgel.titan.xtext.titan.MultiReference
+import java.util.List
 
 class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
@@ -33,12 +34,13 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 	//To model, From Model
 	public static Map<EObject, EObject> transformationReleations = new HashMap<EObject, EObject>();
 	public static Map<EObject, EObject> modelBuilderReleations = new HashMap<EObject, EObject>();
+	public static List<OReferenceMulti> oppositedOMultiReferences = newArrayList
 
 	def OModel doGenerate(Module module) {
 
 		//Model classes must be added.
 		var model = OopFactoryImpl.eINSTANCE.createOModel
-		model.name = module.name
+		model.name = module.name 
 		transformationReleations.put(module, model)
 		transformationReleations.put(model, module)
 
@@ -128,7 +130,13 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 	def dispatch OReference generateFeature(MultiReference r) {
 		var OReference ref;
 		ref = OopFactoryImpl.eINSTANCE.createOReferenceMulti;
-		ref.type = '''List<«r.reference.name»>'''
+
+		if (r.unique) {
+			ref.type = '''Set<«r.reference.name»>''';
+			(ref as OReferenceMulti).uniqueInstance = true;
+		} else {
+			ref.type = '''List<«r.reference.name»>'''
+		}
 
 		ref.name = r.name
 		transformationReleations.put(r, ref)
@@ -146,18 +154,12 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			var oo = transformationReleations.get((e.key as Reference).opposite) as OReference;
 			(e.value as OReference).reference = or;
 			(e.value as OReference).opposite = oo;
+			
+			if(!oppositedOMultiReferences.contains(oo))
+				oppositedOMultiReferences.add(oo as OReferenceMulti)
 		}
 
-		//2-Unique referances must be set (opposite releations = unique releations)
-		var oppositeReferences = transformationReleations.filter[p1, p2|
-			(p1 instanceof Reference) && ((p1 as Reference).opposite != null) && (((p1 as Reference).opposite instanceof MultiReference))]
-		for (e : oppositeReferences.entrySet) {
-			var or = transformationReleations.get((e.key as Reference).opposite) as OReferenceMulti
-			or.uniqueInstance = true;
-			or.type = '''Set<«or.reference.name»>'''
-		}
-
-		//3-Import Statements must be added after generated model classes
+		//2-Import Statements must be added after generated model classes
 		for (e : releationsOfReferences.entrySet) {
 
 			var oReference = e.value as OReference
@@ -174,7 +176,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			}
 		}
 
-		//4-Implement String Statements must be added after generated model classes  
+		//3-Implement String Statements must be added after generated model classes  
 		var oClasesWithUniqueInstanceOFeatures = transformationReleations.filter [ p1, p2 |
 			p1 instanceof OClass && (p1 as OClass).features.filter[f|
 				f instanceof OReferenceMulti && (f as OReferenceMulti).uniqueInstance].size > 0
@@ -184,11 +186,11 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			for (f : oClass.features) {
 				if (f instanceof OReferenceMulti && (f as OReferenceMulti).uniqueInstance)
 					(f as OReferenceMulti).reference.implements.add(
-						'''Comparable<«(f as OReferenceMulti).reference.name»>''');
-			}
+					'''Comparable<«(f as OReferenceMulti).reference.name»>''');
+			} 
 		}
 
-		//5.1- First Constructors must be added after generated model classes
+		//4 Constructors must be added after generated model classes
 		var oClasses = transformationReleations.filter[p1, p2|p1 instanceof OClass]
 		for (e : oClasses.entrySet) {
 			var oc = e.key as OClass
@@ -213,40 +215,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			oc.methods.add(oConst)
 		}
 
-		//5.2- Second Constructors must be added after generated model classes
-		for (e : oClasses.entrySet) {
-			var oc = e.key as OClass
-			var oConst = OopFactoryImpl.eINSTANCE.createOMethod
-			oConst.name = oc.name
-
-			//Parameters must be set && Statements must be create.
-			var oFeatures = oc.features
-			for (OFeature of : oFeatures) {
-				var statement = OopFactoryImpl.eINSTANCE.createOStatement
-				statement.content = '''this.«of.name» = «of.name»;'''
-				oConst.statements.add(statement)
-
-				var param = OopFactoryImpl.eINSTANCE.createOParameter
-				param.name = of.name
-				if (of instanceof ODataTypeSingle) {
-					param.type = '''«of.type»'''
-				} else if (of instanceof ODataTypeMulti) {
-					param.type = '''ArrayList<«of.type»>'''
-				} else if (of instanceof OReferenceSingle) {
-					param.type = '''«of.reference.name»'''
-				} else if (of instanceof OReferenceMulti) {
-					if (of.uniqueInstance) {
-						param.type = '''TreeSet<«of.reference.name»>'''
-					} else {
-						param.type = '''ArrayList<«of.reference.name»>'''
-					}
-				}
-				oConst.parameters.add(param)
-			}
-			oc.methods.add(oConst)
-		}
-
-		//6- adders must be added
+		//5- adders must be added
 		for (e : oClasses.entrySet) {
 			var list = newArrayList
 			var oc = e.key as OClass
@@ -379,7 +348,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 				(of instanceof OReferenceMulti) && (of as OReferenceMulti).uniqueInstance]) {
 				var ref = of as OReferenceMulti
 
-				//setter
+				//setter 
 				var cmethod = OopFactoryImpl.eINSTANCE.createOMethod
 				cmethod.name = '''compareTo'''
 				cmethod.returnType = '''int'''
@@ -493,7 +462,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			//Parameters must be set && Statements must be create.
 			var oFeatures = modelOc.features
 			for (OFeature of : oFeatures) {
-				if (of instanceof OReferenceMulti && !(of as OReferenceMulti).uniqueInstance) {
+				if (of instanceof OReferenceMulti && !oppositedOMultiReferences.contains(of)) {
 					statementContent += '''
 						for («(of as OReference).reference.name» r : «of.name») {
 							o.add«(of as OReference).reference.name.toFirstUpper»(r);
@@ -534,7 +503,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					param.type = '''«of.reference.name»'''
 					constructor.parameters.add(param)
 				} else if (of instanceof OReferenceMulti) {
-					if (!of.uniqueInstance) {
+					if (!oppositedOMultiReferences.contains(of)) {
 						var param = OopFactoryImpl.eINSTANCE.createOParameter
 						param.name = of.name
 						param.type = '''List<«of.reference.name»>'''
@@ -557,7 +526,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			//Parameters must be set && Statements must be create.
 			var oFeatures = modelOc.features
 			for (OFeature of : oFeatures) {
-				if (!(of instanceof OReferenceMulti && (of as OReferenceMulti).uniqueInstance)) {
+				if (!(of instanceof OReferenceMulti && oppositedOMultiReferences.contains(of))) {
 					var staticOM = OopFactoryImpl.eINSTANCE.createOMethod
 					builderOc.methods.add(staticOM)
 
@@ -600,7 +569,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 							} else if (refFeatures instanceof OReferenceSingle) {
 								param.type = '''«refFeatures.reference.name»'''
 							} else if (refFeatures instanceof OReferenceMulti) {
-								if (!refFeatures.uniqueInstance) {
+								if (!oppositedOMultiReferences.contains(refFeatures)) {
 									param.type = '''List<«of.reference.name»>'''
 								}
 							}
@@ -622,7 +591,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 						staticOM.statements.add(statement)
 
 					} else if (of instanceof OReferenceMulti) {
-						if (!of.uniqueInstance) {
+						if (!oppositedOMultiReferences.contains(of)) {
 							var param = OopFactoryImpl.eINSTANCE.createOParameter
 							param.name = of.name
 							param.type = '''«of.reference.name»...'''

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
@@ -48,6 +49,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
   public static Map<EObject, EObject> transformationReleations = new HashMap<EObject, EObject>();
   
   public static Map<EObject, EObject> modelBuilderReleations = new HashMap<EObject, EObject>();
+  
+  public static List<OReferenceMulti> oppositedOMultiReferences = CollectionLiterals.<OReferenceMulti>newArrayList();
   
   public OModel doGenerate(final Module module) {
     OModel _xblockexpression = null;
@@ -183,15 +186,27 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
       OReference ref = null;
       OReferenceMulti _createOReferenceMulti = OopFactoryImpl.eINSTANCE.createOReferenceMulti();
       ref = _createOReferenceMulti;
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("List<");
-      Entity _reference = r.getReference();
-      String _name = _reference.getName();
-      _builder.append(_name, "");
-      _builder.append(">");
-      ref.setType(_builder.toString());
-      String _name_1 = r.getName();
-      ref.setName(_name_1);
+      boolean _isUnique = r.isUnique();
+      if (_isUnique) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Set<");
+        Entity _reference = r.getReference();
+        String _name = _reference.getName();
+        _builder.append(_name, "");
+        _builder.append(">");
+        ref.setType(_builder.toString());
+        ((OReferenceMulti) ref).setUniqueInstance(true);
+      } else {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("List<");
+        Entity _reference_1 = r.getReference();
+        String _name_1 = _reference_1.getName();
+        _builder_1.append(_name_1, "");
+        _builder_1.append(">");
+        ref.setType(_builder_1.toString());
+      }
+      String _name_2 = r.getName();
+      ref.setName(_name_2);
       Titan2OopGenerator.transformationReleations.put(r, ref);
       Titan2OopGenerator.transformationReleations.put(ref, r);
       _xblockexpression = ref;
@@ -221,52 +236,19 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         ((OReference) _value).setReference(or);
         EObject _value_1 = e.getValue();
         ((OReference) _value_1).setOpposite(oo);
+        boolean _contains = Titan2OopGenerator.oppositedOMultiReferences.contains(oo);
+        boolean _not = (!_contains);
+        if (_not) {
+          Titan2OopGenerator.oppositedOMultiReferences.add(((OReferenceMulti) oo));
+        }
       }
     }
-    final Function2<EObject, EObject, Boolean> _function_1 = new Function2<EObject, EObject, Boolean>() {
-      public Boolean apply(final EObject p1, final EObject p2) {
-        boolean _and = false;
-        boolean _and_1 = false;
-        if (!(p1 instanceof Reference)) {
-          _and_1 = false;
-        } else {
-          Reference _opposite = ((Reference) p1).getOpposite();
-          boolean _notEquals = (!Objects.equal(_opposite, null));
-          _and_1 = _notEquals;
-        }
-        if (!_and_1) {
-          _and = false;
-        } else {
-          Reference _opposite_1 = ((Reference) p1).getOpposite();
-          _and = (_opposite_1 instanceof MultiReference);
-        }
-        return Boolean.valueOf(_and);
-      }
-    };
-    Map<EObject, EObject> oppositeReferences = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.transformationReleations, _function_1);
-    Set<Map.Entry<EObject, EObject>> _entrySet_1 = oppositeReferences.entrySet();
+    Set<Map.Entry<EObject, EObject>> _entrySet_1 = releationsOfReferences.entrySet();
     for (final Map.Entry<EObject, EObject> e_1 : _entrySet_1) {
       {
-        EObject _key = e_1.getKey();
-        Reference _opposite = ((Reference) _key).getOpposite();
-        EObject _get = Titan2OopGenerator.transformationReleations.get(_opposite);
-        OReferenceMulti or = ((OReferenceMulti) _get);
-        or.setUniqueInstance(true);
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("Set<");
-        OClass _reference = or.getReference();
-        String _name = _reference.getName();
-        _builder.append(_name, "");
-        _builder.append(">");
-        or.setType(_builder.toString());
-      }
-    }
-    Set<Map.Entry<EObject, EObject>> _entrySet_2 = releationsOfReferences.entrySet();
-    for (final Map.Entry<EObject, EObject> e_2 : _entrySet_2) {
-      {
-        EObject _value = e_2.getValue();
+        EObject _value = e_1.getValue();
         OReference oReference = ((OReference) _value);
-        EObject _value_1 = e_2.getValue();
+        EObject _value_1 = e_1.getValue();
         EObject _eContainer = _value_1.eContainer();
         OClass oClass = ((OClass) _eContainer);
         if ((oReference instanceof OReferenceMulti)) {
@@ -285,7 +267,7 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         }
       }
     }
-    final Function2<EObject, EObject, Boolean> _function_2 = new Function2<EObject, EObject, Boolean>() {
+    final Function2<EObject, EObject, Boolean> _function_1 = new Function2<EObject, EObject, Boolean>() {
       public Boolean apply(final EObject p1, final EObject p2) {
         boolean _and = false;
         if (!(p1 instanceof OClass)) {
@@ -312,11 +294,11 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         return Boolean.valueOf(_and);
       }
     };
-    Map<EObject, EObject> oClasesWithUniqueInstanceOFeatures = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.transformationReleations, _function_2);
-    Set<Map.Entry<EObject, EObject>> _entrySet_3 = oClasesWithUniqueInstanceOFeatures.entrySet();
-    for (final Map.Entry<EObject, EObject> e_3 : _entrySet_3) {
+    Map<EObject, EObject> oClasesWithUniqueInstanceOFeatures = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.transformationReleations, _function_1);
+    Set<Map.Entry<EObject, EObject>> _entrySet_2 = oClasesWithUniqueInstanceOFeatures.entrySet();
+    for (final Map.Entry<EObject, EObject> e_2 : _entrySet_2) {
       {
-        EObject _key = e_3.getKey();
+        EObject _key = e_2.getKey();
         OClass oClass = ((OClass) _key);
         EList<OFeature> _features = oClass.getFeatures();
         for (final OFeature f : _features) {
@@ -341,16 +323,16 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         }
       }
     }
-    final Function2<EObject, EObject, Boolean> _function_3 = new Function2<EObject, EObject, Boolean>() {
+    final Function2<EObject, EObject, Boolean> _function_2 = new Function2<EObject, EObject, Boolean>() {
       public Boolean apply(final EObject p1, final EObject p2) {
         return Boolean.valueOf((p1 instanceof OClass));
       }
     };
-    Map<EObject, EObject> oClasses = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.transformationReleations, _function_3);
-    Set<Map.Entry<EObject, EObject>> _entrySet_4 = oClasses.entrySet();
-    for (final Map.Entry<EObject, EObject> e_4 : _entrySet_4) {
+    Map<EObject, EObject> oClasses = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.transformationReleations, _function_2);
+    Set<Map.Entry<EObject, EObject>> _entrySet_3 = oClasses.entrySet();
+    for (final Map.Entry<EObject, EObject> e_3 : _entrySet_3) {
       {
-        EObject _key = e_4.getKey();
+        EObject _key = e_3.getKey();
         OClass oc = ((OClass) _key);
         OMethod oConst = OopFactoryImpl.eINSTANCE.createOMethod();
         String _name = oc.getName();
@@ -395,97 +377,19 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         _methods.add(oConst);
       }
     }
-    Set<Map.Entry<EObject, EObject>> _entrySet_5 = oClasses.entrySet();
-    for (final Map.Entry<EObject, EObject> e_5 : _entrySet_5) {
-      {
-        EObject _key = e_5.getKey();
-        OClass oc = ((OClass) _key);
-        OMethod oConst = OopFactoryImpl.eINSTANCE.createOMethod();
-        String _name = oc.getName();
-        oConst.setName(_name);
-        EList<OFeature> oFeatures = oc.getFeatures();
-        for (final OFeature of : oFeatures) {
-          {
-            OStatement statement = OopFactoryImpl.eINSTANCE.createOStatement();
-            StringConcatenation _builder = new StringConcatenation();
-            _builder.append("this.");
-            String _name_1 = of.getName();
-            _builder.append(_name_1, "");
-            _builder.append(" = ");
-            String _name_2 = of.getName();
-            _builder.append(_name_2, "");
-            _builder.append(";");
-            statement.setContent(_builder.toString());
-            EList<OStatement> _statements = oConst.getStatements();
-            _statements.add(statement);
-            OParameter param = OopFactoryImpl.eINSTANCE.createOParameter();
-            String _name_3 = of.getName();
-            param.setName(_name_3);
-            if ((of instanceof ODataTypeSingle)) {
-              StringConcatenation _builder_1 = new StringConcatenation();
-              String _type = ((ODataTypeSingle)of).getType();
-              _builder_1.append(_type, "");
-              param.setType(_builder_1.toString());
-            } else {
-              if ((of instanceof ODataTypeMulti)) {
-                StringConcatenation _builder_2 = new StringConcatenation();
-                _builder_2.append("ArrayList<");
-                String _type_1 = ((ODataTypeMulti)of).getType();
-                _builder_2.append(_type_1, "");
-                _builder_2.append(">");
-                param.setType(_builder_2.toString());
-              } else {
-                if ((of instanceof OReferenceSingle)) {
-                  StringConcatenation _builder_3 = new StringConcatenation();
-                  OClass _reference = ((OReferenceSingle)of).getReference();
-                  String _name_4 = _reference.getName();
-                  _builder_3.append(_name_4, "");
-                  param.setType(_builder_3.toString());
-                } else {
-                  if ((of instanceof OReferenceMulti)) {
-                    boolean _isUniqueInstance = ((OReferenceMulti)of).isUniqueInstance();
-                    if (_isUniqueInstance) {
-                      StringConcatenation _builder_4 = new StringConcatenation();
-                      _builder_4.append("TreeSet<");
-                      OClass _reference_1 = ((OReferenceMulti)of).getReference();
-                      String _name_5 = _reference_1.getName();
-                      _builder_4.append(_name_5, "");
-                      _builder_4.append(">");
-                      param.setType(_builder_4.toString());
-                    } else {
-                      StringConcatenation _builder_5 = new StringConcatenation();
-                      _builder_5.append("ArrayList<");
-                      OClass _reference_2 = ((OReferenceMulti)of).getReference();
-                      String _name_6 = _reference_2.getName();
-                      _builder_5.append(_name_6, "");
-                      _builder_5.append(">");
-                      param.setType(_builder_5.toString());
-                    }
-                  }
-                }
-              }
-            }
-            EList<OParameter> _parameters = oConst.getParameters();
-            _parameters.add(param);
-          }
-        }
-        EList<OMethod> _methods = oc.getMethods();
-        _methods.add(oConst);
-      }
-    }
-    Set<Map.Entry<EObject, EObject>> _entrySet_6 = oClasses.entrySet();
-    for (final Map.Entry<EObject, EObject> e_6 : _entrySet_6) {
+    Set<Map.Entry<EObject, EObject>> _entrySet_4 = oClasses.entrySet();
+    for (final Map.Entry<EObject, EObject> e_4 : _entrySet_4) {
       {
         ArrayList<Object> list = CollectionLiterals.<Object>newArrayList();
-        EObject _key = e_6.getKey();
+        EObject _key = e_4.getKey();
         OClass oc = ((OClass) _key);
         EList<OFeature> _features = oc.getFeatures();
-        final Function1<OFeature, Boolean> _function_4 = new Function1<OFeature, Boolean>() {
+        final Function1<OFeature, Boolean> _function_3 = new Function1<OFeature, Boolean>() {
           public Boolean apply(final OFeature of) {
             return Boolean.valueOf((of instanceof OReferenceMulti));
           }
         };
-        Iterable<OFeature> _filter = IterableExtensions.<OFeature>filter(_features, _function_4);
+        Iterable<OFeature> _filter = IterableExtensions.<OFeature>filter(_features, _function_3);
         for (final OFeature of : _filter) {
           {
             OReferenceMulti f = ((OReferenceMulti) of);
@@ -533,12 +437,12 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
           }
         }
         EList<OFeature> _features_1 = oc.getFeatures();
-        final Function1<OFeature, Boolean> _function_5 = new Function1<OFeature, Boolean>() {
+        final Function1<OFeature, Boolean> _function_4 = new Function1<OFeature, Boolean>() {
           public Boolean apply(final OFeature odt) {
             return Boolean.valueOf((odt instanceof ODataTypeMulti));
           }
         };
-        Iterable<OFeature> _filter_1 = IterableExtensions.<OFeature>filter(_features_1, _function_5);
+        Iterable<OFeature> _filter_1 = IterableExtensions.<OFeature>filter(_features_1, _function_4);
         for (final OFeature odt : _filter_1) {
           {
             ODataTypeMulti dt = ((ODataTypeMulti) odt);
@@ -584,18 +488,18 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         }
       }
     }
-    Set<Map.Entry<EObject, EObject>> _entrySet_7 = oClasses.entrySet();
-    for (final Map.Entry<EObject, EObject> e_7 : _entrySet_7) {
+    Set<Map.Entry<EObject, EObject>> _entrySet_5 = oClasses.entrySet();
+    for (final Map.Entry<EObject, EObject> e_5 : _entrySet_5) {
       {
-        EObject _key = e_7.getKey();
+        EObject _key = e_5.getKey();
         OClass oc = ((OClass) _key);
         EList<OFeature> _features = oc.getFeatures();
-        final Function1<OFeature, Boolean> _function_4 = new Function1<OFeature, Boolean>() {
+        final Function1<OFeature, Boolean> _function_3 = new Function1<OFeature, Boolean>() {
           public Boolean apply(final OFeature of) {
             return Boolean.valueOf((of instanceof ODataType));
           }
         };
-        Iterable<OFeature> _filter = IterableExtensions.<OFeature>filter(_features, _function_4);
+        Iterable<OFeature> _filter = IterableExtensions.<OFeature>filter(_features, _function_3);
         for (final OFeature of : _filter) {
           {
             ODataType d = ((ODataType) of);
@@ -662,12 +566,12 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
           }
         }
         EList<OFeature> _features_1 = oc.getFeatures();
-        final Function1<OFeature, Boolean> _function_5 = new Function1<OFeature, Boolean>() {
+        final Function1<OFeature, Boolean> _function_4 = new Function1<OFeature, Boolean>() {
           public Boolean apply(final OFeature of) {
             return Boolean.valueOf((of instanceof OReference));
           }
         };
-        Iterable<OFeature> _filter_1 = IterableExtensions.<OFeature>filter(_features_1, _function_5);
+        Iterable<OFeature> _filter_1 = IterableExtensions.<OFeature>filter(_features_1, _function_4);
         for (final OFeature of_1 : _filter_1) {
           {
             OReference f = ((OReference) of_1);
@@ -776,13 +680,13 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         }
       }
     }
-    Set<Map.Entry<EObject, EObject>> _entrySet_8 = oClasses.entrySet();
-    for (final Map.Entry<EObject, EObject> e_8 : _entrySet_8) {
+    Set<Map.Entry<EObject, EObject>> _entrySet_6 = oClasses.entrySet();
+    for (final Map.Entry<EObject, EObject> e_6 : _entrySet_6) {
       {
-        EObject _key = e_8.getKey();
+        EObject _key = e_6.getKey();
         OClass oc = ((OClass) _key);
         EList<OFeature> _features = oc.getFeatures();
-        final Function1<OFeature, Boolean> _function_4 = new Function1<OFeature, Boolean>() {
+        final Function1<OFeature, Boolean> _function_3 = new Function1<OFeature, Boolean>() {
           public Boolean apply(final OFeature of) {
             boolean _and = false;
             if (!(of instanceof OReferenceMulti)) {
@@ -794,7 +698,7 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             return Boolean.valueOf(_and);
           }
         };
-        Iterable<OFeature> _filter = IterableExtensions.<OFeature>filter(_features, _function_4);
+        Iterable<OFeature> _filter = IterableExtensions.<OFeature>filter(_features, _function_3);
         for (final OFeature of : _filter) {
           {
             OReferenceMulti ref = ((OReferenceMulti) of);
@@ -995,10 +899,10 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
     builderPackage.setName(_plus_1);
     EList<OPackage> _packages_1 = model.getPackages();
     _packages_1.add(builderPackage);
-    Set<Map.Entry<EObject, EObject>> _entrySet_9 = oClasses.entrySet();
-    for (final Map.Entry<EObject, EObject> e_9 : _entrySet_9) {
+    Set<Map.Entry<EObject, EObject>> _entrySet_7 = oClasses.entrySet();
+    for (final Map.Entry<EObject, EObject> e_7 : _entrySet_7) {
       {
-        EObject _key = e_9.getKey();
+        EObject _key = e_7.getKey();
         OClass oc = ((OClass) _key);
         OClass bc = OopFactoryImpl.eINSTANCE.createOClass();
         StringConcatenation _builder = new StringConcatenation();
@@ -1012,12 +916,12 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         _classes.add(bc);
       }
     }
-    Set<Map.Entry<EObject, EObject>> _entrySet_10 = Titan2OopGenerator.modelBuilderReleations.entrySet();
-    for (final Map.Entry<EObject, EObject> e_10 : _entrySet_10) {
+    Set<Map.Entry<EObject, EObject>> _entrySet_8 = Titan2OopGenerator.modelBuilderReleations.entrySet();
+    for (final Map.Entry<EObject, EObject> e_8 : _entrySet_8) {
       {
-        EObject _key = e_10.getKey();
+        EObject _key = e_8.getKey();
         OClass builderOc = ((OClass) _key);
-        EObject _value = e_10.getValue();
+        EObject _value = e_8.getValue();
         OClass modelOc = ((OClass) _value);
         HashSet<String> importSet = CollectionLiterals.<String>newHashSet();
         StringConcatenation _builder = new StringConcatenation();
@@ -1040,15 +944,15 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             _builder_1.append(_name_2, "");
             importSet.add(_builder_1.toString());
             if ((f instanceof OReferenceSingle)) {
-              final Function2<EObject, EObject, Boolean> _function_4 = new Function2<EObject, EObject, Boolean>() {
+              final Function2<EObject, EObject, Boolean> _function_3 = new Function2<EObject, EObject, Boolean>() {
                 public Boolean apply(final EObject p1, final EObject p2) {
                   OClass _reference = ((OReferenceSingle)f).getReference();
                   return Boolean.valueOf(p2.equals(_reference));
                 }
               };
-              Map<EObject, EObject> _filter = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.modelBuilderReleations, _function_4);
-              Set<Map.Entry<EObject, EObject>> _entrySet_11 = _filter.entrySet();
-              Map.Entry<EObject, EObject> _get_1 = ((Map.Entry<EObject, EObject>[])Conversions.unwrapArray(_entrySet_11, Map.Entry.class))[0];
+              Map<EObject, EObject> _filter = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.modelBuilderReleations, _function_3);
+              Set<Map.Entry<EObject, EObject>> _entrySet_9 = _filter.entrySet();
+              Map.Entry<EObject, EObject> _get_1 = ((Map.Entry<EObject, EObject>[])Conversions.unwrapArray(_entrySet_9, Map.Entry.class))[0];
               EObject _key_1 = _get_1.getKey();
               OClass builderOfReferenceOclass = ((OClass) _key_1);
               StringConcatenation _builder_2 = new StringConcatenation();
@@ -1074,12 +978,12 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         _imports.addAll(importSet);
       }
     }
-    Set<Map.Entry<EObject, EObject>> _entrySet_11 = Titan2OopGenerator.modelBuilderReleations.entrySet();
-    for (final Map.Entry<EObject, EObject> e_11 : _entrySet_11) {
+    Set<Map.Entry<EObject, EObject>> _entrySet_9 = Titan2OopGenerator.modelBuilderReleations.entrySet();
+    for (final Map.Entry<EObject, EObject> e_9 : _entrySet_9) {
       {
-        EObject _key = e_11.getKey();
+        EObject _key = e_9.getKey();
         OClass builderOc = ((OClass) _key);
-        EObject _value = e_11.getValue();
+        EObject _value = e_9.getValue();
         OClass modelOc = ((OClass) _value);
         OMethod constructor = OopFactoryImpl.eINSTANCE.createOMethod();
         String _name_1 = modelOc.getName();
@@ -1105,8 +1009,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             if (!(of instanceof OReferenceMulti)) {
               _and = false;
             } else {
-              boolean _isUniqueInstance = ((OReferenceMulti) of).isUniqueInstance();
-              boolean _not = (!_isUniqueInstance);
+              boolean _contains = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
+              boolean _not = (!_contains);
               _and = _not;
             }
             if (_and) {
@@ -1258,8 +1162,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
                   _parameters_2.add(param_2);
                 } else {
                   if ((of instanceof OReferenceMulti)) {
-                    boolean _isUniqueInstance_1 = ((OReferenceMulti)of).isUniqueInstance();
-                    boolean _not_1 = (!_isUniqueInstance_1);
+                    boolean _contains_1 = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
+                    boolean _not_1 = (!_contains_1);
                     if (_not_1) {
                       OParameter param_3 = OopFactoryImpl.eINSTANCE.createOParameter();
                       String _name_19 = ((OReferenceMulti)of).getName();
@@ -1291,12 +1195,12 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
         _methods.add(constructor);
       }
     }
-    Set<Map.Entry<EObject, EObject>> _entrySet_12 = Titan2OopGenerator.modelBuilderReleations.entrySet();
-    for (final Map.Entry<EObject, EObject> e_12 : _entrySet_12) {
+    Set<Map.Entry<EObject, EObject>> _entrySet_10 = Titan2OopGenerator.modelBuilderReleations.entrySet();
+    for (final Map.Entry<EObject, EObject> e_10 : _entrySet_10) {
       {
-        EObject _key = e_12.getKey();
+        EObject _key = e_10.getKey();
         OClass builderOc = ((OClass) _key);
-        EObject _value = e_12.getValue();
+        EObject _value = e_10.getValue();
         OClass modelOc = ((OClass) _value);
         EList<OFeature> oFeatures = modelOc.getFeatures();
         for (final OFeature of : oFeatures) {
@@ -1304,8 +1208,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
           if (!(of instanceof OReferenceMulti)) {
             _and = false;
           } else {
-            boolean _isUniqueInstance = ((OReferenceMulti) of).isUniqueInstance();
-            _and = _isUniqueInstance;
+            boolean _contains = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
+            _and = _contains;
           }
           boolean _not = (!_and);
           if (_not) {
@@ -1397,8 +1301,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
                             param_2.setType(_builder_8.toString());
                           } else {
                             if ((refFeatures instanceof OReferenceMulti)) {
-                              boolean _isUniqueInstance_1 = ((OReferenceMulti)refFeatures).isUniqueInstance();
-                              boolean _not_1 = (!_isUniqueInstance_1);
+                              boolean _contains_1 = Titan2OopGenerator.oppositedOMultiReferences.contains(refFeatures);
+                              boolean _not_1 = (!_contains_1);
                               if (_not_1) {
                                 StringConcatenation _builder_9 = new StringConcatenation();
                                 _builder_9.append("List<");
@@ -1436,15 +1340,15 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
                     _builder_6.newLineIfNotEmpty();
                     statementParamString = (_statementParamString + _builder_6);
                   }
-                  final Function2<EObject, EObject, Boolean> _function_4 = new Function2<EObject, EObject, Boolean>() {
+                  final Function2<EObject, EObject, Boolean> _function_3 = new Function2<EObject, EObject, Boolean>() {
                     public Boolean apply(final EObject p1, final EObject p2) {
                       OClass _reference = ((OReferenceSingle)of).getReference();
                       return Boolean.valueOf(p2.equals(_reference));
                     }
                   };
-                  Map<EObject, EObject> _filter = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.modelBuilderReleations, _function_4);
-                  Set<Map.Entry<EObject, EObject>> _entrySet_13 = _filter.entrySet();
-                  Map.Entry<EObject, EObject> _get_1 = ((Map.Entry<EObject, EObject>[])Conversions.unwrapArray(_entrySet_13, Map.Entry.class))[0];
+                  Map<EObject, EObject> _filter = MapExtensions.<EObject, EObject>filter(Titan2OopGenerator.modelBuilderReleations, _function_3);
+                  Set<Map.Entry<EObject, EObject>> _entrySet_11 = _filter.entrySet();
+                  Map.Entry<EObject, EObject> _get_1 = ((Map.Entry<EObject, EObject>[])Conversions.unwrapArray(_entrySet_11, Map.Entry.class))[0];
                   EObject _key_1 = _get_1.getKey();
                   OClass builderOfReferenceOclass = ((OClass) _key_1);
                   StringConcatenation _builder_7 = new StringConcatenation();
@@ -1468,8 +1372,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
                   _statements_2.add(statement_2);
                 } else {
                   if ((of instanceof OReferenceMulti)) {
-                    boolean _isUniqueInstance_1 = ((OReferenceMulti)of).isUniqueInstance();
-                    boolean _not_2 = (!_isUniqueInstance_1);
+                    boolean _contains_1 = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
+                    boolean _not_2 = (!_contains_1);
                     if (_not_2) {
                       OParameter param_2 = OopFactoryImpl.eINSTANCE.createOParameter();
                       String _name_10 = ((OReferenceMulti)of).getName();
