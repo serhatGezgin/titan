@@ -97,19 +97,19 @@ public class OopSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OopPackage.OREFERENCE_MULTI: {
-				OReferenceMulti oReferenceMulti = (OReferenceMulti)theEObject;
-				T result = caseOReferenceMulti(oReferenceMulti);
-				if (result == null) result = caseOReference(oReferenceMulti);
-				if (result == null) result = caseOFeature(oReferenceMulti);
+			case OopPackage.MULTI_OREFERENCE: {
+				MultiOReference multiOReference = (MultiOReference)theEObject;
+				T result = caseMultiOReference(multiOReference);
+				if (result == null) result = caseOReference(multiOReference);
+				if (result == null) result = caseOFeature(multiOReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OopPackage.OREFERENCE_SINGLE: {
-				OReferenceSingle oReferenceSingle = (OReferenceSingle)theEObject;
-				T result = caseOReferenceSingle(oReferenceSingle);
-				if (result == null) result = caseOReference(oReferenceSingle);
-				if (result == null) result = caseOFeature(oReferenceSingle);
+			case OopPackage.SINGLE_OREFERENCE: {
+				SingleOReference singleOReference = (SingleOReference)theEObject;
+				T result = caseSingleOReference(singleOReference);
+				if (result == null) result = caseOReference(singleOReference);
+				if (result == null) result = caseOFeature(singleOReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,19 +120,19 @@ public class OopSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OopPackage.ODATA_TYPE_SINGLE: {
-				ODataTypeSingle oDataTypeSingle = (ODataTypeSingle)theEObject;
-				T result = caseODataTypeSingle(oDataTypeSingle);
-				if (result == null) result = caseODataType(oDataTypeSingle);
-				if (result == null) result = caseOFeature(oDataTypeSingle);
+			case OopPackage.SINGLE_ODATA_TYPE: {
+				SingleODataType singleODataType = (SingleODataType)theEObject;
+				T result = caseSingleODataType(singleODataType);
+				if (result == null) result = caseODataType(singleODataType);
+				if (result == null) result = caseOFeature(singleODataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OopPackage.ODATA_TYPE_MULTI: {
-				ODataTypeMulti oDataTypeMulti = (ODataTypeMulti)theEObject;
-				T result = caseODataTypeMulti(oDataTypeMulti);
-				if (result == null) result = caseODataType(oDataTypeMulti);
-				if (result == null) result = caseOFeature(oDataTypeMulti);
+			case OopPackage.MULTI_ODATA_TYPE: {
+				MultiODataType multiODataType = (MultiODataType)theEObject;
+				T result = caseMultiODataType(multiODataType);
+				if (result == null) result = caseODataType(multiODataType);
+				if (result == null) result = caseOFeature(multiODataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -234,32 +234,32 @@ public class OopSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OReference Multi</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Multi OReference</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OReference Multi</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Multi OReference</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOReferenceMulti(OReferenceMulti object) {
+	public T caseMultiOReference(MultiOReference object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OReference Single</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Single OReference</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OReference Single</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Single OReference</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOReferenceSingle(OReferenceSingle object) {
+	public T caseSingleOReference(SingleOReference object) {
 		return null;
 	}
 
@@ -279,32 +279,32 @@ public class OopSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OData Type Single</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Single OData Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OData Type Single</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Single OData Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseODataTypeSingle(ODataTypeSingle object) {
+	public T caseSingleODataType(SingleODataType object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>OData Type Multi</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Multi OData Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>OData Type Multi</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Multi OData Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseODataTypeMulti(ODataTypeMulti object) {
+	public T caseMultiODataType(MultiODataType object) {
 		return null;
 	}
 

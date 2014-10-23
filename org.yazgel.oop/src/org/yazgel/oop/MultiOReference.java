@@ -5,21 +5,21 @@ package org.yazgel.oop;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>OReference Multi</b></em>'.
+ * A representation of the model object '<em><b>Multi OReference</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.yazgel.oop.OReferenceMulti#isUniqueInstance <em>Unique Instance</em>}</li>
+ *   <li>{@link org.yazgel.oop.MultiOReference#isUniqueInstance <em>Unique Instance</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.yazgel.oop.OopPackage#getOReferenceMulti()
+ * @see org.yazgel.oop.OopPackage#getMultiOReference()
  * @model
  * @generated
  */
-public interface OReferenceMulti extends OReference {
+public interface MultiOReference extends OReference {
 	/**
 	 * Returns the value of the '<em><b>Unique Instance</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -30,14 +30,14 @@ public interface OReferenceMulti extends OReference {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unique Instance</em>' attribute.
 	 * @see #setUniqueInstance(boolean)
-	 * @see org.yazgel.oop.OopPackage#getOReferenceMulti_UniqueInstance()
+	 * @see org.yazgel.oop.OopPackage#getMultiOReference_UniqueInstance()
 	 * @model
 	 * @generated
 	 */
 	boolean isUniqueInstance();
 
 	/**
-	 * Sets the value of the '{@link org.yazgel.oop.OReferenceMulti#isUniqueInstance <em>Unique Instance</em>}' attribute.
+	 * Sets the value of the '{@link org.yazgel.oop.MultiOReference#isUniqueInstance <em>Unique Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Unique Instance</em>' attribute.
@@ -46,4 +46,4 @@ public interface OReferenceMulti extends OReference {
 	 */
 	void setUniqueInstance(boolean value);
 
-} // OReferenceMulti
+} // MultiOReference

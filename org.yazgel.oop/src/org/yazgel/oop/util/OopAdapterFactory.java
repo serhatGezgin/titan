@@ -88,24 +88,24 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 				return createOReferenceAdapter();
 			}
 			@Override
-			public Adapter caseOReferenceMulti(OReferenceMulti object) {
-				return createOReferenceMultiAdapter();
+			public Adapter caseMultiOReference(MultiOReference object) {
+				return createMultiOReferenceAdapter();
 			}
 			@Override
-			public Adapter caseOReferenceSingle(OReferenceSingle object) {
-				return createOReferenceSingleAdapter();
+			public Adapter caseSingleOReference(SingleOReference object) {
+				return createSingleOReferenceAdapter();
 			}
 			@Override
 			public Adapter caseODataType(ODataType object) {
 				return createODataTypeAdapter();
 			}
 			@Override
-			public Adapter caseODataTypeSingle(ODataTypeSingle object) {
-				return createODataTypeSingleAdapter();
+			public Adapter caseSingleODataType(SingleODataType object) {
+				return createSingleODataTypeAdapter();
 			}
 			@Override
-			public Adapter caseODataTypeMulti(ODataTypeMulti object) {
-				return createODataTypeMultiAdapter();
+			public Adapter caseMultiODataType(MultiODataType object) {
+				return createMultiODataTypeAdapter();
 			}
 			@Override
 			public Adapter caseOMethod(OMethod object) {
@@ -210,30 +210,30 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OReferenceMulti <em>OReference Multi</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.MultiOReference <em>Multi OReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.yazgel.oop.OReferenceMulti
+	 * @see org.yazgel.oop.MultiOReference
 	 * @generated
 	 */
-	public Adapter createOReferenceMultiAdapter() {
+	public Adapter createMultiOReferenceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.OReferenceSingle <em>OReference Single</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.SingleOReference <em>Single OReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.yazgel.oop.OReferenceSingle
+	 * @see org.yazgel.oop.SingleOReference
 	 * @generated
 	 */
-	public Adapter createOReferenceSingleAdapter() {
+	public Adapter createSingleOReferenceAdapter() {
 		return null;
 	}
 
@@ -252,30 +252,30 @@ public class OopAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.ODataTypeSingle <em>OData Type Single</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.SingleODataType <em>Single OData Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.yazgel.oop.ODataTypeSingle
+	 * @see org.yazgel.oop.SingleODataType
 	 * @generated
 	 */
-	public Adapter createODataTypeSingleAdapter() {
+	public Adapter createSingleODataTypeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.ODataTypeMulti <em>OData Type Multi</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.yazgel.oop.MultiODataType <em>Multi OData Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.yazgel.oop.ODataTypeMulti
+	 * @see org.yazgel.oop.MultiODataType
 	 * @generated
 	 */
-	public Adapter createODataTypeMultiAdapter() {
+	public Adapter createMultiODataTypeAdapter() {
 		return null;
 	}
 

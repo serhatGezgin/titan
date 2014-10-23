@@ -9,40 +9,40 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.yazgel.oop.OClass;
-import org.yazgel.oop.OReference;
+import org.yazgel.oop.MultiOReference;
 import org.yazgel.oop.OopPackage;
+import org.yazgel.oop.SingleOReference;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>OReference</b></em>'.
+ * An implementation of the model object '<em><b>Single OReference</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.yazgel.oop.impl.OReferenceImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.SingleOReferenceImpl#getOpposite <em>Opposite</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class OReferenceImpl extends OFeatureImpl implements OReference {
+public class SingleOReferenceImpl extends OReferenceImpl implements SingleOReference {
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
+	 * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getOpposite()
 	 * @generated
 	 * @ordered
 	 */
-	protected OClass reference;
+	protected MultiOReference opposite;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OReferenceImpl() {
+	protected SingleOReferenceImpl() {
 		super();
 	}
 
@@ -53,7 +53,7 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return OopPackage.Literals.OREFERENCE;
+		return OopPackage.Literals.SINGLE_OREFERENCE;
 	}
 
 	/**
@@ -61,16 +61,16 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OClass getReference() {
-		if (reference != null && reference.eIsProxy()) {
-			InternalEObject oldReference = (InternalEObject)reference;
-			reference = (OClass)eResolveProxy(oldReference);
-			if (reference != oldReference) {
+	public MultiOReference getOpposite() {
+		if (opposite != null && opposite.eIsProxy()) {
+			InternalEObject oldOpposite = (InternalEObject)opposite;
+			opposite = (MultiOReference)eResolveProxy(oldOpposite);
+			if (opposite != oldOpposite) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OopPackage.OREFERENCE__REFERENCE, oldReference, reference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OopPackage.SINGLE_OREFERENCE__OPPOSITE, oldOpposite, opposite));
 			}
 		}
-		return reference;
+		return opposite;
 	}
 
 	/**
@@ -78,8 +78,8 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OClass basicGetReference() {
-		return reference;
+	public MultiOReference basicGetOpposite() {
+		return opposite;
 	}
 
 	/**
@@ -87,11 +87,11 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReference(OClass newReference) {
-		OClass oldReference = reference;
-		reference = newReference;
+	public void setOpposite(MultiOReference newOpposite) {
+		MultiOReference oldOpposite = opposite;
+		opposite = newOpposite;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OREFERENCE__REFERENCE, oldReference, reference));
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.SINGLE_OREFERENCE__OPPOSITE, oldOpposite, opposite));
 	}
 
 	/**
@@ -102,9 +102,9 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OopPackage.OREFERENCE__REFERENCE:
-				if (resolve) return getReference();
-				return basicGetReference();
+			case OopPackage.SINGLE_OREFERENCE__OPPOSITE:
+				if (resolve) return getOpposite();
+				return basicGetOpposite();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,8 +117,8 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OopPackage.OREFERENCE__REFERENCE:
-				setReference((OClass)newValue);
+			case OopPackage.SINGLE_OREFERENCE__OPPOSITE:
+				setOpposite((MultiOReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +132,8 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OopPackage.OREFERENCE__REFERENCE:
-				setReference((OClass)null);
+			case OopPackage.SINGLE_OREFERENCE__OPPOSITE:
+				setOpposite((MultiOReference)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,10 +147,10 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OopPackage.OREFERENCE__REFERENCE:
-				return reference != null;
+			case OopPackage.SINGLE_OREFERENCE__OPPOSITE:
+				return opposite != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //OReferenceImpl
+} //SingleOReferenceImpl

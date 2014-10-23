@@ -59,10 +59,10 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 			case OopPackage.OMODEL: return createOModel();
 			case OopPackage.OPACKAGE: return createOPackage();
 			case OopPackage.OCLASS: return createOClass();
-			case OopPackage.OREFERENCE_MULTI: return createOReferenceMulti();
-			case OopPackage.OREFERENCE_SINGLE: return createOReferenceSingle();
-			case OopPackage.ODATA_TYPE_SINGLE: return createODataTypeSingle();
-			case OopPackage.ODATA_TYPE_MULTI: return createODataTypeMulti();
+			case OopPackage.MULTI_OREFERENCE: return createMultiOReference();
+			case OopPackage.SINGLE_OREFERENCE: return createSingleOReference();
+			case OopPackage.SINGLE_ODATA_TYPE: return createSingleODataType();
+			case OopPackage.MULTI_ODATA_TYPE: return createMultiODataType();
 			case OopPackage.OMETHOD: return createOMethod();
 			case OopPackage.OPARAMETER: return createOParameter();
 			case OopPackage.OSTATEMENT: return createOStatement();
@@ -106,9 +106,9 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OReferenceMulti createOReferenceMulti() {
-		OReferenceMultiImpl oReferenceMulti = new OReferenceMultiImpl();
-		return oReferenceMulti;
+	public MultiOReference createMultiOReference() {
+		MultiOReferenceImpl multiOReference = new MultiOReferenceImpl();
+		return multiOReference;
 	}
 
 	/**
@@ -116,9 +116,9 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OReferenceSingle createOReferenceSingle() {
-		OReferenceSingleImpl oReferenceSingle = new OReferenceSingleImpl();
-		return oReferenceSingle;
+	public SingleOReference createSingleOReference() {
+		SingleOReferenceImpl singleOReference = new SingleOReferenceImpl();
+		return singleOReference;
 	}
 
 	/**
@@ -126,9 +126,9 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ODataTypeSingle createODataTypeSingle() {
-		ODataTypeSingleImpl oDataTypeSingle = new ODataTypeSingleImpl();
-		return oDataTypeSingle;
+	public SingleODataType createSingleODataType() {
+		SingleODataTypeImpl singleODataType = new SingleODataTypeImpl();
+		return singleODataType;
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class OopFactoryImpl extends EFactoryImpl implements OopFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ODataTypeMulti createODataTypeMulti() {
-		ODataTypeMultiImpl oDataTypeMulti = new ODataTypeMultiImpl();
-		return oDataTypeMulti;
+	public MultiODataType createMultiODataType() {
+		MultiODataTypeImpl multiODataType = new MultiODataTypeImpl();
+		return multiODataType;
 	}
 
 	/**

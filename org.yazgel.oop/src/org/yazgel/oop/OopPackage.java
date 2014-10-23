@@ -314,22 +314,13 @@ public interface OopPackage extends EPackage {
 	int OREFERENCE__REFERENCE = OFEATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Opposite</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OREFERENCE__OPPOSITE = OFEATURE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>OReference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_FEATURE_COUNT = OFEATURE_FEATURE_COUNT + 2;
+	int OREFERENCE_FEATURE_COUNT = OFEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>OReference</em>' class.
@@ -341,14 +332,14 @@ public interface OopPackage extends EPackage {
 	int OREFERENCE_OPERATION_COUNT = OFEATURE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.OReferenceMultiImpl <em>OReference Multi</em>}' class.
+	 * The meta object id for the '{@link org.yazgel.oop.impl.MultiOReferenceImpl <em>Multi OReference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.OReferenceMultiImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getOReferenceMulti()
+	 * @see org.yazgel.oop.impl.MultiOReferenceImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getMultiOReference()
 	 * @generated
 	 */
-	int OREFERENCE_MULTI = 5;
+	int MULTI_OREFERENCE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -357,7 +348,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_MULTI__NAME = OREFERENCE__NAME;
+	int MULTI_OREFERENCE__NAME = OREFERENCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -366,7 +357,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_MULTI__TYPE = OREFERENCE__TYPE;
+	int MULTI_OREFERENCE__TYPE = OREFERENCE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -375,16 +366,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_MULTI__REFERENCE = OREFERENCE__REFERENCE;
-
-	/**
-	 * The feature id for the '<em><b>Opposite</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OREFERENCE_MULTI__OPPOSITE = OREFERENCE__OPPOSITE;
+	int MULTI_OREFERENCE__REFERENCE = OREFERENCE__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Unique Instance</b></em>' attribute.
@@ -393,35 +375,35 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_MULTI__UNIQUE_INSTANCE = OREFERENCE_FEATURE_COUNT + 0;
+	int MULTI_OREFERENCE__UNIQUE_INSTANCE = OREFERENCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>OReference Multi</em>' class.
+	 * The number of structural features of the '<em>Multi OReference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_MULTI_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 1;
+	int MULTI_OREFERENCE_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>OReference Multi</em>' class.
+	 * The number of operations of the '<em>Multi OReference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_MULTI_OPERATION_COUNT = OREFERENCE_OPERATION_COUNT + 0;
+	int MULTI_OREFERENCE_OPERATION_COUNT = OREFERENCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.OReferenceSingleImpl <em>OReference Single</em>}' class.
+	 * The meta object id for the '{@link org.yazgel.oop.impl.SingleOReferenceImpl <em>Single OReference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.OReferenceSingleImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getOReferenceSingle()
+	 * @see org.yazgel.oop.impl.SingleOReferenceImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getSingleOReference()
 	 * @generated
 	 */
-	int OREFERENCE_SINGLE = 6;
+	int SINGLE_OREFERENCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -430,7 +412,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_SINGLE__NAME = OREFERENCE__NAME;
+	int SINGLE_OREFERENCE__NAME = OREFERENCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -439,7 +421,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_SINGLE__TYPE = OREFERENCE__TYPE;
+	int SINGLE_OREFERENCE__TYPE = OREFERENCE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -448,7 +430,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_SINGLE__REFERENCE = OREFERENCE__REFERENCE;
+	int SINGLE_OREFERENCE__REFERENCE = OREFERENCE__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -457,25 +439,25 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_SINGLE__OPPOSITE = OREFERENCE__OPPOSITE;
+	int SINGLE_OREFERENCE__OPPOSITE = OREFERENCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>OReference Single</em>' class.
+	 * The number of structural features of the '<em>Single OReference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_SINGLE_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 0;
+	int SINGLE_OREFERENCE_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>OReference Single</em>' class.
+	 * The number of operations of the '<em>Single OReference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_SINGLE_OPERATION_COUNT = OREFERENCE_OPERATION_COUNT + 0;
+	int SINGLE_OREFERENCE_OPERATION_COUNT = OREFERENCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.yazgel.oop.impl.ODataTypeImpl <em>OData Type</em>}' class.
@@ -524,14 +506,14 @@ public interface OopPackage extends EPackage {
 	int ODATA_TYPE_OPERATION_COUNT = OFEATURE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.ODataTypeSingleImpl <em>OData Type Single</em>}' class.
+	 * The meta object id for the '{@link org.yazgel.oop.impl.SingleODataTypeImpl <em>Single OData Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.ODataTypeSingleImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypeSingle()
+	 * @see org.yazgel.oop.impl.SingleODataTypeImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getSingleODataType()
 	 * @generated
 	 */
-	int ODATA_TYPE_SINGLE = 8;
+	int SINGLE_ODATA_TYPE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -540,7 +522,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_SINGLE__NAME = ODATA_TYPE__NAME;
+	int SINGLE_ODATA_TYPE__NAME = ODATA_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -549,35 +531,44 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_SINGLE__TYPE = ODATA_TYPE__TYPE;
+	int SINGLE_ODATA_TYPE__TYPE = ODATA_TYPE__TYPE;
 
 	/**
-	 * The number of structural features of the '<em>OData Type Single</em>' class.
+	 * The feature id for the '<em><b>Opposite</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_SINGLE_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 0;
+	int SINGLE_ODATA_TYPE__OPPOSITE = ODATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>OData Type Single</em>' class.
+	 * The number of structural features of the '<em>Single OData Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_SINGLE_OPERATION_COUNT = ODATA_TYPE_OPERATION_COUNT + 0;
+	int SINGLE_ODATA_TYPE_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.yazgel.oop.impl.ODataTypeMultiImpl <em>OData Type Multi</em>}' class.
+	 * The number of operations of the '<em>Single OData Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.yazgel.oop.impl.ODataTypeMultiImpl
-	 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypeMulti()
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_ODATA_TYPE_OPERATION_COUNT = ODATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.yazgel.oop.impl.MultiODataTypeImpl <em>Multi OData Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.yazgel.oop.impl.MultiODataTypeImpl
+	 * @see org.yazgel.oop.impl.OopPackageImpl#getMultiODataType()
 	 * @generated
 	 */
-	int ODATA_TYPE_MULTI = 9;
+	int MULTI_ODATA_TYPE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -586,7 +577,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_MULTI__NAME = ODATA_TYPE__NAME;
+	int MULTI_ODATA_TYPE__NAME = ODATA_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -595,7 +586,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_MULTI__TYPE = ODATA_TYPE__TYPE;
+	int MULTI_ODATA_TYPE__TYPE = ODATA_TYPE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Unique Instance</b></em>' attribute.
@@ -604,25 +595,25 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_MULTI__UNIQUE_INSTANCE = ODATA_TYPE_FEATURE_COUNT + 0;
+	int MULTI_ODATA_TYPE__UNIQUE_INSTANCE = ODATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>OData Type Multi</em>' class.
+	 * The number of structural features of the '<em>Multi OData Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_MULTI_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 1;
+	int MULTI_ODATA_TYPE_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>OData Type Multi</em>' class.
+	 * The number of operations of the '<em>Multi OData Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_MULTI_OPERATION_COUNT = ODATA_TYPE_OPERATION_COUNT + 0;
+	int MULTI_ODATA_TYPE_OPERATION_COUNT = ODATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.yazgel.oop.impl.OMethodImpl <em>OMethod</em>}' class.
@@ -984,46 +975,46 @@ public interface OopPackage extends EPackage {
 	EReference getOReference_Reference();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.yazgel.oop.OReference#getOpposite <em>Opposite</em>}'.
+	 * Returns the meta object for class '{@link org.yazgel.oop.MultiOReference <em>Multi OReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Opposite</em>'.
-	 * @see org.yazgel.oop.OReference#getOpposite()
-	 * @see #getOReference()
+	 * @return the meta object for class '<em>Multi OReference</em>'.
+	 * @see org.yazgel.oop.MultiOReference
 	 * @generated
 	 */
-	EReference getOReference_Opposite();
+	EClass getMultiOReference();
 
 	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.OReferenceMulti <em>OReference Multi</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OReference Multi</em>'.
-	 * @see org.yazgel.oop.OReferenceMulti
-	 * @generated
-	 */
-	EClass getOReferenceMulti();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.yazgel.oop.OReferenceMulti#isUniqueInstance <em>Unique Instance</em>}'.
+	 * Returns the meta object for the attribute '{@link org.yazgel.oop.MultiOReference#isUniqueInstance <em>Unique Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Unique Instance</em>'.
-	 * @see org.yazgel.oop.OReferenceMulti#isUniqueInstance()
-	 * @see #getOReferenceMulti()
+	 * @see org.yazgel.oop.MultiOReference#isUniqueInstance()
+	 * @see #getMultiOReference()
 	 * @generated
 	 */
-	EAttribute getOReferenceMulti_UniqueInstance();
+	EAttribute getMultiOReference_UniqueInstance();
 
 	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.OReferenceSingle <em>OReference Single</em>}'.
+	 * Returns the meta object for class '{@link org.yazgel.oop.SingleOReference <em>Single OReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OReference Single</em>'.
-	 * @see org.yazgel.oop.OReferenceSingle
+	 * @return the meta object for class '<em>Single OReference</em>'.
+	 * @see org.yazgel.oop.SingleOReference
 	 * @generated
 	 */
-	EClass getOReferenceSingle();
+	EClass getSingleOReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.yazgel.oop.SingleOReference#getOpposite <em>Opposite</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Opposite</em>'.
+	 * @see org.yazgel.oop.SingleOReference#getOpposite()
+	 * @see #getSingleOReference()
+	 * @generated
+	 */
+	EReference getSingleOReference_Opposite();
 
 	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.ODataType <em>OData Type</em>}'.
@@ -1036,35 +1027,46 @@ public interface OopPackage extends EPackage {
 	EClass getODataType();
 
 	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.ODataTypeSingle <em>OData Type Single</em>}'.
+	 * Returns the meta object for class '{@link org.yazgel.oop.SingleODataType <em>Single OData Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OData Type Single</em>'.
-	 * @see org.yazgel.oop.ODataTypeSingle
+	 * @return the meta object for class '<em>Single OData Type</em>'.
+	 * @see org.yazgel.oop.SingleODataType
 	 * @generated
 	 */
-	EClass getODataTypeSingle();
+	EClass getSingleODataType();
 
 	/**
-	 * Returns the meta object for class '{@link org.yazgel.oop.ODataTypeMulti <em>OData Type Multi</em>}'.
+	 * Returns the meta object for the reference '{@link org.yazgel.oop.SingleODataType#getOpposite <em>Opposite</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>OData Type Multi</em>'.
-	 * @see org.yazgel.oop.ODataTypeMulti
+	 * @return the meta object for the reference '<em>Opposite</em>'.
+	 * @see org.yazgel.oop.SingleODataType#getOpposite()
+	 * @see #getSingleODataType()
 	 * @generated
 	 */
-	EClass getODataTypeMulti();
+	EReference getSingleODataType_Opposite();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.yazgel.oop.ODataTypeMulti#isUniqueInstance <em>Unique Instance</em>}'.
+	 * Returns the meta object for class '{@link org.yazgel.oop.MultiODataType <em>Multi OData Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Multi OData Type</em>'.
+	 * @see org.yazgel.oop.MultiODataType
+	 * @generated
+	 */
+	EClass getMultiODataType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.yazgel.oop.MultiODataType#isUniqueInstance <em>Unique Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Unique Instance</em>'.
-	 * @see org.yazgel.oop.ODataTypeMulti#isUniqueInstance()
-	 * @see #getODataTypeMulti()
+	 * @see org.yazgel.oop.MultiODataType#isUniqueInstance()
+	 * @see #getMultiODataType()
 	 * @generated
 	 */
-	EAttribute getODataTypeMulti_UniqueInstance();
+	EAttribute getMultiODataType_UniqueInstance();
 
 	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OMethod <em>OMethod</em>}'.
@@ -1373,22 +1375,14 @@ public interface OopPackage extends EPackage {
 		EReference OREFERENCE__REFERENCE = eINSTANCE.getOReference_Reference();
 
 		/**
-		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.MultiOReferenceImpl <em>Multi OReference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.impl.MultiOReferenceImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getMultiOReference()
 		 * @generated
 		 */
-		EReference OREFERENCE__OPPOSITE = eINSTANCE.getOReference_Opposite();
-
-		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.OReferenceMultiImpl <em>OReference Multi</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.OReferenceMultiImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getOReferenceMulti()
-		 * @generated
-		 */
-		EClass OREFERENCE_MULTI = eINSTANCE.getOReferenceMulti();
+		EClass MULTI_OREFERENCE = eINSTANCE.getMultiOReference();
 
 		/**
 		 * The meta object literal for the '<em><b>Unique Instance</b></em>' attribute feature.
@@ -1396,17 +1390,25 @@ public interface OopPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OREFERENCE_MULTI__UNIQUE_INSTANCE = eINSTANCE.getOReferenceMulti_UniqueInstance();
+		EAttribute MULTI_OREFERENCE__UNIQUE_INSTANCE = eINSTANCE.getMultiOReference_UniqueInstance();
 
 		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.OReferenceSingleImpl <em>OReference Single</em>}' class.
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.SingleOReferenceImpl <em>Single OReference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.OReferenceSingleImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getOReferenceSingle()
+		 * @see org.yazgel.oop.impl.SingleOReferenceImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getSingleOReference()
 		 * @generated
 		 */
-		EClass OREFERENCE_SINGLE = eINSTANCE.getOReferenceSingle();
+		EClass SINGLE_OREFERENCE = eINSTANCE.getSingleOReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SINGLE_OREFERENCE__OPPOSITE = eINSTANCE.getSingleOReference_Opposite();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.ODataTypeImpl <em>OData Type</em>}' class.
@@ -1419,24 +1421,32 @@ public interface OopPackage extends EPackage {
 		EClass ODATA_TYPE = eINSTANCE.getODataType();
 
 		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.ODataTypeSingleImpl <em>OData Type Single</em>}' class.
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.SingleODataTypeImpl <em>Single OData Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.ODataTypeSingleImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypeSingle()
+		 * @see org.yazgel.oop.impl.SingleODataTypeImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getSingleODataType()
 		 * @generated
 		 */
-		EClass ODATA_TYPE_SINGLE = eINSTANCE.getODataTypeSingle();
+		EClass SINGLE_ODATA_TYPE = eINSTANCE.getSingleODataType();
 
 		/**
-		 * The meta object literal for the '{@link org.yazgel.oop.impl.ODataTypeMultiImpl <em>OData Type Multi</em>}' class.
+		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.yazgel.oop.impl.ODataTypeMultiImpl
-		 * @see org.yazgel.oop.impl.OopPackageImpl#getODataTypeMulti()
 		 * @generated
 		 */
-		EClass ODATA_TYPE_MULTI = eINSTANCE.getODataTypeMulti();
+		EReference SINGLE_ODATA_TYPE__OPPOSITE = eINSTANCE.getSingleODataType_Opposite();
+
+		/**
+		 * The meta object literal for the '{@link org.yazgel.oop.impl.MultiODataTypeImpl <em>Multi OData Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.yazgel.oop.impl.MultiODataTypeImpl
+		 * @see org.yazgel.oop.impl.OopPackageImpl#getMultiODataType()
+		 * @generated
+		 */
+		EClass MULTI_ODATA_TYPE = eINSTANCE.getMultiODataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Unique Instance</b></em>' attribute feature.
@@ -1444,7 +1454,7 @@ public interface OopPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ODATA_TYPE_MULTI__UNIQUE_INSTANCE = eINSTANCE.getODataTypeMulti_UniqueInstance();
+		EAttribute MULTI_ODATA_TYPE__UNIQUE_INSTANCE = eINSTANCE.getMultiODataType_UniqueInstance();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OMethodImpl <em>OMethod</em>}' class.

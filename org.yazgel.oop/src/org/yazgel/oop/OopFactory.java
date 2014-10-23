@@ -49,40 +49,40 @@ public interface OopFactory extends EFactory {
 	OClass createOClass();
 
 	/**
-	 * Returns a new object of class '<em>OReference Multi</em>'.
+	 * Returns a new object of class '<em>Multi OReference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OReference Multi</em>'.
+	 * @return a new object of class '<em>Multi OReference</em>'.
 	 * @generated
 	 */
-	OReferenceMulti createOReferenceMulti();
+	MultiOReference createMultiOReference();
 
 	/**
-	 * Returns a new object of class '<em>OReference Single</em>'.
+	 * Returns a new object of class '<em>Single OReference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OReference Single</em>'.
+	 * @return a new object of class '<em>Single OReference</em>'.
 	 * @generated
 	 */
-	OReferenceSingle createOReferenceSingle();
+	SingleOReference createSingleOReference();
 
 	/**
-	 * Returns a new object of class '<em>OData Type Single</em>'.
+	 * Returns a new object of class '<em>Single OData Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OData Type Single</em>'.
+	 * @return a new object of class '<em>Single OData Type</em>'.
 	 * @generated
 	 */
-	ODataTypeSingle createODataTypeSingle();
+	SingleODataType createSingleODataType();
 
 	/**
-	 * Returns a new object of class '<em>OData Type Multi</em>'.
+	 * Returns a new object of class '<em>Multi OData Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>OData Type Multi</em>'.
+	 * @return a new object of class '<em>Multi OData Type</em>'.
 	 * @generated
 	 */
-	ODataTypeMulti createODataTypeMulti();
+	MultiODataType createMultiODataType();
 
 	/**
 	 * Returns a new object of class '<em>OMethod</em>'.

@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.yazgel.oop.MultiODataType;
+import org.yazgel.oop.MultiOReference;
 import org.yazgel.oop.OClass;
 import org.yazgel.oop.ODataType;
-import org.yazgel.oop.ODataTypeMulti;
-import org.yazgel.oop.ODataTypeSingle;
 import org.yazgel.oop.OFeature;
 import org.yazgel.oop.OMethod;
 import org.yazgel.oop.OModel;
 import org.yazgel.oop.OPackage;
 import org.yazgel.oop.OParameter;
 import org.yazgel.oop.OReference;
-import org.yazgel.oop.OReferenceMulti;
-import org.yazgel.oop.OReferenceSingle;
 import org.yazgel.oop.OStatement;
 import org.yazgel.oop.OopFactory;
 import org.yazgel.oop.OopPackage;
+import org.yazgel.oop.SingleODataType;
+import org.yazgel.oop.SingleOReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,14 +72,14 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass oReferenceMultiEClass = null;
+	private EClass multiOReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass oReferenceSingleEClass = null;
+	private EClass singleOReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,14 +93,14 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass oDataTypeSingleEClass = null;
+	private EClass singleODataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass oDataTypeMultiEClass = null;
+	private EClass multiODataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -351,8 +351,8 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOReference_Opposite() {
-		return (EReference)oReferenceEClass.getEStructuralFeatures().get(1);
+	public EClass getMultiOReference() {
+		return multiOReferenceEClass;
 	}
 
 	/**
@@ -360,8 +360,8 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOReferenceMulti() {
-		return oReferenceMultiEClass;
+	public EAttribute getMultiOReference_UniqueInstance() {
+		return (EAttribute)multiOReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -369,8 +369,8 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOReferenceMulti_UniqueInstance() {
-		return (EAttribute)oReferenceMultiEClass.getEStructuralFeatures().get(0);
+	public EClass getSingleOReference() {
+		return singleOReferenceEClass;
 	}
 
 	/**
@@ -378,8 +378,8 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOReferenceSingle() {
-		return oReferenceSingleEClass;
+	public EReference getSingleOReference_Opposite() {
+		return (EReference)singleOReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -396,8 +396,8 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getODataTypeSingle() {
-		return oDataTypeSingleEClass;
+	public EClass getSingleODataType() {
+		return singleODataTypeEClass;
 	}
 
 	/**
@@ -405,8 +405,8 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getODataTypeMulti() {
-		return oDataTypeMultiEClass;
+	public EReference getSingleODataType_Opposite() {
+		return (EReference)singleODataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -414,8 +414,17 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getODataTypeMulti_UniqueInstance() {
-		return (EAttribute)oDataTypeMultiEClass.getEStructuralFeatures().get(0);
+	public EClass getMultiODataType() {
+		return multiODataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMultiODataType_UniqueInstance() {
+		return (EAttribute)multiODataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -576,19 +585,20 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 
 		oReferenceEClass = createEClass(OREFERENCE);
 		createEReference(oReferenceEClass, OREFERENCE__REFERENCE);
-		createEReference(oReferenceEClass, OREFERENCE__OPPOSITE);
 
-		oReferenceMultiEClass = createEClass(OREFERENCE_MULTI);
-		createEAttribute(oReferenceMultiEClass, OREFERENCE_MULTI__UNIQUE_INSTANCE);
+		multiOReferenceEClass = createEClass(MULTI_OREFERENCE);
+		createEAttribute(multiOReferenceEClass, MULTI_OREFERENCE__UNIQUE_INSTANCE);
 
-		oReferenceSingleEClass = createEClass(OREFERENCE_SINGLE);
+		singleOReferenceEClass = createEClass(SINGLE_OREFERENCE);
+		createEReference(singleOReferenceEClass, SINGLE_OREFERENCE__OPPOSITE);
 
 		oDataTypeEClass = createEClass(ODATA_TYPE);
 
-		oDataTypeSingleEClass = createEClass(ODATA_TYPE_SINGLE);
+		singleODataTypeEClass = createEClass(SINGLE_ODATA_TYPE);
+		createEReference(singleODataTypeEClass, SINGLE_ODATA_TYPE__OPPOSITE);
 
-		oDataTypeMultiEClass = createEClass(ODATA_TYPE_MULTI);
-		createEAttribute(oDataTypeMultiEClass, ODATA_TYPE_MULTI__UNIQUE_INSTANCE);
+		multiODataTypeEClass = createEClass(MULTI_ODATA_TYPE);
+		createEAttribute(multiODataTypeEClass, MULTI_ODATA_TYPE__UNIQUE_INSTANCE);
 
 		oMethodEClass = createEClass(OMETHOD);
 		createEAttribute(oMethodEClass, OMETHOD__NAME);
@@ -635,11 +645,11 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 
 		// Add supertypes to classes
 		oReferenceEClass.getESuperTypes().add(this.getOFeature());
-		oReferenceMultiEClass.getESuperTypes().add(this.getOReference());
-		oReferenceSingleEClass.getESuperTypes().add(this.getOReference());
+		multiOReferenceEClass.getESuperTypes().add(this.getOReference());
+		singleOReferenceEClass.getESuperTypes().add(this.getOReference());
 		oDataTypeEClass.getESuperTypes().add(this.getOFeature());
-		oDataTypeSingleEClass.getESuperTypes().add(this.getODataType());
-		oDataTypeMultiEClass.getESuperTypes().add(this.getODataType());
+		singleODataTypeEClass.getESuperTypes().add(this.getODataType());
+		multiODataTypeEClass.getESuperTypes().add(this.getODataType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(oModelEClass, OModel.class, "OModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -664,19 +674,20 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 
 		initEClass(oReferenceEClass, OReference.class, "OReference", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOReference_Reference(), this.getOClass(), null, "reference", null, 0, 1, OReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOReference_Opposite(), this.getOReference(), null, "opposite", null, 0, 1, OReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(oReferenceMultiEClass, OReferenceMulti.class, "OReferenceMulti", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOReferenceMulti_UniqueInstance(), ecorePackage.getEBoolean(), "uniqueInstance", null, 0, 1, OReferenceMulti.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(multiOReferenceEClass, MultiOReference.class, "MultiOReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMultiOReference_UniqueInstance(), ecorePackage.getEBoolean(), "uniqueInstance", null, 0, 1, MultiOReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(oReferenceSingleEClass, OReferenceSingle.class, "OReferenceSingle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(singleOReferenceEClass, SingleOReference.class, "SingleOReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSingleOReference_Opposite(), this.getMultiOReference(), null, "opposite", null, 0, 1, SingleOReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oDataTypeEClass, ODataType.class, "ODataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(oDataTypeSingleEClass, ODataTypeSingle.class, "ODataTypeSingle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(singleODataTypeEClass, SingleODataType.class, "SingleODataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSingleODataType_Opposite(), this.getMultiODataType(), null, "opposite", null, 0, 1, SingleODataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(oDataTypeMultiEClass, ODataTypeMulti.class, "ODataTypeMulti", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getODataTypeMulti_UniqueInstance(), ecorePackage.getEBoolean(), "uniqueInstance", null, 0, 1, ODataTypeMulti.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(multiODataTypeEClass, MultiODataType.class, "MultiODataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMultiODataType_UniqueInstance(), ecorePackage.getEBoolean(), "uniqueInstance", null, 0, 1, MultiODataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oMethodEClass, OMethod.class, "OMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, OMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
