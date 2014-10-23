@@ -10,12 +10,6 @@ public class Edge {
 		from = new Vertex();
 		to = new Vertex();
 	}
-	public   Edge(Vertex from, Vertex to, double weight
-	){
-		this.from = from;
-		this.to = to;
-		this.weight = weight;
-	}
 	public  double getWeight(){
 		return this.weight;
 	}

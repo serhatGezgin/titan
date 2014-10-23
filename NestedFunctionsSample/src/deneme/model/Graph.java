@@ -14,12 +14,6 @@ public class Graph {
 		edges = new ArrayList<>();
 		vertices = new TreeSet<>();
 	}
-	public   Graph(String name, ArrayList<Edge> edges, TreeSet<Vertex> vertices
-	){
-		this.name = name;
-		this.edges = edges;
-		this.vertices = vertices;
-	}
 	public  void addEdge(Edge edge
 	){
 		getEdges().add(edge);

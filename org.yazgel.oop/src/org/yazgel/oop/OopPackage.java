@@ -314,13 +314,22 @@ public interface OopPackage extends EPackage {
 	int OREFERENCE__REFERENCE = OFEATURE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Opposite</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OREFERENCE__OPPOSITE = OFEATURE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>OReference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OREFERENCE_FEATURE_COUNT = OFEATURE_FEATURE_COUNT + 1;
+	int OREFERENCE_FEATURE_COUNT = OFEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>OReference</em>' class.
@@ -367,6 +376,15 @@ public interface OopPackage extends EPackage {
 	 * @ordered
 	 */
 	int MULTI_OREFERENCE__REFERENCE = OREFERENCE__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Opposite</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_OREFERENCE__OPPOSITE = OREFERENCE__OPPOSITE;
 
 	/**
 	 * The feature id for the '<em><b>Unique Instance</b></em>' attribute.
@@ -439,7 +457,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_OREFERENCE__OPPOSITE = OREFERENCE_FEATURE_COUNT + 0;
+	int SINGLE_OREFERENCE__OPPOSITE = OREFERENCE__OPPOSITE;
 
 	/**
 	 * The number of structural features of the '<em>Single OReference</em>' class.
@@ -448,7 +466,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_OREFERENCE_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 1;
+	int SINGLE_OREFERENCE_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Single OReference</em>' class.
@@ -488,13 +506,22 @@ public interface OopPackage extends EPackage {
 	int ODATA_TYPE__TYPE = OFEATURE__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Opposite</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ODATA_TYPE__OPPOSITE = OFEATURE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>OData Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ODATA_TYPE_FEATURE_COUNT = OFEATURE_FEATURE_COUNT + 0;
+	int ODATA_TYPE_FEATURE_COUNT = OFEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>OData Type</em>' class.
@@ -540,7 +567,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_ODATA_TYPE__OPPOSITE = ODATA_TYPE_FEATURE_COUNT + 0;
+	int SINGLE_ODATA_TYPE__OPPOSITE = ODATA_TYPE__OPPOSITE;
 
 	/**
 	 * The number of structural features of the '<em>Single OData Type</em>' class.
@@ -549,7 +576,7 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_ODATA_TYPE_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 1;
+	int SINGLE_ODATA_TYPE_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Single OData Type</em>' class.
@@ -587,6 +614,15 @@ public interface OopPackage extends EPackage {
 	 * @ordered
 	 */
 	int MULTI_ODATA_TYPE__TYPE = ODATA_TYPE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Opposite</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ODATA_TYPE__OPPOSITE = ODATA_TYPE__OPPOSITE;
 
 	/**
 	 * The feature id for the '<em><b>Unique Instance</b></em>' attribute.
@@ -975,6 +1011,17 @@ public interface OopPackage extends EPackage {
 	EReference getOReference_Reference();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.yazgel.oop.OReference#getOpposite <em>Opposite</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Opposite</em>'.
+	 * @see org.yazgel.oop.OReference#getOpposite()
+	 * @see #getOReference()
+	 * @generated
+	 */
+	EReference getOReference_Opposite();
+
+	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.MultiOReference <em>Multi OReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1006,17 +1053,6 @@ public interface OopPackage extends EPackage {
 	EClass getSingleOReference();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.yazgel.oop.SingleOReference#getOpposite <em>Opposite</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Opposite</em>'.
-	 * @see org.yazgel.oop.SingleOReference#getOpposite()
-	 * @see #getSingleOReference()
-	 * @generated
-	 */
-	EReference getSingleOReference_Opposite();
-
-	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.ODataType <em>OData Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1027,6 +1063,17 @@ public interface OopPackage extends EPackage {
 	EClass getODataType();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.yazgel.oop.ODataType#getOpposite <em>Opposite</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Opposite</em>'.
+	 * @see org.yazgel.oop.ODataType#getOpposite()
+	 * @see #getODataType()
+	 * @generated
+	 */
+	EReference getODataType_Opposite();
+
+	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.SingleODataType <em>Single OData Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1035,17 +1082,6 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSingleODataType();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.yazgel.oop.SingleODataType#getOpposite <em>Opposite</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Opposite</em>'.
-	 * @see org.yazgel.oop.SingleODataType#getOpposite()
-	 * @see #getSingleODataType()
-	 * @generated
-	 */
-	EReference getSingleODataType_Opposite();
 
 	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.MultiODataType <em>Multi OData Type</em>}'.
@@ -1375,6 +1411,14 @@ public interface OopPackage extends EPackage {
 		EReference OREFERENCE__REFERENCE = eINSTANCE.getOReference_Reference();
 
 		/**
+		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OREFERENCE__OPPOSITE = eINSTANCE.getOReference_Opposite();
+
+		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.MultiOReferenceImpl <em>Multi OReference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1403,14 +1447,6 @@ public interface OopPackage extends EPackage {
 		EClass SINGLE_OREFERENCE = eINSTANCE.getSingleOReference();
 
 		/**
-		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SINGLE_OREFERENCE__OPPOSITE = eINSTANCE.getSingleOReference_Opposite();
-
-		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.ODataTypeImpl <em>OData Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1421,6 +1457,14 @@ public interface OopPackage extends EPackage {
 		EClass ODATA_TYPE = eINSTANCE.getODataType();
 
 		/**
+		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ODATA_TYPE__OPPOSITE = eINSTANCE.getODataType_Opposite();
+
+		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.SingleODataTypeImpl <em>Single OData Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1429,14 +1473,6 @@ public interface OopPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SINGLE_ODATA_TYPE = eINSTANCE.getSingleODataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SINGLE_ODATA_TYPE__OPPOSITE = eINSTANCE.getSingleODataType_Opposite();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.MultiODataTypeImpl <em>Multi OData Type</em>}' class.

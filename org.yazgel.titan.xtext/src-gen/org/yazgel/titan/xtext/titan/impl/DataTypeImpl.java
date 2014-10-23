@@ -5,11 +5,13 @@ package org.yazgel.titan.xtext.titan.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.yazgel.titan.xtext.titan.DataType;
 import org.yazgel.titan.xtext.titan.DataTypes;
+import org.yazgel.titan.xtext.titan.MultiDataType;
 import org.yazgel.titan.xtext.titan.TitanPackage;
 
 /**
@@ -20,6 +22,7 @@ import org.yazgel.titan.xtext.titan.TitanPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.DataTypeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.yazgel.titan.xtext.titan.impl.DataTypeImpl#getOpposite <em>Opposite</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +49,16 @@ public class DataTypeImpl extends FeatureImpl implements DataType
    * @ordered
    */
   protected DataTypes type = TYPE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOpposite()
+   * @generated
+   * @ordered
+   */
+  protected MultiDataType opposite;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,6 +109,49 @@ public class DataTypeImpl extends FeatureImpl implements DataType
    * <!-- end-user-doc -->
    * @generated
    */
+  public MultiDataType getOpposite()
+  {
+    if (opposite != null && opposite.eIsProxy())
+    {
+      InternalEObject oldOpposite = (InternalEObject)opposite;
+      opposite = (MultiDataType)eResolveProxy(oldOpposite);
+      if (opposite != oldOpposite)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TitanPackage.DATA_TYPE__OPPOSITE, oldOpposite, opposite));
+      }
+    }
+    return opposite;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiDataType basicGetOpposite()
+  {
+    return opposite;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOpposite(MultiDataType newOpposite)
+  {
+    MultiDataType oldOpposite = opposite;
+    opposite = newOpposite;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TitanPackage.DATA_TYPE__OPPOSITE, oldOpposite, opposite));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -103,6 +159,9 @@ public class DataTypeImpl extends FeatureImpl implements DataType
     {
       case TitanPackage.DATA_TYPE__TYPE:
         return getType();
+      case TitanPackage.DATA_TYPE__OPPOSITE:
+        if (resolve) return getOpposite();
+        return basicGetOpposite();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,6 +178,9 @@ public class DataTypeImpl extends FeatureImpl implements DataType
     {
       case TitanPackage.DATA_TYPE__TYPE:
         setType((DataTypes)newValue);
+        return;
+      case TitanPackage.DATA_TYPE__OPPOSITE:
+        setOpposite((MultiDataType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,6 +199,9 @@ public class DataTypeImpl extends FeatureImpl implements DataType
       case TitanPackage.DATA_TYPE__TYPE:
         setType(TYPE_EDEFAULT);
         return;
+      case TitanPackage.DATA_TYPE__OPPOSITE:
+        setOpposite((MultiDataType)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -153,6 +218,8 @@ public class DataTypeImpl extends FeatureImpl implements DataType
     {
       case TitanPackage.DATA_TYPE__TYPE:
         return type != TYPE_EDEFAULT;
+      case TitanPackage.DATA_TYPE__OPPOSITE:
+        return opposite != null;
     }
     return super.eIsSet(featureID);
   }

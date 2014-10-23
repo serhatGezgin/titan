@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.yazgel.titan.xtext.titan.Entity;
+import org.yazgel.titan.xtext.titan.MultiReference;
 import org.yazgel.titan.xtext.titan.Reference;
 import org.yazgel.titan.xtext.titan.TitanPackage;
 
@@ -22,6 +23,7 @@ import org.yazgel.titan.xtext.titan.TitanPackage;
  * <ul>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#isUnique <em>Unique</em>}</li>
+ *   <li>{@link org.yazgel.titan.xtext.titan.impl.ReferenceImpl#getOpposite <em>Opposite</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +60,16 @@ public class ReferenceImpl extends FeatureImpl implements Reference
    * @ordered
    */
   protected boolean unique = UNIQUE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOpposite()
+   * @generated
+   * @ordered
+   */
+  protected MultiReference opposite;
 
   /**
    * <!-- begin-user-doc -->
@@ -151,6 +163,49 @@ public class ReferenceImpl extends FeatureImpl implements Reference
    * <!-- end-user-doc -->
    * @generated
    */
+  public MultiReference getOpposite()
+  {
+    if (opposite != null && opposite.eIsProxy())
+    {
+      InternalEObject oldOpposite = (InternalEObject)opposite;
+      opposite = (MultiReference)eResolveProxy(oldOpposite);
+      if (opposite != oldOpposite)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TitanPackage.REFERENCE__OPPOSITE, oldOpposite, opposite));
+      }
+    }
+    return opposite;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiReference basicGetOpposite()
+  {
+    return opposite;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOpposite(MultiReference newOpposite)
+  {
+    MultiReference oldOpposite = opposite;
+    opposite = newOpposite;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TitanPackage.REFERENCE__OPPOSITE, oldOpposite, opposite));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -161,6 +216,9 @@ public class ReferenceImpl extends FeatureImpl implements Reference
         return basicGetReference();
       case TitanPackage.REFERENCE__UNIQUE:
         return isUnique();
+      case TitanPackage.REFERENCE__OPPOSITE:
+        if (resolve) return getOpposite();
+        return basicGetOpposite();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -180,6 +238,9 @@ public class ReferenceImpl extends FeatureImpl implements Reference
         return;
       case TitanPackage.REFERENCE__UNIQUE:
         setUnique((Boolean)newValue);
+        return;
+      case TitanPackage.REFERENCE__OPPOSITE:
+        setOpposite((MultiReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -201,6 +262,9 @@ public class ReferenceImpl extends FeatureImpl implements Reference
       case TitanPackage.REFERENCE__UNIQUE:
         setUnique(UNIQUE_EDEFAULT);
         return;
+      case TitanPackage.REFERENCE__OPPOSITE:
+        setOpposite((MultiReference)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -219,6 +283,8 @@ public class ReferenceImpl extends FeatureImpl implements Reference
         return reference != null;
       case TitanPackage.REFERENCE__UNIQUE:
         return unique != UNIQUE_EDEFAULT;
+      case TitanPackage.REFERENCE__OPPOSITE:
+        return opposite != null;
     }
     return super.eIsSet(featureID);
   }

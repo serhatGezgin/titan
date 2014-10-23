@@ -1,9 +1,9 @@
 package deneme.model;
 
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class University {
 	private String universityName;
@@ -13,12 +13,6 @@ public class University {
 	public   University(){
 		universityStudents = new ArrayList<>();
 		universityCourses = new TreeSet<>();
-	}
-	public   University(String universityName, ArrayList<Student> universityStudents, TreeSet<Course> universityCourses
-	){
-		this.universityName = universityName;
-		this.universityStudents = universityStudents;
-		this.universityCourses = universityCourses;
 	}
 	public  void addStudent(Student student
 	){

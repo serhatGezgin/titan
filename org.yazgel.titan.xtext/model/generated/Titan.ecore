@@ -27,17 +27,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//Feature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SingleReference" eSuperTypes="#//Reference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//MultiReference"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleReference" eSuperTypes="#//Reference"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultiReference" eSuperTypes="#//Reference"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataTypes"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SingleDataType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//MultiDataType"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleDataType" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultiDataType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>

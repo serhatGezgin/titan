@@ -11,12 +11,6 @@ public class Student {
 	public   Student(){
 		studentCourses = new ArrayList<>();
 	}
-	public   Student(String studentCode, String studentName, ArrayList<Course> studentCourses
-	){
-		this.studentCode = studentCode;
-		this.studentName = studentName;
-		this.studentCourses = studentCourses;
-	}
 	public  void addCourse(Course course
 	){
 		getStudentCourses().add(course);

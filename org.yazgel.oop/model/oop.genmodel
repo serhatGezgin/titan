@@ -29,17 +29,16 @@
     </genClasses>
     <genClasses ecoreClass="oop.ecore#//OReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OReference/reference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//OReference/opposite"/>
     </genClasses>
     <genClasses ecoreClass="oop.ecore#//MultiOReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//MultiOReference/uniqueInstance"/>
     </genClasses>
-    <genClasses ecoreClass="oop.ecore#//SingleOReference">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//SingleOReference/opposite"/>
+    <genClasses ecoreClass="oop.ecore#//SingleOReference"/>
+    <genClasses ecoreClass="oop.ecore#//ODataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//ODataType/opposite"/>
     </genClasses>
-    <genClasses ecoreClass="oop.ecore#//ODataType"/>
-    <genClasses ecoreClass="oop.ecore#//SingleODataType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//SingleODataType/opposite"/>
-    </genClasses>
+    <genClasses ecoreClass="oop.ecore#//SingleODataType"/>
     <genClasses ecoreClass="oop.ecore#//MultiODataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//MultiODataType/uniqueInstance"/>
     </genClasses>

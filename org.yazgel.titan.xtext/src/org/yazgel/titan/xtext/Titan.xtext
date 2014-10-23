@@ -48,7 +48,8 @@ MultiReference returns MultiReference:
 	name=ID
 	reference=[Entity|ID]
 	'[]'
-	unique ?= ('unique')?;
+	unique ?= ('unique')?
+	('opposite' opposite=[MultiReference|QUALIFIED_NAME])?;
 	
 DataType returns DataType:
 	SingleDataType | MultiDataType;
@@ -66,7 +67,8 @@ MultiDataType returns MultiDataType:
 	name=ID
 	type=DataTypes
 	'[]'
-	unique ?= ('unique')?;
+	unique ?= ('unique')?
+	('opposite' opposite=[MultiDataType|QUALIFIED_NAME])?;
 
 enum DataTypes returns DataTypes:
 	String='String' | Integer='integer' | Boolean='boolean' | Long='long' | Double='double';

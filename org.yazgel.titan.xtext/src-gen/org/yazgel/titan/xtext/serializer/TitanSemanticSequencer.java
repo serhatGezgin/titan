@@ -101,7 +101,7 @@ public class TitanSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=DataTypes unique?='unique'?)
+	 *     (name=ID type=DataTypes unique?='unique'? opposite=[MultiDataType|QUALIFIED_NAME]?)
 	 */
 	protected void sequence_MultiDataType(EObject context, MultiDataType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -110,7 +110,7 @@ public class TitanSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID reference=[Entity|ID] unique?='unique'?)
+	 *     (name=ID reference=[Entity|ID] unique?='unique'? opposite=[MultiReference|QUALIFIED_NAME]?)
 	 */
 	protected void sequence_MultiReference(EObject context, MultiReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -7,10 +7,6 @@ public class Vertex implements Comparable<Vertex>
 	
 	public   Vertex(){
 	}
-	public   Vertex(String label
-	){
-		this.label = label;
-	}
 	public  String getLabel(){
 		return this.label;
 	}

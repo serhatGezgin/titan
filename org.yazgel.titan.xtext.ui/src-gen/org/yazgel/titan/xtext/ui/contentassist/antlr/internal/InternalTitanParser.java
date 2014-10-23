@@ -1041,11 +1041,11 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
                 if ( (LA1_1==RULE_ID) ) {
                     int LA1_2 = input.LA(3);
 
-                    if ( ((LA1_2>=12 && LA1_2<=16)) ) {
-                        alt1=2;
-                    }
-                    else if ( (LA1_2==RULE_ID) ) {
+                    if ( (LA1_2==RULE_ID) ) {
                         alt1=1;
+                    }
+                    else if ( ((LA1_2>=12 && LA1_2<=16)) ) {
+                        alt1=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -4684,17 +4684,22 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiReference__Group__5"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1744:1: rule__MultiReference__Group__5 : rule__MultiReference__Group__5__Impl ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1744:1: rule__MultiReference__Group__5 : rule__MultiReference__Group__5__Impl rule__MultiReference__Group__6 ;
     public final void rule__MultiReference__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1748:1: ( rule__MultiReference__Group__5__Impl )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1749:2: rule__MultiReference__Group__5__Impl
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1748:1: ( rule__MultiReference__Group__5__Impl rule__MultiReference__Group__6 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1749:2: rule__MultiReference__Group__5__Impl rule__MultiReference__Group__6
             {
             pushFollow(FOLLOW_rule__MultiReference__Group__5__Impl_in_rule__MultiReference__Group__53489);
             rule__MultiReference__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__MultiReference__Group__6_in_rule__MultiReference__Group__53492);
+            rule__MultiReference__Group__6();
 
             state._fsp--;
 
@@ -4717,20 +4722,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiReference__Group__5__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1755:1: rule__MultiReference__Group__5__Impl : ( ( rule__MultiReference__UniqueAssignment_5 )? ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1756:1: rule__MultiReference__Group__5__Impl : ( ( rule__MultiReference__UniqueAssignment_5 )? ) ;
     public final void rule__MultiReference__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1759:1: ( ( ( rule__MultiReference__UniqueAssignment_5 )? ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1760:1: ( ( rule__MultiReference__UniqueAssignment_5 )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1760:1: ( ( ( rule__MultiReference__UniqueAssignment_5 )? ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1761:1: ( ( rule__MultiReference__UniqueAssignment_5 )? )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1760:1: ( ( rule__MultiReference__UniqueAssignment_5 )? )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1761:1: ( rule__MultiReference__UniqueAssignment_5 )?
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1761:1: ( ( rule__MultiReference__UniqueAssignment_5 )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1762:1: ( rule__MultiReference__UniqueAssignment_5 )?
             {
              before(grammarAccess.getMultiReferenceAccess().getUniqueAssignment_5()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1762:1: ( rule__MultiReference__UniqueAssignment_5 )?
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1763:1: ( rule__MultiReference__UniqueAssignment_5 )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -4739,9 +4744,9 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1762:2: rule__MultiReference__UniqueAssignment_5
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1763:2: rule__MultiReference__UniqueAssignment_5
                     {
-                    pushFollow(FOLLOW_rule__MultiReference__UniqueAssignment_5_in_rule__MultiReference__Group__5__Impl3516);
+                    pushFollow(FOLLOW_rule__MultiReference__UniqueAssignment_5_in_rule__MultiReference__Group__5__Impl3519);
                     rule__MultiReference__UniqueAssignment_5();
 
                     state._fsp--;
@@ -4774,22 +4779,268 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MultiReference__Group__5__Impl"
 
 
+    // $ANTLR start "rule__MultiReference__Group__6"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1773:1: rule__MultiReference__Group__6 : rule__MultiReference__Group__6__Impl ;
+    public final void rule__MultiReference__Group__6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1777:1: ( rule__MultiReference__Group__6__Impl )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1778:2: rule__MultiReference__Group__6__Impl
+            {
+            pushFollow(FOLLOW_rule__MultiReference__Group__6__Impl_in_rule__MultiReference__Group__63550);
+            rule__MultiReference__Group__6__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiReference__Group__6"
+
+
+    // $ANTLR start "rule__MultiReference__Group__6__Impl"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1784:1: rule__MultiReference__Group__6__Impl : ( ( rule__MultiReference__Group_6__0 )? ) ;
+    public final void rule__MultiReference__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1788:1: ( ( ( rule__MultiReference__Group_6__0 )? ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1789:1: ( ( rule__MultiReference__Group_6__0 )? )
+            {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1789:1: ( ( rule__MultiReference__Group_6__0 )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1790:1: ( rule__MultiReference__Group_6__0 )?
+            {
+             before(grammarAccess.getMultiReferenceAccess().getGroup_6()); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1791:1: ( rule__MultiReference__Group_6__0 )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==24) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1791:2: rule__MultiReference__Group_6__0
+                    {
+                    pushFollow(FOLLOW_rule__MultiReference__Group_6__0_in_rule__MultiReference__Group__6__Impl3577);
+                    rule__MultiReference__Group_6__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getMultiReferenceAccess().getGroup_6()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiReference__Group__6__Impl"
+
+
+    // $ANTLR start "rule__MultiReference__Group_6__0"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1815:1: rule__MultiReference__Group_6__0 : rule__MultiReference__Group_6__0__Impl rule__MultiReference__Group_6__1 ;
+    public final void rule__MultiReference__Group_6__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1819:1: ( rule__MultiReference__Group_6__0__Impl rule__MultiReference__Group_6__1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1820:2: rule__MultiReference__Group_6__0__Impl rule__MultiReference__Group_6__1
+            {
+            pushFollow(FOLLOW_rule__MultiReference__Group_6__0__Impl_in_rule__MultiReference__Group_6__03622);
+            rule__MultiReference__Group_6__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__MultiReference__Group_6__1_in_rule__MultiReference__Group_6__03625);
+            rule__MultiReference__Group_6__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiReference__Group_6__0"
+
+
+    // $ANTLR start "rule__MultiReference__Group_6__0__Impl"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1827:1: rule__MultiReference__Group_6__0__Impl : ( 'opposite' ) ;
+    public final void rule__MultiReference__Group_6__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1831:1: ( ( 'opposite' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1832:1: ( 'opposite' )
+            {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1832:1: ( 'opposite' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1833:1: 'opposite'
+            {
+             before(grammarAccess.getMultiReferenceAccess().getOppositeKeyword_6_0()); 
+            match(input,24,FOLLOW_24_in_rule__MultiReference__Group_6__0__Impl3653); 
+             after(grammarAccess.getMultiReferenceAccess().getOppositeKeyword_6_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiReference__Group_6__0__Impl"
+
+
+    // $ANTLR start "rule__MultiReference__Group_6__1"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1846:1: rule__MultiReference__Group_6__1 : rule__MultiReference__Group_6__1__Impl ;
+    public final void rule__MultiReference__Group_6__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1850:1: ( rule__MultiReference__Group_6__1__Impl )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1851:2: rule__MultiReference__Group_6__1__Impl
+            {
+            pushFollow(FOLLOW_rule__MultiReference__Group_6__1__Impl_in_rule__MultiReference__Group_6__13684);
+            rule__MultiReference__Group_6__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiReference__Group_6__1"
+
+
+    // $ANTLR start "rule__MultiReference__Group_6__1__Impl"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1857:1: rule__MultiReference__Group_6__1__Impl : ( ( rule__MultiReference__OppositeAssignment_6_1 ) ) ;
+    public final void rule__MultiReference__Group_6__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1861:1: ( ( ( rule__MultiReference__OppositeAssignment_6_1 ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1862:1: ( ( rule__MultiReference__OppositeAssignment_6_1 ) )
+            {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1862:1: ( ( rule__MultiReference__OppositeAssignment_6_1 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1863:1: ( rule__MultiReference__OppositeAssignment_6_1 )
+            {
+             before(grammarAccess.getMultiReferenceAccess().getOppositeAssignment_6_1()); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1864:1: ( rule__MultiReference__OppositeAssignment_6_1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1864:2: rule__MultiReference__OppositeAssignment_6_1
+            {
+            pushFollow(FOLLOW_rule__MultiReference__OppositeAssignment_6_1_in_rule__MultiReference__Group_6__1__Impl3711);
+            rule__MultiReference__OppositeAssignment_6_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMultiReferenceAccess().getOppositeAssignment_6_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiReference__Group_6__1__Impl"
+
+
     // $ANTLR start "rule__SingleDataType__Group__0"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1784:1: rule__SingleDataType__Group__0 : rule__SingleDataType__Group__0__Impl rule__SingleDataType__Group__1 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1878:1: rule__SingleDataType__Group__0 : rule__SingleDataType__Group__0__Impl rule__SingleDataType__Group__1 ;
     public final void rule__SingleDataType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1788:1: ( rule__SingleDataType__Group__0__Impl rule__SingleDataType__Group__1 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1789:2: rule__SingleDataType__Group__0__Impl rule__SingleDataType__Group__1
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1882:1: ( rule__SingleDataType__Group__0__Impl rule__SingleDataType__Group__1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1883:2: rule__SingleDataType__Group__0__Impl rule__SingleDataType__Group__1
             {
-            pushFollow(FOLLOW_rule__SingleDataType__Group__0__Impl_in_rule__SingleDataType__Group__03559);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__0__Impl_in_rule__SingleDataType__Group__03745);
             rule__SingleDataType__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleDataType__Group__1_in_rule__SingleDataType__Group__03562);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__1_in_rule__SingleDataType__Group__03748);
             rule__SingleDataType__Group__1();
 
             state._fsp--;
@@ -4813,21 +5064,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__0__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1796:1: rule__SingleDataType__Group__0__Impl : ( () ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1890:1: rule__SingleDataType__Group__0__Impl : ( () ) ;
     public final void rule__SingleDataType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1800:1: ( ( () ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1801:1: ( () )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1894:1: ( ( () ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1895:1: ( () )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1801:1: ( () )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1802:1: ()
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1895:1: ( () )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1896:1: ()
             {
              before(grammarAccess.getSingleDataTypeAccess().getSingleDataTypeAction_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1803:1: ()
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1805:1: 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1897:1: ()
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1899:1: 
             {
             }
 
@@ -4850,21 +5101,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1815:1: rule__SingleDataType__Group__1 : rule__SingleDataType__Group__1__Impl rule__SingleDataType__Group__2 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1909:1: rule__SingleDataType__Group__1 : rule__SingleDataType__Group__1__Impl rule__SingleDataType__Group__2 ;
     public final void rule__SingleDataType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1819:1: ( rule__SingleDataType__Group__1__Impl rule__SingleDataType__Group__2 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1820:2: rule__SingleDataType__Group__1__Impl rule__SingleDataType__Group__2
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1913:1: ( rule__SingleDataType__Group__1__Impl rule__SingleDataType__Group__2 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1914:2: rule__SingleDataType__Group__1__Impl rule__SingleDataType__Group__2
             {
-            pushFollow(FOLLOW_rule__SingleDataType__Group__1__Impl_in_rule__SingleDataType__Group__13620);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__1__Impl_in_rule__SingleDataType__Group__13806);
             rule__SingleDataType__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleDataType__Group__2_in_rule__SingleDataType__Group__13623);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__2_in_rule__SingleDataType__Group__13809);
             rule__SingleDataType__Group__2();
 
             state._fsp--;
@@ -4888,20 +5139,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__1__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1827:1: rule__SingleDataType__Group__1__Impl : ( 'var' ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1921:1: rule__SingleDataType__Group__1__Impl : ( 'var' ) ;
     public final void rule__SingleDataType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1831:1: ( ( 'var' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1832:1: ( 'var' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1925:1: ( ( 'var' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1926:1: ( 'var' )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1832:1: ( 'var' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1833:1: 'var'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1926:1: ( 'var' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1927:1: 'var'
             {
              before(grammarAccess.getSingleDataTypeAccess().getVarKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__SingleDataType__Group__1__Impl3651); 
+            match(input,23,FOLLOW_23_in_rule__SingleDataType__Group__1__Impl3837); 
              after(grammarAccess.getSingleDataTypeAccess().getVarKeyword_1()); 
 
             }
@@ -4925,21 +5176,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1846:1: rule__SingleDataType__Group__2 : rule__SingleDataType__Group__2__Impl rule__SingleDataType__Group__3 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1940:1: rule__SingleDataType__Group__2 : rule__SingleDataType__Group__2__Impl rule__SingleDataType__Group__3 ;
     public final void rule__SingleDataType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1850:1: ( rule__SingleDataType__Group__2__Impl rule__SingleDataType__Group__3 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1851:2: rule__SingleDataType__Group__2__Impl rule__SingleDataType__Group__3
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1944:1: ( rule__SingleDataType__Group__2__Impl rule__SingleDataType__Group__3 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1945:2: rule__SingleDataType__Group__2__Impl rule__SingleDataType__Group__3
             {
-            pushFollow(FOLLOW_rule__SingleDataType__Group__2__Impl_in_rule__SingleDataType__Group__23682);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__2__Impl_in_rule__SingleDataType__Group__23868);
             rule__SingleDataType__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleDataType__Group__3_in_rule__SingleDataType__Group__23685);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__3_in_rule__SingleDataType__Group__23871);
             rule__SingleDataType__Group__3();
 
             state._fsp--;
@@ -4963,23 +5214,23 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__2__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1858:1: rule__SingleDataType__Group__2__Impl : ( ( rule__SingleDataType__NameAssignment_2 ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1952:1: rule__SingleDataType__Group__2__Impl : ( ( rule__SingleDataType__NameAssignment_2 ) ) ;
     public final void rule__SingleDataType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1862:1: ( ( ( rule__SingleDataType__NameAssignment_2 ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1863:1: ( ( rule__SingleDataType__NameAssignment_2 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1956:1: ( ( ( rule__SingleDataType__NameAssignment_2 ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1957:1: ( ( rule__SingleDataType__NameAssignment_2 ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1863:1: ( ( rule__SingleDataType__NameAssignment_2 ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1864:1: ( rule__SingleDataType__NameAssignment_2 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1957:1: ( ( rule__SingleDataType__NameAssignment_2 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1958:1: ( rule__SingleDataType__NameAssignment_2 )
             {
              before(grammarAccess.getSingleDataTypeAccess().getNameAssignment_2()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1865:1: ( rule__SingleDataType__NameAssignment_2 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1865:2: rule__SingleDataType__NameAssignment_2
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1959:1: ( rule__SingleDataType__NameAssignment_2 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1959:2: rule__SingleDataType__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__SingleDataType__NameAssignment_2_in_rule__SingleDataType__Group__2__Impl3712);
+            pushFollow(FOLLOW_rule__SingleDataType__NameAssignment_2_in_rule__SingleDataType__Group__2__Impl3898);
             rule__SingleDataType__NameAssignment_2();
 
             state._fsp--;
@@ -5010,21 +5261,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__3"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1875:1: rule__SingleDataType__Group__3 : rule__SingleDataType__Group__3__Impl rule__SingleDataType__Group__4 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1969:1: rule__SingleDataType__Group__3 : rule__SingleDataType__Group__3__Impl rule__SingleDataType__Group__4 ;
     public final void rule__SingleDataType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1879:1: ( rule__SingleDataType__Group__3__Impl rule__SingleDataType__Group__4 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1880:2: rule__SingleDataType__Group__3__Impl rule__SingleDataType__Group__4
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1973:1: ( rule__SingleDataType__Group__3__Impl rule__SingleDataType__Group__4 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1974:2: rule__SingleDataType__Group__3__Impl rule__SingleDataType__Group__4
             {
-            pushFollow(FOLLOW_rule__SingleDataType__Group__3__Impl_in_rule__SingleDataType__Group__33742);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__3__Impl_in_rule__SingleDataType__Group__33928);
             rule__SingleDataType__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleDataType__Group__4_in_rule__SingleDataType__Group__33745);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__4_in_rule__SingleDataType__Group__33931);
             rule__SingleDataType__Group__4();
 
             state._fsp--;
@@ -5048,23 +5299,23 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__3__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1887:1: rule__SingleDataType__Group__3__Impl : ( ( rule__SingleDataType__TypeAssignment_3 ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1981:1: rule__SingleDataType__Group__3__Impl : ( ( rule__SingleDataType__TypeAssignment_3 ) ) ;
     public final void rule__SingleDataType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1891:1: ( ( ( rule__SingleDataType__TypeAssignment_3 ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1892:1: ( ( rule__SingleDataType__TypeAssignment_3 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1985:1: ( ( ( rule__SingleDataType__TypeAssignment_3 ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1986:1: ( ( rule__SingleDataType__TypeAssignment_3 ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1892:1: ( ( rule__SingleDataType__TypeAssignment_3 ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1893:1: ( rule__SingleDataType__TypeAssignment_3 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1986:1: ( ( rule__SingleDataType__TypeAssignment_3 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1987:1: ( rule__SingleDataType__TypeAssignment_3 )
             {
              before(grammarAccess.getSingleDataTypeAccess().getTypeAssignment_3()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1894:1: ( rule__SingleDataType__TypeAssignment_3 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1894:2: rule__SingleDataType__TypeAssignment_3
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1988:1: ( rule__SingleDataType__TypeAssignment_3 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1988:2: rule__SingleDataType__TypeAssignment_3
             {
-            pushFollow(FOLLOW_rule__SingleDataType__TypeAssignment_3_in_rule__SingleDataType__Group__3__Impl3772);
+            pushFollow(FOLLOW_rule__SingleDataType__TypeAssignment_3_in_rule__SingleDataType__Group__3__Impl3958);
             rule__SingleDataType__TypeAssignment_3();
 
             state._fsp--;
@@ -5095,16 +5346,16 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__4"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1904:1: rule__SingleDataType__Group__4 : rule__SingleDataType__Group__4__Impl ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1998:1: rule__SingleDataType__Group__4 : rule__SingleDataType__Group__4__Impl ;
     public final void rule__SingleDataType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1908:1: ( rule__SingleDataType__Group__4__Impl )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1909:2: rule__SingleDataType__Group__4__Impl
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2002:1: ( rule__SingleDataType__Group__4__Impl )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2003:2: rule__SingleDataType__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__SingleDataType__Group__4__Impl_in_rule__SingleDataType__Group__43802);
+            pushFollow(FOLLOW_rule__SingleDataType__Group__4__Impl_in_rule__SingleDataType__Group__43988);
             rule__SingleDataType__Group__4__Impl();
 
             state._fsp--;
@@ -5128,31 +5379,31 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group__4__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1915:1: rule__SingleDataType__Group__4__Impl : ( ( rule__SingleDataType__Group_4__0 )? ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2009:1: rule__SingleDataType__Group__4__Impl : ( ( rule__SingleDataType__Group_4__0 )? ) ;
     public final void rule__SingleDataType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1919:1: ( ( ( rule__SingleDataType__Group_4__0 )? ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1920:1: ( ( rule__SingleDataType__Group_4__0 )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2013:1: ( ( ( rule__SingleDataType__Group_4__0 )? ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2014:1: ( ( rule__SingleDataType__Group_4__0 )? )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1920:1: ( ( rule__SingleDataType__Group_4__0 )? )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1921:1: ( rule__SingleDataType__Group_4__0 )?
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2014:1: ( ( rule__SingleDataType__Group_4__0 )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2015:1: ( rule__SingleDataType__Group_4__0 )?
             {
              before(grammarAccess.getSingleDataTypeAccess().getGroup_4()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1922:1: ( rule__SingleDataType__Group_4__0 )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2016:1: ( rule__SingleDataType__Group_4__0 )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==24) ) {
-                alt15=1;
+            if ( (LA16_0==24) ) {
+                alt16=1;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1922:2: rule__SingleDataType__Group_4__0
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2016:2: rule__SingleDataType__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__SingleDataType__Group_4__0_in_rule__SingleDataType__Group__4__Impl3829);
+                    pushFollow(FOLLOW_rule__SingleDataType__Group_4__0_in_rule__SingleDataType__Group__4__Impl4015);
                     rule__SingleDataType__Group_4__0();
 
                     state._fsp--;
@@ -5186,21 +5437,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group_4__0"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1942:1: rule__SingleDataType__Group_4__0 : rule__SingleDataType__Group_4__0__Impl rule__SingleDataType__Group_4__1 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2036:1: rule__SingleDataType__Group_4__0 : rule__SingleDataType__Group_4__0__Impl rule__SingleDataType__Group_4__1 ;
     public final void rule__SingleDataType__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1946:1: ( rule__SingleDataType__Group_4__0__Impl rule__SingleDataType__Group_4__1 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1947:2: rule__SingleDataType__Group_4__0__Impl rule__SingleDataType__Group_4__1
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2040:1: ( rule__SingleDataType__Group_4__0__Impl rule__SingleDataType__Group_4__1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2041:2: rule__SingleDataType__Group_4__0__Impl rule__SingleDataType__Group_4__1
             {
-            pushFollow(FOLLOW_rule__SingleDataType__Group_4__0__Impl_in_rule__SingleDataType__Group_4__03870);
+            pushFollow(FOLLOW_rule__SingleDataType__Group_4__0__Impl_in_rule__SingleDataType__Group_4__04056);
             rule__SingleDataType__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleDataType__Group_4__1_in_rule__SingleDataType__Group_4__03873);
+            pushFollow(FOLLOW_rule__SingleDataType__Group_4__1_in_rule__SingleDataType__Group_4__04059);
             rule__SingleDataType__Group_4__1();
 
             state._fsp--;
@@ -5224,20 +5475,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group_4__0__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1954:1: rule__SingleDataType__Group_4__0__Impl : ( 'opposite' ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2048:1: rule__SingleDataType__Group_4__0__Impl : ( 'opposite' ) ;
     public final void rule__SingleDataType__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1958:1: ( ( 'opposite' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1959:1: ( 'opposite' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2052:1: ( ( 'opposite' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2053:1: ( 'opposite' )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1959:1: ( 'opposite' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1960:1: 'opposite'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2053:1: ( 'opposite' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2054:1: 'opposite'
             {
              before(grammarAccess.getSingleDataTypeAccess().getOppositeKeyword_4_0()); 
-            match(input,24,FOLLOW_24_in_rule__SingleDataType__Group_4__0__Impl3901); 
+            match(input,24,FOLLOW_24_in_rule__SingleDataType__Group_4__0__Impl4087); 
              after(grammarAccess.getSingleDataTypeAccess().getOppositeKeyword_4_0()); 
 
             }
@@ -5261,16 +5512,16 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group_4__1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1973:1: rule__SingleDataType__Group_4__1 : rule__SingleDataType__Group_4__1__Impl ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2067:1: rule__SingleDataType__Group_4__1 : rule__SingleDataType__Group_4__1__Impl ;
     public final void rule__SingleDataType__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1977:1: ( rule__SingleDataType__Group_4__1__Impl )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1978:2: rule__SingleDataType__Group_4__1__Impl
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2071:1: ( rule__SingleDataType__Group_4__1__Impl )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2072:2: rule__SingleDataType__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__SingleDataType__Group_4__1__Impl_in_rule__SingleDataType__Group_4__13932);
+            pushFollow(FOLLOW_rule__SingleDataType__Group_4__1__Impl_in_rule__SingleDataType__Group_4__14118);
             rule__SingleDataType__Group_4__1__Impl();
 
             state._fsp--;
@@ -5294,23 +5545,23 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__Group_4__1__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1984:1: rule__SingleDataType__Group_4__1__Impl : ( ( rule__SingleDataType__OppositeAssignment_4_1 ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2078:1: rule__SingleDataType__Group_4__1__Impl : ( ( rule__SingleDataType__OppositeAssignment_4_1 ) ) ;
     public final void rule__SingleDataType__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1988:1: ( ( ( rule__SingleDataType__OppositeAssignment_4_1 ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1989:1: ( ( rule__SingleDataType__OppositeAssignment_4_1 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2082:1: ( ( ( rule__SingleDataType__OppositeAssignment_4_1 ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2083:1: ( ( rule__SingleDataType__OppositeAssignment_4_1 ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1989:1: ( ( rule__SingleDataType__OppositeAssignment_4_1 ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1990:1: ( rule__SingleDataType__OppositeAssignment_4_1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2083:1: ( ( rule__SingleDataType__OppositeAssignment_4_1 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2084:1: ( rule__SingleDataType__OppositeAssignment_4_1 )
             {
              before(grammarAccess.getSingleDataTypeAccess().getOppositeAssignment_4_1()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1991:1: ( rule__SingleDataType__OppositeAssignment_4_1 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:1991:2: rule__SingleDataType__OppositeAssignment_4_1
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2085:1: ( rule__SingleDataType__OppositeAssignment_4_1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2085:2: rule__SingleDataType__OppositeAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__SingleDataType__OppositeAssignment_4_1_in_rule__SingleDataType__Group_4__1__Impl3959);
+            pushFollow(FOLLOW_rule__SingleDataType__OppositeAssignment_4_1_in_rule__SingleDataType__Group_4__1__Impl4145);
             rule__SingleDataType__OppositeAssignment_4_1();
 
             state._fsp--;
@@ -5341,21 +5592,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__0"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2005:1: rule__MultiDataType__Group__0 : rule__MultiDataType__Group__0__Impl rule__MultiDataType__Group__1 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2099:1: rule__MultiDataType__Group__0 : rule__MultiDataType__Group__0__Impl rule__MultiDataType__Group__1 ;
     public final void rule__MultiDataType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2009:1: ( rule__MultiDataType__Group__0__Impl rule__MultiDataType__Group__1 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2010:2: rule__MultiDataType__Group__0__Impl rule__MultiDataType__Group__1
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2103:1: ( rule__MultiDataType__Group__0__Impl rule__MultiDataType__Group__1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2104:2: rule__MultiDataType__Group__0__Impl rule__MultiDataType__Group__1
             {
-            pushFollow(FOLLOW_rule__MultiDataType__Group__0__Impl_in_rule__MultiDataType__Group__03993);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__0__Impl_in_rule__MultiDataType__Group__04179);
             rule__MultiDataType__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MultiDataType__Group__1_in_rule__MultiDataType__Group__03996);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__1_in_rule__MultiDataType__Group__04182);
             rule__MultiDataType__Group__1();
 
             state._fsp--;
@@ -5379,21 +5630,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__0__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2017:1: rule__MultiDataType__Group__0__Impl : ( () ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2111:1: rule__MultiDataType__Group__0__Impl : ( () ) ;
     public final void rule__MultiDataType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2021:1: ( ( () ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2022:1: ( () )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2115:1: ( ( () ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2116:1: ( () )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2022:1: ( () )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2023:1: ()
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2116:1: ( () )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2117:1: ()
             {
              before(grammarAccess.getMultiDataTypeAccess().getMultiDataTypeAction_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2024:1: ()
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2026:1: 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2118:1: ()
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2120:1: 
             {
             }
 
@@ -5416,21 +5667,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2036:1: rule__MultiDataType__Group__1 : rule__MultiDataType__Group__1__Impl rule__MultiDataType__Group__2 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2130:1: rule__MultiDataType__Group__1 : rule__MultiDataType__Group__1__Impl rule__MultiDataType__Group__2 ;
     public final void rule__MultiDataType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2040:1: ( rule__MultiDataType__Group__1__Impl rule__MultiDataType__Group__2 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2041:2: rule__MultiDataType__Group__1__Impl rule__MultiDataType__Group__2
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2134:1: ( rule__MultiDataType__Group__1__Impl rule__MultiDataType__Group__2 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2135:2: rule__MultiDataType__Group__1__Impl rule__MultiDataType__Group__2
             {
-            pushFollow(FOLLOW_rule__MultiDataType__Group__1__Impl_in_rule__MultiDataType__Group__14054);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__1__Impl_in_rule__MultiDataType__Group__14240);
             rule__MultiDataType__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MultiDataType__Group__2_in_rule__MultiDataType__Group__14057);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__2_in_rule__MultiDataType__Group__14243);
             rule__MultiDataType__Group__2();
 
             state._fsp--;
@@ -5454,20 +5705,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__1__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2048:1: rule__MultiDataType__Group__1__Impl : ( 'var' ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2142:1: rule__MultiDataType__Group__1__Impl : ( 'var' ) ;
     public final void rule__MultiDataType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2052:1: ( ( 'var' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2053:1: ( 'var' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2146:1: ( ( 'var' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2147:1: ( 'var' )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2053:1: ( 'var' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2054:1: 'var'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2147:1: ( 'var' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2148:1: 'var'
             {
              before(grammarAccess.getMultiDataTypeAccess().getVarKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__MultiDataType__Group__1__Impl4085); 
+            match(input,23,FOLLOW_23_in_rule__MultiDataType__Group__1__Impl4271); 
              after(grammarAccess.getMultiDataTypeAccess().getVarKeyword_1()); 
 
             }
@@ -5491,21 +5742,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2067:1: rule__MultiDataType__Group__2 : rule__MultiDataType__Group__2__Impl rule__MultiDataType__Group__3 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2161:1: rule__MultiDataType__Group__2 : rule__MultiDataType__Group__2__Impl rule__MultiDataType__Group__3 ;
     public final void rule__MultiDataType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2071:1: ( rule__MultiDataType__Group__2__Impl rule__MultiDataType__Group__3 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2072:2: rule__MultiDataType__Group__2__Impl rule__MultiDataType__Group__3
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2165:1: ( rule__MultiDataType__Group__2__Impl rule__MultiDataType__Group__3 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2166:2: rule__MultiDataType__Group__2__Impl rule__MultiDataType__Group__3
             {
-            pushFollow(FOLLOW_rule__MultiDataType__Group__2__Impl_in_rule__MultiDataType__Group__24116);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__2__Impl_in_rule__MultiDataType__Group__24302);
             rule__MultiDataType__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MultiDataType__Group__3_in_rule__MultiDataType__Group__24119);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__3_in_rule__MultiDataType__Group__24305);
             rule__MultiDataType__Group__3();
 
             state._fsp--;
@@ -5529,23 +5780,23 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__2__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2079:1: rule__MultiDataType__Group__2__Impl : ( ( rule__MultiDataType__NameAssignment_2 ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2173:1: rule__MultiDataType__Group__2__Impl : ( ( rule__MultiDataType__NameAssignment_2 ) ) ;
     public final void rule__MultiDataType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2083:1: ( ( ( rule__MultiDataType__NameAssignment_2 ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2084:1: ( ( rule__MultiDataType__NameAssignment_2 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2177:1: ( ( ( rule__MultiDataType__NameAssignment_2 ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2178:1: ( ( rule__MultiDataType__NameAssignment_2 ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2084:1: ( ( rule__MultiDataType__NameAssignment_2 ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2085:1: ( rule__MultiDataType__NameAssignment_2 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2178:1: ( ( rule__MultiDataType__NameAssignment_2 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2179:1: ( rule__MultiDataType__NameAssignment_2 )
             {
              before(grammarAccess.getMultiDataTypeAccess().getNameAssignment_2()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2086:1: ( rule__MultiDataType__NameAssignment_2 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2086:2: rule__MultiDataType__NameAssignment_2
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2180:1: ( rule__MultiDataType__NameAssignment_2 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2180:2: rule__MultiDataType__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__MultiDataType__NameAssignment_2_in_rule__MultiDataType__Group__2__Impl4146);
+            pushFollow(FOLLOW_rule__MultiDataType__NameAssignment_2_in_rule__MultiDataType__Group__2__Impl4332);
             rule__MultiDataType__NameAssignment_2();
 
             state._fsp--;
@@ -5576,21 +5827,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__3"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2096:1: rule__MultiDataType__Group__3 : rule__MultiDataType__Group__3__Impl rule__MultiDataType__Group__4 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2190:1: rule__MultiDataType__Group__3 : rule__MultiDataType__Group__3__Impl rule__MultiDataType__Group__4 ;
     public final void rule__MultiDataType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2100:1: ( rule__MultiDataType__Group__3__Impl rule__MultiDataType__Group__4 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2101:2: rule__MultiDataType__Group__3__Impl rule__MultiDataType__Group__4
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2194:1: ( rule__MultiDataType__Group__3__Impl rule__MultiDataType__Group__4 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2195:2: rule__MultiDataType__Group__3__Impl rule__MultiDataType__Group__4
             {
-            pushFollow(FOLLOW_rule__MultiDataType__Group__3__Impl_in_rule__MultiDataType__Group__34176);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__3__Impl_in_rule__MultiDataType__Group__34362);
             rule__MultiDataType__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MultiDataType__Group__4_in_rule__MultiDataType__Group__34179);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__4_in_rule__MultiDataType__Group__34365);
             rule__MultiDataType__Group__4();
 
             state._fsp--;
@@ -5614,23 +5865,23 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__3__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2108:1: rule__MultiDataType__Group__3__Impl : ( ( rule__MultiDataType__TypeAssignment_3 ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2202:1: rule__MultiDataType__Group__3__Impl : ( ( rule__MultiDataType__TypeAssignment_3 ) ) ;
     public final void rule__MultiDataType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2112:1: ( ( ( rule__MultiDataType__TypeAssignment_3 ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2113:1: ( ( rule__MultiDataType__TypeAssignment_3 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2206:1: ( ( ( rule__MultiDataType__TypeAssignment_3 ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2207:1: ( ( rule__MultiDataType__TypeAssignment_3 ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2113:1: ( ( rule__MultiDataType__TypeAssignment_3 ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2114:1: ( rule__MultiDataType__TypeAssignment_3 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2207:1: ( ( rule__MultiDataType__TypeAssignment_3 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2208:1: ( rule__MultiDataType__TypeAssignment_3 )
             {
              before(grammarAccess.getMultiDataTypeAccess().getTypeAssignment_3()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2115:1: ( rule__MultiDataType__TypeAssignment_3 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2115:2: rule__MultiDataType__TypeAssignment_3
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2209:1: ( rule__MultiDataType__TypeAssignment_3 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2209:2: rule__MultiDataType__TypeAssignment_3
             {
-            pushFollow(FOLLOW_rule__MultiDataType__TypeAssignment_3_in_rule__MultiDataType__Group__3__Impl4206);
+            pushFollow(FOLLOW_rule__MultiDataType__TypeAssignment_3_in_rule__MultiDataType__Group__3__Impl4392);
             rule__MultiDataType__TypeAssignment_3();
 
             state._fsp--;
@@ -5661,21 +5912,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__4"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2125:1: rule__MultiDataType__Group__4 : rule__MultiDataType__Group__4__Impl rule__MultiDataType__Group__5 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2219:1: rule__MultiDataType__Group__4 : rule__MultiDataType__Group__4__Impl rule__MultiDataType__Group__5 ;
     public final void rule__MultiDataType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2129:1: ( rule__MultiDataType__Group__4__Impl rule__MultiDataType__Group__5 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2130:2: rule__MultiDataType__Group__4__Impl rule__MultiDataType__Group__5
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2223:1: ( rule__MultiDataType__Group__4__Impl rule__MultiDataType__Group__5 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2224:2: rule__MultiDataType__Group__4__Impl rule__MultiDataType__Group__5
             {
-            pushFollow(FOLLOW_rule__MultiDataType__Group__4__Impl_in_rule__MultiDataType__Group__44236);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__4__Impl_in_rule__MultiDataType__Group__44422);
             rule__MultiDataType__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__MultiDataType__Group__5_in_rule__MultiDataType__Group__44239);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__5_in_rule__MultiDataType__Group__44425);
             rule__MultiDataType__Group__5();
 
             state._fsp--;
@@ -5699,20 +5950,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__4__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2137:1: rule__MultiDataType__Group__4__Impl : ( '[]' ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2231:1: rule__MultiDataType__Group__4__Impl : ( '[]' ) ;
     public final void rule__MultiDataType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2141:1: ( ( '[]' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2142:1: ( '[]' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2235:1: ( ( '[]' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2236:1: ( '[]' )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2142:1: ( '[]' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2143:1: '[]'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2236:1: ( '[]' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2237:1: '[]'
             {
              before(grammarAccess.getMultiDataTypeAccess().getLeftSquareBracketRightSquareBracketKeyword_4()); 
-            match(input,25,FOLLOW_25_in_rule__MultiDataType__Group__4__Impl4267); 
+            match(input,25,FOLLOW_25_in_rule__MultiDataType__Group__4__Impl4453); 
              after(grammarAccess.getMultiDataTypeAccess().getLeftSquareBracketRightSquareBracketKeyword_4()); 
 
             }
@@ -5736,17 +5987,22 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__5"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2156:1: rule__MultiDataType__Group__5 : rule__MultiDataType__Group__5__Impl ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2250:1: rule__MultiDataType__Group__5 : rule__MultiDataType__Group__5__Impl rule__MultiDataType__Group__6 ;
     public final void rule__MultiDataType__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2160:1: ( rule__MultiDataType__Group__5__Impl )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2161:2: rule__MultiDataType__Group__5__Impl
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2254:1: ( rule__MultiDataType__Group__5__Impl rule__MultiDataType__Group__6 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2255:2: rule__MultiDataType__Group__5__Impl rule__MultiDataType__Group__6
             {
-            pushFollow(FOLLOW_rule__MultiDataType__Group__5__Impl_in_rule__MultiDataType__Group__54298);
+            pushFollow(FOLLOW_rule__MultiDataType__Group__5__Impl_in_rule__MultiDataType__Group__54484);
             rule__MultiDataType__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__MultiDataType__Group__6_in_rule__MultiDataType__Group__54487);
+            rule__MultiDataType__Group__6();
 
             state._fsp--;
 
@@ -5769,31 +6025,31 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__Group__5__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2167:1: rule__MultiDataType__Group__5__Impl : ( ( rule__MultiDataType__UniqueAssignment_5 )? ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2262:1: rule__MultiDataType__Group__5__Impl : ( ( rule__MultiDataType__UniqueAssignment_5 )? ) ;
     public final void rule__MultiDataType__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2171:1: ( ( ( rule__MultiDataType__UniqueAssignment_5 )? ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2172:1: ( ( rule__MultiDataType__UniqueAssignment_5 )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2266:1: ( ( ( rule__MultiDataType__UniqueAssignment_5 )? ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2267:1: ( ( rule__MultiDataType__UniqueAssignment_5 )? )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2172:1: ( ( rule__MultiDataType__UniqueAssignment_5 )? )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2173:1: ( rule__MultiDataType__UniqueAssignment_5 )?
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2267:1: ( ( rule__MultiDataType__UniqueAssignment_5 )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2268:1: ( rule__MultiDataType__UniqueAssignment_5 )?
             {
              before(grammarAccess.getMultiDataTypeAccess().getUniqueAssignment_5()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2174:1: ( rule__MultiDataType__UniqueAssignment_5 )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2269:1: ( rule__MultiDataType__UniqueAssignment_5 )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA16_0==27) ) {
-                alt16=1;
+            if ( (LA17_0==27) ) {
+                alt17=1;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2174:2: rule__MultiDataType__UniqueAssignment_5
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2269:2: rule__MultiDataType__UniqueAssignment_5
                     {
-                    pushFollow(FOLLOW_rule__MultiDataType__UniqueAssignment_5_in_rule__MultiDataType__Group__5__Impl4325);
+                    pushFollow(FOLLOW_rule__MultiDataType__UniqueAssignment_5_in_rule__MultiDataType__Group__5__Impl4514);
                     rule__MultiDataType__UniqueAssignment_5();
 
                     state._fsp--;
@@ -5826,22 +6082,268 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MultiDataType__Group__5__Impl"
 
 
+    // $ANTLR start "rule__MultiDataType__Group__6"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2279:1: rule__MultiDataType__Group__6 : rule__MultiDataType__Group__6__Impl ;
+    public final void rule__MultiDataType__Group__6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2283:1: ( rule__MultiDataType__Group__6__Impl )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2284:2: rule__MultiDataType__Group__6__Impl
+            {
+            pushFollow(FOLLOW_rule__MultiDataType__Group__6__Impl_in_rule__MultiDataType__Group__64545);
+            rule__MultiDataType__Group__6__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiDataType__Group__6"
+
+
+    // $ANTLR start "rule__MultiDataType__Group__6__Impl"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2290:1: rule__MultiDataType__Group__6__Impl : ( ( rule__MultiDataType__Group_6__0 )? ) ;
+    public final void rule__MultiDataType__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2294:1: ( ( ( rule__MultiDataType__Group_6__0 )? ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2295:1: ( ( rule__MultiDataType__Group_6__0 )? )
+            {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2295:1: ( ( rule__MultiDataType__Group_6__0 )? )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2296:1: ( rule__MultiDataType__Group_6__0 )?
+            {
+             before(grammarAccess.getMultiDataTypeAccess().getGroup_6()); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2297:1: ( rule__MultiDataType__Group_6__0 )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
+
+            if ( (LA18_0==24) ) {
+                alt18=1;
+            }
+            switch (alt18) {
+                case 1 :
+                    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2297:2: rule__MultiDataType__Group_6__0
+                    {
+                    pushFollow(FOLLOW_rule__MultiDataType__Group_6__0_in_rule__MultiDataType__Group__6__Impl4572);
+                    rule__MultiDataType__Group_6__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getMultiDataTypeAccess().getGroup_6()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiDataType__Group__6__Impl"
+
+
+    // $ANTLR start "rule__MultiDataType__Group_6__0"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2321:1: rule__MultiDataType__Group_6__0 : rule__MultiDataType__Group_6__0__Impl rule__MultiDataType__Group_6__1 ;
+    public final void rule__MultiDataType__Group_6__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2325:1: ( rule__MultiDataType__Group_6__0__Impl rule__MultiDataType__Group_6__1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2326:2: rule__MultiDataType__Group_6__0__Impl rule__MultiDataType__Group_6__1
+            {
+            pushFollow(FOLLOW_rule__MultiDataType__Group_6__0__Impl_in_rule__MultiDataType__Group_6__04617);
+            rule__MultiDataType__Group_6__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__MultiDataType__Group_6__1_in_rule__MultiDataType__Group_6__04620);
+            rule__MultiDataType__Group_6__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiDataType__Group_6__0"
+
+
+    // $ANTLR start "rule__MultiDataType__Group_6__0__Impl"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2333:1: rule__MultiDataType__Group_6__0__Impl : ( 'opposite' ) ;
+    public final void rule__MultiDataType__Group_6__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2337:1: ( ( 'opposite' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2338:1: ( 'opposite' )
+            {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2338:1: ( 'opposite' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2339:1: 'opposite'
+            {
+             before(grammarAccess.getMultiDataTypeAccess().getOppositeKeyword_6_0()); 
+            match(input,24,FOLLOW_24_in_rule__MultiDataType__Group_6__0__Impl4648); 
+             after(grammarAccess.getMultiDataTypeAccess().getOppositeKeyword_6_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiDataType__Group_6__0__Impl"
+
+
+    // $ANTLR start "rule__MultiDataType__Group_6__1"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2352:1: rule__MultiDataType__Group_6__1 : rule__MultiDataType__Group_6__1__Impl ;
+    public final void rule__MultiDataType__Group_6__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2356:1: ( rule__MultiDataType__Group_6__1__Impl )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2357:2: rule__MultiDataType__Group_6__1__Impl
+            {
+            pushFollow(FOLLOW_rule__MultiDataType__Group_6__1__Impl_in_rule__MultiDataType__Group_6__14679);
+            rule__MultiDataType__Group_6__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiDataType__Group_6__1"
+
+
+    // $ANTLR start "rule__MultiDataType__Group_6__1__Impl"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2363:1: rule__MultiDataType__Group_6__1__Impl : ( ( rule__MultiDataType__OppositeAssignment_6_1 ) ) ;
+    public final void rule__MultiDataType__Group_6__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2367:1: ( ( ( rule__MultiDataType__OppositeAssignment_6_1 ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2368:1: ( ( rule__MultiDataType__OppositeAssignment_6_1 ) )
+            {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2368:1: ( ( rule__MultiDataType__OppositeAssignment_6_1 ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2369:1: ( rule__MultiDataType__OppositeAssignment_6_1 )
+            {
+             before(grammarAccess.getMultiDataTypeAccess().getOppositeAssignment_6_1()); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2370:1: ( rule__MultiDataType__OppositeAssignment_6_1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2370:2: rule__MultiDataType__OppositeAssignment_6_1
+            {
+            pushFollow(FOLLOW_rule__MultiDataType__OppositeAssignment_6_1_in_rule__MultiDataType__Group_6__1__Impl4706);
+            rule__MultiDataType__OppositeAssignment_6_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMultiDataTypeAccess().getOppositeAssignment_6_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiDataType__Group_6__1__Impl"
+
+
     // $ANTLR start "rule__QUALIFIED_NAME__Group__0"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2196:1: rule__QUALIFIED_NAME__Group__0 : rule__QUALIFIED_NAME__Group__0__Impl rule__QUALIFIED_NAME__Group__1 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2384:1: rule__QUALIFIED_NAME__Group__0 : rule__QUALIFIED_NAME__Group__0__Impl rule__QUALIFIED_NAME__Group__1 ;
     public final void rule__QUALIFIED_NAME__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2200:1: ( rule__QUALIFIED_NAME__Group__0__Impl rule__QUALIFIED_NAME__Group__1 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2201:2: rule__QUALIFIED_NAME__Group__0__Impl rule__QUALIFIED_NAME__Group__1
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2388:1: ( rule__QUALIFIED_NAME__Group__0__Impl rule__QUALIFIED_NAME__Group__1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2389:2: rule__QUALIFIED_NAME__Group__0__Impl rule__QUALIFIED_NAME__Group__1
             {
-            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group__0__Impl_in_rule__QUALIFIED_NAME__Group__04368);
+            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group__0__Impl_in_rule__QUALIFIED_NAME__Group__04740);
             rule__QUALIFIED_NAME__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group__1_in_rule__QUALIFIED_NAME__Group__04371);
+            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group__1_in_rule__QUALIFIED_NAME__Group__04743);
             rule__QUALIFIED_NAME__Group__1();
 
             state._fsp--;
@@ -5865,20 +6367,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QUALIFIED_NAME__Group__0__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2208:1: rule__QUALIFIED_NAME__Group__0__Impl : ( RULE_ID ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2396:1: rule__QUALIFIED_NAME__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QUALIFIED_NAME__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2212:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2213:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2400:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2401:1: ( RULE_ID )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2213:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2214:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2401:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2402:1: RULE_ID
             {
              before(grammarAccess.getQUALIFIED_NAMEAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QUALIFIED_NAME__Group__0__Impl4398); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QUALIFIED_NAME__Group__0__Impl4770); 
              after(grammarAccess.getQUALIFIED_NAMEAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -5902,16 +6404,16 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QUALIFIED_NAME__Group__1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2225:1: rule__QUALIFIED_NAME__Group__1 : rule__QUALIFIED_NAME__Group__1__Impl ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2413:1: rule__QUALIFIED_NAME__Group__1 : rule__QUALIFIED_NAME__Group__1__Impl ;
     public final void rule__QUALIFIED_NAME__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2229:1: ( rule__QUALIFIED_NAME__Group__1__Impl )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2230:2: rule__QUALIFIED_NAME__Group__1__Impl
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2417:1: ( rule__QUALIFIED_NAME__Group__1__Impl )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2418:2: rule__QUALIFIED_NAME__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group__1__Impl_in_rule__QUALIFIED_NAME__Group__14427);
+            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group__1__Impl_in_rule__QUALIFIED_NAME__Group__14799);
             rule__QUALIFIED_NAME__Group__1__Impl();
 
             state._fsp--;
@@ -5935,35 +6437,35 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QUALIFIED_NAME__Group__1__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2236:1: rule__QUALIFIED_NAME__Group__1__Impl : ( ( rule__QUALIFIED_NAME__Group_1__0 )* ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2424:1: rule__QUALIFIED_NAME__Group__1__Impl : ( ( rule__QUALIFIED_NAME__Group_1__0 )* ) ;
     public final void rule__QUALIFIED_NAME__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2240:1: ( ( ( rule__QUALIFIED_NAME__Group_1__0 )* ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2241:1: ( ( rule__QUALIFIED_NAME__Group_1__0 )* )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2428:1: ( ( ( rule__QUALIFIED_NAME__Group_1__0 )* ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2429:1: ( ( rule__QUALIFIED_NAME__Group_1__0 )* )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2241:1: ( ( rule__QUALIFIED_NAME__Group_1__0 )* )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2242:1: ( rule__QUALIFIED_NAME__Group_1__0 )*
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2429:1: ( ( rule__QUALIFIED_NAME__Group_1__0 )* )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2430:1: ( rule__QUALIFIED_NAME__Group_1__0 )*
             {
              before(grammarAccess.getQUALIFIED_NAMEAccess().getGroup_1()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2243:1: ( rule__QUALIFIED_NAME__Group_1__0 )*
-            loop17:
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2431:1: ( rule__QUALIFIED_NAME__Group_1__0 )*
+            loop19:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( (LA17_0==26) ) {
-                    alt17=1;
+                if ( (LA19_0==26) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt19) {
             	case 1 :
-            	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2243:2: rule__QUALIFIED_NAME__Group_1__0
+            	    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2431:2: rule__QUALIFIED_NAME__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group_1__0_in_rule__QUALIFIED_NAME__Group__1__Impl4454);
+            	    pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group_1__0_in_rule__QUALIFIED_NAME__Group__1__Impl4826);
             	    rule__QUALIFIED_NAME__Group_1__0();
 
             	    state._fsp--;
@@ -5973,7 +6475,7 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop19;
                 }
             } while (true);
 
@@ -6000,21 +6502,21 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QUALIFIED_NAME__Group_1__0"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2257:1: rule__QUALIFIED_NAME__Group_1__0 : rule__QUALIFIED_NAME__Group_1__0__Impl rule__QUALIFIED_NAME__Group_1__1 ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2445:1: rule__QUALIFIED_NAME__Group_1__0 : rule__QUALIFIED_NAME__Group_1__0__Impl rule__QUALIFIED_NAME__Group_1__1 ;
     public final void rule__QUALIFIED_NAME__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2261:1: ( rule__QUALIFIED_NAME__Group_1__0__Impl rule__QUALIFIED_NAME__Group_1__1 )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2262:2: rule__QUALIFIED_NAME__Group_1__0__Impl rule__QUALIFIED_NAME__Group_1__1
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2449:1: ( rule__QUALIFIED_NAME__Group_1__0__Impl rule__QUALIFIED_NAME__Group_1__1 )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2450:2: rule__QUALIFIED_NAME__Group_1__0__Impl rule__QUALIFIED_NAME__Group_1__1
             {
-            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group_1__0__Impl_in_rule__QUALIFIED_NAME__Group_1__04489);
+            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group_1__0__Impl_in_rule__QUALIFIED_NAME__Group_1__04861);
             rule__QUALIFIED_NAME__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group_1__1_in_rule__QUALIFIED_NAME__Group_1__04492);
+            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group_1__1_in_rule__QUALIFIED_NAME__Group_1__04864);
             rule__QUALIFIED_NAME__Group_1__1();
 
             state._fsp--;
@@ -6038,20 +6540,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QUALIFIED_NAME__Group_1__0__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2269:1: rule__QUALIFIED_NAME__Group_1__0__Impl : ( '.' ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2457:1: rule__QUALIFIED_NAME__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QUALIFIED_NAME__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2273:1: ( ( '.' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2274:1: ( '.' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2461:1: ( ( '.' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2462:1: ( '.' )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2274:1: ( '.' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2275:1: '.'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2462:1: ( '.' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2463:1: '.'
             {
              before(grammarAccess.getQUALIFIED_NAMEAccess().getFullStopKeyword_1_0()); 
-            match(input,26,FOLLOW_26_in_rule__QUALIFIED_NAME__Group_1__0__Impl4520); 
+            match(input,26,FOLLOW_26_in_rule__QUALIFIED_NAME__Group_1__0__Impl4892); 
              after(grammarAccess.getQUALIFIED_NAMEAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -6075,16 +6577,16 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QUALIFIED_NAME__Group_1__1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2288:1: rule__QUALIFIED_NAME__Group_1__1 : rule__QUALIFIED_NAME__Group_1__1__Impl ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2476:1: rule__QUALIFIED_NAME__Group_1__1 : rule__QUALIFIED_NAME__Group_1__1__Impl ;
     public final void rule__QUALIFIED_NAME__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2292:1: ( rule__QUALIFIED_NAME__Group_1__1__Impl )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2293:2: rule__QUALIFIED_NAME__Group_1__1__Impl
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2480:1: ( rule__QUALIFIED_NAME__Group_1__1__Impl )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2481:2: rule__QUALIFIED_NAME__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group_1__1__Impl_in_rule__QUALIFIED_NAME__Group_1__14551);
+            pushFollow(FOLLOW_rule__QUALIFIED_NAME__Group_1__1__Impl_in_rule__QUALIFIED_NAME__Group_1__14923);
             rule__QUALIFIED_NAME__Group_1__1__Impl();
 
             state._fsp--;
@@ -6108,20 +6610,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QUALIFIED_NAME__Group_1__1__Impl"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2299:1: rule__QUALIFIED_NAME__Group_1__1__Impl : ( RULE_ID ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2487:1: rule__QUALIFIED_NAME__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QUALIFIED_NAME__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2303:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2304:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2491:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2492:1: ( RULE_ID )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2304:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2305:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2492:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2493:1: RULE_ID
             {
              before(grammarAccess.getQUALIFIED_NAMEAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QUALIFIED_NAME__Group_1__1__Impl4578); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QUALIFIED_NAME__Group_1__1__Impl4950); 
              after(grammarAccess.getQUALIFIED_NAMEAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -6145,20 +6647,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Module__NameAssignment_2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2321:1: rule__Module__NameAssignment_2 : ( ruleQUALIFIED_NAME ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2509:1: rule__Module__NameAssignment_2 : ( ruleQUALIFIED_NAME ) ;
     public final void rule__Module__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2325:1: ( ( ruleQUALIFIED_NAME ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2326:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2513:1: ( ( ruleQUALIFIED_NAME ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2514:1: ( ruleQUALIFIED_NAME )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2326:1: ( ruleQUALIFIED_NAME )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2327:1: ruleQUALIFIED_NAME
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2514:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2515:1: ruleQUALIFIED_NAME
             {
              before(grammarAccess.getModuleAccess().getNameQUALIFIED_NAMEParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__Module__NameAssignment_24616);
+            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__Module__NameAssignment_24988);
             ruleQUALIFIED_NAME();
 
             state._fsp--;
@@ -6186,20 +6688,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Module__TypeAssignment_3"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2336:1: rule__Module__TypeAssignment_3 : ( ruleInternalDSLType ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2524:1: rule__Module__TypeAssignment_3 : ( ruleInternalDSLType ) ;
     public final void rule__Module__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2340:1: ( ( ruleInternalDSLType ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2341:1: ( ruleInternalDSLType )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2528:1: ( ( ruleInternalDSLType ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2529:1: ( ruleInternalDSLType )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2341:1: ( ruleInternalDSLType )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2342:1: ruleInternalDSLType
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2529:1: ( ruleInternalDSLType )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2530:1: ruleInternalDSLType
             {
              before(grammarAccess.getModuleAccess().getTypeInternalDSLTypeEnumRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleInternalDSLType_in_rule__Module__TypeAssignment_34647);
+            pushFollow(FOLLOW_ruleInternalDSLType_in_rule__Module__TypeAssignment_35019);
             ruleInternalDSLType();
 
             state._fsp--;
@@ -6227,20 +6729,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Module__PackagesAssignment_4_0"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2351:1: rule__Module__PackagesAssignment_4_0 : ( rulePackage ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2539:1: rule__Module__PackagesAssignment_4_0 : ( rulePackage ) ;
     public final void rule__Module__PackagesAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2355:1: ( ( rulePackage ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2356:1: ( rulePackage )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2543:1: ( ( rulePackage ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2544:1: ( rulePackage )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2356:1: ( rulePackage )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2357:1: rulePackage
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2544:1: ( rulePackage )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2545:1: rulePackage
             {
              before(grammarAccess.getModuleAccess().getPackagesPackageParserRuleCall_4_0_0()); 
-            pushFollow(FOLLOW_rulePackage_in_rule__Module__PackagesAssignment_4_04678);
+            pushFollow(FOLLOW_rulePackage_in_rule__Module__PackagesAssignment_4_05050);
             rulePackage();
 
             state._fsp--;
@@ -6268,20 +6770,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Module__PackagesAssignment_4_1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2366:1: rule__Module__PackagesAssignment_4_1 : ( rulePackage ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2554:1: rule__Module__PackagesAssignment_4_1 : ( rulePackage ) ;
     public final void rule__Module__PackagesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2370:1: ( ( rulePackage ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2371:1: ( rulePackage )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2558:1: ( ( rulePackage ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2559:1: ( rulePackage )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2371:1: ( rulePackage )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2372:1: rulePackage
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2559:1: ( rulePackage )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2560:1: rulePackage
             {
              before(grammarAccess.getModuleAccess().getPackagesPackageParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_rulePackage_in_rule__Module__PackagesAssignment_4_14709);
+            pushFollow(FOLLOW_rulePackage_in_rule__Module__PackagesAssignment_4_15081);
             rulePackage();
 
             state._fsp--;
@@ -6309,20 +6811,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__NameAssignment_2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2381:1: rule__Package__NameAssignment_2 : ( ruleQUALIFIED_NAME ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2569:1: rule__Package__NameAssignment_2 : ( ruleQUALIFIED_NAME ) ;
     public final void rule__Package__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2385:1: ( ( ruleQUALIFIED_NAME ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2386:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2573:1: ( ( ruleQUALIFIED_NAME ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2574:1: ( ruleQUALIFIED_NAME )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2386:1: ( ruleQUALIFIED_NAME )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2387:1: ruleQUALIFIED_NAME
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2574:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2575:1: ruleQUALIFIED_NAME
             {
              before(grammarAccess.getPackageAccess().getNameQUALIFIED_NAMEParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__Package__NameAssignment_24740);
+            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__Package__NameAssignment_25112);
             ruleQUALIFIED_NAME();
 
             state._fsp--;
@@ -6350,20 +6852,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__EntitiesAssignment_4_0"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2396:1: rule__Package__EntitiesAssignment_4_0 : ( ruleEntity ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2584:1: rule__Package__EntitiesAssignment_4_0 : ( ruleEntity ) ;
     public final void rule__Package__EntitiesAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2400:1: ( ( ruleEntity ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2401:1: ( ruleEntity )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2588:1: ( ( ruleEntity ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2589:1: ( ruleEntity )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2401:1: ( ruleEntity )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2402:1: ruleEntity
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2589:1: ( ruleEntity )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2590:1: ruleEntity
             {
              before(grammarAccess.getPackageAccess().getEntitiesEntityParserRuleCall_4_0_0()); 
-            pushFollow(FOLLOW_ruleEntity_in_rule__Package__EntitiesAssignment_4_04771);
+            pushFollow(FOLLOW_ruleEntity_in_rule__Package__EntitiesAssignment_4_05143);
             ruleEntity();
 
             state._fsp--;
@@ -6391,20 +6893,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__EntitiesAssignment_4_1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2411:1: rule__Package__EntitiesAssignment_4_1 : ( ruleEntity ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2599:1: rule__Package__EntitiesAssignment_4_1 : ( ruleEntity ) ;
     public final void rule__Package__EntitiesAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2415:1: ( ( ruleEntity ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2416:1: ( ruleEntity )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2603:1: ( ( ruleEntity ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2604:1: ( ruleEntity )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2416:1: ( ruleEntity )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2417:1: ruleEntity
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2604:1: ( ruleEntity )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2605:1: ruleEntity
             {
              before(grammarAccess.getPackageAccess().getEntitiesEntityParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_ruleEntity_in_rule__Package__EntitiesAssignment_4_14802);
+            pushFollow(FOLLOW_ruleEntity_in_rule__Package__EntitiesAssignment_4_15174);
             ruleEntity();
 
             state._fsp--;
@@ -6432,20 +6934,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__NameAssignment_2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2426:1: rule__Entity__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2614:1: rule__Entity__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2430:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2431:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2618:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2619:1: ( RULE_ID )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2431:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2432:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2619:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2620:1: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_24833); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_25205); 
              after(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -6469,24 +6971,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__SuperEntityAssignment_3_1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2441:1: rule__Entity__SuperEntityAssignment_3_1 : ( ( RULE_ID ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2629:1: rule__Entity__SuperEntityAssignment_3_1 : ( ( RULE_ID ) ) ;
     public final void rule__Entity__SuperEntityAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2445:1: ( ( ( RULE_ID ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2446:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2633:1: ( ( ( RULE_ID ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2634:1: ( ( RULE_ID ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2446:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2447:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2634:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2635:1: ( RULE_ID )
             {
              before(grammarAccess.getEntityAccess().getSuperEntityEntityCrossReference_3_1_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2448:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2449:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2636:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2637:1: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getSuperEntityEntityIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__SuperEntityAssignment_3_14868); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__SuperEntityAssignment_3_15240); 
              after(grammarAccess.getEntityAccess().getSuperEntityEntityIDTerminalRuleCall_3_1_0_1()); 
 
             }
@@ -6514,20 +7016,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__FeaturesAssignment_5_0"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2460:1: rule__Entity__FeaturesAssignment_5_0 : ( ruleFeature ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2648:1: rule__Entity__FeaturesAssignment_5_0 : ( ruleFeature ) ;
     public final void rule__Entity__FeaturesAssignment_5_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2464:1: ( ( ruleFeature ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2465:1: ( ruleFeature )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2652:1: ( ( ruleFeature ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2653:1: ( ruleFeature )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2465:1: ( ruleFeature )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2466:1: ruleFeature
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2653:1: ( ruleFeature )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2654:1: ruleFeature
             {
              before(grammarAccess.getEntityAccess().getFeaturesFeatureParserRuleCall_5_0_0()); 
-            pushFollow(FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_5_04903);
+            pushFollow(FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_5_05275);
             ruleFeature();
 
             state._fsp--;
@@ -6555,20 +7057,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__FeaturesAssignment_5_1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2475:1: rule__Entity__FeaturesAssignment_5_1 : ( ruleFeature ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2663:1: rule__Entity__FeaturesAssignment_5_1 : ( ruleFeature ) ;
     public final void rule__Entity__FeaturesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2479:1: ( ( ruleFeature ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2480:1: ( ruleFeature )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2667:1: ( ( ruleFeature ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2668:1: ( ruleFeature )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2480:1: ( ruleFeature )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2481:1: ruleFeature
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2668:1: ( ruleFeature )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2669:1: ruleFeature
             {
              before(grammarAccess.getEntityAccess().getFeaturesFeatureParserRuleCall_5_1_0()); 
-            pushFollow(FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_5_14934);
+            pushFollow(FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_5_15306);
             ruleFeature();
 
             state._fsp--;
@@ -6596,20 +7098,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleReference__NameAssignment_2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2490:1: rule__SingleReference__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2678:1: rule__SingleReference__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__SingleReference__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2494:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2495:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2682:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2683:1: ( RULE_ID )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2495:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2496:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2683:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2684:1: RULE_ID
             {
              before(grammarAccess.getSingleReferenceAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SingleReference__NameAssignment_24965); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SingleReference__NameAssignment_25337); 
              after(grammarAccess.getSingleReferenceAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -6633,24 +7135,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleReference__ReferenceAssignment_3"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2505:1: rule__SingleReference__ReferenceAssignment_3 : ( ( RULE_ID ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2693:1: rule__SingleReference__ReferenceAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__SingleReference__ReferenceAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2509:1: ( ( ( RULE_ID ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2510:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2697:1: ( ( ( RULE_ID ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2698:1: ( ( RULE_ID ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2510:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2511:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2698:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2699:1: ( RULE_ID )
             {
              before(grammarAccess.getSingleReferenceAccess().getReferenceEntityCrossReference_3_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2512:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2513:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2700:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2701:1: RULE_ID
             {
              before(grammarAccess.getSingleReferenceAccess().getReferenceEntityIDTerminalRuleCall_3_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SingleReference__ReferenceAssignment_35000); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SingleReference__ReferenceAssignment_35372); 
              after(grammarAccess.getSingleReferenceAccess().getReferenceEntityIDTerminalRuleCall_3_0_1()); 
 
             }
@@ -6678,24 +7180,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleReference__UniqueAssignment_4"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2524:1: rule__SingleReference__UniqueAssignment_4 : ( ( 'unique' ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2712:1: rule__SingleReference__UniqueAssignment_4 : ( ( 'unique' ) ) ;
     public final void rule__SingleReference__UniqueAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2528:1: ( ( ( 'unique' ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2529:1: ( ( 'unique' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2716:1: ( ( ( 'unique' ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2717:1: ( ( 'unique' ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2529:1: ( ( 'unique' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2530:1: ( 'unique' )
-            {
-             before(grammarAccess.getSingleReferenceAccess().getUniqueUniqueKeyword_4_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2531:1: ( 'unique' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2532:1: 'unique'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2717:1: ( ( 'unique' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2718:1: ( 'unique' )
             {
              before(grammarAccess.getSingleReferenceAccess().getUniqueUniqueKeyword_4_0()); 
-            match(input,27,FOLLOW_27_in_rule__SingleReference__UniqueAssignment_45040); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2719:1: ( 'unique' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2720:1: 'unique'
+            {
+             before(grammarAccess.getSingleReferenceAccess().getUniqueUniqueKeyword_4_0()); 
+            match(input,27,FOLLOW_27_in_rule__SingleReference__UniqueAssignment_45412); 
              after(grammarAccess.getSingleReferenceAccess().getUniqueUniqueKeyword_4_0()); 
 
             }
@@ -6723,24 +7225,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleReference__OppositeAssignment_5_1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2547:1: rule__SingleReference__OppositeAssignment_5_1 : ( ( ruleQUALIFIED_NAME ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2735:1: rule__SingleReference__OppositeAssignment_5_1 : ( ( ruleQUALIFIED_NAME ) ) ;
     public final void rule__SingleReference__OppositeAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2551:1: ( ( ( ruleQUALIFIED_NAME ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2552:1: ( ( ruleQUALIFIED_NAME ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2739:1: ( ( ( ruleQUALIFIED_NAME ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2740:1: ( ( ruleQUALIFIED_NAME ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2552:1: ( ( ruleQUALIFIED_NAME ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2553:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2740:1: ( ( ruleQUALIFIED_NAME ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2741:1: ( ruleQUALIFIED_NAME )
             {
              before(grammarAccess.getSingleReferenceAccess().getOppositeMultiReferenceCrossReference_5_1_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2554:1: ( ruleQUALIFIED_NAME )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2555:1: ruleQUALIFIED_NAME
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2742:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2743:1: ruleQUALIFIED_NAME
             {
              before(grammarAccess.getSingleReferenceAccess().getOppositeMultiReferenceQUALIFIED_NAMEParserRuleCall_5_1_0_1()); 
-            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__SingleReference__OppositeAssignment_5_15083);
+            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__SingleReference__OppositeAssignment_5_15455);
             ruleQUALIFIED_NAME();
 
             state._fsp--;
@@ -6772,20 +7274,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiReference__NameAssignment_2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2566:1: rule__MultiReference__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2754:1: rule__MultiReference__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__MultiReference__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2570:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2571:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2758:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2759:1: ( RULE_ID )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2571:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2572:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2759:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2760:1: RULE_ID
             {
              before(grammarAccess.getMultiReferenceAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MultiReference__NameAssignment_25118); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MultiReference__NameAssignment_25490); 
              after(grammarAccess.getMultiReferenceAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -6809,24 +7311,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiReference__ReferenceAssignment_3"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2581:1: rule__MultiReference__ReferenceAssignment_3 : ( ( RULE_ID ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2769:1: rule__MultiReference__ReferenceAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__MultiReference__ReferenceAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2585:1: ( ( ( RULE_ID ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2586:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2773:1: ( ( ( RULE_ID ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2774:1: ( ( RULE_ID ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2586:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2587:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2774:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2775:1: ( RULE_ID )
             {
              before(grammarAccess.getMultiReferenceAccess().getReferenceEntityCrossReference_3_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2588:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2589:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2776:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2777:1: RULE_ID
             {
              before(grammarAccess.getMultiReferenceAccess().getReferenceEntityIDTerminalRuleCall_3_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MultiReference__ReferenceAssignment_35153); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MultiReference__ReferenceAssignment_35525); 
              after(grammarAccess.getMultiReferenceAccess().getReferenceEntityIDTerminalRuleCall_3_0_1()); 
 
             }
@@ -6854,24 +7356,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiReference__UniqueAssignment_5"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2600:1: rule__MultiReference__UniqueAssignment_5 : ( ( 'unique' ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2788:1: rule__MultiReference__UniqueAssignment_5 : ( ( 'unique' ) ) ;
     public final void rule__MultiReference__UniqueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2604:1: ( ( ( 'unique' ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2605:1: ( ( 'unique' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2792:1: ( ( ( 'unique' ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2793:1: ( ( 'unique' ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2605:1: ( ( 'unique' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2606:1: ( 'unique' )
-            {
-             before(grammarAccess.getMultiReferenceAccess().getUniqueUniqueKeyword_5_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2607:1: ( 'unique' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2608:1: 'unique'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2793:1: ( ( 'unique' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2794:1: ( 'unique' )
             {
              before(grammarAccess.getMultiReferenceAccess().getUniqueUniqueKeyword_5_0()); 
-            match(input,27,FOLLOW_27_in_rule__MultiReference__UniqueAssignment_55193); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2795:1: ( 'unique' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2796:1: 'unique'
+            {
+             before(grammarAccess.getMultiReferenceAccess().getUniqueUniqueKeyword_5_0()); 
+            match(input,27,FOLLOW_27_in_rule__MultiReference__UniqueAssignment_55565); 
              after(grammarAccess.getMultiReferenceAccess().getUniqueUniqueKeyword_5_0()); 
 
             }
@@ -6898,21 +7400,70 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MultiReference__UniqueAssignment_5"
 
 
+    // $ANTLR start "rule__MultiReference__OppositeAssignment_6_1"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2811:1: rule__MultiReference__OppositeAssignment_6_1 : ( ( ruleQUALIFIED_NAME ) ) ;
+    public final void rule__MultiReference__OppositeAssignment_6_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2815:1: ( ( ( ruleQUALIFIED_NAME ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2816:1: ( ( ruleQUALIFIED_NAME ) )
+            {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2816:1: ( ( ruleQUALIFIED_NAME ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2817:1: ( ruleQUALIFIED_NAME )
+            {
+             before(grammarAccess.getMultiReferenceAccess().getOppositeMultiReferenceCrossReference_6_1_0()); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2818:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2819:1: ruleQUALIFIED_NAME
+            {
+             before(grammarAccess.getMultiReferenceAccess().getOppositeMultiReferenceQUALIFIED_NAMEParserRuleCall_6_1_0_1()); 
+            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__MultiReference__OppositeAssignment_6_15608);
+            ruleQUALIFIED_NAME();
+
+            state._fsp--;
+
+             after(grammarAccess.getMultiReferenceAccess().getOppositeMultiReferenceQUALIFIED_NAMEParserRuleCall_6_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getMultiReferenceAccess().getOppositeMultiReferenceCrossReference_6_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiReference__OppositeAssignment_6_1"
+
+
     // $ANTLR start "rule__SingleDataType__NameAssignment_2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2623:1: rule__SingleDataType__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2830:1: rule__SingleDataType__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__SingleDataType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2627:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2628:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2834:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2835:1: ( RULE_ID )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2628:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2629:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2835:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2836:1: RULE_ID
             {
              before(grammarAccess.getSingleDataTypeAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SingleDataType__NameAssignment_25232); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SingleDataType__NameAssignment_25643); 
              after(grammarAccess.getSingleDataTypeAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -6936,20 +7487,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__TypeAssignment_3"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2638:1: rule__SingleDataType__TypeAssignment_3 : ( ruleDataTypes ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2845:1: rule__SingleDataType__TypeAssignment_3 : ( ruleDataTypes ) ;
     public final void rule__SingleDataType__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2642:1: ( ( ruleDataTypes ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2643:1: ( ruleDataTypes )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2849:1: ( ( ruleDataTypes ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2850:1: ( ruleDataTypes )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2643:1: ( ruleDataTypes )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2644:1: ruleDataTypes
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2850:1: ( ruleDataTypes )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2851:1: ruleDataTypes
             {
              before(grammarAccess.getSingleDataTypeAccess().getTypeDataTypesEnumRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleDataTypes_in_rule__SingleDataType__TypeAssignment_35263);
+            pushFollow(FOLLOW_ruleDataTypes_in_rule__SingleDataType__TypeAssignment_35674);
             ruleDataTypes();
 
             state._fsp--;
@@ -6977,24 +7528,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleDataType__OppositeAssignment_4_1"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2653:1: rule__SingleDataType__OppositeAssignment_4_1 : ( ( ruleQUALIFIED_NAME ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2860:1: rule__SingleDataType__OppositeAssignment_4_1 : ( ( ruleQUALIFIED_NAME ) ) ;
     public final void rule__SingleDataType__OppositeAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2657:1: ( ( ( ruleQUALIFIED_NAME ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2658:1: ( ( ruleQUALIFIED_NAME ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2864:1: ( ( ( ruleQUALIFIED_NAME ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2865:1: ( ( ruleQUALIFIED_NAME ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2658:1: ( ( ruleQUALIFIED_NAME ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2659:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2865:1: ( ( ruleQUALIFIED_NAME ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2866:1: ( ruleQUALIFIED_NAME )
             {
              before(grammarAccess.getSingleDataTypeAccess().getOppositeMultiDataTypeCrossReference_4_1_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2660:1: ( ruleQUALIFIED_NAME )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2661:1: ruleQUALIFIED_NAME
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2867:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2868:1: ruleQUALIFIED_NAME
             {
              before(grammarAccess.getSingleDataTypeAccess().getOppositeMultiDataTypeQUALIFIED_NAMEParserRuleCall_4_1_0_1()); 
-            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__SingleDataType__OppositeAssignment_4_15298);
+            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__SingleDataType__OppositeAssignment_4_15709);
             ruleQUALIFIED_NAME();
 
             state._fsp--;
@@ -7026,20 +7577,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__NameAssignment_2"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2672:1: rule__MultiDataType__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2879:1: rule__MultiDataType__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__MultiDataType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2676:1: ( ( RULE_ID ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2677:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2883:1: ( ( RULE_ID ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2884:1: ( RULE_ID )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2677:1: ( RULE_ID )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2678:1: RULE_ID
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2884:1: ( RULE_ID )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2885:1: RULE_ID
             {
              before(grammarAccess.getMultiDataTypeAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MultiDataType__NameAssignment_25333); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MultiDataType__NameAssignment_25744); 
              after(grammarAccess.getMultiDataTypeAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -7063,20 +7614,20 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__TypeAssignment_3"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2687:1: rule__MultiDataType__TypeAssignment_3 : ( ruleDataTypes ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2894:1: rule__MultiDataType__TypeAssignment_3 : ( ruleDataTypes ) ;
     public final void rule__MultiDataType__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2691:1: ( ( ruleDataTypes ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2692:1: ( ruleDataTypes )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2898:1: ( ( ruleDataTypes ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2899:1: ( ruleDataTypes )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2692:1: ( ruleDataTypes )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2693:1: ruleDataTypes
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2899:1: ( ruleDataTypes )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2900:1: ruleDataTypes
             {
              before(grammarAccess.getMultiDataTypeAccess().getTypeDataTypesEnumRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleDataTypes_in_rule__MultiDataType__TypeAssignment_35364);
+            pushFollow(FOLLOW_ruleDataTypes_in_rule__MultiDataType__TypeAssignment_35775);
             ruleDataTypes();
 
             state._fsp--;
@@ -7104,24 +7655,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiDataType__UniqueAssignment_5"
-    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2702:1: rule__MultiDataType__UniqueAssignment_5 : ( ( 'unique' ) ) ;
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2909:1: rule__MultiDataType__UniqueAssignment_5 : ( ( 'unique' ) ) ;
     public final void rule__MultiDataType__UniqueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2706:1: ( ( ( 'unique' ) ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2707:1: ( ( 'unique' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2913:1: ( ( ( 'unique' ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2914:1: ( ( 'unique' ) )
             {
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2707:1: ( ( 'unique' ) )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2708:1: ( 'unique' )
-            {
-             before(grammarAccess.getMultiDataTypeAccess().getUniqueUniqueKeyword_5_0()); 
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2709:1: ( 'unique' )
-            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2710:1: 'unique'
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2914:1: ( ( 'unique' ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2915:1: ( 'unique' )
             {
              before(grammarAccess.getMultiDataTypeAccess().getUniqueUniqueKeyword_5_0()); 
-            match(input,27,FOLLOW_27_in_rule__MultiDataType__UniqueAssignment_55400); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2916:1: ( 'unique' )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2917:1: 'unique'
+            {
+             before(grammarAccess.getMultiDataTypeAccess().getUniqueUniqueKeyword_5_0()); 
+            match(input,27,FOLLOW_27_in_rule__MultiDataType__UniqueAssignment_55811); 
              after(grammarAccess.getMultiDataTypeAccess().getUniqueUniqueKeyword_5_0()); 
 
             }
@@ -7147,6 +7698,55 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end "rule__MultiDataType__UniqueAssignment_5"
 
+
+    // $ANTLR start "rule__MultiDataType__OppositeAssignment_6_1"
+    // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2932:1: rule__MultiDataType__OppositeAssignment_6_1 : ( ( ruleQUALIFIED_NAME ) ) ;
+    public final void rule__MultiDataType__OppositeAssignment_6_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2936:1: ( ( ( ruleQUALIFIED_NAME ) ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2937:1: ( ( ruleQUALIFIED_NAME ) )
+            {
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2937:1: ( ( ruleQUALIFIED_NAME ) )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2938:1: ( ruleQUALIFIED_NAME )
+            {
+             before(grammarAccess.getMultiDataTypeAccess().getOppositeMultiDataTypeCrossReference_6_1_0()); 
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2939:1: ( ruleQUALIFIED_NAME )
+            // ../org.yazgel.titan.xtext.ui/src-gen/org/yazgel/titan/xtext/ui/contentassist/antlr/internal/InternalTitan.g:2940:1: ruleQUALIFIED_NAME
+            {
+             before(grammarAccess.getMultiDataTypeAccess().getOppositeMultiDataTypeQUALIFIED_NAMEParserRuleCall_6_1_0_1()); 
+            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_rule__MultiDataType__OppositeAssignment_6_15854);
+            ruleQUALIFIED_NAME();
+
+            state._fsp--;
+
+             after(grammarAccess.getMultiDataTypeAccess().getOppositeMultiDataTypeQUALIFIED_NAMEParserRuleCall_6_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getMultiDataTypeAccess().getOppositeMultiDataTypeCrossReference_6_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MultiDataType__OppositeAssignment_6_1"
+
     // Delegated rules
 
 
@@ -7154,24 +7754,24 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
     static final String DFA3_eotS =
         "\12\uffff";
     static final String DFA3_eofS =
-        "\3\uffff\5\11\2\uffff";
+        "\3\uffff\5\10\2\uffff";
     static final String DFA3_minS =
         "\1\27\1\4\1\14\5\24\2\uffff";
     static final String DFA3_maxS =
         "\1\27\1\4\1\20\5\31\2\uffff";
     static final String DFA3_acceptS =
-        "\10\uffff\1\2\1\1";
+        "\10\uffff\1\1\1\2";
     static final String DFA3_specialS =
         "\12\uffff}>";
     static final String[] DFA3_transitionS = {
             "\1\1",
             "\1\2",
             "\1\3\1\4\1\5\1\6\1\7",
-            "\1\11\2\uffff\2\11\1\10",
-            "\1\11\2\uffff\2\11\1\10",
-            "\1\11\2\uffff\2\11\1\10",
-            "\1\11\2\uffff\2\11\1\10",
-            "\1\11\2\uffff\2\11\1\10",
+            "\1\10\2\uffff\2\10\1\11",
+            "\1\10\2\uffff\2\10\1\11",
+            "\1\10\2\uffff\2\10\1\11",
+            "\1\10\2\uffff\2\10\1\11",
+            "\1\10\2\uffff\2\10\1\11",
             "",
             ""
     };
@@ -7357,78 +7957,96 @@ public class InternalTitanParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__MultiReference__Group__3__Impl_in_rule__MultiReference__Group__33367 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_rule__MultiReference__Group__4_in_rule__MultiReference__Group__33370 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MultiReference__ReferenceAssignment_3_in_rule__MultiReference__Group__3__Impl3397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiReference__Group__4__Impl_in_rule__MultiReference__Group__43427 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__MultiReference__Group__4__Impl_in_rule__MultiReference__Group__43427 = new BitSet(new long[]{0x0000000009000000L});
     public static final BitSet FOLLOW_rule__MultiReference__Group__5_in_rule__MultiReference__Group__43430 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_25_in_rule__MultiReference__Group__4__Impl3458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiReference__Group__5__Impl_in_rule__MultiReference__Group__53489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiReference__UniqueAssignment_5_in_rule__MultiReference__Group__5__Impl3516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__0__Impl_in_rule__SingleDataType__Group__03559 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__1_in_rule__SingleDataType__Group__03562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__1__Impl_in_rule__SingleDataType__Group__13620 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__2_in_rule__SingleDataType__Group__13623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__SingleDataType__Group__1__Impl3651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__2__Impl_in_rule__SingleDataType__Group__23682 = new BitSet(new long[]{0x000000000001F000L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__3_in_rule__SingleDataType__Group__23685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__NameAssignment_2_in_rule__SingleDataType__Group__2__Impl3712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__3__Impl_in_rule__SingleDataType__Group__33742 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__4_in_rule__SingleDataType__Group__33745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__TypeAssignment_3_in_rule__SingleDataType__Group__3__Impl3772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group__4__Impl_in_rule__SingleDataType__Group__43802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group_4__0_in_rule__SingleDataType__Group__4__Impl3829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group_4__0__Impl_in_rule__SingleDataType__Group_4__03870 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group_4__1_in_rule__SingleDataType__Group_4__03873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__SingleDataType__Group_4__0__Impl3901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__Group_4__1__Impl_in_rule__SingleDataType__Group_4__13932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleDataType__OppositeAssignment_4_1_in_rule__SingleDataType__Group_4__1__Impl3959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__0__Impl_in_rule__MultiDataType__Group__03993 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__1_in_rule__MultiDataType__Group__03996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__1__Impl_in_rule__MultiDataType__Group__14054 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__2_in_rule__MultiDataType__Group__14057 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__MultiDataType__Group__1__Impl4085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__2__Impl_in_rule__MultiDataType__Group__24116 = new BitSet(new long[]{0x000000000001F000L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__3_in_rule__MultiDataType__Group__24119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__NameAssignment_2_in_rule__MultiDataType__Group__2__Impl4146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__3__Impl_in_rule__MultiDataType__Group__34176 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__4_in_rule__MultiDataType__Group__34179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__TypeAssignment_3_in_rule__MultiDataType__Group__3__Impl4206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__4__Impl_in_rule__MultiDataType__Group__44236 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__5_in_rule__MultiDataType__Group__44239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__MultiDataType__Group__4__Impl4267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__Group__5__Impl_in_rule__MultiDataType__Group__54298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MultiDataType__UniqueAssignment_5_in_rule__MultiDataType__Group__5__Impl4325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group__0__Impl_in_rule__QUALIFIED_NAME__Group__04368 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group__1_in_rule__QUALIFIED_NAME__Group__04371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QUALIFIED_NAME__Group__0__Impl4398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group__1__Impl_in_rule__QUALIFIED_NAME__Group__14427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group_1__0_in_rule__QUALIFIED_NAME__Group__1__Impl4454 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group_1__0__Impl_in_rule__QUALIFIED_NAME__Group_1__04489 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group_1__1_in_rule__QUALIFIED_NAME__Group_1__04492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__QUALIFIED_NAME__Group_1__0__Impl4520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group_1__1__Impl_in_rule__QUALIFIED_NAME__Group_1__14551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QUALIFIED_NAME__Group_1__1__Impl4578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__Module__NameAssignment_24616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInternalDSLType_in_rule__Module__TypeAssignment_34647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePackage_in_rule__Module__PackagesAssignment_4_04678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePackage_in_rule__Module__PackagesAssignment_4_14709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__Package__NameAssignment_24740 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntity_in_rule__Package__EntitiesAssignment_4_04771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntity_in_rule__Package__EntitiesAssignment_4_14802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_24833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__SuperEntityAssignment_3_14868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_5_04903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_5_14934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SingleReference__NameAssignment_24965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SingleReference__ReferenceAssignment_35000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__SingleReference__UniqueAssignment_45040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__SingleReference__OppositeAssignment_5_15083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MultiReference__NameAssignment_25118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MultiReference__ReferenceAssignment_35153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__MultiReference__UniqueAssignment_55193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SingleDataType__NameAssignment_25232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypes_in_rule__SingleDataType__TypeAssignment_35263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__SingleDataType__OppositeAssignment_4_15298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__MultiDataType__NameAssignment_25333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypes_in_rule__MultiDataType__TypeAssignment_35364 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__MultiDataType__UniqueAssignment_55400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiReference__Group__5__Impl_in_rule__MultiReference__Group__53489 = new BitSet(new long[]{0x0000000009000000L});
+    public static final BitSet FOLLOW_rule__MultiReference__Group__6_in_rule__MultiReference__Group__53492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiReference__UniqueAssignment_5_in_rule__MultiReference__Group__5__Impl3519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiReference__Group__6__Impl_in_rule__MultiReference__Group__63550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiReference__Group_6__0_in_rule__MultiReference__Group__6__Impl3577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiReference__Group_6__0__Impl_in_rule__MultiReference__Group_6__03622 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MultiReference__Group_6__1_in_rule__MultiReference__Group_6__03625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__MultiReference__Group_6__0__Impl3653 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiReference__Group_6__1__Impl_in_rule__MultiReference__Group_6__13684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiReference__OppositeAssignment_6_1_in_rule__MultiReference__Group_6__1__Impl3711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__0__Impl_in_rule__SingleDataType__Group__03745 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__1_in_rule__SingleDataType__Group__03748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__1__Impl_in_rule__SingleDataType__Group__13806 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__2_in_rule__SingleDataType__Group__13809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__SingleDataType__Group__1__Impl3837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__2__Impl_in_rule__SingleDataType__Group__23868 = new BitSet(new long[]{0x000000000001F000L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__3_in_rule__SingleDataType__Group__23871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__NameAssignment_2_in_rule__SingleDataType__Group__2__Impl3898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__3__Impl_in_rule__SingleDataType__Group__33928 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__4_in_rule__SingleDataType__Group__33931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__TypeAssignment_3_in_rule__SingleDataType__Group__3__Impl3958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group__4__Impl_in_rule__SingleDataType__Group__43988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group_4__0_in_rule__SingleDataType__Group__4__Impl4015 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group_4__0__Impl_in_rule__SingleDataType__Group_4__04056 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group_4__1_in_rule__SingleDataType__Group_4__04059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__SingleDataType__Group_4__0__Impl4087 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__Group_4__1__Impl_in_rule__SingleDataType__Group_4__14118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleDataType__OppositeAssignment_4_1_in_rule__SingleDataType__Group_4__1__Impl4145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__0__Impl_in_rule__MultiDataType__Group__04179 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__1_in_rule__MultiDataType__Group__04182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__1__Impl_in_rule__MultiDataType__Group__14240 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__2_in_rule__MultiDataType__Group__14243 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__MultiDataType__Group__1__Impl4271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__2__Impl_in_rule__MultiDataType__Group__24302 = new BitSet(new long[]{0x000000000001F000L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__3_in_rule__MultiDataType__Group__24305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__NameAssignment_2_in_rule__MultiDataType__Group__2__Impl4332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__3__Impl_in_rule__MultiDataType__Group__34362 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__4_in_rule__MultiDataType__Group__34365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__TypeAssignment_3_in_rule__MultiDataType__Group__3__Impl4392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__4__Impl_in_rule__MultiDataType__Group__44422 = new BitSet(new long[]{0x0000000009000000L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__5_in_rule__MultiDataType__Group__44425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__MultiDataType__Group__4__Impl4453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__5__Impl_in_rule__MultiDataType__Group__54484 = new BitSet(new long[]{0x0000000009000000L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__6_in_rule__MultiDataType__Group__54487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__UniqueAssignment_5_in_rule__MultiDataType__Group__5__Impl4514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group__6__Impl_in_rule__MultiDataType__Group__64545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group_6__0_in_rule__MultiDataType__Group__6__Impl4572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group_6__0__Impl_in_rule__MultiDataType__Group_6__04617 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group_6__1_in_rule__MultiDataType__Group_6__04620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__MultiDataType__Group_6__0__Impl4648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__Group_6__1__Impl_in_rule__MultiDataType__Group_6__14679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MultiDataType__OppositeAssignment_6_1_in_rule__MultiDataType__Group_6__1__Impl4706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group__0__Impl_in_rule__QUALIFIED_NAME__Group__04740 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group__1_in_rule__QUALIFIED_NAME__Group__04743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QUALIFIED_NAME__Group__0__Impl4770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group__1__Impl_in_rule__QUALIFIED_NAME__Group__14799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group_1__0_in_rule__QUALIFIED_NAME__Group__1__Impl4826 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group_1__0__Impl_in_rule__QUALIFIED_NAME__Group_1__04861 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group_1__1_in_rule__QUALIFIED_NAME__Group_1__04864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__QUALIFIED_NAME__Group_1__0__Impl4892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QUALIFIED_NAME__Group_1__1__Impl_in_rule__QUALIFIED_NAME__Group_1__14923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QUALIFIED_NAME__Group_1__1__Impl4950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__Module__NameAssignment_24988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInternalDSLType_in_rule__Module__TypeAssignment_35019 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePackage_in_rule__Module__PackagesAssignment_4_05050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePackage_in_rule__Module__PackagesAssignment_4_15081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__Package__NameAssignment_25112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntity_in_rule__Package__EntitiesAssignment_4_05143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntity_in_rule__Package__EntitiesAssignment_4_15174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_25205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__SuperEntityAssignment_3_15240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_5_05275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeature_in_rule__Entity__FeaturesAssignment_5_15306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SingleReference__NameAssignment_25337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SingleReference__ReferenceAssignment_35372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__SingleReference__UniqueAssignment_45412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__SingleReference__OppositeAssignment_5_15455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MultiReference__NameAssignment_25490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MultiReference__ReferenceAssignment_35525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__MultiReference__UniqueAssignment_55565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__MultiReference__OppositeAssignment_6_15608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SingleDataType__NameAssignment_25643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypes_in_rule__SingleDataType__TypeAssignment_35674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__SingleDataType__OppositeAssignment_4_15709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__MultiDataType__NameAssignment_25744 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypes_in_rule__MultiDataType__TypeAssignment_35775 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__MultiDataType__UniqueAssignment_55811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_rule__MultiDataType__OppositeAssignment_6_15854 = new BitSet(new long[]{0x0000000000000002L});
 
 }

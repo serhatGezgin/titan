@@ -1399,7 +1399,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiReference"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:559:1: ruleMultiReference returns [EObject current=null] : ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? ) ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:559:1: ruleMultiReference returns [EObject current=null] : ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? ) ;
     public final EObject ruleMultiReference() throws RecognitionException {
         EObject current = null;
 
@@ -1408,15 +1408,16 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
         Token otherlv_3=null;
         Token otherlv_4=null;
         Token lv_unique_5_0=null;
+        Token otherlv_6=null;
 
          enterRule(); 
             
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:562:28: ( ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:563:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:562:28: ( ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:563:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:563:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:563:2: () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )?
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:563:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:563:2: () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (otherlv_3= RULE_ID ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )?
             {
             // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:563:2: ()
             // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:564:5: 
@@ -1517,6 +1518,55 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
             }
 
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:623:3: (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==19) ) {
+                alt13=1;
+            }
+            switch (alt13) {
+                case 1 :
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:623:5: otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) )
+                    {
+                    otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleMultiReference1254); 
+
+                        	newLeafNode(otherlv_6, grammarAccess.getMultiReferenceAccess().getOppositeKeyword_6_0());
+                        
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:627:1: ( ( ruleQUALIFIED_NAME ) )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:628:1: ( ruleQUALIFIED_NAME )
+                    {
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:628:1: ( ruleQUALIFIED_NAME )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:629:3: ruleQUALIFIED_NAME
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMultiReferenceRule());
+                    	        }
+                            
+                     
+                    	        newCompositeNode(grammarAccess.getMultiReferenceAccess().getOppositeMultiReferenceCrossReference_6_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_ruleMultiReference1277);
+                    ruleQUALIFIED_NAME();
+
+                    state._fsp--;
+
+                     
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -1538,7 +1588,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataType"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:631:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:650:1: entryRuleDataType returns [EObject current=null] : iv_ruleDataType= ruleDataType EOF ;
     public final EObject entryRuleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -1546,17 +1596,17 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:632:2: (iv_ruleDataType= ruleDataType EOF )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:633:2: iv_ruleDataType= ruleDataType EOF
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:651:2: (iv_ruleDataType= ruleDataType EOF )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:652:2: iv_ruleDataType= ruleDataType EOF
             {
              newCompositeNode(grammarAccess.getDataTypeRule()); 
-            pushFollow(FOLLOW_ruleDataType_in_entryRuleDataType1277);
+            pushFollow(FOLLOW_ruleDataType_in_entryRuleDataType1315);
             iv_ruleDataType=ruleDataType();
 
             state._fsp--;
 
              current =iv_ruleDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDataType1287); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDataType1325); 
 
             }
 
@@ -1574,7 +1624,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataType"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:640:1: ruleDataType returns [EObject current=null] : (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType ) ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:659:1: ruleDataType returns [EObject current=null] : (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType ) ;
     public final EObject ruleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -1586,20 +1636,20 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:643:28: ( (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:644:1: (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:662:28: ( (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:663:1: (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:644:1: (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType )
-            int alt13=2;
-            alt13 = dfa13.predict(input);
-            switch (alt13) {
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:663:1: (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType )
+            int alt14=2;
+            alt14 = dfa14.predict(input);
+            switch (alt14) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:645:5: this_SingleDataType_0= ruleSingleDataType
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:664:5: this_SingleDataType_0= ruleSingleDataType
                     {
                      
                             newCompositeNode(grammarAccess.getDataTypeAccess().getSingleDataTypeParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSingleDataType_in_ruleDataType1334);
+                    pushFollow(FOLLOW_ruleSingleDataType_in_ruleDataType1372);
                     this_SingleDataType_0=ruleSingleDataType();
 
                     state._fsp--;
@@ -1612,12 +1662,12 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:655:5: this_MultiDataType_1= ruleMultiDataType
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:674:5: this_MultiDataType_1= ruleMultiDataType
                     {
                      
                             newCompositeNode(grammarAccess.getDataTypeAccess().getMultiDataTypeParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleMultiDataType_in_ruleDataType1361);
+                    pushFollow(FOLLOW_ruleMultiDataType_in_ruleDataType1399);
                     this_MultiDataType_1=ruleMultiDataType();
 
                     state._fsp--;
@@ -1650,7 +1700,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSingleDataType"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:671:1: entryRuleSingleDataType returns [EObject current=null] : iv_ruleSingleDataType= ruleSingleDataType EOF ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:690:1: entryRuleSingleDataType returns [EObject current=null] : iv_ruleSingleDataType= ruleSingleDataType EOF ;
     public final EObject entryRuleSingleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -1658,17 +1708,17 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:672:2: (iv_ruleSingleDataType= ruleSingleDataType EOF )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:673:2: iv_ruleSingleDataType= ruleSingleDataType EOF
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:691:2: (iv_ruleSingleDataType= ruleSingleDataType EOF )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:692:2: iv_ruleSingleDataType= ruleSingleDataType EOF
             {
              newCompositeNode(grammarAccess.getSingleDataTypeRule()); 
-            pushFollow(FOLLOW_ruleSingleDataType_in_entryRuleSingleDataType1396);
+            pushFollow(FOLLOW_ruleSingleDataType_in_entryRuleSingleDataType1434);
             iv_ruleSingleDataType=ruleSingleDataType();
 
             state._fsp--;
 
              current =iv_ruleSingleDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSingleDataType1406); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSingleDataType1444); 
 
             }
 
@@ -1686,7 +1736,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSingleDataType"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:680:1: ruleSingleDataType returns [EObject current=null] : ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? ) ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:699:1: ruleSingleDataType returns [EObject current=null] : ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? ) ;
     public final EObject ruleSingleDataType() throws RecognitionException {
         EObject current = null;
 
@@ -1699,14 +1749,14 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:683:28: ( ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:684:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:702:28: ( ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:703:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:684:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:684:2: () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )?
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:703:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:703:2: () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )?
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:684:2: ()
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:685:5: 
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:703:2: ()
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:704:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1716,17 +1766,17 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleSingleDataType1452); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleSingleDataType1490); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getSingleDataTypeAccess().getVarKeyword_1());
                 
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:694:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:695:1: (lv_name_2_0= RULE_ID )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:713:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:714:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:695:1: (lv_name_2_0= RULE_ID )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:696:3: lv_name_2_0= RULE_ID
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:714:1: (lv_name_2_0= RULE_ID )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:715:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSingleDataType1469); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSingleDataType1507); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getSingleDataTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -1746,16 +1796,16 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:712:2: ( (lv_type_3_0= ruleDataTypes ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:713:1: (lv_type_3_0= ruleDataTypes )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:731:2: ( (lv_type_3_0= ruleDataTypes ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:732:1: (lv_type_3_0= ruleDataTypes )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:713:1: (lv_type_3_0= ruleDataTypes )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:714:3: lv_type_3_0= ruleDataTypes
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:732:1: (lv_type_3_0= ruleDataTypes )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:733:3: lv_type_3_0= ruleDataTypes
             {
              
             	        newCompositeNode(grammarAccess.getSingleDataTypeAccess().getTypeDataTypesEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleDataTypes_in_ruleSingleDataType1495);
+            pushFollow(FOLLOW_ruleDataTypes_in_ruleSingleDataType1533);
             lv_type_3_0=ruleDataTypes();
 
             state._fsp--;
@@ -1777,26 +1827,26 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:730:2: (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:749:2: (otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA14_0==19) ) {
-                alt14=1;
+            if ( (LA15_0==19) ) {
+                alt15=1;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:730:4: otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:749:4: otherlv_4= 'opposite' ( ( ruleQUALIFIED_NAME ) )
                     {
-                    otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleSingleDataType1508); 
+                    otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleSingleDataType1546); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getSingleDataTypeAccess().getOppositeKeyword_4_0());
                         
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:734:1: ( ( ruleQUALIFIED_NAME ) )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:735:1: ( ruleQUALIFIED_NAME )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:753:1: ( ( ruleQUALIFIED_NAME ) )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:754:1: ( ruleQUALIFIED_NAME )
                     {
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:735:1: ( ruleQUALIFIED_NAME )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:736:3: ruleQUALIFIED_NAME
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:754:1: ( ruleQUALIFIED_NAME )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:755:3: ruleQUALIFIED_NAME
                     {
 
                     			if (current==null) {
@@ -1806,7 +1856,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getSingleDataTypeAccess().getOppositeMultiDataTypeCrossReference_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_ruleSingleDataType1531);
+                    pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_ruleSingleDataType1569);
                     ruleQUALIFIED_NAME();
 
                     state._fsp--;
@@ -1847,7 +1897,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMultiDataType"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:757:1: entryRuleMultiDataType returns [EObject current=null] : iv_ruleMultiDataType= ruleMultiDataType EOF ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:776:1: entryRuleMultiDataType returns [EObject current=null] : iv_ruleMultiDataType= ruleMultiDataType EOF ;
     public final EObject entryRuleMultiDataType() throws RecognitionException {
         EObject current = null;
 
@@ -1855,17 +1905,17 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:758:2: (iv_ruleMultiDataType= ruleMultiDataType EOF )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:759:2: iv_ruleMultiDataType= ruleMultiDataType EOF
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:777:2: (iv_ruleMultiDataType= ruleMultiDataType EOF )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:778:2: iv_ruleMultiDataType= ruleMultiDataType EOF
             {
              newCompositeNode(grammarAccess.getMultiDataTypeRule()); 
-            pushFollow(FOLLOW_ruleMultiDataType_in_entryRuleMultiDataType1569);
+            pushFollow(FOLLOW_ruleMultiDataType_in_entryRuleMultiDataType1607);
             iv_ruleMultiDataType=ruleMultiDataType();
 
             state._fsp--;
 
              current =iv_ruleMultiDataType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiDataType1579); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiDataType1617); 
 
             }
 
@@ -1883,7 +1933,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiDataType"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:766:1: ruleMultiDataType returns [EObject current=null] : ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? ) ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:785:1: ruleMultiDataType returns [EObject current=null] : ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? ) ;
     public final EObject ruleMultiDataType() throws RecognitionException {
         EObject current = null;
 
@@ -1891,20 +1941,21 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
         Token lv_name_2_0=null;
         Token otherlv_4=null;
         Token lv_unique_5_0=null;
+        Token otherlv_6=null;
         Enumerator lv_type_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:769:28: ( ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:770:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:788:28: ( ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:789:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:770:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:770:2: () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )?
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:789:1: ( () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )? )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:789:2: () otherlv_1= 'var' ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleDataTypes ) ) otherlv_4= '[]' ( (lv_unique_5_0= 'unique' ) )? (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )?
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:770:2: ()
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:771:5: 
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:789:2: ()
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:790:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1914,17 +1965,17 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleMultiDataType1625); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleMultiDataType1663); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getMultiDataTypeAccess().getVarKeyword_1());
                 
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:780:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:781:1: (lv_name_2_0= RULE_ID )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:799:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:800:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:781:1: (lv_name_2_0= RULE_ID )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:782:3: lv_name_2_0= RULE_ID
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:800:1: (lv_name_2_0= RULE_ID )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:801:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMultiDataType1642); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMultiDataType1680); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getMultiDataTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -1944,16 +1995,16 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:798:2: ( (lv_type_3_0= ruleDataTypes ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:799:1: (lv_type_3_0= ruleDataTypes )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:817:2: ( (lv_type_3_0= ruleDataTypes ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:818:1: (lv_type_3_0= ruleDataTypes )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:799:1: (lv_type_3_0= ruleDataTypes )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:800:3: lv_type_3_0= ruleDataTypes
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:818:1: (lv_type_3_0= ruleDataTypes )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:819:3: lv_type_3_0= ruleDataTypes
             {
              
             	        newCompositeNode(grammarAccess.getMultiDataTypeAccess().getTypeDataTypesEnumRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleDataTypes_in_ruleMultiDataType1668);
+            pushFollow(FOLLOW_ruleDataTypes_in_ruleMultiDataType1706);
             lv_type_3_0=ruleDataTypes();
 
             state._fsp--;
@@ -1975,25 +2026,25 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,20,FOLLOW_20_in_ruleMultiDataType1680); 
+            otherlv_4=(Token)match(input,20,FOLLOW_20_in_ruleMultiDataType1718); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getMultiDataTypeAccess().getLeftSquareBracketRightSquareBracketKeyword_4());
                 
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:820:1: ( (lv_unique_5_0= 'unique' ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:839:1: ( (lv_unique_5_0= 'unique' ) )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==18) ) {
-                alt15=1;
+            if ( (LA16_0==18) ) {
+                alt16=1;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:821:1: (lv_unique_5_0= 'unique' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:840:1: (lv_unique_5_0= 'unique' )
                     {
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:821:1: (lv_unique_5_0= 'unique' )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:822:3: lv_unique_5_0= 'unique'
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:840:1: (lv_unique_5_0= 'unique' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:841:3: lv_unique_5_0= 'unique'
                     {
-                    lv_unique_5_0=(Token)match(input,18,FOLLOW_18_in_ruleMultiDataType1698); 
+                    lv_unique_5_0=(Token)match(input,18,FOLLOW_18_in_ruleMultiDataType1736); 
 
                             newLeafNode(lv_unique_5_0, grammarAccess.getMultiDataTypeAccess().getUniqueUniqueKeyword_5_0());
                         
@@ -2003,6 +2054,55 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
                     	        }
                            		setWithLastConsumed(current, "unique", true, "unique");
                     	    
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:854:3: (otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) ) )?
+            int alt17=2;
+            int LA17_0 = input.LA(1);
+
+            if ( (LA17_0==19) ) {
+                alt17=1;
+            }
+            switch (alt17) {
+                case 1 :
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:854:5: otherlv_6= 'opposite' ( ( ruleQUALIFIED_NAME ) )
+                    {
+                    otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleMultiDataType1763); 
+
+                        	newLeafNode(otherlv_6, grammarAccess.getMultiDataTypeAccess().getOppositeKeyword_6_0());
+                        
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:858:1: ( ( ruleQUALIFIED_NAME ) )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:859:1: ( ruleQUALIFIED_NAME )
+                    {
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:859:1: ( ruleQUALIFIED_NAME )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:860:3: ruleQUALIFIED_NAME
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMultiDataTypeRule());
+                    	        }
+                            
+                     
+                    	        newCompositeNode(grammarAccess.getMultiDataTypeAccess().getOppositeMultiDataTypeCrossReference_6_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_ruleMultiDataType1786);
+                    ruleQUALIFIED_NAME();
+
+                    state._fsp--;
+
+                     
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
 
                     }
 
@@ -2033,7 +2133,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQUALIFIED_NAME"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:843:1: entryRuleQUALIFIED_NAME returns [String current=null] : iv_ruleQUALIFIED_NAME= ruleQUALIFIED_NAME EOF ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:881:1: entryRuleQUALIFIED_NAME returns [String current=null] : iv_ruleQUALIFIED_NAME= ruleQUALIFIED_NAME EOF ;
     public final String entryRuleQUALIFIED_NAME() throws RecognitionException {
         String current = null;
 
@@ -2041,17 +2141,17 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:844:2: (iv_ruleQUALIFIED_NAME= ruleQUALIFIED_NAME EOF )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:845:2: iv_ruleQUALIFIED_NAME= ruleQUALIFIED_NAME EOF
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:882:2: (iv_ruleQUALIFIED_NAME= ruleQUALIFIED_NAME EOF )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:883:2: iv_ruleQUALIFIED_NAME= ruleQUALIFIED_NAME EOF
             {
              newCompositeNode(grammarAccess.getQUALIFIED_NAMERule()); 
-            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_entryRuleQUALIFIED_NAME1749);
+            pushFollow(FOLLOW_ruleQUALIFIED_NAME_in_entryRuleQUALIFIED_NAME1825);
             iv_ruleQUALIFIED_NAME=ruleQUALIFIED_NAME();
 
             state._fsp--;
 
              current =iv_ruleQUALIFIED_NAME.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQUALIFIED_NAME1760); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQUALIFIED_NAME1836); 
 
             }
 
@@ -2069,7 +2169,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQUALIFIED_NAME"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:852:1: ruleQUALIFIED_NAME returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:890:1: ruleQUALIFIED_NAME returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQUALIFIED_NAME() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2080,40 +2180,40 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:855:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:856:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:893:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:894:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:856:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:856:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:894:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:894:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQUALIFIED_NAME1800); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQUALIFIED_NAME1876); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getQUALIFIED_NAMEAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:863:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop16:
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:901:1: (kw= '.' this_ID_2= RULE_ID )*
+            loop18:
             do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( (LA16_0==21) ) {
-                    alt16=1;
+                if ( (LA18_0==21) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt16) {
+                switch (alt18) {
             	case 1 :
-            	    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:864:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:902:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,21,FOLLOW_21_in_ruleQUALIFIED_NAME1819); 
+            	    kw=(Token)match(input,21,FOLLOW_21_in_ruleQUALIFIED_NAME1895); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQUALIFIED_NAMEAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQUALIFIED_NAME1834); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQUALIFIED_NAME1910); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -2125,7 +2225,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop16;
+            	    break loop18;
                 }
             } while (true);
 
@@ -2150,7 +2250,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInternalDSLType"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:884:1: ruleInternalDSLType returns [Enumerator current=null] : (enumLiteral_0= 'Nested Functions' ) ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:922:1: ruleInternalDSLType returns [Enumerator current=null] : (enumLiteral_0= 'Nested Functions' ) ;
     public final Enumerator ruleInternalDSLType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2158,13 +2258,13 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:886:28: ( (enumLiteral_0= 'Nested Functions' ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:887:1: (enumLiteral_0= 'Nested Functions' )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:924:28: ( (enumLiteral_0= 'Nested Functions' ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:925:1: (enumLiteral_0= 'Nested Functions' )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:887:1: (enumLiteral_0= 'Nested Functions' )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:887:3: enumLiteral_0= 'Nested Functions'
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:925:1: (enumLiteral_0= 'Nested Functions' )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:925:3: enumLiteral_0= 'Nested Functions'
             {
-            enumLiteral_0=(Token)match(input,22,FOLLOW_22_in_ruleInternalDSLType1894); 
+            enumLiteral_0=(Token)match(input,22,FOLLOW_22_in_ruleInternalDSLType1970); 
 
                     current = grammarAccess.getInternalDSLTypeAccess().getNestedFunctionsEnumLiteralDeclaration().getEnumLiteral().getInstance();
                     newLeafNode(enumLiteral_0, grammarAccess.getInternalDSLTypeAccess().getNestedFunctionsEnumLiteralDeclaration()); 
@@ -2190,7 +2290,7 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataTypes"
-    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:897:1: ruleDataTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) ) ;
+    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:935:1: ruleDataTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) ) ;
     public final Enumerator ruleDataTypes() throws RecognitionException {
         Enumerator current = null;
 
@@ -2202,52 +2302,52 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:899:28: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) ) )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:900:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:937:28: ( ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) ) )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:938:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) )
             {
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:900:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) )
-            int alt17=5;
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:938:1: ( (enumLiteral_0= 'String' ) | (enumLiteral_1= 'integer' ) | (enumLiteral_2= 'boolean' ) | (enumLiteral_3= 'long' ) | (enumLiteral_4= 'double' ) )
+            int alt19=5;
             switch ( input.LA(1) ) {
             case 23:
                 {
-                alt17=1;
+                alt19=1;
                 }
                 break;
             case 24:
                 {
-                alt17=2;
+                alt19=2;
                 }
                 break;
             case 25:
                 {
-                alt17=3;
+                alt19=3;
                 }
                 break;
             case 26:
                 {
-                alt17=4;
+                alt19=4;
                 }
                 break;
             case 27:
                 {
-                alt17=5;
+                alt19=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt17) {
+            switch (alt19) {
                 case 1 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:900:2: (enumLiteral_0= 'String' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:938:2: (enumLiteral_0= 'String' )
                     {
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:900:2: (enumLiteral_0= 'String' )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:900:4: enumLiteral_0= 'String'
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:938:2: (enumLiteral_0= 'String' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:938:4: enumLiteral_0= 'String'
                     {
-                    enumLiteral_0=(Token)match(input,23,FOLLOW_23_in_ruleDataTypes1938); 
+                    enumLiteral_0=(Token)match(input,23,FOLLOW_23_in_ruleDataTypes2014); 
 
                             current = grammarAccess.getDataTypesAccess().getStringEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getDataTypesAccess().getStringEnumLiteralDeclaration_0()); 
@@ -2259,12 +2359,12 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:906:6: (enumLiteral_1= 'integer' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:944:6: (enumLiteral_1= 'integer' )
                     {
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:906:6: (enumLiteral_1= 'integer' )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:906:8: enumLiteral_1= 'integer'
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:944:6: (enumLiteral_1= 'integer' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:944:8: enumLiteral_1= 'integer'
                     {
-                    enumLiteral_1=(Token)match(input,24,FOLLOW_24_in_ruleDataTypes1955); 
+                    enumLiteral_1=(Token)match(input,24,FOLLOW_24_in_ruleDataTypes2031); 
 
                             current = grammarAccess.getDataTypesAccess().getIntegerEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getDataTypesAccess().getIntegerEnumLiteralDeclaration_1()); 
@@ -2276,12 +2376,12 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:912:6: (enumLiteral_2= 'boolean' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:950:6: (enumLiteral_2= 'boolean' )
                     {
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:912:6: (enumLiteral_2= 'boolean' )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:912:8: enumLiteral_2= 'boolean'
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:950:6: (enumLiteral_2= 'boolean' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:950:8: enumLiteral_2= 'boolean'
                     {
-                    enumLiteral_2=(Token)match(input,25,FOLLOW_25_in_ruleDataTypes1972); 
+                    enumLiteral_2=(Token)match(input,25,FOLLOW_25_in_ruleDataTypes2048); 
 
                             current = grammarAccess.getDataTypesAccess().getBooleanEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getDataTypesAccess().getBooleanEnumLiteralDeclaration_2()); 
@@ -2293,12 +2393,12 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:918:6: (enumLiteral_3= 'long' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:956:6: (enumLiteral_3= 'long' )
                     {
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:918:6: (enumLiteral_3= 'long' )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:918:8: enumLiteral_3= 'long'
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:956:6: (enumLiteral_3= 'long' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:956:8: enumLiteral_3= 'long'
                     {
-                    enumLiteral_3=(Token)match(input,26,FOLLOW_26_in_ruleDataTypes1989); 
+                    enumLiteral_3=(Token)match(input,26,FOLLOW_26_in_ruleDataTypes2065); 
 
                             current = grammarAccess.getDataTypesAccess().getLongEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getDataTypesAccess().getLongEnumLiteralDeclaration_3()); 
@@ -2310,12 +2410,12 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:924:6: (enumLiteral_4= 'double' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:962:6: (enumLiteral_4= 'double' )
                     {
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:924:6: (enumLiteral_4= 'double' )
-                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:924:8: enumLiteral_4= 'double'
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:962:6: (enumLiteral_4= 'double' )
+                    // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:962:8: enumLiteral_4= 'double'
                     {
-                    enumLiteral_4=(Token)match(input,27,FOLLOW_27_in_ruleDataTypes2006); 
+                    enumLiteral_4=(Token)match(input,27,FOLLOW_27_in_ruleDataTypes2082); 
 
                             current = grammarAccess.getDataTypesAccess().getDoubleEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getDataTypesAccess().getDoubleEnumLiteralDeclaration_4()); 
@@ -2348,20 +2448,20 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA13 dfa13 = new DFA13(this);
-    static final String DFA13_eotS =
+    protected DFA14 dfa14 = new DFA14(this);
+    static final String DFA14_eotS =
         "\12\uffff";
-    static final String DFA13_eofS =
+    static final String DFA14_eofS =
         "\3\uffff\5\11\2\uffff";
-    static final String DFA13_minS =
+    static final String DFA14_minS =
         "\1\21\1\4\1\27\5\16\2\uffff";
-    static final String DFA13_maxS =
+    static final String DFA14_maxS =
         "\1\21\1\4\1\33\5\24\2\uffff";
-    static final String DFA13_acceptS =
+    static final String DFA14_acceptS =
         "\10\uffff\1\2\1\1";
-    static final String DFA13_specialS =
+    static final String DFA14_specialS =
         "\12\uffff}>";
-    static final String[] DFA13_transitionS = {
+    static final String[] DFA14_transitionS = {
             "\1\1",
             "\1\2",
             "\1\3\1\4\1\5\1\6\1\7",
@@ -2374,37 +2474,37 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
-    static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
-    static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
-    static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
-    static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
-    static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
-    static final short[][] DFA13_transition;
+    static final short[] DFA14_eot = DFA.unpackEncodedString(DFA14_eotS);
+    static final short[] DFA14_eof = DFA.unpackEncodedString(DFA14_eofS);
+    static final char[] DFA14_min = DFA.unpackEncodedStringToUnsignedChars(DFA14_minS);
+    static final char[] DFA14_max = DFA.unpackEncodedStringToUnsignedChars(DFA14_maxS);
+    static final short[] DFA14_accept = DFA.unpackEncodedString(DFA14_acceptS);
+    static final short[] DFA14_special = DFA.unpackEncodedString(DFA14_specialS);
+    static final short[][] DFA14_transition;
 
     static {
-        int numStates = DFA13_transitionS.length;
-        DFA13_transition = new short[numStates][];
+        int numStates = DFA14_transitionS.length;
+        DFA14_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
+            DFA14_transition[i] = DFA.unpackEncodedString(DFA14_transitionS[i]);
         }
     }
 
-    class DFA13 extends DFA {
+    class DFA14 extends DFA {
 
-        public DFA13(BaseRecognizer recognizer) {
+        public DFA14(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 13;
-            this.eot = DFA13_eot;
-            this.eof = DFA13_eof;
-            this.min = DFA13_min;
-            this.max = DFA13_max;
-            this.accept = DFA13_accept;
-            this.special = DFA13_special;
-            this.transition = DFA13_transition;
+            this.decisionNumber = 14;
+            this.eot = DFA14_eot;
+            this.eof = DFA14_eof;
+            this.min = DFA14_min;
+            this.max = DFA14_max;
+            this.accept = DFA14_accept;
+            this.special = DFA14_special;
+            this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "644:1: (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType )";
+            return "663:1: (this_SingleDataType_0= ruleSingleDataType | this_MultiDataType_1= ruleMultiDataType )";
         }
     }
  
@@ -2455,36 +2555,40 @@ public class InternalTitanParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_17_in_ruleMultiReference1155 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleMultiReference1172 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleMultiReference1197 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleMultiReference1209 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_18_in_ruleMultiReference1227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType1277 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDataType1287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSingleDataType_in_ruleDataType1334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultiDataType_in_ruleDataType1361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSingleDataType_in_entryRuleSingleDataType1396 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSingleDataType1406 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleSingleDataType1452 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSingleDataType1469 = new BitSet(new long[]{0x000000000F800000L});
-    public static final BitSet FOLLOW_ruleDataTypes_in_ruleSingleDataType1495 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_19_in_ruleSingleDataType1508 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_ruleSingleDataType1531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultiDataType_in_entryRuleMultiDataType1569 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMultiDataType1579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleMultiDataType1625 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMultiDataType1642 = new BitSet(new long[]{0x000000000F800000L});
-    public static final BitSet FOLLOW_ruleDataTypes_in_ruleMultiDataType1668 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleMultiDataType1680 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_18_in_ruleMultiDataType1698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_entryRuleQUALIFIED_NAME1749 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQUALIFIED_NAME1760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQUALIFIED_NAME1800 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_21_in_ruleQUALIFIED_NAME1819 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQUALIFIED_NAME1834 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_22_in_ruleInternalDSLType1894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleDataTypes1938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleDataTypes1955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleDataTypes1972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleDataTypes1989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleDataTypes2006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleMultiReference1209 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_18_in_ruleMultiReference1227 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_19_in_ruleMultiReference1254 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_ruleMultiReference1277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType1315 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDataType1325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSingleDataType_in_ruleDataType1372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMultiDataType_in_ruleDataType1399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSingleDataType_in_entryRuleSingleDataType1434 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSingleDataType1444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleSingleDataType1490 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSingleDataType1507 = new BitSet(new long[]{0x000000000F800000L});
+    public static final BitSet FOLLOW_ruleDataTypes_in_ruleSingleDataType1533 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_19_in_ruleSingleDataType1546 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_ruleSingleDataType1569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMultiDataType_in_entryRuleMultiDataType1607 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMultiDataType1617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleMultiDataType1663 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMultiDataType1680 = new BitSet(new long[]{0x000000000F800000L});
+    public static final BitSet FOLLOW_ruleDataTypes_in_ruleMultiDataType1706 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleMultiDataType1718 = new BitSet(new long[]{0x00000000000C0002L});
+    public static final BitSet FOLLOW_18_in_ruleMultiDataType1736 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_19_in_ruleMultiDataType1763 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_ruleMultiDataType1786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQUALIFIED_NAME_in_entryRuleQUALIFIED_NAME1825 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQUALIFIED_NAME1836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQUALIFIED_NAME1876 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_21_in_ruleQUALIFIED_NAME1895 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQUALIFIED_NAME1910 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_22_in_ruleInternalDSLType1970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleDataTypes2014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleDataTypes2031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleDataTypes2048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleDataTypes2065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleDataTypes2082 = new BitSet(new long[]{0x0000000000000002L});
 
 }

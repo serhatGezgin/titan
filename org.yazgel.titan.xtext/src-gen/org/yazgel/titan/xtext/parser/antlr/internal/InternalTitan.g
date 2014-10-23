@@ -620,7 +620,26 @@ ruleMultiReference returns [EObject current=null]
 	    }
 
 )
-)?)
+)?(	otherlv_6='opposite' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getMultiReferenceAccess().getOppositeKeyword_6_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMultiReferenceRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getMultiReferenceAccess().getOppositeMultiReferenceCrossReference_6_1_0()); 
+	    }
+		ruleQUALIFIED_NAME		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 
@@ -832,7 +851,26 @@ ruleMultiDataType returns [EObject current=null]
 	    }
 
 )
-)?)
+)?(	otherlv_6='opposite' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getMultiDataTypeAccess().getOppositeKeyword_6_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMultiDataTypeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getMultiDataTypeAccess().getOppositeMultiDataTypeCrossReference_6_1_0()); 
+	    }
+		ruleQUALIFIED_NAME		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 

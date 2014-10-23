@@ -8,11 +8,6 @@ public class Course implements Comparable<Course>
 	
 	public   Course(){
 	}
-	public   Course(String courseCode, String courseName
-	){
-		this.courseCode = courseCode;
-		this.courseName = courseName;
-	}
 	public  String getCourseCode(){
 		return this.courseCode;
 	}

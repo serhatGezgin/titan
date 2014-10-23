@@ -37,17 +37,15 @@
     <genClasses ecoreClass="Titan.ecore#//Reference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//Reference/reference"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//Reference/unique"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//Reference/opposite"/>
     </genClasses>
-    <genClasses ecoreClass="Titan.ecore#//SingleReference">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//SingleReference/opposite"/>
-    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//SingleReference"/>
     <genClasses ecoreClass="Titan.ecore#//MultiReference"/>
     <genClasses ecoreClass="Titan.ecore#//DataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//DataType/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//DataType/opposite"/>
     </genClasses>
-    <genClasses ecoreClass="Titan.ecore#//SingleDataType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Titan.ecore#//SingleDataType/opposite"/>
-    </genClasses>
+    <genClasses ecoreClass="Titan.ecore#//SingleDataType"/>
     <genClasses ecoreClass="Titan.ecore#//MultiDataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Titan.ecore#//MultiDataType/unique"/>
     </genClasses>

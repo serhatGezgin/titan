@@ -130,7 +130,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 	def dispatch OReference generateFeature(MultiReference r) {
 		var OReference ref;
 		ref = OopFactoryImpl.eINSTANCE.createMultiOReference;
- 
+
 		if (r.unique) {
 			ref.type = '''Set<«r.reference.name»>''';
 			(ref as MultiOReference).uniqueInstance = true;
@@ -153,29 +153,29 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			if (e.key instanceof Reference) {
 				var or = transformationReleations.get((e.key as Reference).reference) as OClass;
 				(e.value as OReference).reference = or;
-				if (e.key instanceof SingleReference) {
-					var oo = transformationReleations.get((e.key as SingleReference).opposite) as MultiOReference;
-					(e.value as SingleOReference).opposite = oo;
 
-					if (!oppositedOMultiReferences.contains(oo))
-						oppositedOMultiReferences.add(oo as MultiOReference)
-				}
+				var oo = transformationReleations.get((e.key as Reference).opposite) as MultiOReference;
+				(e.value as OReference).opposite = oo;
+
+				if (!oppositedOMultiReferences.contains(oo))
+					oppositedOMultiReferences.add(oo as MultiOReference)
 			}
 		}
 
 		//2-Import Statements must be added after generated model classes
 		for (e : releationsOfReferences.entrySet) {
+			if (e.value instanceof OReference) {
+				var oReference = e.value as OReference
+				var oClass = e.value.eContainer as OClass
 
-			var oReference = e.value as OReference
-			var oClass = e.value.eContainer as OClass
-
-			if (oReference instanceof MultiOReference) {
-				if ((oReference as MultiOReference).uniqueInstance) {
-					oClass.imports.add("java.util.Set");
-					oClass.imports.add("java.util.TreeSet");
-				} else {
-					oClass.imports.add("java.util.List");
-					oClass.imports.add("java.util.ArrayList");
+				if (oReference instanceof MultiOReference) {
+					if ((oReference as MultiOReference).uniqueInstance) {
+						oClass.imports.add("java.util.Set");
+						oClass.imports.add("java.util.TreeSet");
+					} else {
+						oClass.imports.add("java.util.List");
+						oClass.imports.add("java.util.ArrayList");
+					}
 				}
 			}
 		}
@@ -471,7 +471,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 						for («(of as OReference).reference.name» r : «of.name») {
 							o.add«(of as OReference).reference.name.toFirstUpper»(r);
 							«FOR f2 : (of as OReference).reference.features»
-								«IF f2 instanceof SingleOReference && (f2 as SingleOReference).opposite != null»
+								«IF f2 instanceof OReference && (f2 as OReference).opposite != null»
 									«FOR f3 : modelOc.features»
 										«IF f3 instanceof OReference && (f3 as OReference).reference.equals((f2 as OReference).eContainer as OClass)»
 											«IF (f2 instanceof MultiOReference)»

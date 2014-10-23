@@ -344,9 +344,9 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSingleReference()
+  public EReference getReference_Opposite()
   {
-    return singleReferenceEClass;
+    return (EReference)referenceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -354,9 +354,9 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSingleReference_Opposite()
+  public EClass getSingleReference()
   {
-    return (EReference)singleReferenceEClass.getEStructuralFeatures().get(0);
+    return singleReferenceEClass;
   }
 
   /**
@@ -394,9 +394,9 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSingleDataType()
+  public EReference getDataType_Opposite()
   {
-    return singleDataTypeEClass;
+    return (EReference)dataTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -404,9 +404,9 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSingleDataType_Opposite()
+  public EClass getSingleDataType()
   {
-    return (EReference)singleDataTypeEClass.getEStructuralFeatures().get(0);
+    return singleDataTypeEClass;
   }
 
   /**
@@ -499,17 +499,17 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
     referenceEClass = createEClass(REFERENCE);
     createEReference(referenceEClass, REFERENCE__REFERENCE);
     createEAttribute(referenceEClass, REFERENCE__UNIQUE);
+    createEReference(referenceEClass, REFERENCE__OPPOSITE);
 
     singleReferenceEClass = createEClass(SINGLE_REFERENCE);
-    createEReference(singleReferenceEClass, SINGLE_REFERENCE__OPPOSITE);
 
     multiReferenceEClass = createEClass(MULTI_REFERENCE);
 
     dataTypeEClass = createEClass(DATA_TYPE);
     createEAttribute(dataTypeEClass, DATA_TYPE__TYPE);
+    createEReference(dataTypeEClass, DATA_TYPE__OPPOSITE);
 
     singleDataTypeEClass = createEClass(SINGLE_DATA_TYPE);
-    createEReference(singleDataTypeEClass, SINGLE_DATA_TYPE__OPPOSITE);
 
     multiDataTypeEClass = createEClass(MULTI_DATA_TYPE);
     createEAttribute(multiDataTypeEClass, MULTI_DATA_TYPE__UNIQUE);
@@ -576,17 +576,17 @@ public class TitanPackageImpl extends EPackageImpl implements TitanPackage
     initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReference_Reference(), this.getEntity(), null, "reference", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getReference_Unique(), ecorePackage.getEBoolean(), "unique", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReference_Opposite(), this.getMultiReference(), null, "opposite", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(singleReferenceEClass, SingleReference.class, "SingleReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSingleReference_Opposite(), this.getMultiReference(), null, "opposite", null, 0, 1, SingleReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(multiReferenceEClass, MultiReference.class, "MultiReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDataType_Type(), this.getDataTypes(), "type", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataType_Opposite(), this.getMultiDataType(), null, "opposite", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(singleDataTypeEClass, SingleDataType.class, "SingleDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSingleDataType_Opposite(), this.getMultiDataType(), null, "opposite", null, 0, 1, SingleDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(multiDataTypeEClass, MultiDataType.class, "MultiDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMultiDataType_Unique(), ecorePackage.getEBoolean(), "unique", null, 0, 1, MultiDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

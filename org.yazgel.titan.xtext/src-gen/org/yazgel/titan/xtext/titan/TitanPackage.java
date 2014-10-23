@@ -252,13 +252,22 @@ public interface TitanPackage extends EPackage
   int REFERENCE__UNIQUE = FEATURE_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Opposite</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCE__OPPOSITE = FEATURE_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Reference</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REFERENCE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 2;
+  int REFERENCE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.SingleReferenceImpl <em>Single Reference</em>}' class.
@@ -304,7 +313,7 @@ public interface TitanPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE_REFERENCE__OPPOSITE = REFERENCE_FEATURE_COUNT + 0;
+  int SINGLE_REFERENCE__OPPOSITE = REFERENCE__OPPOSITE;
 
   /**
    * The number of structural features of the '<em>Single Reference</em>' class.
@@ -313,7 +322,7 @@ public interface TitanPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE_REFERENCE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 1;
+  int SINGLE_REFERENCE_FEATURE_COUNT = REFERENCE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.MultiReferenceImpl <em>Multi Reference</em>}' class.
@@ -353,6 +362,15 @@ public interface TitanPackage extends EPackage
   int MULTI_REFERENCE__UNIQUE = REFERENCE__UNIQUE;
 
   /**
+   * The feature id for the '<em><b>Opposite</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_REFERENCE__OPPOSITE = REFERENCE__OPPOSITE;
+
+  /**
    * The number of structural features of the '<em>Multi Reference</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -390,13 +408,22 @@ public interface TitanPackage extends EPackage
   int DATA_TYPE__TYPE = FEATURE_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Opposite</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__OPPOSITE = FEATURE_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Data Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA_TYPE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 1;
+  int DATA_TYPE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.SingleDataTypeImpl <em>Single Data Type</em>}' class.
@@ -433,7 +460,7 @@ public interface TitanPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE_DATA_TYPE__OPPOSITE = DATA_TYPE_FEATURE_COUNT + 0;
+  int SINGLE_DATA_TYPE__OPPOSITE = DATA_TYPE__OPPOSITE;
 
   /**
    * The number of structural features of the '<em>Single Data Type</em>' class.
@@ -442,7 +469,7 @@ public interface TitanPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+  int SINGLE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.yazgel.titan.xtext.titan.impl.MultiDataTypeImpl <em>Multi Data Type</em>}' class.
@@ -471,6 +498,15 @@ public interface TitanPackage extends EPackage
    * @ordered
    */
   int MULTI_DATA_TYPE__TYPE = DATA_TYPE__TYPE;
+
+  /**
+   * The feature id for the '<em><b>Opposite</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_DATA_TYPE__OPPOSITE = DATA_TYPE__OPPOSITE;
 
   /**
    * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -683,6 +719,17 @@ public interface TitanPackage extends EPackage
   EAttribute getReference_Unique();
 
   /**
+   * Returns the meta object for the reference '{@link org.yazgel.titan.xtext.titan.Reference#getOpposite <em>Opposite</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Opposite</em>'.
+   * @see org.yazgel.titan.xtext.titan.Reference#getOpposite()
+   * @see #getReference()
+   * @generated
+   */
+  EReference getReference_Opposite();
+
+  /**
    * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.SingleReference <em>Single Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -691,17 +738,6 @@ public interface TitanPackage extends EPackage
    * @generated
    */
   EClass getSingleReference();
-
-  /**
-   * Returns the meta object for the reference '{@link org.yazgel.titan.xtext.titan.SingleReference#getOpposite <em>Opposite</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Opposite</em>'.
-   * @see org.yazgel.titan.xtext.titan.SingleReference#getOpposite()
-   * @see #getSingleReference()
-   * @generated
-   */
-  EReference getSingleReference_Opposite();
 
   /**
    * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.MultiReference <em>Multi Reference</em>}'.
@@ -735,6 +771,17 @@ public interface TitanPackage extends EPackage
   EAttribute getDataType_Type();
 
   /**
+   * Returns the meta object for the reference '{@link org.yazgel.titan.xtext.titan.DataType#getOpposite <em>Opposite</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Opposite</em>'.
+   * @see org.yazgel.titan.xtext.titan.DataType#getOpposite()
+   * @see #getDataType()
+   * @generated
+   */
+  EReference getDataType_Opposite();
+
+  /**
    * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.SingleDataType <em>Single Data Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -743,17 +790,6 @@ public interface TitanPackage extends EPackage
    * @generated
    */
   EClass getSingleDataType();
-
-  /**
-   * Returns the meta object for the reference '{@link org.yazgel.titan.xtext.titan.SingleDataType#getOpposite <em>Opposite</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Opposite</em>'.
-   * @see org.yazgel.titan.xtext.titan.SingleDataType#getOpposite()
-   * @see #getSingleDataType()
-   * @generated
-   */
-  EReference getSingleDataType_Opposite();
 
   /**
    * Returns the meta object for class '{@link org.yazgel.titan.xtext.titan.MultiDataType <em>Multi Data Type</em>}'.
@@ -958,6 +994,14 @@ public interface TitanPackage extends EPackage
     EAttribute REFERENCE__UNIQUE = eINSTANCE.getReference_Unique();
 
     /**
+     * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REFERENCE__OPPOSITE = eINSTANCE.getReference_Opposite();
+
+    /**
      * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.SingleReferenceImpl <em>Single Reference</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -966,14 +1010,6 @@ public interface TitanPackage extends EPackage
      * @generated
      */
     EClass SINGLE_REFERENCE = eINSTANCE.getSingleReference();
-
-    /**
-     * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SINGLE_REFERENCE__OPPOSITE = eINSTANCE.getSingleReference_Opposite();
 
     /**
      * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.MultiReferenceImpl <em>Multi Reference</em>}' class.
@@ -1004,6 +1040,14 @@ public interface TitanPackage extends EPackage
     EAttribute DATA_TYPE__TYPE = eINSTANCE.getDataType_Type();
 
     /**
+     * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_TYPE__OPPOSITE = eINSTANCE.getDataType_Opposite();
+
+    /**
      * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.SingleDataTypeImpl <em>Single Data Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1012,14 +1056,6 @@ public interface TitanPackage extends EPackage
      * @generated
      */
     EClass SINGLE_DATA_TYPE = eINSTANCE.getSingleDataType();
-
-    /**
-     * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SINGLE_DATA_TYPE__OPPOSITE = eINSTANCE.getSingleDataType_Opposite();
 
     /**
      * The meta object literal for the '{@link org.yazgel.titan.xtext.titan.impl.MultiDataTypeImpl <em>Multi Data Type</em>}' class.
