@@ -6,7 +6,7 @@ import deneme.model.Vertex;
 
 public class NestedEdgeBuilder {
 	
-	public static Edge Edge(Vertex from, Vertex to, double weight
+	public static Edge Edge(Vertex from, Vertex to, Double weight
 	){
 		Edge o = new Edge();o.setFrom(from);o.setTo(to);o.setWeight(weight);return o;
 	}
@@ -20,7 +20,7 @@ public class NestedEdgeBuilder {
 		return NestedVertexBuilder.Vertex(label
 		);
 	}
-	public static double weight(double weight
+	public static Double weight(Double weight
 	){
 		return weight;
 	}

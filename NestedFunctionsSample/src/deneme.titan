@@ -5,12 +5,12 @@ package deneme.model{
 		var name String      
 		var edges Edge[]    
 		var vertices Vertex[] unique       
-	}                        
+	}                          
 	                     
 	entity Edge{    
 		var from Vertex opposite Graph.vertices
 		var to Vertex   opposite Graph.vertices
-		var weight double
+		var weight Double
 	}  
 	    
 	entity Vertex{

@@ -4,16 +4,14 @@ package deneme.model;
 public class Edge {
 	private Vertex from;
 	private Vertex to;
-	private double weight;
+	private Double weight;
 	
 	public   Edge(){
-		from = new Vertex();
-		to = new Vertex();
 	}
-	public  double getWeight(){
+	public  Double getWeight(){
 		return this.weight;
 	}
-	public  void setWeight(double weight
+	public  void setWeight(Double weight
 	){
 		this.weight = weight;
 	}

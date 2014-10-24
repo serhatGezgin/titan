@@ -7,7 +7,7 @@ package deneme.model{
 		var universityStudents Student[]
 		var universityCourses Course[] unique
 	}          
-	  
+	    
 	entity Student{
 		var studentCode String
 		var studentName String

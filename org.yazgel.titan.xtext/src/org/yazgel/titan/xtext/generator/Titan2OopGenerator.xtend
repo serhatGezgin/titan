@@ -220,8 +220,6 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					} else {
 						statement.content = '''«of.name» = new ArrayList<>();'''
 					}
-				} else if (of instanceof SingleOReference) {
-					statement.content = '''«of.name» = new «(of as OReference).reference.name»();'''
 				} else if (of instanceof MultiODataType) {
 					if (of.uniqueInstance) {
 						statement.content = '''«of.name» = new TreeSet<>();'''
@@ -580,24 +578,23 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 							staticOM.statements.add(statement)
 						}
 					} else if (of instanceof SingleOReference) {
-
 						//Burada Diğer builder Constructor cagıralacagından bırden fazla parametre olusturulup eklenır.
 						var ref = of.reference
 						for (refFeatures : ref.features) {
-							var param = OopFactoryImpl.eINSTANCE.createOParameter
-							param.name = refFeatures.name
-							if (refFeatures instanceof SingleODataType) {
-								param.type = '''«refFeatures.type»'''
-							} else if (refFeatures instanceof MultiODataType) {
-								param.type = '''List<«refFeatures.type»>'''
-							} else if (refFeatures instanceof SingleOReference) {
-								param.type = '''«refFeatures.reference.name»'''
-							} else if (refFeatures instanceof MultiOReference) {
-								if (!oppositedOMultiReferences.contains(refFeatures)) {
+							if (!oppositedOMultiReferences.contains(refFeatures)) {
+								var param = OopFactoryImpl.eINSTANCE.createOParameter
+								param.name = refFeatures.name
+								if (refFeatures instanceof SingleODataType) {
+									param.type = '''«refFeatures.type»'''
+								} else if (refFeatures instanceof MultiODataType) {
+									param.type = '''List<«refFeatures.type»>'''
+								} else if (refFeatures instanceof SingleOReference) {
+									param.type = '''«refFeatures.reference.name»'''
+								} else if (refFeatures instanceof MultiOReference) {
 									param.type = '''List<«of.reference.name»>'''
 								}
+								staticOM.parameters.add(param)
 							}
-							staticOM.parameters.add(param)
 						}
 						var statement = OopFactoryImpl.eINSTANCE.createOStatement
 						var statementParamString = ""

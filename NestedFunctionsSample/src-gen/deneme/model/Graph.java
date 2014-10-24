@@ -1,9 +1,9 @@
 package deneme.model;
 
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Graph {
 	private String name;
