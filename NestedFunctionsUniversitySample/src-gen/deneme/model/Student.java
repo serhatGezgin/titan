@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Student {
 	private String studentCode;
 	private String studentName;
-	private List<Course> studentCourses;
+	private Course studentCourses;
 	
 	public   Student(){
 		studentCourses = new ArrayList<>();

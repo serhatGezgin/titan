@@ -7,8 +7,8 @@ import java.util.TreeSet;
 
 public class University {
 	private String universityName;
-	private List<Student> universityStudents;
-	private Set<Course> universityCourses;
+	private Student universityStudents;
+	private Course universityCourses;
 	
 	public   University(){
 		universityStudents = new ArrayList<>();

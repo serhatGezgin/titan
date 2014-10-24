@@ -103,7 +103,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 	def dispatch ODataType generateFeature(MultiDataType dt) {
 		var ODataType data;
 		data = OopFactoryImpl.eINSTANCE.createMultiODataType;
-		data.type = '''List<«dt.type»>'''
+		data.type = '''«dt.type»'''
 
 		data.name = dt.name
 		transformationReleations.put(dt, data)
@@ -131,11 +131,9 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 		var OReference ref;
 		ref = OopFactoryImpl.eINSTANCE.createMultiOReference;
 
+		ref.type = '''«r.reference.name»''';
 		if (r.unique) {
-			ref.type = '''Set<«r.reference.name»>''';
 			(ref as MultiOReference).uniqueInstance = true;
-		} else {
-			ref.type = '''List<«r.reference.name»>'''
 		}
 
 		ref.name = r.name
@@ -245,7 +243,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 					var parameter = OopFactoryImpl.eINSTANCE.createOParameter
 					parameter.name = f.reference.name.toFirstLower
-					parameter.type = f.reference.name
+					parameter.type = f.oFeatureType(true)
 					method.parameters.add(parameter)
 
 					var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -266,7 +264,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 					var parameter = OopFactoryImpl.eINSTANCE.createOParameter
 					parameter.name = dt.name.toFirstLower
-					parameter.type = dt.type
+					parameter.type = dt.oFeatureType(true)
 					method.parameters.add(parameter)
 
 					var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -289,7 +287,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 				//getter
 				var gmethod = OopFactoryImpl.eINSTANCE.createOMethod
 				gmethod.name = '''get«d.name.toFirstUpper»'''
-				gmethod.returnType = '''«d.type»«IF d instanceof MultiODataType»[]«ENDIF»'''
+				gmethod.returnType = d.oFeatureType(true)
 
 				var statement = OopFactoryImpl.eINSTANCE.createOStatement
 				statement.content = '''return this.«d.name»;'''
@@ -303,7 +301,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 				var sparameter = OopFactoryImpl.eINSTANCE.createOParameter
 				sparameter.name = d.name.toFirstLower
-				sparameter.type = d.type
+				sparameter.type = d.oFeatureType(true)
 				smethod.parameters.add(sparameter)
 
 				statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -320,11 +318,11 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 				gmethod.name = '''get«f.name.toFirstUpper»'''
 				if (f instanceof MultiOReference) {
 					if (f.uniqueInstance)
-						gmethod.returnType = '''Set<«f.reference.name»>'''
+						gmethod.returnType = f.oFeatureType(true)
 					else
-						gmethod.returnType = '''List<«f.reference.name»>'''
+						gmethod.returnType = f.oFeatureType(true)
 				} else {
-					gmethod.returnType = '''«f.reference.name»'''
+					gmethod.returnType = f.oFeatureType(true)
 				}
 
 				var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -342,11 +340,11 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 				if (f instanceof MultiOReference) {
 					if (f.uniqueInstance)
-						sparameter.type = '''TreeSet<«f.reference.name»>'''
+						sparameter.type = f.oFeatureType(false)
 					else
-						sparameter.type = '''ArrayList<«f.reference.name»>'''
+						sparameter.type = f.oFeatureType(false)
 				} else {
-					sparameter.type = '''«f.reference.name»'''
+					sparameter.type = f.oFeatureType(false)
 				}
 
 				smethod.parameters.add(sparameter)
@@ -373,7 +371,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 				var sparameter = OopFactoryImpl.eINSTANCE.createOParameter
 				sparameter.name = '''o'''
-				sparameter.type = ref.reference.name
+				sparameter.type = ref.oFeatureType(true)
 				cmethod.parameters.add(sparameter)
 
 				var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -507,25 +505,25 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 				if (of instanceof SingleODataType) {
 					var param = OopFactoryImpl.eINSTANCE.createOParameter
 					param.name = of.name
-					param.type = '''«of.type»'''
+					param.type = of.oFeatureType(true)
 					constructor.parameters.add(param)
 				} else if (of instanceof MultiODataType) {
 					if (!oppositedOMultiReferences.contains(of)) {
 						var param = OopFactoryImpl.eINSTANCE.createOParameter
 						param.name = of.name
-						param.type = '''List<«of.type»>'''
+						param.type = of.oFeatureType(true)
 						constructor.parameters.add(param)
 					}
 				} else if (of instanceof SingleOReference) {
 					var param = OopFactoryImpl.eINSTANCE.createOParameter
 					param.name = of.name
-					param.type = '''«of.reference.name»'''
+					param.type = of.oFeatureType(true)
 					constructor.parameters.add(param)
 				} else if (of instanceof MultiOReference) {
 					if (!oppositedOMultiReferences.contains(of)) {
 						var param = OopFactoryImpl.eINSTANCE.createOParameter
 						param.name = of.name
-						param.type = '''List<«of.reference.name»>'''
+						param.type = of.oFeatureType(true)
 						constructor.parameters.add(param)
 					}
 				}
@@ -556,28 +554,29 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					if (of instanceof SingleODataType) {
 						var param = OopFactoryImpl.eINSTANCE.createOParameter
 						param.name = of.name
-						param.type = '''«of.type»'''
+						param.type = of.oFeatureType(true)
 						staticOM.parameters.add(param)
 
 						var statement = OopFactoryImpl.eINSTANCE.createOStatement
 						statement.content = '''return «of.name»;'''
 
-						staticOM.returnType = '''«of.type»'''
+						staticOM.returnType = of.oFeatureType(true)
 						staticOM.statements.add(statement)
 					} else if (of instanceof MultiODataType) {
 						if (!oppositedOMultiReferences.contains(of)) {
 							var param = OopFactoryImpl.eINSTANCE.createOParameter
 							param.name = of.name
-							param.type = '''List<«of.type»>'''
+							param.type = of.oFeatureType(true)
 							staticOM.parameters.add(param)
 
 							var statement = OopFactoryImpl.eINSTANCE.createOStatement
 							statement.content = '''return «of.name»;'''
 
-							staticOM.returnType = '''List<«of.type»>'''
+							staticOM.returnType = of.oFeatureType(true)
 							staticOM.statements.add(statement)
 						}
 					} else if (of instanceof SingleOReference) {
+
 						//Burada Diğer builder Constructor cagıralacagından bırden fazla parametre olusturulup eklenır.
 						var ref = of.reference
 						for (refFeatures : ref.features) {
@@ -585,13 +584,13 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 								var param = OopFactoryImpl.eINSTANCE.createOParameter
 								param.name = refFeatures.name
 								if (refFeatures instanceof SingleODataType) {
-									param.type = '''«refFeatures.type»'''
+									param.type = refFeatures.oFeatureType(true)
 								} else if (refFeatures instanceof MultiODataType) {
-									param.type = '''List<«refFeatures.type»>'''
+									param.type = refFeatures.oFeatureType(true)
 								} else if (refFeatures instanceof SingleOReference) {
-									param.type = '''«refFeatures.reference.name»'''
+									param.type = refFeatures.oFeatureType(true)
 								} else if (refFeatures instanceof MultiOReference) {
-									param.type = '''List<«of.reference.name»>'''
+									param.type = refFeatures.oFeatureType(true)
 								}
 								staticOM.parameters.add(param)
 							}
@@ -621,7 +620,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 							var statement = OopFactoryImpl.eINSTANCE.createOStatement
 							statement.content = '''return Arrays.asList(«of.name»);'''
 
-							staticOM.returnType = '''List<«of.reference.name»>'''
+							staticOM.returnType = of.oFeatureType(true)
 							staticOM.statements.add(statement)
 						}
 					}
