@@ -484,28 +484,28 @@ rule__DataTypes__Alternatives
 
     |(
 { before(grammarAccess.getDataTypesAccess().getIntegerEnumLiteralDeclaration_1()); }
-(	'integer' 
+(	'Integer' 
 )
 { after(grammarAccess.getDataTypesAccess().getIntegerEnumLiteralDeclaration_1()); }
 )
 
     |(
 { before(grammarAccess.getDataTypesAccess().getBooleanEnumLiteralDeclaration_2()); }
-(	'boolean' 
+(	'Boolean' 
 )
 { after(grammarAccess.getDataTypesAccess().getBooleanEnumLiteralDeclaration_2()); }
 )
 
     |(
 { before(grammarAccess.getDataTypesAccess().getLongEnumLiteralDeclaration_3()); }
-(	'long' 
+(	'Long' 
 )
 { after(grammarAccess.getDataTypesAccess().getLongEnumLiteralDeclaration_3()); }
 )
 
     |(
 { before(grammarAccess.getDataTypesAccess().getDoubleEnumLiteralDeclaration_4()); }
-(	'double' 
+(	'Double' 
 )
 { after(grammarAccess.getDataTypesAccess().getDoubleEnumLiteralDeclaration_4()); }
 )

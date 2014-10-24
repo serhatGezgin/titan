@@ -71,7 +71,7 @@ MultiDataType returns MultiDataType:
 	('opposite' opposite=[MultiDataType|QUALIFIED_NAME])?;
 
 enum DataTypes returns DataTypes:
-	String='String' | Integer='integer' | Boolean='boolean' | Long='long' | Double='double';
+	String='String' | Integer='Integer' | Boolean='Boolean' | Long='Long' | Double='Double';
 
 QUALIFIED_NAME:
 	ID ('.' ID)*;

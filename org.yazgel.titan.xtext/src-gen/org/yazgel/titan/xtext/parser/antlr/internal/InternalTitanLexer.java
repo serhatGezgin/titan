@@ -325,10 +325,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:24:7: ( 'integer' )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:24:9: 'integer'
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:24:7: ( 'Integer' )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:24:9: 'Integer'
             {
-            match("integer"); 
+            match("Integer"); 
 
 
             }
@@ -346,10 +346,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:25:7: ( 'boolean' )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:25:9: 'boolean'
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:25:7: ( 'Boolean' )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:25:9: 'Boolean'
             {
-            match("boolean"); 
+            match("Boolean"); 
 
 
             }
@@ -367,10 +367,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:26:7: ( 'long' )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:26:9: 'long'
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:26:7: ( 'Long' )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:26:9: 'Long'
             {
-            match("long"); 
+            match("Long"); 
 
 
             }
@@ -388,10 +388,10 @@ public class InternalTitanLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:27:7: ( 'double' )
-            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:27:9: 'double'
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:27:7: ( 'Double' )
+            // ../org.yazgel.titan.xtext/src-gen/org/yazgel/titan/xtext/parser/antlr/internal/InternalTitan.g:27:9: 'Double'
             {
-            match("double"); 
+            match("Double"); 
 
 
             }
@@ -1120,9 +1120,10 @@ public class InternalTitanLexer extends Lexer {
         "\1\0\24\uffff\1\2\1\1\126\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\31\2\30\2\31\1\30\22\31\1\30\1\31\1\25\4\31\1\26\6\31\1"+
-            "\13\1\27\12\24\1\6\6\31\15\23\1\14\4\23\1\15\7\23\1\12\2\31"+
-            "\1\22\1\23\1\31\1\23\1\17\1\23\1\21\1\5\3\23\1\16\2\23\1\20"+
-            "\1\1\1\23\1\11\1\2\4\23\1\10\1\7\4\23\1\3\1\31\1\4\uff82\31",
+            "\13\1\27\12\24\1\6\6\31\1\23\1\17\1\23\1\21\4\23\1\16\2\23\1"+
+            "\20\1\23\1\14\4\23\1\15\7\23\1\12\2\31\1\22\1\23\1\31\4\23\1"+
+            "\5\7\23\1\1\1\23\1\11\1\2\4\23\1\10\1\7\4\23\1\3\1\31\1\4\uff82"+
+            "\31",
             "\1\32",
             "\1\34",
             "",
@@ -1299,17 +1300,17 @@ public class InternalTitanLexer extends Lexer {
 
                         else if ( (LA12_0=='S') ) {s = 13;}
 
-                        else if ( (LA12_0=='i') ) {s = 14;}
+                        else if ( (LA12_0=='I') ) {s = 14;}
 
-                        else if ( (LA12_0=='b') ) {s = 15;}
+                        else if ( (LA12_0=='B') ) {s = 15;}
 
-                        else if ( (LA12_0=='l') ) {s = 16;}
+                        else if ( (LA12_0=='L') ) {s = 16;}
 
-                        else if ( (LA12_0=='d') ) {s = 17;}
+                        else if ( (LA12_0=='D') ) {s = 17;}
 
                         else if ( (LA12_0=='^') ) {s = 18;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='M')||(LA12_0>='O' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='a'||LA12_0=='c'||(LA12_0>='f' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='k')||LA12_0=='n'||(LA12_0>='q' && LA12_0<='t')||(LA12_0>='w' && LA12_0<='z')) ) {s = 19;}
+                        else if ( (LA12_0=='A'||LA12_0=='C'||(LA12_0>='E' && LA12_0<='H')||(LA12_0>='J' && LA12_0<='K')||LA12_0=='M'||(LA12_0>='O' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='d')||(LA12_0>='f' && LA12_0<='l')||LA12_0=='n'||(LA12_0>='q' && LA12_0<='t')||(LA12_0>='w' && LA12_0<='z')) ) {s = 19;}
 
                         else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 20;}
 

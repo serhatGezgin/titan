@@ -1,13 +1,13 @@
 '.'=21
 ':'=16
+'Boolean'=25
+'Double'=27
+'Integer'=24
+'Long'=26
 'Nested Functions'=22
 'String'=23
 '[]'=20
-'boolean'=25
-'double'=27
 'entity'=15
-'integer'=24
-'long'=26
 'module'=11
 'opposite'=19
 'package'=12

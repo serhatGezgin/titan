@@ -596,10 +596,10 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDoubleDoubleKeyword_4_0 = (Keyword)cDoubleEnumLiteralDeclaration_4.eContents().get(0);
 		
 		//enum DataTypes:
-		//	String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double";
+		//	String | Integer | Boolean | Long | Double;
 		public EnumRule getRule() { return rule; }
 
-		//String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double"
+		//String | Integer | Boolean | Long | Double
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//String
@@ -608,28 +608,28 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 		//"String"
 		public Keyword getStringStringKeyword_0_0() { return cStringStringKeyword_0_0; }
 
-		//Integer="integer"
+		//Integer
 		public EnumLiteralDeclaration getIntegerEnumLiteralDeclaration_1() { return cIntegerEnumLiteralDeclaration_1; }
 
-		//"integer"
+		//"Integer"
 		public Keyword getIntegerIntegerKeyword_1_0() { return cIntegerIntegerKeyword_1_0; }
 
-		//Boolean="boolean"
+		//Boolean
 		public EnumLiteralDeclaration getBooleanEnumLiteralDeclaration_2() { return cBooleanEnumLiteralDeclaration_2; }
 
-		//"boolean"
+		//"Boolean"
 		public Keyword getBooleanBooleanKeyword_2_0() { return cBooleanBooleanKeyword_2_0; }
 
-		//Long="long"
+		//Long
 		public EnumLiteralDeclaration getLongEnumLiteralDeclaration_3() { return cLongEnumLiteralDeclaration_3; }
 
-		//"long"
+		//"Long"
 		public Keyword getLongLongKeyword_3_0() { return cLongLongKeyword_3_0; }
 
-		//Double="double"
+		//Double
 		public EnumLiteralDeclaration getDoubleEnumLiteralDeclaration_4() { return cDoubleEnumLiteralDeclaration_4; }
 
-		//"double"
+		//"Double"
 		public Keyword getDoubleDoubleKeyword_4_0() { return cDoubleDoubleKeyword_4_0; }
 	}
 	
@@ -812,7 +812,7 @@ public class TitanGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum DataTypes:
-	//	String | Integer="integer" | Boolean="boolean" | Long="long" | Double="double";
+	//	String | Integer | Boolean | Long | Double;
 	public DataTypesElements getDataTypesAccess() {
 		return unknownRuleDataTypes;
 	}

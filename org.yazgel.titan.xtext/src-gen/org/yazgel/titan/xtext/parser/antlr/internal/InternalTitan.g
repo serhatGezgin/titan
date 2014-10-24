@@ -941,25 +941,25 @@ ruleDataTypes returns [Enumerator current=null]
         newLeafNode(enumLiteral_0, grammarAccess.getDataTypesAccess().getStringEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='integer' 
+    |(	enumLiteral_1='Integer' 
 	{
         $current = grammarAccess.getDataTypesAccess().getIntegerEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_1, grammarAccess.getDataTypesAccess().getIntegerEnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='boolean' 
+    |(	enumLiteral_2='Boolean' 
 	{
         $current = grammarAccess.getDataTypesAccess().getBooleanEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_2, grammarAccess.getDataTypesAccess().getBooleanEnumLiteralDeclaration_2()); 
     }
 )
-    |(	enumLiteral_3='long' 
+    |(	enumLiteral_3='Long' 
 	{
         $current = grammarAccess.getDataTypesAccess().getLongEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_3, grammarAccess.getDataTypesAccess().getLongEnumLiteralDeclaration_3()); 
     }
 )
-    |(	enumLiteral_4='double' 
+    |(	enumLiteral_4='Double' 
 	{
         $current = grammarAccess.getDataTypesAccess().getDoubleEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_4, grammarAccess.getDataTypesAccess().getDoubleEnumLiteralDeclaration_4()); 

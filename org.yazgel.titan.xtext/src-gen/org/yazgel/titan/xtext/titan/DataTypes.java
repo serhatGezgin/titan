@@ -37,7 +37,7 @@ public enum DataTypes implements Enumerator
    * @generated
    * @ordered
    */
-  INTEGER(1, "Integer", "integer"),
+  INTEGER(1, "Integer", "Integer"),
 
   /**
    * The '<em><b>Boolean</b></em>' literal object.
@@ -47,7 +47,7 @@ public enum DataTypes implements Enumerator
    * @generated
    * @ordered
    */
-  BOOLEAN(2, "Boolean", "boolean"),
+  BOOLEAN(2, "Boolean", "Boolean"),
 
   /**
    * The '<em><b>Long</b></em>' literal object.
@@ -57,7 +57,7 @@ public enum DataTypes implements Enumerator
    * @generated
    * @ordered
    */
-  LONG(3, "Long", "long"),
+  LONG(3, "Long", "Long"),
 
   /**
    * The '<em><b>Double</b></em>' literal object.
@@ -67,7 +67,7 @@ public enum DataTypes implements Enumerator
    * @generated
    * @ordered
    */
-  DOUBLE(4, "Double", "double");
+  DOUBLE(4, "Double", "Double");
 
   /**
    * The '<em><b>String</b></em>' literal value.
@@ -93,7 +93,7 @@ public enum DataTypes implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #INTEGER
-   * @model name="Integer" literal="integer"
+   * @model name="Integer"
    * @generated
    * @ordered
    */
@@ -108,7 +108,7 @@ public enum DataTypes implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #BOOLEAN
-   * @model name="Boolean" literal="boolean"
+   * @model name="Boolean"
    * @generated
    * @ordered
    */
@@ -123,7 +123,7 @@ public enum DataTypes implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #LONG
-   * @model name="Long" literal="long"
+   * @model name="Long"
    * @generated
    * @ordered
    */
@@ -138,7 +138,7 @@ public enum DataTypes implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #DOUBLE
-   * @model name="Double" literal="double"
+   * @model name="Double"
    * @generated
    * @ordered
    */

@@ -34,7 +34,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 	//To model, From Model
 	public static Map<EObject, EObject> transformationReleations = new HashMap<EObject, EObject>();
 	public static Map<EObject, EObject> modelBuilderReleations = new HashMap<EObject, EObject>();
-	public static List<MultiOReference> oppositedOMultiReferences = newArrayList
+	public static List<OFeature> oppositedOMultiReferences = newArrayList
 
 	def OModel doGenerate(Module module) {
 
@@ -147,18 +147,27 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 	def postGenerator(OModel model) {
 
-		//1-Reference Reference prop must be set after generated model classes
+		//1-Reference Reference props must be set after generated model classes
 		var releationsOfReferences = transformationReleations.filter[p1, p2|p1 instanceof Feature]
 		for (e : releationsOfReferences.entrySet) {
-			if (e.key instanceof Reference) {
-				var or = transformationReleations.get((e.key as Reference).reference) as OClass;
-				(e.value as OReference).reference = or;
+			if (e.key instanceof Feature) {
+				if (e.key instanceof Reference) {
+					var or = transformationReleations.get((e.key as Reference).reference) as OClass;
+					(e.value as OReference).reference = or;
 
-				var oo = transformationReleations.get((e.key as Reference).opposite) as MultiOReference;
-				(e.value as OReference).opposite = oo;
+					var oo = transformationReleations.get((e.key as Reference).opposite) as MultiOReference;
+					(e.value as OReference).opposite = oo;
 
-				if (!oppositedOMultiReferences.contains(oo))
-					oppositedOMultiReferences.add(oo as MultiOReference)
+					if (!oppositedOMultiReferences.contains(oo))
+						oppositedOMultiReferences.add(oo as MultiOReference)
+				} else if (e.key instanceof DataType) {
+					var oo = transformationReleations.get((e.key as DataType).opposite) as MultiODataType;
+					(e.value as ODataType).opposite = oo;
+
+					if (!oppositedOMultiReferences.contains(oo))
+						oppositedOMultiReferences.add(oo as MultiODataType)
+				}
+
 			}
 		}
 
@@ -213,6 +222,12 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					}
 				} else if (of instanceof SingleOReference) {
 					statement.content = '''«of.name» = new «(of as OReference).reference.name»();'''
+				} else if (of instanceof MultiODataType) {
+					if (of.uniqueInstance) {
+						statement.content = '''«of.name» = new TreeSet<>();'''
+					} else {
+						statement.content = '''«of.name» = new ArrayList<>();'''
+					}
 				}
 				oConst.statements.add(statement)
 			}
@@ -380,20 +395,20 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 								if (comparison != EQUAL) return comparison;
 							«ELSEIF f.type.equals(DataTypes.BOOLEAN.literal)»
 								//booleans follow this form
-								if (!this.get«f.name.toFirstUpper» && o.get«f.name.toFirstUpper») return BEFORE;
-								if (this.get«f.name.toFirstUpper» && !o.get«f.name.toFirstUpper») return AFTER;
+								if (!this.get«f.name.toFirstUpper»() && o.get«f.name.toFirstUpper»()) return BEFORE;
+								if (this.get«f.name.toFirstUpper»() && !o.get«f.name.toFirstUpper»()) return AFTER;
 							«ELSEIF f.type.equals(DataTypes.DOUBLE.literal)»
 								//primitive numbers follow this form
-								if (this.get«f.name.toFirstUpper» < o.get«f.name.toFirstUpper») return BEFORE;
-								if (this.get«f.name.toFirstUpper» > o.get«f.name.toFirstUpper») return AFTER;
+								if (this.get«f.name.toFirstUpper»() < o.get«f.name.toFirstUpper»()) return BEFORE;
+								if (this.get«f.name.toFirstUpper»() > o.get«f.name.toFirstUpper»()) return AFTER;
 							«ELSEIF f.type.equals(DataTypes.INTEGER.literal)»
 								//primitive numbers follow this form
-								if (this.get«f.name.toFirstUpper» < o.get«f.name.toFirstUpper») return BEFORE;
-								if (this.get«f.name.toFirstUpper» > o.get«f.name.toFirstUpper») return AFTER;
+								if (this.get«f.name.toFirstUpper»() < o.get«f.name.toFirstUpper»()) return BEFORE;
+								if (this.get«f.name.toFirstUpper»() > o.get«f.name.toFirstUpper»()) return AFTER;
 							«ELSEIF f.type.equals(DataTypes.LONG.literal)»
 								//primitive numbers follow this form
-								if (this.get«f.name.toFirstUpper» < o.get«f.name.toFirstUpper») return BEFORE;
-								if (this.get«f.name.toFirstUpper» > o.get«f.name.toFirstUpper») return AFTER;
+								if (this.get«f.name.toFirstUpper»() < o.get«f.name.toFirstUpper»()) return BEFORE;
+								if (this.get«f.name.toFirstUpper»() > o.get«f.name.toFirstUpper»()) return AFTER;
 							«ENDIF»
 						«ENDIF»	
 					«ENDFOR»
@@ -497,10 +512,12 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					param.type = '''«of.type»'''
 					constructor.parameters.add(param)
 				} else if (of instanceof MultiODataType) {
-					var param = OopFactoryImpl.eINSTANCE.createOParameter
-					param.name = of.name
-					param.type = '''List<«of.type»>'''
-					constructor.parameters.add(param)
+					if (!oppositedOMultiReferences.contains(of)) {
+						var param = OopFactoryImpl.eINSTANCE.createOParameter
+						param.name = of.name
+						param.type = '''List<«of.type»>'''
+						constructor.parameters.add(param)
+					}
 				} else if (of instanceof SingleOReference) {
 					var param = OopFactoryImpl.eINSTANCE.createOParameter
 					param.name = of.name
@@ -530,7 +547,8 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 			//Parameters must be set && Statements must be create.
 			var oFeatures = modelOc.features
 			for (OFeature of : oFeatures) {
-				if (!(of instanceof MultiOReference && oppositedOMultiReferences.contains(of))) {
+				if (!(( of instanceof MultiOReference || of instanceof MultiODataType ) &&
+					oppositedOMultiReferences.contains(of))) {
 					var staticOM = OopFactoryImpl.eINSTANCE.createOMethod
 					builderOc.methods.add(staticOM)
 
@@ -549,16 +567,18 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 						staticOM.returnType = '''«of.type»'''
 						staticOM.statements.add(statement)
 					} else if (of instanceof MultiODataType) {
-						var param = OopFactoryImpl.eINSTANCE.createOParameter
-						param.name = of.name
-						param.type = '''List<«of.type»>'''
-						staticOM.parameters.add(param)
+						if (!oppositedOMultiReferences.contains(of)) {
+							var param = OopFactoryImpl.eINSTANCE.createOParameter
+							param.name = of.name
+							param.type = '''List<«of.type»>'''
+							staticOM.parameters.add(param)
 
-						var statement = OopFactoryImpl.eINSTANCE.createOStatement
-						statement.content = '''return «of.name»;'''
+							var statement = OopFactoryImpl.eINSTANCE.createOStatement
+							statement.content = '''return «of.name»;'''
 
-						staticOM.returnType = '''List<«of.type»>'''
-						staticOM.statements.add(statement)
+							staticOM.returnType = '''List<«of.type»>'''
+							staticOM.statements.add(statement)
+						}
 					} else if (of instanceof SingleOReference) {
 
 						//Burada Diğer builder Constructor cagıralacagından bırden fazla parametre olusturulup eklenır.
