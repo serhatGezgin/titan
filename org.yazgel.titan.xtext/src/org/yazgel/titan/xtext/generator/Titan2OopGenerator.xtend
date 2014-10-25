@@ -101,11 +101,13 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 	}
 
 	def dispatch ODataType generateFeature(MultiDataType dt) {
-		var ODataType data;
-		data = OopFactoryImpl.eINSTANCE.createMultiODataType;
+		var data = OopFactoryImpl.eINSTANCE.createMultiODataType;
 		data.type = '''«dt.type»'''
 
 		data.name = dt.name
+		if (dt.unique) {
+			(data as MultiODataType).uniqueInstance = true;
+		}
 		transformationReleations.put(dt, data)
 		transformationReleations.put(data, dt)
 
@@ -171,9 +173,9 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 		//2-Import Statements must be added after generated model classes
 		for (e : releationsOfReferences.entrySet) {
+			var oClass = e.value.eContainer as OClass
 			if (e.value instanceof OReference) {
 				var oReference = e.value as OReference
-				var oClass = e.value.eContainer as OClass
 
 				if (oReference instanceof MultiOReference) {
 					if ((oReference as MultiOReference).uniqueInstance) {
@@ -183,8 +185,11 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 						oClass.imports.add("java.util.List");
 						oClass.imports.add("java.util.ArrayList");
 					}
-				} else if (oReference instanceof MultiODataType) {
-					if ((oReference as MultiODataType).uniqueInstance) {
+				}
+			} else if (e.value instanceof ODataType) {
+				var oData = e.value as ODataType
+				if (oData instanceof MultiODataType) {
+					if ((oData as MultiODataType).uniqueInstance) {
 						oClass.imports.add("java.util.Set");
 						oClass.imports.add("java.util.TreeSet");
 					} else {

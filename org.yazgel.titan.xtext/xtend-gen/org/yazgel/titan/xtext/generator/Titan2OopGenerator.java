@@ -138,17 +138,19 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
   }
   
   protected ODataType _generateFeature(final MultiDataType dt) {
-    ODataType _xblockexpression = null;
+    MultiODataType _xblockexpression = null;
     {
-      ODataType data = null;
-      MultiODataType _createMultiODataType = OopFactoryImpl.eINSTANCE.createMultiODataType();
-      data = _createMultiODataType;
+      MultiODataType data = OopFactoryImpl.eINSTANCE.createMultiODataType();
       StringConcatenation _builder = new StringConcatenation();
       DataTypes _type = dt.getType();
       _builder.append(_type, "");
       data.setType(_builder.toString());
       String _name = dt.getName();
       data.setName(_name);
+      boolean _isUnique = dt.isUnique();
+      if (_isUnique) {
+        ((MultiODataType) data).setUniqueInstance(true);
+      }
       Titan2OopGenerator.transformationReleations.put(dt, data);
       Titan2OopGenerator.transformationReleations.put(data, dt);
       _xblockexpression = data;
@@ -252,39 +254,46 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
     }
     Set<Map.Entry<EObject, EObject>> _entrySet_1 = releationsOfReferences.entrySet();
     for (final Map.Entry<EObject, EObject> e_1 : _entrySet_1) {
-      EObject _value_3 = e_1.getValue();
-      if ((_value_3 instanceof OReference)) {
-        EObject _value_4 = e_1.getValue();
-        OReference oReference = ((OReference) _value_4);
-        EObject _value_5 = e_1.getValue();
-        EObject _eContainer = _value_5.eContainer();
+      {
+        EObject _value_3 = e_1.getValue();
+        EObject _eContainer = _value_3.eContainer();
         OClass oClass = ((OClass) _eContainer);
-        if ((oReference instanceof MultiOReference)) {
-          boolean _isUniqueInstance = ((MultiOReference) oReference).isUniqueInstance();
-          if (_isUniqueInstance) {
-            EList<String> _imports = oClass.getImports();
-            _imports.add("java.util.Set");
-            EList<String> _imports_1 = oClass.getImports();
-            _imports_1.add("java.util.TreeSet");
-          } else {
-            EList<String> _imports_2 = oClass.getImports();
-            _imports_2.add("java.util.List");
-            EList<String> _imports_3 = oClass.getImports();
-            _imports_3.add("java.util.ArrayList");
+        EObject _value_4 = e_1.getValue();
+        if ((_value_4 instanceof OReference)) {
+          EObject _value_5 = e_1.getValue();
+          OReference oReference = ((OReference) _value_5);
+          if ((oReference instanceof MultiOReference)) {
+            boolean _isUniqueInstance = ((MultiOReference) oReference).isUniqueInstance();
+            if (_isUniqueInstance) {
+              EList<String> _imports = oClass.getImports();
+              _imports.add("java.util.Set");
+              EList<String> _imports_1 = oClass.getImports();
+              _imports_1.add("java.util.TreeSet");
+            } else {
+              EList<String> _imports_2 = oClass.getImports();
+              _imports_2.add("java.util.List");
+              EList<String> _imports_3 = oClass.getImports();
+              _imports_3.add("java.util.ArrayList");
+            }
           }
         } else {
-          if ((oReference instanceof MultiODataType)) {
-            boolean _isUniqueInstance_1 = ((MultiODataType) oReference).isUniqueInstance();
-            if (_isUniqueInstance_1) {
-              EList<String> _imports_4 = oClass.getImports();
-              _imports_4.add("java.util.Set");
-              EList<String> _imports_5 = oClass.getImports();
-              _imports_5.add("java.util.TreeSet");
-            } else {
-              EList<String> _imports_6 = oClass.getImports();
-              _imports_6.add("java.util.List");
-              EList<String> _imports_7 = oClass.getImports();
-              _imports_7.add("java.util.ArrayList");
+          EObject _value_6 = e_1.getValue();
+          if ((_value_6 instanceof ODataType)) {
+            EObject _value_7 = e_1.getValue();
+            ODataType oData = ((ODataType) _value_7);
+            if ((oData instanceof MultiODataType)) {
+              boolean _isUniqueInstance_1 = ((MultiODataType) oData).isUniqueInstance();
+              if (_isUniqueInstance_1) {
+                EList<String> _imports_4 = oClass.getImports();
+                _imports_4.add("java.util.Set");
+                EList<String> _imports_5 = oClass.getImports();
+                _imports_5.add("java.util.TreeSet");
+              } else {
+                EList<String> _imports_6 = oClass.getImports();
+                _imports_6.add("java.util.List");
+                EList<String> _imports_7 = oClass.getImports();
+                _imports_7.add("java.util.ArrayList");
+              }
             }
           }
         }
@@ -322,15 +331,15 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
     for (final Map.Entry<EObject, EObject> e_2 : _entrySet_2) {
       {
         EObject _key_6 = e_2.getKey();
-        OClass oClass_1 = ((OClass) _key_6);
-        EList<OFeature> _features = oClass_1.getFeatures();
+        OClass oClass = ((OClass) _key_6);
+        EList<OFeature> _features = oClass.getFeatures();
         for (final OFeature f : _features) {
           boolean _and = false;
           if (!(f instanceof MultiOReference)) {
             _and = false;
           } else {
-            boolean _isUniqueInstance_2 = ((MultiOReference) f).isUniqueInstance();
-            _and = _isUniqueInstance_2;
+            boolean _isUniqueInstance = ((MultiOReference) f).isUniqueInstance();
+            _and = _isUniqueInstance;
           }
           if (_and) {
             OClass _reference_1 = ((MultiOReference) f).getReference();
@@ -365,8 +374,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
           {
             OStatement statement = OopFactoryImpl.eINSTANCE.createOStatement();
             if ((of instanceof MultiOReference)) {
-              boolean _isUniqueInstance_2 = ((MultiOReference)of).isUniqueInstance();
-              if (_isUniqueInstance_2) {
+              boolean _isUniqueInstance = ((MultiOReference)of).isUniqueInstance();
+              if (_isUniqueInstance) {
                 StringConcatenation _builder = new StringConcatenation();
                 String _name_1 = ((MultiOReference)of).getName();
                 _builder.append(_name_1, "");
@@ -381,8 +390,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
               }
             } else {
               if ((of instanceof MultiODataType)) {
-                boolean _isUniqueInstance_3 = ((MultiODataType)of).isUniqueInstance();
-                if (_isUniqueInstance_3) {
+                boolean _isUniqueInstance_1 = ((MultiODataType)of).isUniqueInstance();
+                if (_isUniqueInstance_1) {
                   StringConcatenation _builder_2 = new StringConcatenation();
                   String _name_3 = ((MultiODataType)of).getName();
                   _builder_2.append(_name_3, "");
@@ -603,8 +612,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             _builder.append(_firstUpper, "");
             gmethod.setName(_builder.toString());
             if ((f instanceof MultiOReference)) {
-              boolean _isUniqueInstance_2 = ((MultiOReference)f).isUniqueInstance();
-              if (_isUniqueInstance_2) {
+              boolean _isUniqueInstance = ((MultiOReference)f).isUniqueInstance();
+              if (_isUniqueInstance) {
                 String _oFeatureType = this.oFeatureType(f, true);
                 gmethod.setReturnType(_oFeatureType);
               } else {
@@ -641,8 +650,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             String _firstLower = StringExtensions.toFirstLower(_name_3);
             sparameter.setName(_firstLower);
             if ((f instanceof MultiOReference)) {
-              boolean _isUniqueInstance_3 = ((MultiOReference)f).isUniqueInstance();
-              if (_isUniqueInstance_3) {
+              boolean _isUniqueInstance_1 = ((MultiOReference)f).isUniqueInstance();
+              if (_isUniqueInstance_1) {
                 String _oFeatureType_3 = this.oFeatureType(f, false);
                 sparameter.setType(_oFeatureType_3);
               } else {
@@ -914,8 +923,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
       {
         EObject _key_6 = e_8.getKey();
         OClass builderOc = ((OClass) _key_6);
-        EObject _value_6 = e_8.getValue();
-        OClass modelOc = ((OClass) _value_6);
+        EObject _value_3 = e_8.getValue();
+        OClass modelOc = ((OClass) _value_3);
         HashSet<String> importSet = CollectionLiterals.<String>newHashSet();
         StringConcatenation _builder = new StringConcatenation();
         String _oClassPackageName = this.oClassPackageName(modelOc);
@@ -963,8 +972,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
                 StringConcatenation _builder_4 = new StringConcatenation();
                 _builder_4.append("java.util.List");
                 importSet.add(_builder_4.toString());
-                boolean _isUniqueInstance_2 = ((MultiOReference)f).isUniqueInstance();
-                if (_isUniqueInstance_2) {
+                boolean _isUniqueInstance = ((MultiOReference)f).isUniqueInstance();
+                if (_isUniqueInstance) {
                   StringConcatenation _builder_5 = new StringConcatenation();
                   _builder_5.append("java.util.HashSet");
                   importSet.add(_builder_5.toString());
@@ -976,8 +985,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             }
           }
         }
-        EList<String> _imports_8 = builderOc.getImports();
-        _imports_8.addAll(importSet);
+        EList<String> _imports = builderOc.getImports();
+        _imports.addAll(importSet);
       }
     }
     Set<Map.Entry<EObject, EObject>> _entrySet_9 = Titan2OopGenerator.modelBuilderReleations.entrySet();
@@ -985,8 +994,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
       {
         EObject _key_6 = e_9.getKey();
         OClass builderOc = ((OClass) _key_6);
-        EObject _value_6 = e_9.getValue();
-        OClass modelOc = ((OClass) _value_6);
+        EObject _value_3 = e_9.getValue();
+        OClass modelOc = ((OClass) _value_3);
         OMethod constructor = OopFactoryImpl.eINSTANCE.createOMethod();
         String _name_1 = modelOc.getName();
         constructor.setName(_name_1);
@@ -1058,8 +1067,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
                               _and_2 = false;
                             } else {
                               OClass _reference_4 = ((OReference) f3).getReference();
-                              EObject _eContainer_1 = ((OReference) f2).eContainer();
-                              boolean _equals = _reference_4.equals(((OClass) _eContainer_1));
+                              EObject _eContainer = ((OReference) f2).eContainer();
+                              boolean _equals = _reference_4.equals(((OClass) _eContainer));
                               _and_2 = _equals;
                             }
                             if (_and_2) {
@@ -1192,8 +1201,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
       {
         EObject _key_6 = e_10.getKey();
         OClass builderOc = ((OClass) _key_6);
-        EObject _value_6 = e_10.getValue();
-        OClass modelOc = ((OClass) _value_6);
+        EObject _value_3 = e_10.getValue();
+        OClass modelOc = ((OClass) _value_3);
         EList<OFeature> oFeatures = modelOc.getFeatures();
         for (final OFeature of : oFeatures) {
           boolean _and = false;
@@ -1355,8 +1364,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
                       EList<OParameter> _parameters_5 = staticOM.getParameters();
                       _parameters_5.add(param_3);
                       OStatement statement_3 = OopFactoryImpl.eINSTANCE.createOStatement();
-                      boolean _isUniqueInstance_2 = ((MultiOReference)of).isUniqueInstance();
-                      if (_isUniqueInstance_2) {
+                      boolean _isUniqueInstance = ((MultiOReference)of).isUniqueInstance();
+                      if (_isUniqueInstance) {
                         StringConcatenation _builder_6 = new StringConcatenation();
                         _builder_6.append("return new HashSet<");
                         String _type = ((MultiOReference)of).getType();
