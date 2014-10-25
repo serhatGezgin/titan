@@ -36,6 +36,7 @@ public class ClassGenerator extends Model2TextGeneratorHelper {
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append(" ");
     _builder.newLine();
     _builder.append("public class ");
     String _name = oc.getName();
@@ -50,8 +51,8 @@ public class ClassGenerator extends Model2TextGeneratorHelper {
       for(final OFeature f : _features) {
         _builder.append("\t");
         _builder.append("private ");
-        String _type = f.getType();
-        _builder.append(_type, "\t");
+        String _oFeatureType = this.oFeatureType(f, true);
+        _builder.append(_oFeatureType, "\t");
         _builder.append(" ");
         String _name_1 = f.getName();
         _builder.append(_name_1, "\t");

@@ -6,7 +6,6 @@ import org.yazgel.oop.OMethod
 import org.yazgel.titan.xtext.generator.helper.Model2TextGeneratorHelper
 
 class ClassGenerator extends Model2TextGeneratorHelper {
-
 	def generateFile(OClass oc, IFileSystemAccess fsa) {
 		fsa.generateFile(oc.oClassFileName, oc.oClassContent)
 	}
@@ -17,15 +16,15 @@ class ClassGenerator extends Model2TextGeneratorHelper {
 		«FOR s : oc.imports»
 			import «s»;
 		«ENDFOR»
-		
+		 
 		public class «oc.name» «oc.oClassImplements»{
 			«FOR f : oc.features»
-				private «f.type» «f.name»;
+				private «f.oFeatureType(true)» «f.name»;
 			«ENDFOR» 
 			
 			«FOR c : oc.methods»
 				«IF c.override»
-				@Override
+					@Override
 				«ENDIF»
 				public «c.oMethodAccessType» «c.returnType» «c.name»(«c.oMethodParams»){
 					«FOR s : c.statements»

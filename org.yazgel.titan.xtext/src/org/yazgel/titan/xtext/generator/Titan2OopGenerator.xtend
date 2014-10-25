@@ -183,6 +183,14 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 						oClass.imports.add("java.util.List");
 						oClass.imports.add("java.util.ArrayList");
 					}
+				} else if (oReference instanceof MultiODataType) {
+					if ((oReference as MultiODataType).uniqueInstance) {
+						oClass.imports.add("java.util.Set");
+						oClass.imports.add("java.util.TreeSet");
+					} else {
+						oClass.imports.add("java.util.List");
+						oClass.imports.add("java.util.ArrayList");
+					}
 				}
 			}
 		}
@@ -243,7 +251,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 					var parameter = OopFactoryImpl.eINSTANCE.createOParameter
 					parameter.name = f.reference.name.toFirstLower
-					parameter.type = f.oFeatureType(true)
+					parameter.type = f.type
 					method.parameters.add(parameter)
 
 					var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -264,7 +272,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 					var parameter = OopFactoryImpl.eINSTANCE.createOParameter
 					parameter.name = dt.name.toFirstLower
-					parameter.type = dt.oFeatureType(true)
+					parameter.type = dt.type
 					method.parameters.add(parameter)
 
 					var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -371,7 +379,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 				var sparameter = OopFactoryImpl.eINSTANCE.createOParameter
 				sparameter.name = '''o'''
-				sparameter.type = ref.oFeatureType(true)
+				sparameter.type = ref.type
 				cmethod.parameters.add(sparameter)
 
 				var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -454,6 +462,10 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					} else if (f instanceof MultiOReference) {
 						importSet.add('''java.util.Arrays''')
 						importSet.add('''java.util.List''')
+						if (f.uniqueInstance) {
+							importSet.add('''java.util.HashSet''')
+							importSet.add('''java.util.Set''')
+						}
 					}
 				}
 			}
@@ -618,7 +630,12 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 							staticOM.parameters.add(param)
 
 							var statement = OopFactoryImpl.eINSTANCE.createOStatement
-							statement.content = '''return Arrays.asList(«of.name»);'''
+
+							if (of.uniqueInstance) {
+								statement.content = '''return new HashSet<«of.type»>(Arrays.asList(«of.name»));'''
+							} else {
+								statement.content = '''return Arrays.asList(«of.name»);'''
+							}
 
 							staticOM.returnType = of.oFeatureType(true)
 							staticOM.statements.add(statement)
