@@ -1,6 +1,6 @@
 package deneme.model;
 
-
+ 
 public class Vertex implements Comparable<Vertex>
 {
 	private String label;

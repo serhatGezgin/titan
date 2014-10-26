@@ -1328,79 +1328,58 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
                 EList<OStatement> _statements_1 = staticOM.getStatements();
                 _statements_1.add(statement_1);
               } else {
+                boolean _or = false;
                 if ((of instanceof MultiOReference)) {
+                  _or = true;
+                } else {
+                  _or = (of instanceof MultiODataType);
+                }
+                if (_or) {
                   OParameter param_2 = OopFactoryImpl.eINSTANCE.createOParameter();
-                  String _name_9 = ((MultiOReference)of).getName();
+                  String _name_9 = of.getName();
                   param_2.setName(_name_9);
-                  StringConcatenation _builder_4 = new StringConcatenation();
-                  OClass _reference_3 = ((MultiOReference)of).getReference();
-                  String _name_10 = _reference_3.getName();
-                  _builder_4.append(_name_10, "");
-                  _builder_4.append("...");
-                  param_2.setType(_builder_4.toString());
+                  if ((of instanceof MultiOReference)) {
+                    StringConcatenation _builder_4 = new StringConcatenation();
+                    OClass _reference_3 = ((MultiOReference)of).getReference();
+                    String _name_10 = _reference_3.getName();
+                    _builder_4.append(_name_10, "");
+                    _builder_4.append("...");
+                    param_2.setType(_builder_4.toString());
+                  } else {
+                    if ((of instanceof MultiODataType)) {
+                      StringConcatenation _builder_5 = new StringConcatenation();
+                      String _type = ((MultiODataType)of).getType();
+                      _builder_5.append(_type, "");
+                      _builder_5.append("...");
+                      param_2.setType(_builder_5.toString());
+                    }
+                  }
                   EList<OParameter> _parameters_4 = staticOM.getParameters();
                   _parameters_4.add(param_2);
                   OStatement statement_2 = OopFactoryImpl.eINSTANCE.createOStatement();
-                  boolean _isUniqueInstance = ((MultiOReference)of).isUniqueInstance();
-                  if (_isUniqueInstance) {
-                    StringConcatenation _builder_5 = new StringConcatenation();
-                    _builder_5.append("return new HashSet<");
-                    String _type = ((MultiOReference)of).getType();
-                    _builder_5.append(_type, "");
-                    _builder_5.append(">(Arrays.asList(");
-                    String _name_11 = ((MultiOReference)of).getName();
-                    _builder_5.append(_name_11, "");
-                    _builder_5.append("));");
-                    statement_2.setContent(_builder_5.toString());
-                  } else {
+                  boolean _isFeatureUnique = this.isFeatureUnique(of);
+                  if (_isFeatureUnique) {
                     StringConcatenation _builder_6 = new StringConcatenation();
-                    _builder_6.append("return Arrays.asList(");
-                    String _name_12 = ((MultiOReference)of).getName();
-                    _builder_6.append(_name_12, "");
-                    _builder_6.append(");");
+                    _builder_6.append("return new HashSet<");
+                    String _type_1 = of.getType();
+                    _builder_6.append(_type_1, "");
+                    _builder_6.append(">(Arrays.asList(");
+                    String _name_11 = of.getName();
+                    _builder_6.append(_name_11, "");
+                    _builder_6.append("));");
                     statement_2.setContent(_builder_6.toString());
+                  } else {
+                    StringConcatenation _builder_7 = new StringConcatenation();
+                    _builder_7.append("return Arrays.asList(");
+                    String _name_12 = of.getName();
+                    _builder_7.append(_name_12, "");
+                    _builder_7.append(");");
+                    statement_2.setContent(_builder_7.toString());
                   }
                   String _oFeatureType_6 = this.oFeatureType(of, true);
                   staticOM.setReturnType(_oFeatureType_6);
                   EList<OStatement> _statements_2 = staticOM.getStatements();
                   _statements_2.add(statement_2);
-                } else {
-                  if ((of instanceof MultiODataType)) {
-                    OParameter param_3 = OopFactoryImpl.eINSTANCE.createOParameter();
-                    String _name_13 = ((MultiODataType)of).getName();
-                    param_3.setName(_name_13);
-                    StringConcatenation _builder_7 = new StringConcatenation();
-                    String _type_1 = ((MultiODataType)of).getType();
-                    _builder_7.append(_type_1, "");
-                    _builder_7.append("...");
-                    param_3.setType(_builder_7.toString());
-                    EList<OParameter> _parameters_5 = staticOM.getParameters();
-                    _parameters_5.add(param_3);
-                    OStatement statement_3 = OopFactoryImpl.eINSTANCE.createOStatement();
-                    boolean _isUniqueInstance_1 = ((MultiODataType)of).isUniqueInstance();
-                    if (_isUniqueInstance_1) {
-                      StringConcatenation _builder_8 = new StringConcatenation();
-                      _builder_8.append("return new HashSet<");
-                      String _type_2 = ((MultiODataType)of).getType();
-                      _builder_8.append(_type_2, "");
-                      _builder_8.append(">(Arrays.asList(");
-                      String _name_14 = ((MultiODataType)of).getName();
-                      _builder_8.append(_name_14, "");
-                      _builder_8.append("));");
-                      statement_3.setContent(_builder_8.toString());
-                    } else {
-                      StringConcatenation _builder_9 = new StringConcatenation();
-                      _builder_9.append("return Arrays.asList(");
-                      String _name_15 = ((MultiODataType)of).getName();
-                      _builder_9.append(_name_15, "");
-                      _builder_9.append(");");
-                      statement_3.setContent(_builder_9.toString());
-                    }
-                    String _oFeatureType_7 = this.oFeatureType(of, true);
-                    staticOM.setReturnType(_oFeatureType_7);
-                    EList<OStatement> _statements_3 = staticOM.getStatements();
-                    _statements_3.add(statement_3);
-                  }
                 }
               }
             }

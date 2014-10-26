@@ -3,7 +3,7 @@ package deneme.model.builder;
 import deneme.model.Edge;
 import deneme.model.builder.NestedVertexBuilder;
 import deneme.model.Vertex;
-
+ 
 public class NestedEdgeBuilder {
 	
 	public static Edge Edge(Vertex from, Vertex to, Double weight

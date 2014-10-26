@@ -3,7 +3,7 @@ module deneme Nested Functions
 package deneme.model{
 	     
 	entity University{
-		var universityName String  
+		var universityName String    
 		var universityStudents Student[]
 		var universityCourses Course[] unique
 	}          

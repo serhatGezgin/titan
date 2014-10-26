@@ -1,6 +1,6 @@
 package deneme.model;
 
-
+ 
 public class Course implements Comparable<Course>
 {
 	private String courseCode;

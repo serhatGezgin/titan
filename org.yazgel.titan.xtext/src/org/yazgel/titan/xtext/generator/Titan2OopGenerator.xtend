@@ -564,6 +564,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 						staticOM.returnType = of.oFeatureType(true)
 						staticOM.statements.add(statement)
 					} else if (of instanceof SingleOReference) {
+
 						//Burada Diğer builder Constructor cagıralacagından bırden fazla parametre olusturulup eklenır.
 						var ref = of.reference
 						for (refFeatures : ref.features) {
@@ -597,32 +598,21 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 						staticOM.returnType = '''«of.reference.name»'''
 						staticOM.statements.add(statement)
 
-					} else if (of instanceof MultiOReference) {
+					} else if (of instanceof MultiOReference || of instanceof MultiODataType) {
 						var param = OopFactoryImpl.eINSTANCE.createOParameter
 						param.name = of.name
-						param.type = '''«of.reference.name»...'''
-						staticOM.parameters.add(param)
 
-						var statement = OopFactoryImpl.eINSTANCE.createOStatement
-
-						if (of.uniqueInstance) {
-							statement.content = '''return new HashSet<«of.type»>(Arrays.asList(«of.name»));'''
-						} else {
-							statement.content = '''return Arrays.asList(«of.name»);'''
+						if (of instanceof MultiOReference) {
+							param.type = '''«of.reference.name»...'''
+						} else if (of instanceof MultiODataType) {
+							param.type = '''«of.type»...'''
 						}
 
-						staticOM.returnType = of.oFeatureType(true)
-						staticOM.statements.add(statement)
-
-					} else if (of instanceof MultiODataType) {
-						var param = OopFactoryImpl.eINSTANCE.createOParameter
-						param.name = of.name
-						param.type = '''«of.type»...'''
 						staticOM.parameters.add(param)
 
 						var statement = OopFactoryImpl.eINSTANCE.createOStatement
 
-						if (of.uniqueInstance) {
+						if (of.isFeatureUnique) {
 							statement.content = '''return new HashSet<«of.type»>(Arrays.asList(«of.name»));'''
 						} else {
 							statement.content = '''return Arrays.asList(«of.name»);'''
@@ -631,6 +621,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 						staticOM.returnType = of.oFeatureType(true)
 						staticOM.statements.add(statement)
 					}
+					
 				}
 			}
 		}

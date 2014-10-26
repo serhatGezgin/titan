@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import deneme.model.Student;
 import deneme.model.Course;
-
+ 
 public class NestedStudentBuilder {
 	
 	public static Student Student(String studentCode, String studentName, List<Course> studentCourses

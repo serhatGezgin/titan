@@ -5,7 +5,7 @@ package deneme.model{
 		var name String      
 		var edges Edge[]    
 		var vertices Vertex[] unique       
-	}                          
+	}                           
 	                     
 	entity Edge{    
 		var from Vertex opposite Graph.vertices

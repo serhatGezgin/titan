@@ -1,6 +1,6 @@
 package deneme.model;
 
-
+ 
 public class Edge {
 	private Vertex from;
 	private Vertex to;

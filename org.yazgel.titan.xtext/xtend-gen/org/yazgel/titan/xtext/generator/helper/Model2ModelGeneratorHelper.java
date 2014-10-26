@@ -52,6 +52,31 @@ public class Model2ModelGeneratorHelper extends BaseGeneratorHelper {
     return _builder;
   }
   
+  protected boolean isFeatureUnique(final OFeature f) {
+    boolean _and = false;
+    if (!(f instanceof MultiOReference)) {
+      _and = false;
+    } else {
+      boolean _isUniqueInstance = ((MultiOReference) f).isUniqueInstance();
+      _and = _isUniqueInstance;
+    }
+    if (_and) {
+      return true;
+    } else {
+      boolean _and_1 = false;
+      if (!(f instanceof MultiODataType)) {
+        _and_1 = false;
+      } else {
+        boolean _isUniqueInstance_1 = ((MultiODataType) f).isUniqueInstance();
+        _and_1 = _isUniqueInstance_1;
+      }
+      if (_and_1) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
   protected boolean isFeatureOpposited(final OFeature f) {
     boolean _and = false;
     if (!(f instanceof MultiOReference)) {

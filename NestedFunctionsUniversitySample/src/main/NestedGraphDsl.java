@@ -13,7 +13,7 @@ import static deneme.model.builder.NestedCourseBuilder.courseCode;
 import static deneme.model.builder.NestedCourseBuilder.courseName;
 import deneme.model.Course;
 import deneme.model.University;
-
+  
 
 public class NestedGraphDsl {
 	public static void main(String[] args) {

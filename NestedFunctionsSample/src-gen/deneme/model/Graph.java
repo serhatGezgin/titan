@@ -4,11 +4,11 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.List;
 import java.util.ArrayList;
-
+ 
 public class Graph {
 	private String name;
-	private Edge edges;
-	private Vertex vertices;
+	private List<Edge> edges;
+	private Set<Vertex> vertices;
 	
 	public   Graph(){
 		edges = new ArrayList<>();
