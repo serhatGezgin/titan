@@ -2,6 +2,8 @@
  */
 package org.yazgel.oop;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +14,7 @@ package org.yazgel.oop;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.yazgel.oop.MultiODataType#isUniqueInstance <em>Unique Instance</em>}</li>
+ *   <li>{@link org.yazgel.oop.MultiODataType#getOpposites <em>Opposites</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,5 +48,23 @@ public interface MultiODataType extends ODataType {
 	 * @generated
 	 */
 	void setUniqueInstance(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Opposites</b></em>' reference list.
+	 * The list contents are of type {@link org.yazgel.oop.ODataType}.
+	 * It is bidirectional and its opposite is '{@link org.yazgel.oop.ODataType#getOpposite <em>Opposite</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Opposites</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Opposites</em>' reference list.
+	 * @see org.yazgel.oop.OopPackage#getMultiODataType_Opposites()
+	 * @see org.yazgel.oop.ODataType#getOpposite
+	 * @model opposite="opposite"
+	 * @generated
+	 */
+	EList<ODataType> getOpposites();
 
 } // MultiODataType

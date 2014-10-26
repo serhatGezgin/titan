@@ -30,18 +30,24 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OReference" abstract="true" eSuperTypes="#//OFeature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//OClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//MultiOReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//MultiOReference"
+        eOpposite="#//MultiOReference/opposites"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiOReference" eSuperTypes="#//OReference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueInstance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposites" upperBound="-1"
+        eType="#//OReference" eOpposite="#//OReference/opposite"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SingleOReference" eSuperTypes="#//OReference"/>
   <eClassifiers xsi:type="ecore:EClass" name="ODataType" abstract="true" eSuperTypes="#//OFeature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//MultiODataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//MultiODataType"
+        eOpposite="#//MultiODataType/opposites"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SingleODataType" eSuperTypes="#//ODataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultiODataType" eSuperTypes="#//ODataType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueInstance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposites" upperBound="-1"
+        eType="#//ODataType" eOpposite="#//ODataType/opposite"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OMethod">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -396,13 +396,22 @@ public interface OopPackage extends EPackage {
 	int MULTI_OREFERENCE__UNIQUE_INSTANCE = OREFERENCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Opposites</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_OREFERENCE__OPPOSITES = OREFERENCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Multi OReference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_OREFERENCE_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 1;
+	int MULTI_OREFERENCE_FEATURE_COUNT = OREFERENCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Multi OReference</em>' class.
@@ -634,13 +643,22 @@ public interface OopPackage extends EPackage {
 	int MULTI_ODATA_TYPE__UNIQUE_INSTANCE = ODATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Opposites</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_ODATA_TYPE__OPPOSITES = ODATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Multi OData Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_ODATA_TYPE_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 1;
+	int MULTI_ODATA_TYPE_FEATURE_COUNT = ODATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Multi OData Type</em>' class.
@@ -1043,6 +1061,17 @@ public interface OopPackage extends EPackage {
 	EAttribute getMultiOReference_UniqueInstance();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.yazgel.oop.MultiOReference#getOpposites <em>Opposites</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Opposites</em>'.
+	 * @see org.yazgel.oop.MultiOReference#getOpposites()
+	 * @see #getMultiOReference()
+	 * @generated
+	 */
+	EReference getMultiOReference_Opposites();
+
+	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.SingleOReference <em>Single OReference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1103,6 +1132,17 @@ public interface OopPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMultiODataType_UniqueInstance();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.yazgel.oop.MultiODataType#getOpposites <em>Opposites</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Opposites</em>'.
+	 * @see org.yazgel.oop.MultiODataType#getOpposites()
+	 * @see #getMultiODataType()
+	 * @generated
+	 */
+	EReference getMultiODataType_Opposites();
 
 	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OMethod <em>OMethod</em>}'.
@@ -1437,6 +1477,14 @@ public interface OopPackage extends EPackage {
 		EAttribute MULTI_OREFERENCE__UNIQUE_INSTANCE = eINSTANCE.getMultiOReference_UniqueInstance();
 
 		/**
+		 * The meta object literal for the '<em><b>Opposites</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_OREFERENCE__OPPOSITES = eINSTANCE.getMultiOReference_Opposites();
+
+		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.SingleOReferenceImpl <em>Single OReference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1491,6 +1539,14 @@ public interface OopPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MULTI_ODATA_TYPE__UNIQUE_INSTANCE = eINSTANCE.getMultiODataType_UniqueInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Opposites</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_ODATA_TYPE__OPPOSITES = eINSTANCE.getMultiODataType_Opposites();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OMethodImpl <em>OMethod</em>}' class.

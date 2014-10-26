@@ -2,11 +2,11 @@ package org.yazgel.titan.xtext.generator.helper
 
 import org.yazgel.oop.OClass
 import org.yazgel.oop.OPackage
-import org.yazgel.oop.OFeature
-import org.yazgel.oop.SingleOReference
-import org.yazgel.oop.MultiOReference
 import org.yazgel.oop.SingleODataType
 import org.yazgel.oop.MultiODataType
+import org.yazgel.oop.SingleOReference
+import org.yazgel.oop.MultiOReference
+import org.yazgel.oop.OFeature
 
 class BaseGeneratorHelper {
 	protected def oClassPackageName(OClass oc) {
@@ -22,7 +22,7 @@ class BaseGeneratorHelper {
 
 		list
 	}
-	
+
 	def oFeatureType(OFeature of, boolean isGenericType) {
 		if (of instanceof SingleOReference) {
 			return '''«of.reference.name»'''

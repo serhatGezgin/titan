@@ -4,6 +4,7 @@ package org.yazgel.oop.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -137,11 +138,63 @@ public abstract class OReferenceImpl extends OFeatureImpl implements OReference 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOpposite(MultiOReference newOpposite) {
+	public NotificationChain basicSetOpposite(MultiOReference newOpposite, NotificationChain msgs) {
 		MultiOReference oldOpposite = opposite;
 		opposite = newOpposite;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OREFERENCE__OPPOSITE, oldOpposite, opposite));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OopPackage.OREFERENCE__OPPOSITE, oldOpposite, newOpposite);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOpposite(MultiOReference newOpposite) {
+		if (newOpposite != opposite) {
+			NotificationChain msgs = null;
+			if (opposite != null)
+				msgs = ((InternalEObject)opposite).eInverseRemove(this, OopPackage.MULTI_OREFERENCE__OPPOSITES, MultiOReference.class, msgs);
+			if (newOpposite != null)
+				msgs = ((InternalEObject)newOpposite).eInverseAdd(this, OopPackage.MULTI_OREFERENCE__OPPOSITES, MultiOReference.class, msgs);
+			msgs = basicSetOpposite(newOpposite, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OREFERENCE__OPPOSITE, newOpposite, newOpposite));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OopPackage.OREFERENCE__OPPOSITE:
+				if (opposite != null)
+					msgs = ((InternalEObject)opposite).eInverseRemove(this, OopPackage.MULTI_OREFERENCE__OPPOSITES, MultiOReference.class, msgs);
+				return basicSetOpposite((MultiOReference)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OopPackage.OREFERENCE__OPPOSITE:
+				return basicSetOpposite(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -436,17 +436,14 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             if (_not_2) {
               OMethod method = OopFactoryImpl.eINSTANCE.createOMethod();
               StringConcatenation _builder = new StringConcatenation();
-              _builder.append("add");
-              OClass _reference_2 = f.getReference();
-              String _name = _reference_2.getName();
-              String _firstUpper = StringExtensions.toFirstUpper(_name);
-              _builder.append(_firstUpper, "");
+              String _addername = this.addername(f);
+              _builder.append(_addername, "");
               method.setName(_builder.toString());
               method.setReturnType("void");
               OParameter parameter = OopFactoryImpl.eINSTANCE.createOParameter();
-              OClass _reference_3 = f.getReference();
-              String _name_1 = _reference_3.getName();
-              String _firstLower = StringExtensions.toFirstLower(_name_1);
+              OClass _reference_2 = f.getReference();
+              String _name = _reference_2.getName();
+              String _firstLower = StringExtensions.toFirstLower(_name);
               parameter.setName(_firstLower);
               String _type = f.getType();
               parameter.setType(_type);
@@ -454,21 +451,19 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
               _parameters.add(parameter);
               OStatement statement = OopFactoryImpl.eINSTANCE.createOStatement();
               StringConcatenation _builder_1 = new StringConcatenation();
-              _builder_1.append("get");
-              String _name_2 = f.getName();
-              String _firstUpper_1 = StringExtensions.toFirstUpper(_name_2);
-              _builder_1.append(_firstUpper_1, "");
+              String _tername = this.gettername(f);
+              _builder_1.append(_tername, "");
               _builder_1.append("().add(");
-              String _name_3 = parameter.getName();
-              _builder_1.append(_name_3, "");
+              String _name_1 = parameter.getName();
+              _builder_1.append(_name_1, "");
               _builder_1.append(");");
               statement.setContent(_builder_1.toString());
               EList<OStatement> _statements = method.getStatements();
               _statements.add(statement);
               EList<OMethod> _methods = oc.getMethods();
               _methods.add(method);
-              OClass _reference_4 = f.getReference();
-              list.add(_reference_4);
+              OClass _reference_3 = f.getReference();
+              list.add(_reference_3);
             }
           }
         }
@@ -488,15 +483,13 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             if (_not_2) {
               OMethod method = OopFactoryImpl.eINSTANCE.createOMethod();
               StringConcatenation _builder = new StringConcatenation();
-              _builder.append("add");
-              String _name = dt.getName();
-              String _firstUpper = StringExtensions.toFirstUpper(_name);
-              _builder.append(_firstUpper, "");
+              String _addername = this.addername(dt);
+              _builder.append(_addername, "");
               method.setName(_builder.toString());
               method.setReturnType("void");
               OParameter parameter = OopFactoryImpl.eINSTANCE.createOParameter();
-              String _name_1 = dt.getName();
-              String _firstLower = StringExtensions.toFirstLower(_name_1);
+              String _name = dt.getName();
+              String _firstLower = StringExtensions.toFirstLower(_name);
               parameter.setName(_firstLower);
               String _type_1 = dt.getType();
               parameter.setType(_type_1);
@@ -504,13 +497,11 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
               _parameters.add(parameter);
               OStatement statement = OopFactoryImpl.eINSTANCE.createOStatement();
               StringConcatenation _builder_1 = new StringConcatenation();
-              _builder_1.append("get");
-              String _name_2 = dt.getName();
-              String _firstUpper_1 = StringExtensions.toFirstUpper(_name_2);
-              _builder_1.append(_firstUpper_1, "");
+              String _tername = this.gettername(dt);
+              _builder_1.append(_tername, "");
               _builder_1.append("().add(");
-              String _name_3 = parameter.getName();
-              _builder_1.append(_name_3, "");
+              String _name_1 = parameter.getName();
+              _builder_1.append(_name_1, "");
               _builder_1.append(");");
               statement.setContent(_builder_1.toString());
               EList<OStatement> _statements = method.getStatements();
@@ -541,18 +532,16 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             ODataType d = ((ODataType) of);
             OMethod gmethod = OopFactoryImpl.eINSTANCE.createOMethod();
             StringConcatenation _builder = new StringConcatenation();
-            _builder.append("get");
-            String _name = d.getName();
-            String _firstUpper = StringExtensions.toFirstUpper(_name);
-            _builder.append(_firstUpper, "");
+            String _tername = this.gettername(d);
+            _builder.append(_tername, "");
             gmethod.setName(_builder.toString());
             String _oFeatureType = this.oFeatureType(d, true);
             gmethod.setReturnType(_oFeatureType);
             OStatement statement = OopFactoryImpl.eINSTANCE.createOStatement();
             StringConcatenation _builder_1 = new StringConcatenation();
             _builder_1.append("return this.");
-            String _name_1 = d.getName();
-            _builder_1.append(_name_1, "");
+            String _name = d.getName();
+            _builder_1.append(_name, "");
             _builder_1.append(";");
             statement.setContent(_builder_1.toString());
             EList<OStatement> _statements = gmethod.getStatements();
@@ -561,17 +550,15 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             _methods.add(gmethod);
             OMethod smethod = OopFactoryImpl.eINSTANCE.createOMethod();
             StringConcatenation _builder_2 = new StringConcatenation();
-            _builder_2.append("set");
-            String _name_2 = d.getName();
-            String _firstUpper_1 = StringExtensions.toFirstUpper(_name_2);
-            _builder_2.append(_firstUpper_1, "");
+            String _settername = this.settername(d);
+            _builder_2.append(_settername, "");
             smethod.setName(_builder_2.toString());
             StringConcatenation _builder_3 = new StringConcatenation();
             _builder_3.append("void");
             smethod.setReturnType(_builder_3.toString());
             OParameter sparameter = OopFactoryImpl.eINSTANCE.createOParameter();
-            String _name_3 = d.getName();
-            String _firstLower = StringExtensions.toFirstLower(_name_3);
+            String _name_1 = d.getName();
+            String _firstLower = StringExtensions.toFirstLower(_name_1);
             sparameter.setName(_firstLower);
             String _oFeatureType_1 = this.oFeatureType(d, true);
             sparameter.setType(_oFeatureType_1);
@@ -581,11 +568,11 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             statement = _createOStatement;
             StringConcatenation _builder_4 = new StringConcatenation();
             _builder_4.append("this.");
-            String _name_4 = d.getName();
-            _builder_4.append(_name_4, "");
+            String _name_2 = d.getName();
+            _builder_4.append(_name_2, "");
             _builder_4.append(" = ");
-            String _name_5 = sparameter.getName();
-            _builder_4.append(_name_5, "");
+            String _name_3 = sparameter.getName();
+            _builder_4.append(_name_3, "");
             _builder_4.append(";");
             statement.setContent(_builder_4.toString());
             EList<OStatement> _statements_1 = smethod.getStatements();
@@ -606,10 +593,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             OReference f = ((OReference) of_1);
             OMethod gmethod = OopFactoryImpl.eINSTANCE.createOMethod();
             StringConcatenation _builder = new StringConcatenation();
-            _builder.append("get");
-            String _name = f.getName();
-            String _firstUpper = StringExtensions.toFirstUpper(_name);
-            _builder.append(_firstUpper, "");
+            String _tername = this.gettername(f);
+            _builder.append(_tername, "");
             gmethod.setName(_builder.toString());
             if ((f instanceof MultiOReference)) {
               boolean _isUniqueInstance = ((MultiOReference)f).isUniqueInstance();
@@ -627,8 +612,8 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             OStatement statement = OopFactoryImpl.eINSTANCE.createOStatement();
             StringConcatenation _builder_1 = new StringConcatenation();
             _builder_1.append("return this.");
-            String _name_1 = f.getName();
-            _builder_1.append(_name_1, "");
+            String _name = f.getName();
+            _builder_1.append(_name, "");
             _builder_1.append(";");
             statement.setContent(_builder_1.toString());
             EList<OStatement> _statements = gmethod.getStatements();
@@ -637,17 +622,15 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             _methods.add(gmethod);
             OMethod smethod = OopFactoryImpl.eINSTANCE.createOMethod();
             StringConcatenation _builder_2 = new StringConcatenation();
-            _builder_2.append("set");
-            String _name_2 = f.getName();
-            String _firstUpper_1 = StringExtensions.toFirstUpper(_name_2);
-            _builder_2.append(_firstUpper_1, "");
+            String _settername = this.settername(f);
+            _builder_2.append(_settername, "");
             smethod.setName(_builder_2.toString());
             StringConcatenation _builder_3 = new StringConcatenation();
             _builder_3.append("void");
             smethod.setReturnType(_builder_3.toString());
             OParameter sparameter = OopFactoryImpl.eINSTANCE.createOParameter();
-            String _name_3 = f.getName();
-            String _firstLower = StringExtensions.toFirstLower(_name_3);
+            String _name_1 = f.getName();
+            String _firstLower = StringExtensions.toFirstLower(_name_1);
             sparameter.setName(_firstLower);
             if ((f instanceof MultiOReference)) {
               boolean _isUniqueInstance_1 = ((MultiOReference)f).isUniqueInstance();
@@ -668,11 +651,11 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
             statement = _createOStatement;
             StringConcatenation _builder_4 = new StringConcatenation();
             _builder_4.append("this.");
-            String _name_4 = f.getName();
-            _builder_4.append(_name_4, "");
+            String _name_2 = f.getName();
+            _builder_4.append(_name_2, "");
             _builder_4.append(" = ");
-            String _name_5 = sparameter.getName();
-            _builder_4.append(_name_5, "");
+            String _name_3 = sparameter.getName();
+            _builder_4.append(_name_3, "");
             _builder_4.append(";");
             statement.setContent(_builder_4.toString());
             EList<OStatement> _statements_1 = smethod.getStatements();
@@ -1047,70 +1030,115 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
               {
                 OClass _reference_3 = ((OReference) of).getReference();
                 EList<OFeature> _features = _reference_3.getFeatures();
-                for(final OFeature f2 : _features) {
+                for(final OFeature f : _features) {
                   {
                     boolean _and_1 = false;
-                    if (!(f2 instanceof OReference)) {
+                    boolean _and_2 = false;
+                    if (!(f instanceof OReference)) {
+                      _and_2 = false;
+                    } else {
+                      MultiOReference _opposite_2 = ((OReference) f).getOpposite();
+                      boolean _notEquals = (!Objects.equal(_opposite_2, null));
+                      _and_2 = _notEquals;
+                    }
+                    if (!_and_2) {
                       _and_1 = false;
                     } else {
-                      MultiOReference _opposite_2 = ((OReference) f2).getOpposite();
-                      boolean _notEquals = (!Objects.equal(_opposite_2, null));
-                      _and_1 = _notEquals;
+                      MultiOReference _opposite_3 = ((OReference) f).getOpposite();
+                      EObject _eContainer = _opposite_3.eContainer();
+                      EObject _eContainer_1 = of.eContainer();
+                      boolean _equals = _eContainer.equals(_eContainer_1);
+                      _and_1 = _equals;
                     }
                     if (_and_1) {
                       {
-                        EList<OFeature> _features_1 = modelOc.getFeatures();
-                        for(final OFeature f3 : _features_1) {
-                          {
-                            boolean _and_2 = false;
-                            if (!(f3 instanceof OReference)) {
-                              _and_2 = false;
-                            } else {
-                              OClass _reference_4 = ((OReference) f3).getReference();
-                              EObject _eContainer = ((OReference) f2).eContainer();
-                              boolean _equals = _reference_4.equals(((OClass) _eContainer));
-                              _and_2 = _equals;
-                            }
-                            if (_and_2) {
-                              {
-                                if ((f2 instanceof MultiOReference)) {
-                                  _builder_2.append("\t");
-                                  _builder_2.append("for(");
-                                  OClass _reference_5 = ((OReference) f2).getReference();
-                                  String _name_8 = _reference_5.getName();
-                                  _builder_2.append(_name_8, "\t");
-                                  _builder_2.append(" c : r.get");
-                                  String _name_9 = ((MultiOReference)f2).getName();
-                                  String _firstUpper_1 = StringExtensions.toFirstUpper(_name_9);
-                                  _builder_2.append(_firstUpper_1, "\t");
-                                  _builder_2.append("()){");
-                                  _builder_2.newLineIfNotEmpty();
-                                  _builder_2.append("\t");
-                                  _builder_2.append("\t");
-                                  _builder_2.append("o.add");
-                                  OClass _reference_6 = ((MultiOReference)f2).getReference();
-                                  String _name_10 = _reference_6.getName();
-                                  _builder_2.append(_name_10, "\t\t");
-                                  _builder_2.append("(c);");
-                                  _builder_2.newLineIfNotEmpty();
-                                  _builder_2.append("\t");
-                                  _builder_2.append("}");
-                                  _builder_2.newLine();
-                                } else {
-                                  _builder_2.append("\t");
-                                  _builder_2.append("o.add");
-                                  OClass _reference_7 = ((SingleOReference) f2).getReference();
-                                  String _name_11 = _reference_7.getName();
-                                  _builder_2.append(_name_11, "\t");
-                                  _builder_2.append("(r.get");
-                                  String _name_12 = f2.getName();
-                                  String _firstUpper_2 = StringExtensions.toFirstUpper(_name_12);
-                                  _builder_2.append(_firstUpper_2, "\t");
-                                  _builder_2.append("());");
-                                  _builder_2.newLineIfNotEmpty();
-                                }
-                              }
-                            }
+                        if ((f instanceof MultiOReference)) {
+                          _builder_2.append("\t");
+                          _builder_2.append("for(");
+                          OClass _reference_4 = ((OReference) f).getReference();
+                          String _name_8 = _reference_4.getName();
+                          _builder_2.append(_name_8, "\t");
+                          _builder_2.append(" c : r.get");
+                          String _name_9 = ((MultiOReference)f).getName();
+                          String _firstUpper_1 = StringExtensions.toFirstUpper(_name_9);
+                          _builder_2.append(_firstUpper_1, "\t");
+                          _builder_2.append("()){");
+                          _builder_2.newLineIfNotEmpty();
+                          _builder_2.append("\t");
+                          _builder_2.append("\t");
+                          _builder_2.append("o.");
+                          String _addername = this.addername(f);
+                          _builder_2.append(_addername, "\t\t");
+                          _builder_2.append("(c);");
+                          _builder_2.newLineIfNotEmpty();
+                          _builder_2.append("\t");
+                          _builder_2.append("}");
+                          _builder_2.newLine();
+                        } else {
+                          _builder_2.append("\t");
+                          _builder_2.append("o.");
+                          String _addername_1 = this.addername(f);
+                          _builder_2.append(_addername_1, "\t");
+                          _builder_2.append("(r.");
+                          String _tername = this.gettername(f);
+                          _builder_2.append(_tername, "\t");
+                          _builder_2.append("());");
+                          _builder_2.newLineIfNotEmpty();
+                        }
+                      }
+                    } else {
+                      boolean _and_3 = false;
+                      boolean _and_4 = false;
+                      if (!(f instanceof ODataType)) {
+                        _and_4 = false;
+                      } else {
+                        MultiODataType _opposite_4 = ((ODataType) f).getOpposite();
+                        boolean _notEquals_1 = (!Objects.equal(_opposite_4, null));
+                        _and_4 = _notEquals_1;
+                      }
+                      if (!_and_4) {
+                        _and_3 = false;
+                      } else {
+                        MultiODataType _opposite_5 = ((ODataType) f).getOpposite();
+                        EObject _eContainer_2 = _opposite_5.eContainer();
+                        EObject _eContainer_3 = of.eContainer();
+                        boolean _equals_1 = _eContainer_2.equals(_eContainer_3);
+                        _and_3 = _equals_1;
+                      }
+                      if (_and_3) {
+                        {
+                          if ((f instanceof MultiODataType)) {
+                            _builder_2.append("\t");
+                            _builder_2.append("for(");
+                            String _type = ((ODataType) f).getType();
+                            _builder_2.append(_type, "\t");
+                            _builder_2.append(" c : r.");
+                            String _tername_1 = this.gettername(f);
+                            _builder_2.append(_tername_1, "\t");
+                            _builder_2.append("()){");
+                            _builder_2.newLineIfNotEmpty();
+                            _builder_2.append("\t");
+                            _builder_2.append("\t");
+                            _builder_2.append("o.");
+                            MultiODataType _opposite_6 = ((MultiODataType)f).getOpposite();
+                            String _addername_2 = this.addername(_opposite_6);
+                            _builder_2.append(_addername_2, "\t\t");
+                            _builder_2.append("(c);");
+                            _builder_2.newLineIfNotEmpty();
+                            _builder_2.append("\t");
+                            _builder_2.append("}");
+                            _builder_2.newLine();
+                          } else {
+                            _builder_2.append("\t");
+                            _builder_2.append("o.");
+                            MultiODataType _opposite_7 = ((ODataType) f).getOpposite();
+                            String _addername_3 = this.addername(_opposite_7);
+                            _builder_2.append(_addername_3, "\t");
+                            _builder_2.append("(r.");
+                            String _tername_2 = this.gettername(f);
+                            _builder_2.append(_tername_2, "\t");
+                            _builder_2.append("());");
+                            _builder_2.newLineIfNotEmpty();
                           }
                         }
                       }
@@ -1122,36 +1150,43 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
               _builder_2.newLine();
               statementContent = (_statementContent + _builder_2);
             } else {
-              if ((!(of instanceof MultiOReference))) {
+              boolean _and_5 = false;
+              if (!(!(of instanceof MultiOReference))) {
+                _and_5 = false;
+              } else {
+                boolean _contains_3 = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
+                boolean _not_3 = (!_contains_3);
+                _and_5 = _not_3;
+              }
+              if (_and_5) {
                 String _statementContent_1 = statementContent;
                 StringConcatenation _builder_3 = new StringConcatenation();
-                _builder_3.append("o.set");
-                String _name_13 = of.getName();
-                String _firstUpper_3 = StringExtensions.toFirstUpper(_name_13);
-                _builder_3.append(_firstUpper_3, "");
+                _builder_3.append("o.");
+                String _settername = this.settername(of);
+                _builder_3.append(_settername, "");
                 _builder_3.append("(");
-                String _name_14 = of.getName();
-                _builder_3.append(_name_14, "");
+                String _name_10 = of.getName();
+                _builder_3.append(_name_10, "");
                 _builder_3.append(");");
                 statementContent = (_statementContent_1 + _builder_3);
               }
             }
             if ((of instanceof SingleODataType)) {
               OParameter param = OopFactoryImpl.eINSTANCE.createOParameter();
-              String _name_15 = ((SingleODataType)of).getName();
-              param.setName(_name_15);
+              String _name_11 = ((SingleODataType)of).getName();
+              param.setName(_name_11);
               String _oFeatureType = this.oFeatureType(of, true);
               param.setType(_oFeatureType);
               EList<OParameter> _parameters = constructor.getParameters();
               _parameters.add(param);
             } else {
               if ((of instanceof MultiODataType)) {
-                boolean _contains_3 = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
-                boolean _not_3 = (!_contains_3);
-                if (_not_3) {
+                boolean _contains_4 = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
+                boolean _not_4 = (!_contains_4);
+                if (_not_4) {
                   OParameter param_1 = OopFactoryImpl.eINSTANCE.createOParameter();
-                  String _name_16 = ((MultiODataType)of).getName();
-                  param_1.setName(_name_16);
+                  String _name_12 = ((MultiODataType)of).getName();
+                  param_1.setName(_name_12);
                   String _oFeatureType_1 = this.oFeatureType(of, true);
                   param_1.setType(_oFeatureType_1);
                   EList<OParameter> _parameters_1 = constructor.getParameters();
@@ -1160,20 +1195,20 @@ public class Titan2OopGenerator extends Model2ModelGeneratorHelper {
               } else {
                 if ((of instanceof SingleOReference)) {
                   OParameter param_2 = OopFactoryImpl.eINSTANCE.createOParameter();
-                  String _name_17 = ((SingleOReference)of).getName();
-                  param_2.setName(_name_17);
+                  String _name_13 = ((SingleOReference)of).getName();
+                  param_2.setName(_name_13);
                   String _oFeatureType_2 = this.oFeatureType(of, true);
                   param_2.setType(_oFeatureType_2);
                   EList<OParameter> _parameters_2 = constructor.getParameters();
                   _parameters_2.add(param_2);
                 } else {
                   if ((of instanceof MultiOReference)) {
-                    boolean _contains_4 = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
-                    boolean _not_4 = (!_contains_4);
-                    if (_not_4) {
+                    boolean _contains_5 = Titan2OopGenerator.oppositedOMultiReferences.contains(of);
+                    boolean _not_5 = (!_contains_5);
+                    if (_not_5) {
                       OParameter param_3 = OopFactoryImpl.eINSTANCE.createOParameter();
-                      String _name_18 = ((MultiOReference)of).getName();
-                      param_3.setName(_name_18);
+                      String _name_14 = ((MultiOReference)of).getName();
+                      param_3.setName(_name_14);
                       String _oFeatureType_3 = this.oFeatureType(of, true);
                       param_3.setType(_oFeatureType_3);
                       EList<OParameter> _parameters_3 = constructor.getParameters();

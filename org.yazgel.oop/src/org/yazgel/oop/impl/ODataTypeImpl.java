@@ -4,6 +4,7 @@ package org.yazgel.oop.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -87,11 +88,63 @@ public abstract class ODataTypeImpl extends OFeatureImpl implements ODataType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOpposite(MultiODataType newOpposite) {
+	public NotificationChain basicSetOpposite(MultiODataType newOpposite, NotificationChain msgs) {
 		MultiODataType oldOpposite = opposite;
 		opposite = newOpposite;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.ODATA_TYPE__OPPOSITE, oldOpposite, opposite));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, OopPackage.ODATA_TYPE__OPPOSITE, oldOpposite, newOpposite);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOpposite(MultiODataType newOpposite) {
+		if (newOpposite != opposite) {
+			NotificationChain msgs = null;
+			if (opposite != null)
+				msgs = ((InternalEObject)opposite).eInverseRemove(this, OopPackage.MULTI_ODATA_TYPE__OPPOSITES, MultiODataType.class, msgs);
+			if (newOpposite != null)
+				msgs = ((InternalEObject)newOpposite).eInverseAdd(this, OopPackage.MULTI_ODATA_TYPE__OPPOSITES, MultiODataType.class, msgs);
+			msgs = basicSetOpposite(newOpposite, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.ODATA_TYPE__OPPOSITE, newOpposite, newOpposite));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OopPackage.ODATA_TYPE__OPPOSITE:
+				if (opposite != null)
+					msgs = ((InternalEObject)opposite).eInverseRemove(this, OopPackage.MULTI_ODATA_TYPE__OPPOSITES, MultiODataType.class, msgs);
+				return basicSetOpposite((MultiODataType)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case OopPackage.ODATA_TYPE__OPPOSITE:
+				return basicSetOpposite(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

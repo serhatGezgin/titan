@@ -251,7 +251,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 				var f = of as MultiOReference
 				if (!list.contains(f.reference)) {
 					var method = OopFactoryImpl.eINSTANCE.createOMethod
-					method.name = '''add«f.reference.name.toFirstUpper»'''
+					method.name = '''«f.addername»'''
 					method.returnType = 'void'
 
 					var parameter = OopFactoryImpl.eINSTANCE.createOParameter
@@ -260,7 +260,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					method.parameters.add(parameter)
 
 					var statement = OopFactoryImpl.eINSTANCE.createOStatement
-					statement.content = '''get«f.name.toFirstUpper»().add(«parameter.name»);'''
+					statement.content = '''«f.gettername»().add(«parameter.name»);'''
 					method.statements.add(statement)
 
 					oc.methods.add(method)
@@ -272,7 +272,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 				var dt = odt as MultiODataType
 				if (!list.contains(dt.type)) {
 					var method = OopFactoryImpl.eINSTANCE.createOMethod
-					method.name = '''add«dt.name.toFirstUpper»'''
+					method.name = '''«dt.addername»'''
 					method.returnType = 'void'
 
 					var parameter = OopFactoryImpl.eINSTANCE.createOParameter
@@ -281,7 +281,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					method.parameters.add(parameter)
 
 					var statement = OopFactoryImpl.eINSTANCE.createOStatement
-					statement.content = '''get«dt.name.toFirstUpper»().add(«parameter.name»);'''
+					statement.content = '''«dt.gettername»().add(«parameter.name»);'''
 					method.statements.add(statement)
 					oc.methods.add(method)
 
@@ -299,7 +299,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 				//getter
 				var gmethod = OopFactoryImpl.eINSTANCE.createOMethod
-				gmethod.name = '''get«d.name.toFirstUpper»'''
+				gmethod.name = '''«d.gettername»'''
 				gmethod.returnType = d.oFeatureType(true)
 
 				var statement = OopFactoryImpl.eINSTANCE.createOStatement
@@ -309,7 +309,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 				//setter
 				var smethod = OopFactoryImpl.eINSTANCE.createOMethod
-				smethod.name = '''set«d.name.toFirstUpper»'''
+				smethod.name = '''«d.settername»'''
 				smethod.returnType = '''void'''
 
 				var sparameter = OopFactoryImpl.eINSTANCE.createOParameter
@@ -325,19 +325,19 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 			for (OFeature of : oc.features.filter[of|(of instanceof OReference)]) {
 				var f = of as OReference
-
+ 
 				//getter
 				var gmethod = OopFactoryImpl.eINSTANCE.createOMethod
-				gmethod.name = '''get«f.name.toFirstUpper»'''
+				gmethod.name = '''«f.gettername»'''
 				if (f instanceof MultiOReference) {
 					if (f.uniqueInstance)
 						gmethod.returnType = f.oFeatureType(true)
-					else
+					else  
 						gmethod.returnType = f.oFeatureType(true)
 				} else {
 					gmethod.returnType = f.oFeatureType(true)
 				}
-
+ 
 				var statement = OopFactoryImpl.eINSTANCE.createOStatement
 				statement.content = '''return this.«f.name»;'''
 				gmethod.statements.add(statement)
@@ -345,7 +345,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 				//setter
 				var smethod = OopFactoryImpl.eINSTANCE.createOMethod
-				smethod.name = '''set«f.name.toFirstUpper»'''
+				smethod.name = '''«f.settername»'''
 				smethod.returnType = '''void'''
 
 				var sparameter = OopFactoryImpl.eINSTANCE.createOParameter
@@ -498,25 +498,32 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 					statementContent += '''
 						for («(of as OReference).reference.name» r : «of.name») {
 							o.add«(of as OReference).reference.name.toFirstUpper»(r);
-							«FOR f2 : (of as OReference).reference.features»
-								«IF f2 instanceof OReference && (f2 as OReference).opposite != null»
-									«FOR f3 : modelOc.features»
-										«IF f3 instanceof OReference && (f3 as OReference).reference.equals((f2 as OReference).eContainer as OClass)»
-											«IF (f2 instanceof MultiOReference)»
-												for(«(f2 as OReference).reference.name» c : r.get«f2.name.toFirstUpper»()){
-													o.add«f2.reference.name»(c);
-												}
-											«ELSE»
-												o.add«(f2 as SingleOReference).reference.name»(r.get«f2.name.toFirstUpper»());
-											«ENDIF»
-										«ENDIF»
-									«ENDFOR»
+							«FOR f : (of as OReference).reference.features»
+								«IF f instanceof OReference && (f as OReference).opposite != null &&
+							(f as OReference).opposite.eContainer.equals(of.eContainer)»
+									«IF (f instanceof MultiOReference)»
+										for(«(f as OReference).reference.name» c : r.get«f.name.toFirstUpper»()){
+											o.«f.addername»(c);
+										}
+									«ELSE»
+										o.«f.addername»(r.«f.gettername»());
+									«ENDIF»
+								«ELSEIF f instanceof ODataType && (f as ODataType).opposite != null &&
+							(f as ODataType).opposite.eContainer.equals(of.eContainer)»
+									«IF (f instanceof MultiODataType)»
+										for(«(f as ODataType).type» c : r.«f.gettername»()){
+											o.«f.opposite.addername»(c);
+										}
+									«ELSE»
+										o.«(f as ODataType).opposite.addername»(r.«f.gettername»());
+									«ENDIF»
 								«ENDIF»
 							«ENDFOR»
 						}
 					'''
-				} else if (!(of instanceof MultiOReference)) {
-					statementContent += '''o.set«of.name.toFirstUpper»(«of.name»);'''
+				}
+				else if (!(of instanceof MultiOReference) && !oppositedOMultiReferences.contains(of)) {
+					statementContent += '''o.«of.settername»(«of.name»);'''
 				}
 
 				if (of instanceof SingleODataType) {

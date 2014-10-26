@@ -33,6 +33,7 @@
     </genClasses>
     <genClasses ecoreClass="oop.ecore#//MultiOReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//MultiOReference/uniqueInstance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//MultiOReference/opposites"/>
     </genClasses>
     <genClasses ecoreClass="oop.ecore#//SingleOReference"/>
     <genClasses ecoreClass="oop.ecore#//ODataType">
@@ -41,6 +42,7 @@
     <genClasses ecoreClass="oop.ecore#//SingleODataType"/>
     <genClasses ecoreClass="oop.ecore#//MultiODataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//MultiODataType/uniqueInstance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oop.ecore#//MultiODataType/opposites"/>
     </genClasses>
     <genClasses ecoreClass="oop.ecore#//OMethod">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oop.ecore#//OMethod/name"/>

@@ -49,6 +49,7 @@ public interface OReference extends OFeature {
 
 	/**
 	 * Returns the value of the '<em><b>Opposite</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.yazgel.oop.MultiOReference#getOpposites <em>Opposites</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Opposite</em>' reference isn't clear,
@@ -58,7 +59,8 @@ public interface OReference extends OFeature {
 	 * @return the value of the '<em>Opposite</em>' reference.
 	 * @see #setOpposite(MultiOReference)
 	 * @see org.yazgel.oop.OopPackage#getOReference_Opposite()
-	 * @model
+	 * @see org.yazgel.oop.MultiOReference#getOpposites
+	 * @model opposite="opposites"
 	 * @generated
 	 */
 	MultiOReference getOpposite();
