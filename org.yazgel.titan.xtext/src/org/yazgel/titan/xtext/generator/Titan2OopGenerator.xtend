@@ -146,6 +146,16 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 
 	def postGenerator(OModel model) {
 
+		//0- super Classes must be set
+		var entities = transformationReleations.filter[p1, p2|p1 instanceof Entity]
+		for (e : entities.entrySet) {
+			var entity = e.key as Entity
+			if(entity.superEntity != null){
+				var oc = transformationReleations.get(entity) as OClass
+				oc.^super = transformationReleations.get(entity.superEntity) as OClass
+			}
+		} 
+		
 		//1-Reference Reference props must be set after generated model classes
 		var releationsOfReferences = transformationReleations.filter[p1, p2|p1 instanceof Feature]
 		for (e : releationsOfReferences.entrySet) {
@@ -210,7 +220,7 @@ class Titan2OopGenerator extends Model2ModelGeneratorHelper {
 		//4 Constructors must be added after generated model classes
 		var oClasses = transformationReleations.filter[p1, p2|p1 instanceof OClass]
 		for (e : oClasses.entrySet) {
-			var oc = e.key as OClass
+			var oc = e.key as OClass 
 			var oConst = OopFactoryImpl.eINSTANCE.createOMethod
 			oConst.name = oc.name
 

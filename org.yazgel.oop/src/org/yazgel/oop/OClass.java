@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.yazgel.oop.OClass#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.yazgel.oop.OClass#getImports <em>Imports</em>}</li>
  *   <li>{@link org.yazgel.oop.OClass#getImplements <em>Implements</em>}</li>
+ *   <li>{@link org.yazgel.oop.OClass#getSuper <em>Super</em>}</li>
  * </ul>
  * </p>
  *
@@ -116,5 +117,31 @@ public interface OClass extends EObject {
 	 * @generated
 	 */
 	EList<String> getImplements();
+
+	/**
+	 * Returns the value of the '<em><b>Super</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Super</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Super</em>' reference.
+	 * @see #setSuper(OClass)
+	 * @see org.yazgel.oop.OopPackage#getOClass_Super()
+	 * @model
+	 * @generated
+	 */
+	OClass getSuper();
+
+	/**
+	 * Sets the value of the '{@link org.yazgel.oop.OClass#getSuper <em>Super</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Super</em>' reference.
+	 * @see #getSuper()
+	 * @generated
+	 */
+	void setSuper(OClass value);
 
 } // OClass

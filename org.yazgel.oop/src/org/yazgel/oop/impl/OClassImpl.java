@@ -36,6 +36,7 @@ import org.yazgel.oop.OopPackage;
  *   <li>{@link org.yazgel.oop.impl.OClassImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.yazgel.oop.impl.OClassImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.yazgel.oop.impl.OClassImpl#getImplements <em>Implements</em>}</li>
+ *   <li>{@link org.yazgel.oop.impl.OClassImpl#getSuper <em>Super</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,6 +102,16 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 	 * @ordered
 	 */
 	protected EList<String> implements_;
+
+	/**
+	 * The cached value of the '{@link #getSuper() <em>Super</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuper()
+	 * @generated
+	 * @ordered
+	 */
+	protected OClass super_;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,6 +206,44 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OClass getSuper() {
+		if (super_ != null && super_.eIsProxy()) {
+			InternalEObject oldSuper = (InternalEObject)super_;
+			super_ = (OClass)eResolveProxy(oldSuper);
+			if (super_ != oldSuper) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OopPackage.OCLASS__SUPER, oldSuper, super_));
+			}
+		}
+		return super_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OClass basicGetSuper() {
+		return super_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSuper(OClass newSuper) {
+		OClass oldSuper = super_;
+		super_ = newSuper;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OopPackage.OCLASS__SUPER, oldSuper, super_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -224,6 +273,9 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 				return getImports();
 			case OopPackage.OCLASS__IMPLEMENTS:
 				return getImplements();
+			case OopPackage.OCLASS__SUPER:
+				if (resolve) return getSuper();
+				return basicGetSuper();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,6 +308,9 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 				getImplements().clear();
 				getImplements().addAll((Collection<? extends String>)newValue);
 				return;
+			case OopPackage.OCLASS__SUPER:
+				setSuper((OClass)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -283,6 +338,9 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 			case OopPackage.OCLASS__IMPLEMENTS:
 				getImplements().clear();
 				return;
+			case OopPackage.OCLASS__SUPER:
+				setSuper((OClass)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -305,6 +363,8 @@ public class OClassImpl extends MinimalEObjectImpl.Container implements OClass {
 				return imports != null && !imports.isEmpty();
 			case OopPackage.OCLASS__IMPLEMENTS:
 				return implements_ != null && !implements_.isEmpty();
+			case OopPackage.OCLASS__SUPER:
+				return super_ != null;
 		}
 		return super.eIsSet(featureID);
 	}

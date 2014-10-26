@@ -306,6 +306,15 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOClass_Super() {
+		return (EReference)oClassEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOFeature() {
 		return oFeatureEClass;
 	}
@@ -596,6 +605,7 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 		createEReference(oClassEClass, OCLASS__FEATURES);
 		createEAttribute(oClassEClass, OCLASS__IMPORTS);
 		createEAttribute(oClassEClass, OCLASS__IMPLEMENTS);
+		createEReference(oClassEClass, OCLASS__SUPER);
 
 		oFeatureEClass = createEClass(OFEATURE);
 		createEAttribute(oFeatureEClass, OFEATURE__NAME);
@@ -687,6 +697,7 @@ public class OopPackageImpl extends EPackageImpl implements OopPackage {
 		initEReference(getOClass_Features(), this.getOFeature(), null, "features", null, 0, -1, OClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOClass_Imports(), ecorePackage.getEString(), "imports", null, 0, -1, OClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOClass_Implements(), ecorePackage.getEString(), "implements", null, 0, -1, OClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOClass_Super(), this.getOClass(), null, "super", null, 0, 1, OClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(oFeatureEClass, OFeature.class, "OFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, OFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -213,13 +213,22 @@ public interface OopPackage extends EPackage {
 	int OCLASS__IMPLEMENTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Super</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCLASS__SUPER = 5;
+
+	/**
 	 * The number of structural features of the '<em>OClass</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OCLASS_FEATURE_COUNT = 5;
+	int OCLASS_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>OClass</em>' class.
@@ -976,6 +985,17 @@ public interface OopPackage extends EPackage {
 	EAttribute getOClass_Implements();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.yazgel.oop.OClass#getSuper <em>Super</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Super</em>'.
+	 * @see org.yazgel.oop.OClass#getSuper()
+	 * @see #getOClass()
+	 * @generated
+	 */
+	EReference getOClass_Super();
+
+	/**
 	 * Returns the meta object for class '{@link org.yazgel.oop.OFeature <em>OFeature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1405,6 +1425,14 @@ public interface OopPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OCLASS__IMPLEMENTS = eINSTANCE.getOClass_Implements();
+
+		/**
+		 * The meta object literal for the '<em><b>Super</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OCLASS__SUPER = eINSTANCE.getOClass_Super();
 
 		/**
 		 * The meta object literal for the '{@link org.yazgel.oop.impl.OFeatureImpl <em>OFeature</em>}' class.
